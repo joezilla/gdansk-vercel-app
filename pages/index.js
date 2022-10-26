@@ -42,6 +42,8 @@ export default function Index({ preview, allPosts, allStreets }) {
 
           </StreetOverviewModule>
 
+          <button onClick="topFunction()" id="scrollBtn" title="Go to top">Top</button>
+
         </Container>
       </Layout>
     </>
