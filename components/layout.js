@@ -11,7 +11,6 @@ export default function Layout({ preview, children }) {
         <Menu right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
           <a id="home" className="menu-item" href="/">Home</a>
           <a id="about" className="menu-item" href="/posts/about">About</a>
-          <a id="contact" className="menu-item" href="/posts/contact">Contact</a>
         </Menu>
         <main id="page-wrap">{children}</main>
       </div>
