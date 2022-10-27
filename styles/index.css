@@ -6,6 +6,15 @@
 
 @import url('http://fonts.cdnfonts.com/css/wiegel-kurrent');
 
+
+/* grid */
+.streetGrid {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: solid 1px gray;
+
+}
+
 /** alphabet list */
 .alphabetlist ul {
     background: none;
@@ -40,7 +49,8 @@
   .bigletter {
     font-family: "Wiegel Kurrent", sans-serif;  
     font-size: 76pt;
-    display: block; 
+    display: inline;
+    /*display: block; */
   }
 
 .columnContainer {
@@ -54,15 +64,6 @@
     column-fill: auto;
   }
 
-
-.columnContainer:before {
-  content: "";
-  display: block;
-  width: 90%;
-  margin: 0px 0px 10px 10px;
-  border-bottom: solid 1px black;
-  break-before: always;
-}
 
 .streetInfoTable {
   margin-bottom: 20px;
