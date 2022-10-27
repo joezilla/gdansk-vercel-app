@@ -42,15 +42,15 @@ function sort2({streets}) {
 export default function StreetOverviewModule({streets}) {
   var sorted = sort2({streets})
   return (
-    <Container>
-      <Container>
+    <div>
+      <div>
       <ul className="alphabetlist">
         {letters.map (l => <li><a href={`#alphabetlist-${l}`}>{l}</a></li> )}   
       </ul>
-      </Container>
-      <Container>
+      </div>
+      <div>
         {letters.map (k => 
-          <Container>
+          <div>
             <div className="relative flex streetGrid">
             <div className="columns-2 md:columns-3 gap-1">
               <div className="w-64"><h2 class="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
@@ -59,10 +59,10 @@ export default function StreetOverviewModule({streets}) {
                 )}
             </div>
             </div>
-          </Container>
+          </div>
         )}
-      </Container>
-    </Container>
+      </div>
+    </div>
   )
 }
 
