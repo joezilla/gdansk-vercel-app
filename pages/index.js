@@ -13,6 +13,7 @@ import { findResultsState } from 'react-instantsearch-dom/server';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 import common_en from '../i18n/en/common.json'
 
+
 const searchClient = algoliasearch(
   '8YAT2UHBPJ',
   '9f21f2b327d6f0e944f5276b1445aa51'
@@ -30,10 +31,6 @@ export default function Index({ preview, allPosts, allStreets }) {
           <title>Danzig Street Names</title>
         </Head>
 
-        <Container>
-          Hero
-          {heroPost}
-        </Container>
 
         <Container>
           <Intro />
