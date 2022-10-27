@@ -8,7 +8,7 @@ export default function Layout({ preview, children }) {
     <>
       <Meta />
       <div className="min-h-screen" id="outer-container">
-        <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
+        <Menu right pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
           <a id="home" className="menu-item" href="/">Home</a>
           <a id="about" className="menu-item" href="/posts/about">About</a>
           <a id="contact" className="menu-item" href="/posts/contact">Contact</a>
