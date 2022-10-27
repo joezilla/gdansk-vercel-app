@@ -36,6 +36,7 @@ export default function Meta() {
         name="description"
         content={`Overview of the old streets of Danzig.`}
       />
+      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
   )
 }
