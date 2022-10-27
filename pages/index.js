@@ -47,7 +47,7 @@ export default function Index({ preview, allPosts, allStreets }) {
   )
 }
 
-export async function getStaticProps({ preview = true }) {
+export async function getStaticProps({ preview = false }) {
   const allPosts = (await getAllPostsForHome(preview)) ?? []
   const allStreets = (await getAllStreets(preview)) ?? []
   return {
