@@ -33,8 +33,7 @@ function sort2({streets}) {
             }
             return 0;
           });
-          console.log("sorting")
-        } else { console.log ("not sorting " + l) }
+        } 
       })
   return(hashMap);
 }
@@ -45,7 +44,7 @@ export default function StreetOverviewModule({streets}) {
     <div>
       <div>
       <ul className="alphabetlist">
-        {letters.map (l => <li><a href={`#alphabetlist-${l}`}>{l}</a></li> )}   
+        {letters.map (l => <li key={`#alphabetlist-${l}`}><a href={`#alphabetlist-${l}`}>{l}</a></li> )}   
       </ul>
       </div>
       <div>
@@ -53,7 +52,7 @@ export default function StreetOverviewModule({streets}) {
           <div>
             <div className="relative flex streetGrid">
             <div className="columns-2 md:columns-3 gap-1">
-              <div className="w-64"><h2 class="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
+              <div className="w-64"><h2 className="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
                 {Object.values(sorted[k] ?? new Array).map ( v => 
                   <div className="w-64"><Link href={`/streets/${encodeURIComponent(v.germanName)}`}>{v.germanName}</Link></div>
                 )}
