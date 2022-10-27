@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import {Helmet} from "react-helmet";
 
 export default function Meta() {
   return (
-    <Head>
+    <Helmet>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -34,9 +35,16 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`Overview of the old streets of Danzig.`}
+        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
-    </Head>
+      <script>{`
+        window.fwSettings={
+        'widget_id':151000001120
+        };
+        !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
+      `}</script>
+<script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' async defer></script>
+    </Helmet>
   )
 }
