@@ -1,4 +1,10 @@
 import React from 'react';
+import Head from 'next/head'
+import Container from '../components/container'
+import Layout from '../components/layout'
+import { getNavigationPosts } from '../lib/api'
+
+
 import algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
@@ -11,11 +17,26 @@ const DEFAULT_PROPS = {
   indexName: 'dev_danzig',
 };
 
-export default function Search(props) {
+export default function Search(preview, navigationPosts) {
   
   return (
-    <div>
-      nothing
-    </div>
+    <>
+    <Layout preview={preview} navigationPosts={navigationPosts}>
+      <Head>
+        <title>Danzig Street Names</title>
+      </Head>
+      <Container>
+        nix
+      </Container>
+    </Layout>
+  </>
   );
+}
+
+
+export async function getStaticProps({ preview = false }) {
+  const navigationPosts = (await getNavigationPosts(preview)) ?? []
+  return {
+    props: { preview, navigationPosts },
+  }
 }

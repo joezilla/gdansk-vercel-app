@@ -136,7 +136,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all .7s ease-in;
+  /*transition: all .7s ease-in;*/
   border-bottom: 1px solid #ccc;
 }
 

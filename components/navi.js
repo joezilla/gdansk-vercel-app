@@ -3,6 +3,8 @@ import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
 import Script from 'next/script'
 import { slide as Menu } from 'react-burger-menu'
 
+import { SearchBox } from 'react-instantsearch-dom';
+
 
 export default function Navi(navigationPosts) {
   return (
@@ -11,7 +13,7 @@ export default function Navi(navigationPosts) {
          <ul>
           <li><a id="home" className="menu-item" href="/">Home</a></li>
           <li><a id="allstreets" className="menu-item" href="/allstreets">Alle Strassen</a></li>
-          {navigationPosts.navigationPosts.map(post => 
+          {navigationPosts?.navigationPosts?.map(post => 
             <li><a id={post.slug} key={post.slug} className="menu-item" href={`/posts/${post.slug}`}>{post.title}</a></li>
           )}
         </ul>

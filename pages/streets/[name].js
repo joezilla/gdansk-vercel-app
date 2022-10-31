@@ -50,7 +50,6 @@ export default function Street({ street, navigationPosts, preview }) {
 
 /* get the static properties for this street */
 export async function getStaticProps({ params, preview = false }) {
-  console.log("Getting street by name " + params.name);
   const data = (await getStreetByName( preview, params.name ));
   const navigationPosts = (await getNavigationPosts(preview)) ?? []
   return {
