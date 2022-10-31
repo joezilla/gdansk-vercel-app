@@ -1,13 +1,14 @@
 import { CMS_NAME, CMS_URL } from '../lib/constants'
 
 export default function Intro() {
+  {/*flex-col md:flex-row flex items-center md:justify-between */}
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
+    <section className="mt-16 mb-16 md:mb-12">
       <h1 className="text-4xl lg:text-6xl font-bold font-bold tracking-tighter leading-tight md:pr-8">
-        Die Strassen Danzigs
+       Das Alte Danzig.
       </h1>
-      <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        Eine Auflistung der alten Strassennamen Danzigs.
+      <h4 className="text-left text-lg">
+      Strassen, Persönlichkeiten, Bilder.
       </h4>
     </section>
   )

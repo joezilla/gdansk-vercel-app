@@ -49,12 +49,12 @@ export default function StreetOverviewModule({streets}) {
       </div>
       <div>
         {letters.map (k => 
-          <div>
+          <div key={k}>
             <div className="relative flex streetGrid">
             <div className="columns-2 md:columns-3 gap-1">
               <div className="w-64"><h2 className="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
                 {Object.values(sorted[k] ?? new Array).map ( v => 
-                  <div className="w-64"><Link href={`/streets/${encodeURIComponent(v.germanName)}`}>{v.germanName}</Link></div>
+                  <div key={v.sys.id} className="w-64"><Link href={`/streets/${encodeURIComponent(v.germanName)}`}>{v.germanName}</Link></div>
                 )}
             </div>
             </div>

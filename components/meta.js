@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import Script from 'next/script'
 
 export default function Meta() {
   return (
@@ -37,13 +38,9 @@ export default function Meta() {
         content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
-      <script>{`
-        window.fwSettings={
-        'widget_id':151000001120
-        };
-        !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
-      `}</script>
-      <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' async defer></script>
+     
+      <Script type='text/javascript' src='/freshworks.js' async defer></Script>
+      <Script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' async defer></Script>
     </Head>
   )
 }

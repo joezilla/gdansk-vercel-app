@@ -16,7 +16,7 @@ export default function StreetDetails({ street, preview }) {
                   <td>{street.germanName}</td>
                 </tr>
                 <tr>
-                  <th>Distrikt</th>
+                  <th>Stadtteil</th>
                   <td>{street.district}</td>
                 </tr>
                 <tr>
