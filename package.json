@@ -7,24 +7,27 @@
     "setup": "node ./contentful/setup.js"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^15.4.0",
-    "algoliasearch": "4.11.0",
-    "classnames": "2.3.1",
-    "date-fns": "2.28.0",
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "algoliasearch": "4.14.2",
+    "classnames": "2.3.2",
+    "date-fns": "2.29.3",
+    "instantsearch.css": "^7.4.5",
     "next": "latest",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-burger-menu": "^3.0.8",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "latest",
-    "react-instantsearch-dom": "6.31.1",
+    "react-instantsearch-dom": "6.38.0",
     "react-responsive-carousel": "^3.2.23",
     "react-table": "^7.8.0"
   },
   "devDependencies": {
-    "autoprefixer": "10.4.2",
-    "contentful-import": "^7.8.7",
-    "postcss": "8.4.5",
-    "tailwindcss": "^3.0.15"
+    "autoprefixer": "10.4.13",
+    "contentful-import": "^8.5.1",
+    "css-loader": "^6.7.1",
+    "postcss": "8.4.18",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.2.1"
   }
 }

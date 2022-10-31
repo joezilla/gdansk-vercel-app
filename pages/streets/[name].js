@@ -10,10 +10,10 @@ import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import { CMS_NAME } from '../../lib/constants'
 import { connectAutoComplete } from 'react-instantsearch-dom'
-import { getAllStreets, getStreetByName } from '../../lib/api'
+import { getAllStreets, getStreetByName, getNavigationPosts } from '../../lib/api'
 
 
-export default function Street({ street, preview }) {
+export default function Street({ street, navigationPosts, preview }) {
   const router = useRouter()
 
   if (!router.isFallback && !street) {
@@ -21,7 +21,7 @@ export default function Street({ street, preview }) {
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} navigationPosts={navigationPosts}>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -51,11 +51,13 @@ export default function Street({ street, preview }) {
 /* get the static properties for this street */
 export async function getStaticProps({ params, preview = false }) {
   console.log("Getting street by name " + params.name);
-  const data = (await getStreetByName( params.name ));
+  const data = (await getStreetByName( preview, params.name ));
+  const navigationPosts = (await getNavigationPosts(preview)) ?? []
   return {
     props: {
         preview,
-        street: data ?? null
+        street: data ?? null,
+        navigationPosts
     }
   }
 }
