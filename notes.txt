@@ -1,0 +1,100 @@
+to go thru: https://www.inyourpocket.com/gdansk/historic-danzig-gdansk-street-names_74676f
+
+https://www.contentful.com/blog/2021/07/02/add-algolia-instantsearch-to-nextjs-app/
+
+
+== Algolia Index Structure ==
+
+index1: danzig_preview
+index2: danzig_prod
+
+{
+    type: "post|street|person",
+    // street
+    fields: {
+        germanName: "xxx",
+        polishNames: [
+            "one",
+            "two
+        ],
+        previousName: "text",
+        history: "rich text, stripped", 
+        district: "yyy",
+        thumbnail: "url"
+    }
+    // post
+    fields: {
+        title: "title",
+        content: "content",
+        thumbnail: "url to coverimage"
+    }    
+    // person
+    fields: {
+        name: "name",
+        bio: "bio rt stripped"
+    }
+
+}
+
+== Reindex ==
+https://npm.io/package/contentful-to-algolia-sync
+
+== Algolia Contentful Webhook for Streets, en-US ==
+
+{
+  "type": "street",
+  "fields": {
+    "germanName": "/payload/fields/germanName/en-US" 
+  }
+}
+
+
+
+  == Images ==
+
+  https://images.ctfassets.net/{space_id}/{asset_id}/{unique_id}/{name}
+
+
+
+  https://images.ctfassets.net/9ieso0n2yz5w/ov5Nu7JrDYMMcoE3q3hV3/1c43822b4590e261c92a10480ce7da66/site-screenshot.png?w=3840&q=75
+
+
+  https://images.ctfassets.net/9ieso0n2yz5w/ov5Nu7JrDYMMcoE3q3hV3/1c43822b4590e261c92a10480ce7da66/site-screenshot.png?w=3840&q=75
+
+
+  
+
+  https://images.ctfassets.net/9ieso0n2yz5w/1beB3xJtefTJdvcgHguMyj/foo.jpg
+
+
+  == Index Structure ==
+  {
+    "id": "id",
+    "assetType": "street|person|asset",
+    "spaceId": "1234k124",
+    "tags": [ "tag1", "tag2", "tag3" ],
+    "cityName: "Danzig",
+    "cityId": "123123",
+    "createdAt": "2022-10-29T00:29:35.427Z",
+    "updatedAt": "2022-10-29T00:29:35.427Z",
+    "fields": {
+      "germanName": "123",
+      "polishNames": [ "one", "two ],
+      "history": [
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Sie umfasste zu Beginn auch die Ankerschmiedegasse. Der Name kommt von den hier wohnenden Reifschlägern. Deren Reeperbahnen befanden sich übrigens 1385 bereits in der späteren Niederstadt.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            }
+          } 
+        ],
+        "thumbnail": "url"
+    }
+  }
