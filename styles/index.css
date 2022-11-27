@@ -6,12 +6,12 @@
 
 @import url('http://fonts.cdnfonts.com/css/wiegel-kurrent');
 
+
 /* grid */
 .streetGrid {
   padding-bottom: 10px;
   padding-top: 10px;
   border-bottom: solid 1px gray;
-
 }
 
 /** alphabet list */
@@ -36,7 +36,6 @@
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     font-weight: bolder;
-    color: #000;
     height: 50px;
     width: auto;
     display: block;
@@ -117,7 +116,7 @@
 
 
 body {
-  padding: 10px;
+  /*padding: 10px;*/
   font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
@@ -239,4 +238,55 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* react instantsearch box */
+
+ .ais-SearchBox {
+  height: 64px;
+  width: 740px;
+}
+
+ .ais-SearchBox .ais-SearchBox-input {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 48px 0 rgba(0, 0, 0, 0.2);
+  font-family: Hind, sans-serif;
+  height: 38px;
+  /*
+    The "Hind" font family is vertically off-balance.
+    Adding 4px of padding top makes it more vertically aligned.
+  */
+  padding: 4px 24px 0 64px;
+}
+
+ .ais-SearchBox-submit {
+  padding: 0 1rem 0 2rem;
+  width: 64px;
+}
+
+ .ais-SearchBox .ais-SearchBox-input::placeholder {
+  color: rgba(33, 36, 61, 0.24);
+  opacity: 1; /* Firefox */
+}
+
+.ais-SearchBox-input:-ms-input-placeholder {
+  color: rgba(33, 36, 61, 0.24);
+}
+
+.ais-SearchBox-input::-ms-input-placeholder {
+  color: rgba(33, 36, 61, 0.24);
+}
+
+.ais-SearchBox-submit {
+  color: #e2a400;
+}
+
+.ais-RefinementList .ais-SearchBox-input {
+  font-family: Hind, sans-serif;
+  /*
+    The "Hind" font family is vertically off-balance.
+    Adding some padding top makes it more vertically aligned.
+  */
+  padding-top: 2px;
 }

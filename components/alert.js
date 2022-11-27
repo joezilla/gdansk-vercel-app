@@ -6,8 +6,8 @@ export default function Alert({ preview }) {
   return (
     <div
       className={cn('border-b', {
-        'bg-accent-7 border-accent-7 text-white': preview,
-        'bg-accent-1 border-accent-2': !preview,
+        'bg-accent-7 border-accent-7 text-white dark:bg-zinc-900': preview,
+        'bg-accent-1 border-accent-2 dark:bg-zinc-900': !preview,
       })}
     >
       <Container>

@@ -1,5 +1,6 @@
 .markdown {
   @apply text-lg leading-relaxed;
+  @apply dark:text-white;
 }
 
 .markdown p,

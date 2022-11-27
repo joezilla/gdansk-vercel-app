@@ -23,7 +23,6 @@ export default function Street({ street, navigationPosts, preview }) {
   return (
     <Layout preview={preview} navigationPosts={navigationPosts}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <Container>Loading...</Container>
         ) : (
@@ -34,11 +33,8 @@ export default function Street({ street, navigationPosts, preview }) {
                   {street.germanName}
                 </title>
               </Head>
-
               <StreetDetails street={street}></StreetDetails>
-             
             </article>
-            <SectionSeparator />
             
 
           </>

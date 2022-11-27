@@ -10,7 +10,7 @@ export default function Layout({ preview, children, navigationPosts }) {
       <Meta />
       <div className="min-h-screen" id="outer-container">
         <Navi navigationPosts={navigationPosts}/>
-        <main id="page-wrap">{children}</main>
+        <main id="page-wrap" className="pt-0.5">{children}</main>
       </div>
       <Alert preview={preview} />
       <Footer />

@@ -42,8 +42,8 @@ export default function StreetOverviewModule({streets}) {
   var sorted = sort2({streets})
   return (
     <div>
-      <div>
-      <ul className="alphabetlist">
+      <div className="dark:text-white">
+      <ul className="alphabetlist dark:text-gray-200">
         {letters.map (l => <li key={`#alphabetlist-${l}`}><a href={`#alphabetlist-${l}`}>{l}</a></li> )}   
       </ul>
       </div>
@@ -52,9 +52,9 @@ export default function StreetOverviewModule({streets}) {
           <div key={k}>
             <div className="relative flex streetGrid">
             <div className="columns-2 md:columns-3 gap-1">
-              <div className="w-64"><h2 className="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
+              <div className="w-64 dark:text-violet-400"><h2 className="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
                 {Object.values(sorted[k] ?? new Array).map ( v => 
-                  <div key={v.sys.id} className="w-64"><Link href={`/streets/${encodeURIComponent(v.germanName)}`}>{v.germanName}</Link></div>
+                  <div key={v.sys.id} className="w-64 dark:text-gray-200"><Link href={`/streets/${encodeURIComponent(v.germanName)}`}>{v.germanName}</Link></div>
                 )}
             </div>
             </div>

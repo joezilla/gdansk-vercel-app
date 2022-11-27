@@ -19,10 +19,11 @@ export default function FullpagePost({ post, morePosts, navigationPosts, preview
     return <ErrorPage statusCode={404} />
   }
 
+  // rm <Header />
+        
   return (
     <Layout preview={preview} navigationPosts={navigationPosts}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -30,7 +31,7 @@ export default function FullpagePost({ post, morePosts, navigationPosts, preview
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title}
                 </title>
                 <meta property="og:image" content={post.coverImage.url} />
               </Head>

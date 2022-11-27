@@ -23,7 +23,7 @@ export default function Index({ preview, allPosts, navigationPosts }) {
           <title>Danzig Street Names</title>
         </Head>
         <Container>
-          <Intro />
+         <Intro />
          <HeroPost title={allPosts?.heroPost.title} coverImage={allPosts?.heroPost.coverImage} date={allPosts?.heroPost.date}
                    excerpt={allPosts?.heroPost.excerpt} author={allPosts?.heroPost.author} slug={allPosts?.heroPost.slug} />
           <MoreStories posts={allPosts?.morePosts}/>
