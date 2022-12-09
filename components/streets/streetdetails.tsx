@@ -1,10 +1,8 @@
-import Container from '../container'
-import PostTitle from '../post-title'
-import PostBody from '../post-body'
+
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { IStreet, IImageWithFocalPoint } from '../../src/@types/contentful'
-import Richtext from '../contentful/richtextComponent'
+import { RichtextComponent } from '../contentful'
 
 import React from "react";
 
@@ -40,7 +38,7 @@ export function StreetDetail(props: StreetDetailProps) {
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">Geschichte</h3>
-              <Richtext content={street.fields.history} />
+              <RichtextComponent content={street.fields.history} />
               <div className="mt-12 space-y-12">
                 <div className="flex">
                   <div className="flex-shrink-0">

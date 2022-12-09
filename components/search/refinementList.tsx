@@ -8,7 +8,7 @@ function RefinementRenderer(renderOptions: any) {
     const { items, refine, createURL } = renderOptions;
     return (
         <>
-            {items.map((item) => (
+            {items.map((item: any) => (
                 <div key={item.label} className="flex flex-col space-y-1">
                     <label className="pr-1">
                         <input

@@ -57,7 +57,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
             <a id="home" className="menu-item dark:text-white" href="/">Home</a>
             <a id="allstreets" className="menu-item dark:text-white" href="/allstreets">Strassenverzeichnis</a>
             <a id="search" className="menu-item dark:text-white" href="/search">Suche</a>
-            {props.navigationPosts.map(post =>
+            {props.navigationPosts?.map(post =>
               <a id={post.fields.slug} key={post.fields.slug} className="menu-item dark:text-white" href={`/posts/${post.fields.slug}`}>{post.fields.title}</a>
             )}
           </Menu>

@@ -47,12 +47,13 @@ export default function Search(props: any) {
 
   const [searchState, setSearchState] = React.useState(props.searchState);
   const router = useRouter();
-  const debouncedSetState = React.useRef();
+  const debouncedSetState = React.useRef<any>();// todo: defaults to undefined type
 
   React.useEffect(() => {
     if (router) {
       router.beforePopState(({ url }) => {
         setSearchState(pathToSearchState(url));
+        return true;
       });
     }
   }, [router]);
@@ -70,16 +71,23 @@ export default function Search(props: any) {
             searchState={searchState}
             resultsState={props.resultsState}
             onSearchStateChange={(nextSearchState) => {
+
+              // todo: fix this
+              
               clearTimeout(debouncedSetState.current);
 
-              debouncedSetState.current = setTimeout(() => {
+             let dx = setTimeout(() => {
                 const href = searchStateToURL(nextSearchState);
 
                 router.push(href, href, { shallow: true });
               }, updateAfter);
 
+              debouncedSetState.current = dx;
               setSearchState(nextSearchState);
+            
+            
             }}
+
             createURL={createURL}
           />
          </div>

@@ -16,7 +16,7 @@ export function FullpagePost(props: PostProps) {
                     <h1 className="text-5xl font-bold leading-none">{content.fields.title}</h1>
                     <div className="flex flex-wrap space-x-2 text-sm dark:text-gray-400">
                         {content.metadata.tags.map((tag, index) => (
-                            <a rel="noopener noreferrer" href={`/tags/${tag}`} className="p-1 hover:underline">#{tag}</a>
+                            <a rel="noopener noreferrer" href={`/tags/${tag}`} className="p-1 hover:underline"><span>{tag.sys.id}</span></a>
                         ))}
                     </div>
                     <p className="text-sm dark:text-gray-400 space-x-1">by&nbsp;

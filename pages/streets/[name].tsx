@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
 import { Layout, Container } from '../../components/layout'
-import { getNavigationPosts } from '../../lib/api'
 import { StreetDetail } from '../../components/streets'
 import { IStreet, IPost} from '../../src/@types/contentful'
 import { GetStaticProps, GetStaticPaths } from 'next'
@@ -57,7 +56,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       preview: false,
       street: await loader.getStreetByName(name),
-      navigationPosts: await getNavigationPosts(false) 
+      navigationPosts: await loader.getNavigationPosts() 
     }
   };
 }

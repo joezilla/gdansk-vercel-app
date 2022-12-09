@@ -58,7 +58,8 @@ export function StreetSearch(props : InstantSearchProps) {
             <div className="bg-white dark:bg-gray-800">
               <div className="mx-auto px-4 max-w-2xl px-4sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="mx-auto">
-                  <AlgoliaSearchBox searchAsYouType={true} className="focus:w-full py-2 pl-10 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900" />
+                  {/* searchAsYouType={true} */}
+                  <AlgoliaSearchBox />
                 </div>
                 <h2 className="text-2xl py-2 font-bold tracking-tight text-gray-900 dark:text-white">Strassen</h2>
                 <AlgoliaHitRenderer />
