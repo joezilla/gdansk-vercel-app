@@ -4,9 +4,6 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-@import url('http://fonts.cdnfonts.com/css/wiegel-kurrent');
-
-
 /* grid */
 .streetGrid {
   padding-bottom: 10px;
@@ -16,39 +13,39 @@
 
 /** alphabet list */
 .alphabetlist ul {
-    background: none;
-    height: 50px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  background: none;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .alphabetlist li {
-    display: inline-block;
-    list-style: none;
-    margin-left: 20px;
-    margin-right: 0px;
-    top: 0px;
-    height: 50px;
+  display: inline-block;
+  list-style: none;
+  margin-left: 20px;
+  margin-right: 0px;
+  top: 0px;
+  height: 50px;
 }
 
 .alphabetlist li a {
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    font-weight: bolder;
-    height: 50px;
-    width: auto;
-    display: block;
-    text-align: center;
-    line-height: 50px;
-  }
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  font-weight: bolder;
+  height: 50px;
+  width: auto;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+}
 
-  .bigletter {
-    font-family: "Wiegel Kurrent", sans-serif;  
-    font-size: 76pt;
-    display: inline;
-    /*display: block; */
-  }
+.bigletter {
+  font-family: "Wiegel Kurrent", sans-serif;
+  font-size: 76pt;
+  display: inline;
+  /*display: block; */
+}
 
 .columnContainer {
   padding-top: 10px;
@@ -56,10 +53,10 @@
 }
 
 .threeColumn {
-    width: 100%;
-    column-count: 3;
-    column-fill: auto;
-  }
+  width: 100%;
+  column-count: 3;
+  column-fill: auto;
+}
 
 .streetInfoTable {
   margin-bottom: 20px;
@@ -77,42 +74,42 @@
 
 .streetInfoTable td {
   text-align: left;
- /* @apply text-2xl;*/
+  /* @apply text-2xl;*/
 }
 
-  .columnX {
-   /* flex-direction: column;
+.columnX {
+  /* flex-direction: column;
     height: 400px;*/
-  }
-  
-  .itemX {
-    /* width: 100px;
+}
+
+.itemX {
+  /* width: 100px;
     height: 100px;*/
-    padding: 10px;
-  }
+  padding: 10px;
+}
 
 
 
 
-  #scrollBtn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
-  }
-  
-  #scrollBtn:hover {
-    background-color: #555;
-  }
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#scrollBtn:hover {
+  background-color: #555;
+}
 
 
 body {
@@ -120,14 +117,17 @@ body {
   font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 p {
   margin: 0 0 1em 0;
 }
 
-
 /* the header menu */
+
+/*
 .menu-container {
   width: 100%;
   min-height: 6vh;
@@ -135,17 +135,15 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*transition: all .7s ease-in;*/
   border-bottom: 1px solid #ccc;
 }
 
-
-.list-menu ul  {
-    background: none;
-    height: 50px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.list-menu ul {
+  background: none;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .list-menu li {
@@ -161,13 +159,14 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   font-weight: normal;
-  color: #888;
   height: 50px;
   width: auto;
   display: block;
   text-align: center;
   line-height: 50px;
 }
+
+*/
 
 /** hamburger **/
 /* Position and sizing of burger button */
@@ -180,8 +179,31 @@ p {
 }
 
 /* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: #373a47;
+
+@media (prefers-color-scheme: dark) {
+  .bm-burger-bars {
+    background: #fff;
+  }
+
+  .bm-menu {
+    background: #1f2937;
+  }
+
+  .list-menu li a {
+    color: #fff;
+  }
+
+}
+
+@media (prefers-color-scheme: light) {
+  .bm-burger-bars {
+    background: #ccc;
+  }
+
+  .bm-menu {
+    background: #fff;
+  }
+ 
 }
 
 /* Color/shape of burger icon bars on hover*/
@@ -206,14 +228,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 */
 .bm-menu-wrap {
   position: fixed;
+  left: 0px;
+  top: 0px;
   height: 100%;
-  width: 500px;
 }
 
 /* General sidebar styles */
 .bm-menu {
-  background: #fff;
-  padding: 2.5em 1.5em 0;
+  padding: 1.5em 0.5em 0;
   font-size: 1.5em;
 }
 
@@ -238,55 +260,4 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
-}
-
-/* react instantsearch box */
-
- .ais-SearchBox {
-  height: 64px;
-  width: 740px;
-}
-
- .ais-SearchBox .ais-SearchBox-input {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 48px 0 rgba(0, 0, 0, 0.2);
-  font-family: Hind, sans-serif;
-  height: 38px;
-  /*
-    The "Hind" font family is vertically off-balance.
-    Adding 4px of padding top makes it more vertically aligned.
-  */
-  padding: 4px 24px 0 64px;
-}
-
- .ais-SearchBox-submit {
-  padding: 0 1rem 0 2rem;
-  width: 64px;
-}
-
- .ais-SearchBox .ais-SearchBox-input::placeholder {
-  color: rgba(33, 36, 61, 0.24);
-  opacity: 1; /* Firefox */
-}
-
-.ais-SearchBox-input:-ms-input-placeholder {
-  color: rgba(33, 36, 61, 0.24);
-}
-
-.ais-SearchBox-input::-ms-input-placeholder {
-  color: rgba(33, 36, 61, 0.24);
-}
-
-.ais-SearchBox-submit {
-  color: #e2a400;
-}
-
-.ais-RefinementList .ais-SearchBox-input {
-  font-family: Hind, sans-serif;
-  /*
-    The "Hind" font family is vertically off-balance.
-    Adding some padding top makes it more vertically aligned.
-  */
-  padding-top: 2px;
 }

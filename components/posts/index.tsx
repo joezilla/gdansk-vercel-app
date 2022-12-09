@@ -1,0 +1,6 @@
+// export {PostHeader} from './postHeader'
+export {HeroPost} from './heroPost'
+export {MoreStories} from './moreStories'
+// export {PostTitle} from './postTitle'
+// export {PostBody} from './postBody'
+export {FullpagePost} from './fullpagePost'
