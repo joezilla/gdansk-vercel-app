@@ -16,9 +16,8 @@ function renderImage(hit: any) {
 }
 
 function AlgoliaHitRenderer({ searchState, searchResults }: { searchState: any, searchResults: any }) {
+  console.log("searchquery state: ", searchState.query?.length);
   const validQuery = true; // searchState.query?.length >= 3;
-  console.log("HITRENDERER:  searchResults", searchResults);
-  console.log("validQuery", validQuery);
   return (
     <>
       {searchResults?.hits.length === 0 && validQuery && (
@@ -36,16 +35,29 @@ function AlgoliaHitRenderer({ searchState, searchResults }: { searchState: any, 
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-gray-700 dark:text-white">
-                    <a href={`/streets/${hit.germanName}`}>
-                      <span aria-hidden="true" className="absolute inset-0"></span>
-                      {hit.germanName}
-                    </a>
+                    {/* STREET */}
+                    {hit.type === 'street' &&
+                      <a href={`/streets/${hit.germanName}`}>
+                        <span aria-hidden="true" className="absolute inset-0"></span>
+                        {hit.germanName}
+                      </a>
+                    }
+                    {/* POST */}
+                    {hit.type === 'post' &&
+                      <a href={`/posts/${hit.slug}`}>
+                        <span aria-hidden="true" className="absolute inset-0"></span>
+                        {hit.title}
+                      </a>
+                    }
                   </h3>
-                  <div className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                    {hit.polishNames.map((name: string) =>
-                      <div className="pr-2" key={name}>{name}</div>
-                    )}
-                  </div>
+                  {/* Render only for street */}
+                  {hit.type === 'street' &&
+                    <div className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                      {hit.polishNames.map((name: string) =>
+                        <div className="pr-2" key={name}>{name}</div>
+                      )}
+                    </div>
+                  }
                 </div>
               </div>
             </div>

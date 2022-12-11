@@ -1,8 +1,7 @@
 import React from 'react';
 import Head from 'next/head'
-import { ContentfulLoader, StreetSummary } from '../lib/contentful'
-import { IPost } from '../src/@types/contentful'
-import { Layout, Container } from '../components/layout'
+import { ContentfulLoader } from '../lib/contentful'
+import { Layout } from '../components/layout'
 import algoliasearch from 'algoliasearch/lite';
 import { findResultsState } from 'react-instantsearch-dom/server';
 import qs from 'qs';

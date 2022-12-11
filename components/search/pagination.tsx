@@ -1,12 +1,39 @@
 import React from 'react';
-
 import { connectPagination } from "react-instantsearch-dom";
 
+/**
+ * Up to 10 buttons
+ * @param lowerBound 
+ * @param upperBound 
+ * @param currentRefinement 
+ * @param createURL 
+ * @returns 
+ */
+function renderButtons(currentRefinement: number, createURL: any) {  
+    // upper and lower bounds for pagination`
+    let lowerBound = Math.max(1, currentRefinement - 5);
+    let upperBound = Math.max(10, currentRefinement + 5);
+    return (
+        <>
+            {Array.apply(lowerBound, Array(10)).map( (x, index) =>
+                    index + 1 === currentRefinement ?
+                        <button type="button" title={`Page ${index + 1}`} className="inline-flex items-center justify-center w-8 h-8 text-sm font-semibold border rounded shadow-md dark:bg-gray-900 dark:text-violet-400 dark:border-violet-400">{index + 1}</button>
+                        :
+                        <button type="button" title={`Page ${index + 1}`} className="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md dark:bg-gray-900 dark:border-gray-800"><a href={createURL(index + 1)}>{index + 1}</a></button>
+            )}
+        </>
+    );
+}
 
+/**
+ * Render the pagination
+ * @param renderOptions 
+ * @param isFirstRender 
+ * @returns 
+ */
 function PaginationRenderer(renderOptions: any, isFirstRender: any) {
     const { nbPages, currentRefinement, refine, createURL } = renderOptions;
-    console.log("*** PAGES");
-    console.log(nbPages);
+
     return (
         <>
             { /* 
@@ -33,12 +60,7 @@ function PaginationRenderer(renderOptions: any, isFirstRender: any) {
                     }
                 </button>
 
-                {new Array(nbPages).fill(null).map((_, index) => (
-                    index + 1 === currentRefinement ?
-                        <button type="button" title={`Page ${index + 1}`} className="inline-flex items-center justify-center w-8 h-8 text-sm font-semibold border rounded shadow-md dark:bg-gray-900 dark:text-violet-400 dark:border-violet-400">{index + 1}</button>
-                        :
-                        <button type="button" title={`Page ${index + 1}`} className="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md dark:bg-gray-900 dark:border-gray-800"><a href={createURL(index + 1)}>{index + 1}</a></button>
-                ))}
+                {renderButtons(currentRefinement, createURL)}
 
                 <button title="next" type="button" className="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md dark:bg-gray-900 dark:border-gray-800">
                     {currentRefinement === nbPages ?

@@ -1,12 +1,4 @@
 import React from 'react';
-// import Head from 'next/head'
-// import { Container, Layout } from '../layout'
-
-// import algoliasearch from 'algoliasearch/lite';
-// import { findResultsState } from 'react-instantsearch-dom/server';
-
-// import { IPost } from '../../src/@types/contentful'
-// import { ContentfulLoader, StreetSummary } from '../../lib/contentful'
 
 import AlgoliaSearchBox from './algoliaSearchBox';
 import AlgoliaHitRenderer from './algoliaHits';
@@ -16,13 +8,7 @@ import RefinementRenderer from './refinementList';
 // Import components
 import {
   InstantSearch,
-  // Hits,
-  // SearchBox,
-  // Highlight,
-  // Pagination,
   Configure,
-  // RefinementList,
-  // Stats,
   InstantSearchProps
 } from 'react-instantsearch-dom';
 
@@ -47,11 +33,11 @@ export function StreetSearch(props : InstantSearchProps) {
                   <h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400">Stadtteil</h2>
                   <RefinementRenderer attribute='district' />
                 </div>
-                {/* District */}
-                {/*<div className="space-y-2">
-                  <h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400">First Letter</h2>
-                  <RefinementRenderer attribute='firstLetter' />
-                 </div>*/}
+                {/* Type */}
+                <div className="space-y-2">
+                  <h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400">Type</h2>
+                  <RefinementRenderer attribute='type' />
+                 </div>
               </nav>
             </aside>
             {/* search results */}
@@ -61,7 +47,6 @@ export function StreetSearch(props : InstantSearchProps) {
                   {/* searchAsYouType={true} */}
                   <AlgoliaSearchBox />
                 </div>
-                <h2 className="text-2xl py-2 font-bold tracking-tight text-gray-900 dark:text-white">Strassen</h2>
                 <AlgoliaHitRenderer />
               </div>
             </div>

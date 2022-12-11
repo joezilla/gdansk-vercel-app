@@ -149,9 +149,10 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         const query = {
             content_type: 'post',
             order: '-sys.createdAt',
+            'fields.showIn[nin]': "Hero",
             limit: 10
         };
-        const cacheKey = "homepage-posts";
+        const cacheKey = "homepage-posts-3";
         const entries = await cache.getCachedEntry(cacheKey, () => {
             //const queryString = JSON.stringify(query);
             return contentfulClient.getEntries(query).then((entries) => {
@@ -160,6 +161,9 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             }); 
 
         }, 60 * 60 /* cache for an hour */);
+
+        console.log("homepage posts", entries);
+
         return entries as IPost[];
     }
 
