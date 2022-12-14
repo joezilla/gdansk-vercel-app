@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { ImageLoaderProps, ImageProps } from 'next/image'
 
 const contentfulLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  console.log(`*** contentfulLoader: ${src} ${width} ${quality}`);
   return `${src}?w=${width}&q=${quality || 75}`;
 }
 
@@ -19,7 +20,7 @@ type MyImageProps = {
 export function ImageComponent(props: MyImageProps) {
 
   if (!props.image || !props.image.fields.file.url) {
-    throw new Error("missing misage");
+    throw new Error("missing image");
   }
 
   return <Image 

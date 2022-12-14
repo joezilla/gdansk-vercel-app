@@ -1,6 +1,7 @@
 import Footer from '../footer'
 import Meta from './meta'
 import Navi from '../navigation'
+import Script from 'next/script'
 import { IPost } from '../../src/@types/contentful'
 
 type LayoutProps = {
@@ -13,11 +14,12 @@ export function Layout(props: LayoutProps) {
   return (
     <>
       <Meta />
-      <div className="min-h-screen" id="outer-container">
+      <div className="dark:bg-mybg-dark dark:text-mytxt-dark">
         <Navi navigationPosts={props.navigationPosts}/>
-        <main id="page-wrap" className="pt-0.5">{props.children}</main>
+        <main className="py-8">{props.children}</main>
       </div>
       <Footer />
+      <Script src="/scripts/darkmode.js" strategy="lazyOnload" />
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { Layout, Container }  from '../components/layout'
+import { Layout, Container } from '../components/layout'
 import { StreetOverview } from '../components/streets'
 import Head from 'next/head'
 import common_en from '../i18n/en/common.json'
@@ -11,7 +11,7 @@ type AllStreetProps = {
   navigationPosts: IPost[]
 }
 
-export default function AllStreets( props : AllStreetProps) {
+export default function AllStreets(props: AllStreetProps) {
   let {
     preview,
     allStreets,
@@ -21,24 +21,21 @@ export default function AllStreets( props : AllStreetProps) {
   return (
     <>
       <Layout preview={preview} navigationPosts={navigationPosts}>
-        <Container>
           <Head>
             <title>Danzig Street Names</title>
           </Head>
-          <div className="p-6 py-6 w-full m-0 dark:bg-zinc-900 dark:text-gray-100">
-            <section className="mt-4 mb-4 md:mb-8">
-              <h1 className="text-4xl lg:text-6xl font-bold font-bold tracking-tighter leading-tight md:pr-8 dark:text-white">
-                Alle Strassen Danzigs
+          <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
+            <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+              <h1 className="text-4xl lg:text-6xl font-bold font-bold tracking-tighter md:pr-8 dark:text-white">
+                Alle Strassen Danzigs 22
               </h1>
-            </section>
-            <StreetOverview streets={allStreets} />
-          </div>
-        </Container>
+              <StreetOverview streets={allStreets} />
+            </div>
+          </section>
       </Layout>
     </>
   )
 }
-
 export async function getStaticProps({ preview = false }) {
   let loader = new ContentfulLoader();
   const allStreets = (await loader.getAllStreets()) ?? []

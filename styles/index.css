@@ -4,7 +4,11 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
+
+
+/** ***** */
 /* grid */
+/** ***** */
 .streetGrid {
   padding-bottom: 10px;
   padding-top: 10px;
@@ -127,47 +131,6 @@ p {
 
 /* the header menu */
 
-/*
-.menu-container {
-  width: 100%;
-  min-height: 6vh;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-}
-
-.list-menu ul {
-  background: none;
-  height: 50px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.list-menu li {
-  display: inline-block;
-  list-style: none;
-  margin-left: 0px;
-  margin-right: 20px;
-  top: 0px;
-  height: 50px;
-}
-
-.list-menu li a {
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  font-weight: normal;
-  height: 50px;
-  width: auto;
-  display: block;
-  text-align: center;
-  line-height: 50px;
-}
-
-*/
-
 /** hamburger **/
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -203,7 +166,7 @@ p {
   .bm-menu {
     background: #fff;
   }
- 
+
 }
 
 /* Color/shape of burger icon bars on hover*/

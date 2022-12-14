@@ -12,7 +12,7 @@ type AssetCacheEntry = {
 }
 
 const redisClient = Redis.fromEnv();
-const defaultTimeout = +(process.env.CACHE_TTL ?? "0");
+const defaultTimeout = +(process.env.CACHE_DEFAULT_TTL ?? "0");
 
 /**
  * Generic object cache backed by a simple redis db.
@@ -32,6 +32,10 @@ export class ObjectCache {
             throw new Error("id is required");
         }
         log.debug(`Cache timeout is ${timeout}`);
+        if(process.env.CACHE_DISABLED == "true") {
+            log.warn("CACHE DISABLED");
+            timeout = -1;
+        }
         //  
         // retrieve the object from redis
         const key = `${id}`;

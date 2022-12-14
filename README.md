@@ -9,3 +9,5 @@
 
 
 ### Related examples
+
+https://github.com/renatomoor/storybook-tailwind-dark-mode

@@ -24,7 +24,7 @@ export default function Index( props :  HomepageProps) {
         <Head>
           <title>Danzig Street Names</title>
         </Head>
-        <section className="dark:bg-gray-800 dark:text-gray-100">
+        <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
           <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
             {heroPost &&
               <HeroPost content={heroPost} />

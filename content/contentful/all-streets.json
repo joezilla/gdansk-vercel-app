@@ -1,0 +1,9200 @@
+[
+    {
+        "germanName": "Abbegg-Gasse",
+        "polishNames": [
+            "Dobra"
+        ],
+        "sys": {
+            "id": "3mrTq71TxocSALuATZF0v"
+        }
+    },
+    {
+        "germanName": "Mattenbuden",
+        "polishNames": [
+            "Szopy"
+        ],
+        "sys": {
+            "id": "70Tcb9OxX7nfZogUMv2Ovb"
+        }
+    },
+    {
+        "germanName": "Fleischergasse",
+        "polishNames": [
+            "Franciszkańska",
+            "n. e.",
+            "Rzeźnicka"
+        ],
+        "sys": {
+            "id": "wdEVoj2JCkmH3PIDuhUXk"
+        }
+    },
+    {
+        "germanName": "Weidengasse",
+        "polishNames": [
+            "Łąkowa"
+        ],
+        "sys": {
+            "id": "5Bmx2ik0C3wT1EK6ExfTIo"
+        }
+    },
+    {
+        "germanName": "Bergstraße",
+        "polishNames": [
+            "1 Maja",
+            "Podhalańska",
+            "Orzeszkowej",
+            "Władysława IV",
+            "Zamiejska"
+        ],
+        "sys": {
+            "id": "3i3Sff2VBd5XZY9jAvKJc1"
+        }
+    },
+    {
+        "germanName": "Pankewall",
+        "polishNames": [
+            "Gerwazego",
+            "Powalna"
+        ],
+        "sys": {
+            "id": "4oSIByLeTJ3rmG3869CQGo"
+        }
+    },
+    {
+        "germanName": "Wissmann-Straße",
+        "polishNames": [
+            "Swojska"
+        ],
+        "sys": {
+            "id": "4kQvnZi8SRGq7ELg4CQqs3"
+        }
+    },
+    {
+        "germanName": "Pfefferstraße",
+        "polishNames": [
+            "Czerwonego Sztandaru",
+            "Gomulickiego"
+        ],
+        "sys": {
+            "id": "7er6Qk9Q5YUvZHkFb6bV3p"
+        }
+    },
+    {
+        "germanName": "Sandstraße",
+        "polishNames": [
+            "Jastrzębia"
+        ],
+        "sys": {
+            "id": "5YJ1h5eqyYV5HZslSpDaci"
+        }
+    },
+    {
+        "germanName": "Winterbergstraße",
+        "polishNames": [
+            "Orkana"
+        ],
+        "sys": {
+            "id": "75J2bEelfFbUCmsOSk6S4f"
+        }
+    },
+    {
+        "germanName": "August - Bebel - Straße",
+        "polishNames": [
+            "Kraszewskiego",
+            "Ramulta"
+        ],
+        "sys": {
+            "id": "3547P1YC7j7WZ5hsai4BkZ"
+        }
+    },
+    {
+        "germanName": "Güntershofer-Promenade",
+        "polishNames": [
+            "Mściwoja II"
+        ],
+        "sys": {
+            "id": "4P5EULg2u3xvLqg8jMtgEi"
+        }
+    },
+    {
+        "germanName": "Bothmerstraße",
+        "polishNames": [
+            "Urocza"
+        ],
+        "sys": {
+            "id": "6Op586TZH8PKpaDhborzMi"
+        }
+    },
+    {
+        "germanName": "Stahlweg",
+        "polishNames": [
+            "Stalowa"
+        ],
+        "sys": {
+            "id": "2ovPcAaF1ihc6VnSFqHy8W"
+        }
+    },
+    {
+        "germanName": "Ritterspornweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4ZPe2C2lehgZFxz50YJpnd"
+        }
+    },
+    {
+        "germanName": "Rothöferweg",
+        "polishNames": [
+            "Czerwony Dwór"
+        ],
+        "sys": {
+            "id": "DBWmHPapti85oJnOa5iU4"
+        }
+    },
+    {
+        "germanName": "Poggenpfuhl",
+        "polishNames": [
+            "Żabi Kruk"
+        ],
+        "sys": {
+            "id": "1gb2ZtHoXcjdiN93Ws27IM"
+        }
+    },
+    {
+        "germanName": "Obberghenweg",
+        "polishNames": [
+            "Fornalskiej, Małgorzaty",
+            "Hubala,mjr.",
+            "Witosa Al."
+        ],
+        "sys": {
+            "id": "wmfhsBPUenQ6vxbKlBGsN"
+        }
+    },
+    {
+        "germanName": "Weißhofer Außendeich",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "12OOxCKsgKLIR5LZ8RcCvn"
+        }
+    },
+    {
+        "germanName": "Dorotheenstraße",
+        "polishNames": [
+            "Plater Emilii"
+        ],
+        "sys": {
+            "id": "1eu5wqHQrM8BH8dsoYClxy"
+        }
+    },
+    {
+        "germanName": "Bärenwinkel",
+        "polishNames": [
+            "Podbielańska",
+            "Kurkowa"
+        ],
+        "sys": {
+            "id": "6iq9up2ClgvabkEBFm1UVu"
+        }
+    },
+    {
+        "germanName": "Wehlengang",
+        "polishNames": [
+            "Przybojna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "1dytsZ5YEIYqBU58xjM6fN"
+        }
+    },
+    {
+        "germanName": "Pfaffenwall",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5XikWaNQ36UW9o94UQcglk"
+        }
+    },
+    {
+        "germanName": "Obere Trift",
+        "polishNames": [
+            "Zawodzie"
+        ],
+        "sys": {
+            "id": "1Dt98pudncLUQsORafTaOO"
+        }
+    },
+    {
+        "germanName": "Tagnetergasse",
+        "polishNames": [
+            "Tandeta"
+        ],
+        "sys": {
+            "id": "1vBzrYEFuwQy704yaw7mJF"
+        }
+    },
+    {
+        "germanName": "Rennerstiftsgasse",
+        "polishNames": [
+            "Gdyńskich Kosynierów"
+        ],
+        "sys": {
+            "id": "6D1LVYl3Opl1IvH3vsUSHG"
+        }
+    },
+    {
+        "germanName": "Kelpiner Weg",
+        "polishNames": [
+            "Kiełpińska"
+        ],
+        "sys": {
+            "id": "gCKN7Xp1juVQ9GGprJscx"
+        }
+    },
+    {
+        "germanName": "Herbststraße",
+        "polishNames": [
+            "Kopernika"
+        ],
+        "sys": {
+            "id": "3P6C0tLP454kMGt3kQwxtC"
+        }
+    },
+    {
+        "germanName": "Am Mühlengraben",
+        "polishNames": [
+            "Miedza"
+        ],
+        "sys": {
+            "id": "7jf0HigN3ZwdHr56KQfkeu"
+        }
+    },
+    {
+        "germanName": "Wolfsweg",
+        "polishNames": [
+            "Lilli Wenedy"
+        ],
+        "sys": {
+            "id": "4ybZQ9hbpyG2J6BATfekZv"
+        }
+    },
+    {
+        "germanName": "Ankerschmiedegasse",
+        "polishNames": [
+            " Ulica Kotwiczników"
+        ],
+        "sys": {
+            "id": "k4bhCnJD1eqMBwQ76jJVt"
+        }
+    },
+    {
+        "germanName": "Coselweg",
+        "polishNames": [
+            "Staszica"
+        ],
+        "sys": {
+            "id": "5twxKZetgZ6mVlWAsUITHQ"
+        }
+    },
+    {
+        "germanName": "Johannisgasse",
+        "polishNames": [
+            "Świętojańska"
+        ],
+        "sys": {
+            "id": "7nRVzcHU1NZVygPkYHZCwH"
+        }
+    },
+    {
+        "germanName": "Samtgasse",
+        "polishNames": [
+            "Aksamitna"
+        ],
+        "sys": {
+            "id": "7jjyQz6IzgKJsFZQeYl6IP"
+        }
+    },
+    {
+        "germanName": "Kronprinzenweg",
+        "polishNames": [
+            "Podleśna"
+        ],
+        "sys": {
+            "id": "74sajfIZZTYk2gdU4r4EMt"
+        }
+    },
+    {
+        "germanName": "Röpergasse",
+        "polishNames": [
+            "Powroźnicza"
+        ],
+        "sys": {
+            "id": "7CjEpdkEnbYcBJ8L9UfnoD"
+        }
+    },
+    {
+        "germanName": "Bootsmanngasse",
+        "polishNames": [
+            "Bosmańska"
+        ],
+        "sys": {
+            "id": "7ulK3gI5NwEYuqoMElQRy5"
+        }
+    },
+    {
+        "germanName": "Brüderstraße",
+        "polishNames": [
+            "Bracka"
+        ],
+        "sys": {
+            "id": "zHbSWcYNCOsXUgJwCxyUj"
+        }
+    },
+    {
+        "germanName": "Compest",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "67bdPPe2MqHQIDZNEnUHCD"
+        }
+    },
+    {
+        "germanName": "Reuterweg",
+        "polishNames": [
+            "Joselewicza"
+        ],
+        "sys": {
+            "id": "2tKmkujKEg1NaRfbYqj20T"
+        }
+    },
+    {
+        "germanName": "Wollwebergasse",
+        "polishNames": [
+            "Tkacka"
+        ],
+        "sys": {
+            "id": "5VtRrkrFNlesSCbmpPyYpv"
+        }
+    },
+    {
+        "germanName": "Große Seebadstraße",
+        "polishNames": [
+            "Nowotna"
+        ],
+        "sys": {
+            "id": "72uYKNmeJt3yJ4K0gKXXSc"
+        }
+    },
+    {
+        "germanName": "Speichergasse",
+        "polishNames": [
+            "Spichrzowa"
+        ],
+        "sys": {
+            "id": "3yVwzLFumVWPuaLkSlvM6x"
+        }
+    },
+    {
+        "germanName": "Hauptstraße",
+        "polishNames": [
+            "Grunwaldzka",
+            "Jedności Robotniczej",
+            "Oruńska 3",
+            "Trakt Swiętego Wojciecha"
+        ],
+        "sys": {
+            "id": "mQXYJ9z2f2CueTjX2JmfX"
+        }
+    },
+    {
+        "germanName": "Vogelgreif",
+        "polishNames": [
+            "Ptasia"
+        ],
+        "sys": {
+            "id": "6yxPeWk4ln5fgJDW4n2ORy"
+        }
+    },
+    {
+        "germanName": "Friedrich Straße",
+        "polishNames": [
+            "Pułaskiego"
+        ],
+        "sys": {
+            "id": "41KW54xqPozZ43xOJZotEC"
+        }
+    },
+    {
+        "germanName": "Linzstraße",
+        "polishNames": [
+            "Pola"
+        ],
+        "sys": {
+            "id": "gQUctZTWNTsNeGamHbkwc"
+        }
+    },
+    {
+        "germanName": "Schleusengasse",
+        "polishNames": [
+            "Kieturakisa",
+            "Śluza"
+        ],
+        "sys": {
+            "id": "2QaX3pmAeXObuxCb7C0dS6"
+        }
+    },
+    {
+        "germanName": "Amselweg",
+        "polishNames": [
+            "Rozewska"
+        ],
+        "sys": {
+            "id": "3TIHp2QHMAEw0Knuw1QDcD"
+        }
+    },
+    {
+        "germanName": "Fieffingergasse",
+        "polishNames": [
+            "Osiek"
+        ],
+        "sys": {
+            "id": "6iDCQHMvN46q9fxbBobEdE"
+        }
+    },
+    {
+        "germanName": "Baedeckerweg",
+        "polishNames": [
+            "Władysława IV"
+        ],
+        "sys": {
+            "id": "rEyDbt4LqvUI9mhAFLKrC"
+        }
+    },
+    {
+        "germanName": "Herrengarten",
+        "polishNames": [
+            "Sadowa"
+        ],
+        "sys": {
+            "id": "5mklnzQJZLkdQZxsTBZBlm"
+        }
+    },
+    {
+        "germanName": "Bahnwärterhaus",
+        "polishNames": [
+            "?"
+        ],
+        "sys": {
+            "id": "Nwv9lM2oSRGWdZJ4CMtEc"
+        }
+    },
+    {
+        "germanName": "Lehmkaule",
+        "polishNames": [
+            "Wyczółkowskiego"
+        ],
+        "sys": {
+            "id": "12RvAzYjmdQJminmqZFvqH"
+        }
+    },
+    {
+        "germanName": "Mittlere Trift",
+        "polishNames": [
+            "Modra"
+        ],
+        "sys": {
+            "id": "1FR0RJxYidb3IvNo4fLv34"
+        }
+    },
+    {
+        "germanName": "Schwanengasse",
+        "polishNames": [
+            "Łąkowa"
+        ],
+        "sys": {
+            "id": "3gMMmYro0yuZuCWbaaCQ7P"
+        }
+    },
+    {
+        "germanName": "Läwgasse",
+        "polishNames": [
+            "Zielona"
+        ],
+        "sys": {
+            "id": "4RsyqXfFLkTGZdWDBmlazI"
+        }
+    },
+    {
+        "germanName": "St. Katharinenkirchhof",
+        "polishNames": [
+            "Katarzynki"
+        ],
+        "sys": {
+            "id": "7IUMadaVmSAZyzxvxmjqjn"
+        }
+    },
+    {
+        "germanName": "St. Michaelsweg",
+        "polishNames": [
+            "Traugutta"
+        ],
+        "sys": {
+            "id": "46dMQnFmekEPJSEvlGMXSY"
+        }
+    },
+    {
+        "germanName": "Schillstraße",
+        "polishNames": [
+            "Słowackiego"
+        ],
+        "sys": {
+            "id": "7BLyIH8rPsZKzJHWlPyaTQ"
+        }
+    },
+    {
+        "germanName": "Große Scharmachergasse",
+        "polishNames": [
+            "Kołodziejska"
+        ],
+        "sys": {
+            "id": "2Mibqkx9zWoIpc5lkkxK5E"
+        }
+    },
+    {
+        "germanName": "Sprengelshof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7AcSCivEYZRXS3v9iMkXVm"
+        }
+    },
+    {
+        "germanName": "Hermann-Loens-Weg",
+        "polishNames": [
+            "Drożyny"
+        ],
+        "sys": {
+            "id": "34UUVQSo4XeBzlzZBI54Gb"
+        }
+    },
+    {
+        "germanName": "Karlstraße",
+        "polishNames": [
+            "Krótka"
+        ],
+        "sys": {
+            "id": "4zYMe9p3p6xp26qEoFoRBn"
+        }
+    },
+    {
+        "germanName": "Kleine Vendet",
+        "polishNames": [
+            "Tandeta"
+        ],
+        "sys": {
+            "id": "1PKPTQzrtLan3dB4DY0HJn"
+        }
+    },
+    {
+        "germanName": "Südbadstraße",
+        "polishNames": [
+            "Kordeckiego"
+        ],
+        "sys": {
+            "id": "3R5G5BQ89cCPiaDeVRtB9r"
+        }
+    },
+    {
+        "germanName": "Ochsengasse",
+        "polishNames": [
+            "Oborniki",
+            "n. e."
+        ],
+        "sys": {
+            "id": "3vjij0Ntti5MtEmIuBofay"
+        }
+    },
+    {
+        "germanName": "Nordseitstraße",
+        "polishNames": [
+            "Powstańców Warszawy"
+        ],
+        "sys": {
+            "id": "25W9RFFo67wy6WnEmApPoR"
+        }
+    },
+    {
+        "germanName": "Steuermannstraße",
+        "polishNames": [
+            "Kapitańska"
+        ],
+        "sys": {
+            "id": "3jWgBlUpCCnCAGCTpBaHIj"
+        }
+    },
+    {
+        "germanName": "Pommersche Straße",
+        "polishNames": [
+            "Niepodległości"
+        ],
+        "sys": {
+            "id": "604VaA0IV0bIcm5dZ1v0ew"
+        }
+    },
+    {
+        "germanName": "Trägerplatz",
+        "polishNames": [
+            "Królikarnia"
+        ],
+        "sys": {
+            "id": "1fdL9VVZfmhhjRt9huSCV2"
+        }
+    },
+    {
+        "germanName": "Zaggengasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "30yR9Z00TaGduXrgqtMtrS"
+        }
+    },
+    {
+        "germanName": "Einhornstraße",
+        "polishNames": [
+            "Wojskiego",
+            "Wygon"
+        ],
+        "sys": {
+            "id": "2OPfNhqeTanmOgHt5VRU7X"
+        }
+    },
+    {
+        "germanName": "Stettinerstraße",
+        "polishNames": [
+            "Szczecińska"
+        ],
+        "sys": {
+            "id": "3yVQTdPJFHOPakMOA92qEX"
+        }
+    },
+    {
+        "germanName": "Humboldtstraße",
+        "polishNames": [
+            "Słowiańska"
+        ],
+        "sys": {
+            "id": "1wY1egv62qSpkbLJkZkjua"
+        }
+    },
+    {
+        "germanName": "Faulgraben",
+        "polishNames": [
+            "Gnilna"
+        ],
+        "sys": {
+            "id": "2hRUdbN8dSX20x2JZIgLWh"
+        }
+    },
+    {
+        "germanName": "Hubertusallee",
+        "polishNames": [
+            "Abrahama"
+        ],
+        "sys": {
+            "id": "zbDxRrOrESofWJHlquPVA"
+        }
+    },
+    {
+        "germanName": "Beutlergasse",
+        "polishNames": [
+            "Kaletnicza"
+        ],
+        "sys": {
+            "id": "5EzeR5ttuSygXcMrAifZQd"
+        }
+    },
+    {
+        "germanName": "Gartenstraße",
+        "polishNames": [
+            "Flisacka",
+            "Ogrodowa"
+        ],
+        "sys": {
+            "id": "24wIsM7E8jJKmsGzge6DQt"
+        }
+    },
+    {
+        "germanName": "Max-Halbe-Platz",
+        "polishNames": [
+            "Komorowskiego Pl."
+        ],
+        "sys": {
+            "id": "5NPJqRsMS9LIpQ0kJjL5Vo"
+        }
+    },
+    {
+        "germanName": "Röttgerstraße",
+        "polishNames": [
+            "Pastoriusza"
+        ],
+        "sys": {
+            "id": "4OL25d70LqauBIhlrsxXsL"
+        }
+    },
+    {
+        "germanName": "Am Heidsee",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5c4zjaTpwtU1fqHZuY5hgM"
+        }
+    },
+    {
+        "germanName": "Beethovenstraße",
+        "polishNames": [
+            "Książąt Pomorskich"
+        ],
+        "sys": {
+            "id": "3PucBiTZpqCFcsLVDFCR3L"
+        }
+    },
+    {
+        "germanName": "Schwalbengasse",
+        "polishNames": [
+            "Jaskółcza"
+        ],
+        "sys": {
+            "id": "1pWcWfrowFxSRuvCxSD7Kq"
+        }
+    },
+    {
+        "germanName": "Schraubenweg",
+        "polishNames": [
+            "Sielska"
+        ],
+        "sys": {
+            "id": "6fpH1q3jJtKoZ9LznZyVdv"
+        }
+    },
+    {
+        "germanName": "Kiebitztrift",
+        "polishNames": [
+            "Żabia"
+        ],
+        "sys": {
+            "id": "6f0FMxknHwRjUaMMRdnb8X"
+        }
+    },
+    {
+        "germanName": "Stadtgebiet",
+        "polishNames": [
+            "Jedności Robotniczej",
+            "Oruńska 2",
+            "Trakt Swiętego Wojciecha"
+        ],
+        "sys": {
+            "id": "4cHb4PXfMC1Obh2QyReuw5"
+        }
+    },
+    {
+        "germanName": "Fahrenheitstraße",
+        "polishNames": [
+            "Fahrenheita"
+        ],
+        "sys": {
+            "id": "3C7eeemCkvkp0kTl7e6nik"
+        }
+    },
+    {
+        "germanName": "Heinrich-Scholtz-Weg",
+        "polishNames": [
+            "Powstańców Warszawskich"
+        ],
+        "sys": {
+            "id": "5L1GvkIbNGcFzwsBHTFuPU"
+        }
+    },
+    {
+        "germanName": "Alfredstraße",
+        "polishNames": [
+            "Ogrodowa"
+        ],
+        "sys": {
+            "id": "15wK5fjEYaSy7mfA6sPoot"
+        }
+    },
+    {
+        "germanName": "St. Barbara- Kirchhof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "41lGtfHcbx7m74bR4dVa7g"
+        }
+    },
+    {
+        "germanName": "Jakobsneugasse",
+        "polishNames": [
+            "Św. Jakuba",
+            "n. e."
+        ],
+        "sys": {
+            "id": "6dpzcHvaB7NxGdLqqkfUWX"
+        }
+    },
+    {
+        "germanName": "Karpfenseigen",
+        "polishNames": [
+            "Karpia"
+        ],
+        "sys": {
+            "id": "3cbvre83cE02xdWEzAv28G"
+        }
+    },
+    {
+        "germanName": "Ernsttal",
+        "polishNames": [
+            "Pucka"
+        ],
+        "sys": {
+            "id": "14nALyCJeelWEUAxXqTp6A"
+        }
+    },
+    {
+        "germanName": "Graue Nonnengasse",
+        "polishNames": [
+            "Mniszki"
+        ],
+        "sys": {
+            "id": "1q7PIP9THj9PLTaXmBc6Fj"
+        }
+    },
+    {
+        "germanName": "Steffensweg",
+        "polishNames": [
+            "Batorego"
+        ],
+        "sys": {
+            "id": "87imRezK6Q4Vuy4bSyhmy"
+        }
+    },
+    {
+        "germanName": "Schulzengasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2IczU60VlUyoZBvFDSjaCV"
+        }
+    },
+    {
+        "germanName": "Talmühler Weg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3i1evwX5zkymINA58LBhTn"
+        }
+    },
+    {
+        "germanName": "Mottlaugasse",
+        "polishNames": [
+            "Dolna Brama"
+        ],
+        "sys": {
+            "id": "7tdyXNqAJWe8ikmsY3ZeNJ"
+        }
+    },
+    {
+        "germanName": "Posadowskyweg",
+        "polishNames": [
+            "Kochanowskiego"
+        ],
+        "sys": {
+            "id": "7dpYSpl4AhwaE9MMTTZxSN"
+        }
+    },
+    {
+        "germanName": "Salvatorgasse",
+        "polishNames": [
+            "Salwator"
+        ],
+        "sys": {
+            "id": "5weebpvRLXvIuWkAu7Ln80"
+        }
+    },
+    {
+        "germanName": "Am Holzraum",
+        "polishNames": [
+            "Drewnica",
+            "Jaracza"
+        ],
+        "sys": {
+            "id": "5v1J3GPJ8vBp6xa54KcEiD"
+        }
+    },
+    {
+        "germanName": "Steinstraße",
+        "polishNames": [
+            "Wąsowicza"
+        ],
+        "sys": {
+            "id": "U4Lgj9lVuyZi2ykF54cCG"
+        }
+    },
+    {
+        "germanName": "Bärengasse",
+        "polishNames": [
+            "Zielona"
+        ],
+        "sys": {
+            "id": "7fEeJ6SAZ8b0mZ46YgTiC8"
+        }
+    },
+    {
+        "germanName": "Schwedenhofstraße",
+        "polishNames": [
+            "Władysława Jagiełły"
+        ],
+        "sys": {
+            "id": "7j0EZjoNOgpqvV0wQpPbtm"
+        }
+    },
+    {
+        "germanName": "Norderstraße",
+        "polishNames": [
+            "Kotwice"
+        ],
+        "sys": {
+            "id": "5d9msMS0ucBw6kgtsBh3go"
+        }
+    },
+    {
+        "germanName": "Niedergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3zDdx0TOraYACQVT7dF9Zg"
+        }
+    },
+    {
+        "germanName": "Adebargasse",
+        "polishNames": [
+            "Pszenna"
+        ],
+        "sys": {
+            "id": "55WC52dG1T0OF2cU3EUF0U"
+        }
+    },
+    {
+        "germanName": "Hagedorns Tor",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3NCJU7NF5jUhuzyUhfpQgm"
+        }
+    },
+    {
+        "germanName": "Auf dem Sande",
+        "polishNames": [
+            "Na Piaskach"
+        ],
+        "sys": {
+            "id": "3pwtlPZ2lIOCO5iEOCqswB"
+        }
+    },
+    {
+        "germanName": "Trinitatiskirchengasse",
+        "polishNames": [
+            "Św. Trójcy"
+        ],
+        "sys": {
+            "id": "3as2l8FfMYvBzPFShe1GTV"
+        }
+    },
+    {
+        "germanName": "Schellmühler Weg",
+        "polishNames": [
+            "Kliniczna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "6QcwbY2abCSxw1S4h7sBx3"
+        }
+    },
+    {
+        "germanName": "Kleine Knüppelgasse",
+        "polishNames": [
+            "Dylinki"
+        ],
+        "sys": {
+            "id": "4vWoAZfcLZVaLYdNBV1Y1N"
+        }
+    },
+    {
+        "germanName": "Neunaugengasse",
+        "polishNames": [
+            "Minogi"
+        ],
+        "sys": {
+            "id": "76sHNHX0HDGcVl2W8C1xcy"
+        }
+    },
+    {
+        "germanName": "Osterzeile",
+        "polishNames": [
+            "Jagienki",
+            "Dubois"
+        ],
+        "sys": {
+            "id": "4rkaT0ylL054NUT71vk7eP"
+        }
+    },
+    {
+        "germanName": "Heumarkt",
+        "polishNames": [
+            "1 Maja",
+            "Targ Sienny"
+        ],
+        "sys": {
+            "id": "2byBjegmLTJCLerNvbsPx5"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Wiesengrund",
+        "polishNames": [
+            "Kolonia Zaranie"
+        ],
+        "sys": {
+            "id": "3rsmCRcPnHKajCZgqKISSb"
+        }
+    },
+    {
+        "germanName": "Benzlerstraße",
+        "polishNames": [
+            "Winieckiego"
+        ],
+        "sys": {
+            "id": "74uijpMf0yj8PSwPHCxRuD"
+        }
+    },
+    {
+        "germanName": "Blumenstraße",
+        "polishNames": [
+            "Puszkina"
+        ],
+        "sys": {
+            "id": "rNfz1IorgJNLGz25grnAx"
+        }
+    },
+    {
+        "germanName": "Brösener Weg",
+        "polishNames": [
+            "Chrobrego"
+        ],
+        "sys": {
+            "id": "7FXLUvllm3lZ9PXkLeYP6L"
+        }
+    },
+    {
+        "germanName": "Totengasse",
+        "polishNames": [
+            "Św. Barbary"
+        ],
+        "sys": {
+            "id": "3NMuHJKC0eRMdD06DLKmJt"
+        }
+    },
+    {
+        "germanName": "Paetowstraße",
+        "polishNames": [
+            "Niwki"
+        ],
+        "sys": {
+            "id": "1Jq0xRNrJurSIRXzZDtGMZ"
+        }
+    },
+    {
+        "germanName": "Reussengasse",
+        "polishNames": [
+            "Łąkowa"
+        ],
+        "sys": {
+            "id": "vOU04e5NUl9AGTkNXKbg5"
+        }
+    },
+    {
+        "germanName": "Alter Büttelhof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "d15sse83m25XBIO6gLxs5"
+        }
+    },
+    {
+        "germanName": "Großer Stinkgang",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7pbqgJV4DsLnjDVE8iG9ZB"
+        }
+    },
+    {
+        "germanName": "Brabank",
+        "polishNames": [
+            "Stara Stocznia"
+        ],
+        "sys": {
+            "id": "4nJich1IC0DenVn0lreOmo"
+        }
+    },
+    {
+        "germanName": "Lothringenweg",
+        "polishNames": [
+            "Rybacka"
+        ],
+        "sys": {
+            "id": "4VWm666OtXUMbuPkQKq2NK"
+        }
+    },
+    {
+        "germanName": "Rittergasse",
+        "polishNames": [
+            "n. e.",
+            "Rycerska"
+        ],
+        "sys": {
+            "id": "42Jue6avJkZDAkEPtFkLdl"
+        }
+    },
+    {
+        "germanName": "Große Scheibenrittergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "dGaC4AEqfZ5ufNBtD18Jl"
+        }
+    },
+    {
+        "germanName": "Steingasse",
+        "polishNames": [
+            "Czopowa"
+        ],
+        "sys": {
+            "id": "1PdcUQ2KOxysqKlo2CHH1P"
+        }
+    },
+    {
+        "germanName": "Olivaer Straße",
+        "polishNames": [
+            "Korzeniowskiego",
+            "Obrońców Londynu",
+            "Oliwska"
+        ],
+        "sys": {
+            "id": "29FxC6C1ikuRSpasygbRb1"
+        }
+    },
+    {
+        "germanName": "von-Wissmann-Straße",
+        "polishNames": [
+            "Swojska"
+        ],
+        "sys": {
+            "id": "4QZRmYpaWLmJHugLKupF4b"
+        }
+    },
+    {
+        "germanName": "Bülowstraße",
+        "polishNames": [
+            "Drzymały"
+        ],
+        "sys": {
+            "id": "3DkN2r5PT8OxtvpCFJPYK2"
+        }
+    },
+    {
+        "germanName": "Am Petershagener Tor",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "PpVXX3ZNx2WLTpWaDycvM"
+        }
+    },
+    {
+        "germanName": "Nonnenacker",
+        "polishNames": [
+            "Wieniawskiego"
+        ],
+        "sys": {
+            "id": "4OPtFkO6erFNHzYi79SoJj"
+        }
+    },
+    {
+        "germanName": "Schützengang",
+        "polishNames": [
+            "Strzelecka"
+        ],
+        "sys": {
+            "id": "1J84WB3R8XFKrpdwCAYDjB"
+        }
+    },
+    {
+        "germanName": "Erdscher Gang",
+        "polishNames": [
+            "Przesmyk"
+        ],
+        "sys": {
+            "id": "7sk6W35sXV8q2EFnAbcoGT"
+        }
+    },
+    {
+        "germanName": "Elisabethstraße",
+        "polishNames": [
+            "Karlikowska"
+        ],
+        "sys": {
+            "id": "LrZ8OGxJp30UDXbnVwP3D"
+        }
+    },
+    {
+        "germanName": "Rickertstraße",
+        "polishNames": [
+            "Obrońców Westerplatte"
+        ],
+        "sys": {
+            "id": "6n4tR1zj6zxQyDvHisNhuw"
+        }
+    },
+    {
+        "germanName": "Am Hagelsberg",
+        "polishNames": [
+            "Dąbrowskiego"
+        ],
+        "sys": {
+            "id": "5GEI5XZb7spx7Pak8xQlSn"
+        }
+    },
+    {
+        "germanName": "Neuer Weg",
+        "polishNames": [
+            "Sandomierska"
+        ],
+        "sys": {
+            "id": "63Z5Gqlk4FxFkr53ofqtnx"
+        }
+    },
+    {
+        "germanName": "Wallplatz",
+        "polishNames": [
+            "Wałowy Pl."
+        ],
+        "sys": {
+            "id": "565cDPqV2l32T88iP5VNKI"
+        }
+    },
+    {
+        "germanName": "Kleine Bäckergasse",
+        "polishNames": [
+            "Zapiecek",
+            "n. e."
+        ],
+        "sys": {
+            "id": "4B9qIZEyIbYnkgTh9DhJc9"
+        }
+    },
+    {
+        "germanName": "Chodowiecki-Weg",
+        "polishNames": [
+            "Chodowieckiego"
+        ],
+        "sys": {
+            "id": "47GzvOPnE9cnzu63pvE4Zb"
+        }
+    },
+    {
+        "germanName": "Leuthenweg",
+        "polishNames": [
+            "Żeglarska"
+        ],
+        "sys": {
+            "id": "2lytQ4YCtrJB6IeYHLi7tp"
+        }
+    },
+    {
+        "germanName": "Litzmannstraße",
+        "polishNames": [
+            "Grabowa"
+        ],
+        "sys": {
+            "id": "e9XyBNYOHzxZffOsNYlEc"
+        }
+    },
+    {
+        "germanName": "Promenade",
+        "polishNames": [
+            "3-go Maja"
+        ],
+        "sys": {
+            "id": "1sFETYzDPFRXDaWe9HRUXM"
+        }
+    },
+    {
+        "germanName": "Westerzeile",
+        "polishNames": [
+            "Zbyszka z Bogdańca"
+        ],
+        "sys": {
+            "id": "6ahzjphyWhunzNOjqGhqrA"
+        }
+    },
+    {
+        "germanName": "Karmelitergasse",
+        "polishNames": [
+            "Karmelicka"
+        ],
+        "sys": {
+            "id": "6FAsa9lHLOc1gXmdPsUH7n"
+        }
+    },
+    {
+        "germanName": "Steindamm",
+        "polishNames": [
+            "Kamienna Grobla"
+        ],
+        "sys": {
+            "id": "3MxRMlFOhB64kMty5BC3MN"
+        }
+    },
+    {
+        "germanName": "Bachstraße",
+        "polishNames": [
+            "Subisława"
+        ],
+        "sys": {
+            "id": "7v9Ng0u6ACDVqFfw7GOoHR"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Bergfrieden",
+        "polishNames": [
+            "Wolna Góra",
+            "Kolonia Praca"
+        ],
+        "sys": {
+            "id": "7njLvOwNrz9t5yrbQfeO2n"
+        }
+    },
+    {
+        "germanName": "Kleine Pfaffengasse",
+        "polishNames": [
+            "Księża"
+        ],
+        "sys": {
+            "id": "MbFUT2pqP36GykVuIfDep"
+        }
+    },
+    {
+        "germanName": "Mausegasse",
+        "polishNames": [
+            "Owsiana"
+        ],
+        "sys": {
+            "id": "2kQGT3cESiDNttqln0tICs"
+        }
+    },
+    {
+        "germanName": "Kurze Straße",
+        "polishNames": [
+            "Cicha"
+        ],
+        "sys": {
+            "id": "4P1YecaGpUz6glmYlmBk9a"
+        }
+    },
+    {
+        "germanName": "Ochsenmarkt",
+        "polishNames": [
+            "Targ Sienny"
+        ],
+        "sys": {
+            "id": "6sk3KcYFoNtvvqpj5J9q13"
+        }
+    },
+    {
+        "germanName": "Steinschleuse",
+        "polishNames": [
+            "Grodza Kamienna"
+        ],
+        "sys": {
+            "id": "4QqWLuljhx7u1dsQE1qNVA"
+        }
+    },
+    {
+        "germanName": "Falkhof",
+        "polishNames": [
+            "Tarasy"
+        ],
+        "sys": {
+            "id": "37pHGyKd0iuOegxABKaITe"
+        }
+    },
+    {
+        "germanName": "Matzkauschegasse",
+        "polishNames": [
+            "Ławnicza"
+        ],
+        "sys": {
+            "id": "1SZno7n25NXmv1t9o0RGKH"
+        }
+    },
+    {
+        "germanName": "Hangweg",
+        "polishNames": [
+            "Nad Jarem",
+            "Stogi"
+        ],
+        "sys": {
+            "id": "30Lcaf5TdOhVAW7XoS9mOy"
+        }
+    },
+    {
+        "germanName": "Altstädtischer Graben",
+        "polishNames": [
+            "Podwale Staromiejskie"
+        ],
+        "sys": {
+            "id": "WHqTYBvjO2kAsl57A0vDR"
+        }
+    },
+    {
+        "germanName": "Elisenstraße",
+        "polishNames": [
+            "Ceynowy"
+        ],
+        "sys": {
+            "id": "2MmeVnEHVKFYQgxsm3YIha"
+        }
+    },
+    {
+        "germanName": "Mittelgasse",
+        "polishNames": [
+            "Dolna"
+        ],
+        "sys": {
+            "id": "3Pz2UuTSLTxbwRq5JgXXEN"
+        }
+    },
+    {
+        "germanName": "Koppelweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "26rF0LxMXGGzifHVhgR391"
+        }
+    },
+    {
+        "germanName": "Am Trumpfturm",
+        "polishNames": [
+            "Pod Zrębem"
+        ],
+        "sys": {
+            "id": "1asCTyEKhN9QoV8fR7ydRF"
+        }
+    },
+    {
+        "germanName": "St. Bartholomäi-Kirchgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "dWV9UdwueFdqxitLZzfIq"
+        }
+    },
+    {
+        "germanName": "Hohe Seigen",
+        "polishNames": [
+            "Rybaki Górne"
+        ],
+        "sys": {
+            "id": "rpYKxHq77FDwdAEokStA3"
+        }
+    },
+    {
+        "germanName": "Große Ölmühlengasse",
+        "polishNames": [
+            "Olejarna"
+        ],
+        "sys": {
+            "id": "2yndh42kELB2Xh5MrFLDbd"
+        }
+    },
+    {
+        "germanName": "Kleines Gässlein",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "44yn35A3in2gHdYpyfLjZt"
+        }
+    },
+    {
+        "germanName": "Rüschweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4vKUfawZZatMtvsfa38SR2"
+        }
+    },
+    {
+        "germanName": "Weintraubenweg",
+        "polishNames": [
+            "Winogronowa"
+        ],
+        "sys": {
+            "id": "1XuSlPRqaPnmdF0MM3DMwS"
+        }
+    },
+    {
+        "germanName": "Frischwasser",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7LLSbiGvDAVLIfpOd9cO01"
+        }
+    },
+    {
+        "germanName": "Schleppweg",
+        "polishNames": [
+            "Wyciąg"
+        ],
+        "sys": {
+            "id": "G6OqE8HE2nOivPTQO6wwA"
+        }
+    },
+    {
+        "germanName": "Zwirngasse",
+        "polishNames": [
+            "Przędzalnicza"
+        ],
+        "sys": {
+            "id": "1UINhZENaoENDPa17RACOe"
+        }
+    },
+    {
+        "germanName": "Postgasse",
+        "polishNames": [
+            "Pocztowa"
+        ],
+        "sys": {
+            "id": "MUiNpHNGeJBhZ1CDOrOES"
+        }
+    },
+    {
+        "germanName": "Strohdeich",
+        "polishNames": [
+            "Sienna Grobla"
+        ],
+        "sys": {
+            "id": "7Ff6OFibtlFFAk8iaqGrzM"
+        }
+    },
+    {
+        "germanName": "Bliesenstraße",
+        "polishNames": [
+            "Blizowa",
+            "Wysoka"
+        ],
+        "sys": {
+            "id": "wHP1T9ZRCWpACFhR8MPkF"
+        }
+    },
+    {
+        "germanName": "Beethovenweg",
+        "polishNames": [
+            "Beethovena"
+        ],
+        "sys": {
+            "id": "XIgGby0CfQ4hytUUy1Lg6"
+        }
+    },
+    {
+        "germanName": "Grünhagenstraße",
+        "polishNames": [
+            "Zygmunta Augusta"
+        ],
+        "sys": {
+            "id": "26uLfefD0pQ0OrlVNH57ZZ"
+        }
+    },
+    {
+        "germanName": "Allmodengasse",
+        "polishNames": [
+            "Jałmużnicza"
+        ],
+        "sys": {
+            "id": "1vCF0miKN5I9YezJ2YlifU"
+        }
+    },
+    {
+        "germanName": "Alexanderstraße",
+        "polishNames": [
+            "Okrzei"
+        ],
+        "sys": {
+            "id": "1mF6AfiZPWrglVhjHzER9M"
+        }
+    },
+    {
+        "germanName": "Uff der Trumme",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7HuZVgUC59PZkWcZoi9IM3"
+        }
+    },
+    {
+        "germanName": "Strandgasse",
+        "polishNames": [
+            "Dolna"
+        ],
+        "sys": {
+            "id": "4o8aP1VTgMHWUppCuKUiwF"
+        }
+    },
+    {
+        "germanName": "Festungsstraße",
+        "polishNames": [
+            "de Plelo"
+        ],
+        "sys": {
+            "id": "1ZYcTscyJ1lVJ6cXznwbTD"
+        }
+    },
+    {
+        "germanName": "Kneipab",
+        "polishNames": [
+            "Rudnicka",
+            "Elbląska"
+        ],
+        "sys": {
+            "id": "0JRl5X9lC0KHnPPiZmOPF"
+        }
+    },
+    {
+        "germanName": "Privatstraße I",
+        "polishNames": [
+            "Krasickiego"
+        ],
+        "sys": {
+            "id": "4y4rlIDPnLfsnRvo8FqdcT"
+        }
+    },
+    {
+        "germanName": "Freundschaftstraße",
+        "polishNames": [
+            "Przyjaciół"
+        ],
+        "sys": {
+            "id": "7w4Ft8LQcqUzx9MJIHLUuV"
+        }
+    },
+    {
+        "germanName": "Goethestraße",
+        "polishNames": [
+            "Tetmajera"
+        ],
+        "sys": {
+            "id": "AGVZKmdnz3OXN5Hl36w9W"
+        }
+    },
+    {
+        "germanName": "Weddigenstraße",
+        "polishNames": [
+            "Lotników Polskich"
+        ],
+        "sys": {
+            "id": "3IxKzx2UGdPK4gVtkDMrjS"
+        }
+    },
+    {
+        "germanName": "Am Leeger Tor",
+        "polishNames": [
+            "Dolna Brama"
+        ],
+        "sys": {
+            "id": "3x2Oc1f5fAY45eadikaFq3"
+        }
+    },
+    {
+        "germanName": "Am Pfarrhof",
+        "polishNames": [
+            "Plebania"
+        ],
+        "sys": {
+            "id": "5cujfzFtFk7fjcIWxOoNPf"
+        }
+    },
+    {
+        "germanName": "Käfergang",
+        "polishNames": [
+            "Floriańska",
+            "Łodo, Jana"
+        ],
+        "sys": {
+            "id": "1MdrewW7KM6yytc9nas6v3"
+        }
+    },
+    {
+        "germanName": "Büttelgasse",
+        "polishNames": [
+            "Pachołów"
+        ],
+        "sys": {
+            "id": "5dl4QbG1KGvRBX7uYvcWdc"
+        }
+    },
+    {
+        "germanName": "Bischofsberg",
+        "polishNames": [
+            "Biskupia"
+        ],
+        "sys": {
+            "id": "2aatl4wrhdADh1z3dS3FwH"
+        }
+    },
+    {
+        "germanName": "Hansaplatz",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1RTQrWp0fOGKsVHJoyztzR"
+        }
+    },
+    {
+        "germanName": "Kleine Lawendelgsse",
+        "polishNames": [
+            "Słomiana"
+        ],
+        "sys": {
+            "id": "5LKNRAzM6sValXEN8A3JlN"
+        }
+    },
+    {
+        "germanName": "Zieskengasse",
+        "polishNames": [
+            "Jaskółcza"
+        ],
+        "sys": {
+            "id": "4M9hEDH6KBggVaH92s9TCu"
+        }
+    },
+    {
+        "germanName": "Flunderstraße",
+        "polishNames": [
+            "Niska"
+        ],
+        "sys": {
+            "id": "2mm9AnFk0n5sz71QBJSOnS"
+        }
+    },
+    {
+        "germanName": "Helastraße",
+        "polishNames": [
+            "Drzymały"
+        ],
+        "sys": {
+            "id": "6W7HgE2CiTqAq3MIRlxITL"
+        }
+    },
+    {
+        "germanName": "Rieselfeldchaussee",
+        "polishNames": [
+            "Kaczeńce"
+        ],
+        "sys": {
+            "id": "19IAi4cu8G0CSXAhFlSBw9"
+        }
+    },
+    {
+        "germanName": "Sternweg",
+        "polishNames": [
+            "Żeromskiego"
+        ],
+        "sys": {
+            "id": "5DIIt3rMsdfKrDARy2U4ht"
+        }
+    },
+    {
+        "germanName": "Dominikswall",
+        "polishNames": [
+            "Wały Jagiellońskie"
+        ],
+        "sys": {
+            "id": "17hMkQQ0IBAiTL48RwzcmL"
+        }
+    },
+    {
+        "germanName": "Körnerstraße",
+        "polishNames": [
+            "Racławicka",
+            "Sambora"
+        ],
+        "sys": {
+            "id": "SJJgjzcZ7PeKQDDYhis7y"
+        }
+    },
+    {
+        "germanName": "Paradiesgasse",
+        "polishNames": [
+            "Rajska"
+        ],
+        "sys": {
+            "id": "18FMbQQpQiH44TCpxBAljK"
+        }
+    },
+    {
+        "germanName": "Bahnhofstraße",
+        "polishNames": [
+            "Barlickiego",
+            "Dmowskiego",
+            "Dworcowa",
+            "Marchlewskiego",
+            "Dworcowa",
+            "Podjazd"
+        ],
+        "sys": {
+            "id": "2zYdpcJLdnIJClNM54xnez"
+        }
+    },
+    {
+        "germanName": "Jakobsbleiche",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1DnELCXDIBWW4s1OZ7mjKs"
+        }
+    },
+    {
+        "germanName": "Behrendstraße",
+        "polishNames": [
+            "Krasickiego"
+        ],
+        "sys": {
+            "id": "3kHVmndlbnjwICzU1WzqJk"
+        }
+    },
+    {
+        "germanName": "Gertrudengasse",
+        "polishNames": [
+            "Wilcza"
+        ],
+        "sys": {
+            "id": "15b9wf6wAoJu2e83cZZ4un"
+        }
+    },
+    {
+        "germanName": "Magdeburger Straße",
+        "polishNames": [
+            "Kościuszki"
+        ],
+        "sys": {
+            "id": "2whFmfB70hrpFNfBJ1oIr1"
+        }
+    },
+    {
+        "germanName": "Untere Trift",
+        "polishNames": [
+            "Łanowa"
+        ],
+        "sys": {
+            "id": "2MruomjAESRwrVnlwXGP3F"
+        }
+    },
+    {
+        "germanName": "Dienergasse",
+        "polishNames": [
+            "Służebna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "3RX59rp53X64gELpnkByh3"
+        }
+    },
+    {
+        "germanName": "Heimatstraße",
+        "polishNames": [
+            "Wróblewskiego"
+        ],
+        "sys": {
+            "id": "5qyAO9C6MdwhuGI8472eES"
+        }
+    },
+    {
+        "germanName": "Eichhornstraße",
+        "polishNames": [
+            "Junacka"
+        ],
+        "sys": {
+            "id": "iRHMHRYOAHuyH0RUMBfDf"
+        }
+    },
+    {
+        "germanName": "Hedwigskirchstraße",
+        "polishNames": [
+            "Góreckiego, ks. Mariana",
+            "Łowczyńskiego, Kazimierza",
+            "Parafialna"
+        ],
+        "sys": {
+            "id": "5MjfYfJYQ3VxgSF4bRjHXl"
+        }
+    },
+    {
+        "germanName": "Pestilenzgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6XjOlPwQbYfCTwHO53aot8"
+        }
+    },
+    {
+        "germanName": "Grabengasse",
+        "polishNames": [
+            "Przyokopowa"
+        ],
+        "sys": {
+            "id": "5xtcGqJnkNkdN450rBvtjJ"
+        }
+    },
+    {
+        "germanName": "Zimmergase",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6C2mhVgGWE9CapuCirhdMj"
+        }
+    },
+    {
+        "germanName": "Schlossgasse",
+        "polishNames": [
+            "Zamkowa"
+        ],
+        "sys": {
+            "id": "1ft6WKvakiGIdzovaP5tEn"
+        }
+    },
+    {
+        "germanName": "Bastion Ochs",
+        "polishNames": [
+            "Reduta Dzik"
+        ],
+        "sys": {
+            "id": "2HEsX0y6jAFJx73Rgo4fLV"
+        }
+    },
+    {
+        "germanName": "Kesseldorfweg",
+        "polishNames": [
+            "Boya-Żeleńskiego"
+        ],
+        "sys": {
+            "id": "53VK3M52qtum7bPmlTFSWw"
+        }
+    },
+    {
+        "germanName": "Mariahilfstraße",
+        "polishNames": [
+            "Trawki"
+        ],
+        "sys": {
+            "id": "1zqoPrHYRxs7CNDf4WqKe3"
+        }
+    },
+    {
+        "germanName": "Stützengasse",
+        "polishNames": [
+            "Wspornikowa"
+        ],
+        "sys": {
+            "id": "5Xz4A66TH85bDROYJX7W4C"
+        }
+    },
+    {
+        "germanName": "Bei der Knüppelbrücke",
+        "polishNames": [
+            "Kurza"
+        ],
+        "sys": {
+            "id": "2UOJMaBmqKBemwRLrxjsfZ"
+        }
+    },
+    {
+        "germanName": "Damaschkeweg",
+        "polishNames": [
+            "Ojcowska"
+        ],
+        "sys": {
+            "id": "4eq6wkzRmgBU8p1lHVzUvj"
+        }
+    },
+    {
+        "germanName": "Delbrückallee",
+        "polishNames": [
+            "Paderewskiego",
+            "Skłodowskiej-Curie"
+        ],
+        "sys": {
+            "id": "4XWCmnPZgy26YkuGrfYHze"
+        }
+    },
+    {
+        "germanName": "Torgauer Weg",
+        "polishNames": [
+            "Karłowicza"
+        ],
+        "sys": {
+            "id": "5Vo874IpfFkAezYnF0D0Ey"
+        }
+    },
+    {
+        "germanName": "Mackigasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6kZMM89bT0irBKaZZsC1To"
+        }
+    },
+    {
+        "germanName": "Albertstraße",
+        "polishNames": [
+            "Asnyka"
+        ],
+        "sys": {
+            "id": "3JXoTaGM0t9WkNbAJJCcTL"
+        }
+    },
+    {
+        "germanName": "Hansagasse",
+        "polishNames": [
+            "Kupiecka"
+        ],
+        "sys": {
+            "id": "1YCp2L02l5UoJcKpUzxsRp"
+        }
+    },
+    {
+        "germanName": "Herbert-Norkus-Straße",
+        "polishNames": [
+            "Kraszewskiego"
+        ],
+        "sys": {
+            "id": "5yNbtZ26VBL81iMztcrcWM"
+        }
+    },
+    {
+        "germanName": "Uphagenweg",
+        "polishNames": [
+            "Uphagena"
+        ],
+        "sys": {
+            "id": "6Buj9cH8vzLLKun5eeZfgj"
+        }
+    },
+    {
+        "germanName": "Lange Brücke",
+        "polishNames": [
+            "Długie Pobrzeże"
+        ],
+        "sys": {
+            "id": "3aFOx5C687XaseUO604RXA"
+        }
+    },
+    {
+        "germanName": "Goldschmiedegasse",
+        "polishNames": [
+            "Złotników"
+        ],
+        "sys": {
+            "id": "4eQ10RkFxw5GPtwbXntmR"
+        }
+    },
+    {
+        "germanName": "Melzergasse",
+        "polishNames": [
+            "Słodowników"
+        ],
+        "sys": {
+            "id": "57B0fQJDeGdBwnz8TufO8n"
+        }
+    },
+    {
+        "germanName": "Am Generalkommando",
+        "polishNames": [
+            "Armii Czerwonej",
+            "n. e."
+        ],
+        "sys": {
+            "id": "5oQxBT4rq4cluWEssgEavw"
+        }
+    },
+    {
+        "germanName": "Orselnweg",
+        "polishNames": [
+            "Wrocławska"
+        ],
+        "sys": {
+            "id": "5zyFVvZ2h7Fbyu6lGJY1Lr"
+        }
+    },
+    {
+        "germanName": "Stromufer",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "23vFNU7uQOTUNi13nMzWA6"
+        }
+    },
+    {
+        "germanName": "Turmgasse",
+        "polishNames": [
+            "Basztowa",
+            "n. e."
+        ],
+        "sys": {
+            "id": "1WHbduu5Ol85uFOxWL1Bru"
+        }
+    },
+    {
+        "germanName": "Karrenwall",
+        "polishNames": [
+            "Okopowa"
+        ],
+        "sys": {
+            "id": "3Xg45C3EsUVi2vXJDLwfl4"
+        }
+    },
+    {
+        "germanName": "Mittelbleiche",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3zQChBQizwkue2Vluz7cSP"
+        }
+    },
+    {
+        "germanName": "Elisabethwall",
+        "polishNames": [
+            "Wały Jagiellońskie"
+        ],
+        "sys": {
+            "id": "67XkzaSQnw6JEZxpfEXtfT"
+        }
+    },
+    {
+        "germanName": "Steinbuttstraße",
+        "polishNames": [
+            "Rybna"
+        ],
+        "sys": {
+            "id": "3I6KohWDIFEeFTnm6hVDG6"
+        }
+    },
+    {
+        "germanName": "Heidseestraße",
+        "polishNames": [
+            "Stryjewskiego"
+        ],
+        "sys": {
+            "id": "2m6vAwwEqBofoWL3IgUAmX"
+        }
+    },
+    {
+        "germanName": "Weißmönchen-Hintergasse",
+        "polishNames": [
+            "Podbielańska"
+        ],
+        "sys": {
+            "id": "7nzxjG26Env3XOOkyrOChj"
+        }
+    },
+    {
+        "germanName": "Grützmühlenmakergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6JXQFLOtJaNiUHoNwLUpiU"
+        }
+    },
+    {
+        "germanName": "Horst-Hoffmann-Wall",
+        "polishNames": [
+            "3 Maja"
+        ],
+        "sys": {
+            "id": "4bAsLmKzDJl6EojOQ8mRzj"
+        }
+    },
+    {
+        "germanName": "Predigergasse",
+        "polishNames": [
+            "Kaznodziejska"
+        ],
+        "sys": {
+            "id": "yKkP9xvcUEgvGuwfmbiM4"
+        }
+    },
+    {
+        "germanName": "Schwarzer Weg",
+        "polishNames": [
+            "Letniewska",
+            "Czarna",
+            "Zator-Przytockiego, ks.",
+            "Przy Torze"
+        ],
+        "sys": {
+            "id": "3CVcxA4AvF51jcr1q8kd53"
+        }
+    },
+    {
+        "germanName": "Am Hasenwinkel",
+        "polishNames": [
+            "Zajęcza"
+        ],
+        "sys": {
+            "id": "bdOqyXUuvUbsdqCv842SI"
+        }
+    },
+    {
+        "germanName": "Hertastraße",
+        "polishNames": [
+            "Konrada Wallenroda"
+        ],
+        "sys": {
+            "id": "4U71dssinXJdc4ofJ4cCbp"
+        }
+    },
+    {
+        "germanName": "Gaisbergstraße",
+        "polishNames": [
+            "Długosza"
+        ],
+        "sys": {
+            "id": "3IE3luJgOOsU4PRrLzxEuB"
+        }
+    },
+    {
+        "germanName": "Niedere Seigen",
+        "polishNames": [
+            "Rybaki Dolne"
+        ],
+        "sys": {
+            "id": "NrH0yuiwxYQ1Gz3HY2rP7"
+        }
+    },
+    {
+        "germanName": "Breitgang",
+        "polishNames": [
+            "Ciasna"
+        ],
+        "sys": {
+            "id": "DGpoaOZkM1ryewENgU0d4"
+        }
+    },
+    {
+        "germanName": "Friedensstraße",
+        "polishNames": [
+            "Olszewskiego"
+        ],
+        "sys": {
+            "id": "4CnA6hJ4kSK871gGn1jMI5"
+        }
+    },
+    {
+        "germanName": "Ferdinand - Lasalle - Straße",
+        "polishNames": [
+            "Urocza"
+        ],
+        "sys": {
+            "id": "1CiSvoTq3bcq3b1BuOOlS5"
+        }
+    },
+    {
+        "germanName": "Am Steinfließ",
+        "polishNames": [
+            "Obodrzyców"
+        ],
+        "sys": {
+            "id": "3m9O5JAHJXr9gjOuWSrTxT"
+        }
+    },
+    {
+        "germanName": "Hinter dem Pockenhaus",
+        "polishNames": [
+            "Jana z Kolna"
+        ],
+        "sys": {
+            "id": "6dHW0wLnkhcLRtJ4pDj8je"
+        }
+    },
+    {
+        "germanName": "Zimmerhof",
+        "polishNames": [
+            "Ołowianka"
+        ],
+        "sys": {
+            "id": "0hf55XC0IUfpWTjwXxAj8"
+        }
+    },
+    {
+        "germanName": "Horst - Hoffmann - Weg",
+        "polishNames": [
+            "Armii Czerwonej",
+            "Armii Krajowej"
+        ],
+        "sys": {
+            "id": "1WnkGQJdRXXuhOFqoY3kRU"
+        }
+    },
+    {
+        "germanName": "Vlamenstraße",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6Z1uQcILvEhFY0KGPf4kd8"
+        }
+    },
+    {
+        "germanName": "Wallgasse",
+        "polishNames": [
+            "Wałowa"
+        ],
+        "sys": {
+            "id": "18K787lRpABubHMw98LyVB"
+        }
+    },
+    {
+        "germanName": "Gänsegasse",
+        "polishNames": [
+            "Łąkowa"
+        ],
+        "sys": {
+            "id": "5z4lUqJc4ApiTxV1ZzwTeU"
+        }
+    },
+    {
+        "germanName": "Plautzengasse",
+        "polishNames": [
+            "Pocztowa"
+        ],
+        "sys": {
+            "id": "xKaYKmDfixVvf7owGb6U8"
+        }
+    },
+    {
+        "germanName": "Fischbrücke",
+        "polishNames": [
+            "Rybackie Pobrzeże"
+        ],
+        "sys": {
+            "id": "2RvQlo6CdGkGZMCBw9Fiu0"
+        }
+    },
+    {
+        "germanName": "Breitlingsweg",
+        "polishNames": [
+            "Zalesie"
+        ],
+        "sys": {
+            "id": "3jl47sgikrswdsIj0X8qgF"
+        }
+    },
+    {
+        "germanName": "Schäferei",
+        "polishNames": [
+            "Owczarnia",
+            "Szafarnia"
+        ],
+        "sys": {
+            "id": "6rxSQUNB5mXPGEQ5q59Pee"
+        }
+    },
+    {
+        "germanName": "Fichtestraße",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3I93S6ucZCLHLpFdcvfMya"
+        }
+    },
+    {
+        "germanName": "Fleischbänke",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "68jmsBAQpbm4U824atgQP1"
+        }
+    },
+    {
+        "germanName": "Schwanengang",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2geCURri52fNHBq6ZIk3o2"
+        }
+    },
+    {
+        "germanName": "An der Ölmühle",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4KPM2WNFVkbHrZPSsxeF9r"
+        }
+    },
+    {
+        "germanName": "Stiftsgang",
+        "polishNames": [
+            "Fundacja",
+            "Fundacyjna"
+        ],
+        "sys": {
+            "id": "1i5i31zx1IJP4oa0xMvmoh"
+        }
+    },
+    {
+        "germanName": "Oetkerstraße",
+        "polishNames": [
+            "Dickmana"
+        ],
+        "sys": {
+            "id": "4T1vp2H0rrUmaZBQQBN3G4"
+        }
+    },
+    {
+        "germanName": "Flughafenstraße",
+        "polishNames": [
+            "Pilotów",
+            "Braci Lewoniewskich"
+        ],
+        "sys": {
+            "id": "3BF59zIE9gXsx5lniJg5dE"
+        }
+    },
+    {
+        "germanName": "Judengasse",
+        "polishNames": [
+            "Spichrzowa"
+        ],
+        "sys": {
+            "id": "1MO7Xj3QVDY3jT9Y2lxiJq"
+        }
+    },
+    {
+        "germanName": "An der Kampfbahn",
+        "polishNames": [
+            "Zawodników"
+        ],
+        "sys": {
+            "id": "7eo8Bvqf7vWFA1YXMFxmf6"
+        }
+    },
+    {
+        "germanName": "Unter den Weiden",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2H3xFtLpCOI85dtNQZLHbU"
+        }
+    },
+    {
+        "germanName": "Keyselstraße",
+        "polishNames": [
+            "Orla"
+        ],
+        "sys": {
+            "id": "2IXEslk3b1bNbS4auSOPBk"
+        }
+    },
+    {
+        "germanName": "Ammer-Kolonie",
+        "polishNames": [
+            "Kolonia Orka"
+        ],
+        "sys": {
+            "id": "6iIA4iXnj66JbySize8iWC"
+        }
+    },
+    {
+        "germanName": "Kalckreuthstraße",
+        "polishNames": [
+            "Zawiślańska"
+        ],
+        "sys": {
+            "id": "1ykKItIpZgvY90JE4yVykG"
+        }
+    },
+    {
+        "germanName": "Diestelweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5nvZFV4706mKJDzFTUrmNr"
+        }
+    },
+    {
+        "germanName": "Blockeweg",
+        "polishNames": [
+            "Ludowa"
+        ],
+        "sys": {
+            "id": "6lX4ukMeJUdE2dQr0KXiSY"
+        }
+    },
+    {
+        "germanName": "Gralathstraße",
+        "polishNames": [
+            "Hoene-Wrońskiego"
+        ],
+        "sys": {
+            "id": "2zvbqudbgrTE0irlk1dhCe"
+        }
+    },
+    {
+        "germanName": "Jungferngasse",
+        "polishNames": [
+            "Panieńska"
+        ],
+        "sys": {
+            "id": "1EvRPqZp89gxLecA325euR"
+        }
+    },
+    {
+        "germanName": "Langgarten",
+        "polishNames": [
+            "Długie Ogrody"
+        ],
+        "sys": {
+            "id": "3fBjfEoWxqv1KjQeLRQ1MX"
+        }
+    },
+    {
+        "germanName": "Hennigsstraße",
+        "polishNames": [
+            "Ceglana"
+        ],
+        "sys": {
+            "id": "76ObD8CrJFELLhW45tKeoF"
+        }
+    },
+    {
+        "germanName": "Fliederstraße",
+        "polishNames": [
+            "Pelplińska"
+        ],
+        "sys": {
+            "id": "2m5qrsLeHNGSpVgt72DHAT"
+        }
+    },
+    {
+        "germanName": "Redefkaweg",
+        "polishNames": [
+            "Uczniowska"
+        ],
+        "sys": {
+            "id": "5KydvRElBbAILrBUJkLo7i"
+        }
+    },
+    {
+        "germanName": "Kohlentor",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3OmarJuP2Zq4NqZH3BDxlG"
+        }
+    },
+    {
+        "germanName": "Weißer Weg",
+        "polishNames": [
+            "Biała"
+        ],
+        "sys": {
+            "id": "3NYtt5Pkg2XLVXvsIu8gy4"
+        }
+    },
+    {
+        "germanName": "An der Schönfelder Brücke",
+        "polishNames": [
+            "Podmiejska"
+        ],
+        "sys": {
+            "id": "1V7lzdT090qrmLHUld3me5"
+        }
+    },
+    {
+        "germanName": "Bastion Aussprung",
+        "polishNames": [
+            "Reduta Wyskok"
+        ],
+        "sys": {
+            "id": "5vkFaDvFUSjGlf4LUlNN2y"
+        }
+    },
+    {
+        "germanName": "Brotmarkt",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "lCaLoatETqbqD6HoCzepk"
+        }
+    },
+    {
+        "germanName": "Am Eulenbruch",
+        "polishNames": [
+            "Sówki"
+        ],
+        "sys": {
+            "id": "5wEl9o5nBfUNIJeoPl0hY9"
+        }
+    },
+    {
+        "germanName": "Bastion Wolf",
+        "polishNames": [
+            "Reduta Wilk"
+        ],
+        "sys": {
+            "id": "6RpaRyKdzVlRIDKl92Doxl"
+        }
+    },
+    {
+        "germanName": "Prinz - Adalbert - Straße",
+        "polishNames": [
+            "Obrońców Londynu",
+            "Pawła Findera",
+            "Biskupa Wronki"
+        ],
+        "sys": {
+            "id": "1g1vjT6PK3SA1YP9Gklrsm"
+        }
+    },
+    {
+        "germanName": "St. Trinitatis - Kirchengasse",
+        "polishNames": [
+            "Św. Trójcy"
+        ],
+        "sys": {
+            "id": "1wn6s4RO0Ba4cvo9XForCD"
+        }
+    },
+    {
+        "germanName": "Weinberggang",
+        "polishNames": [
+            "Winnicka"
+        ],
+        "sys": {
+            "id": "7EgskB6PqO4BG7VKMSiU0w"
+        }
+    },
+    {
+        "germanName": "Dreilindener Weg",
+        "polishNames": [
+            "Nowolipie",
+            "Trzy Lipy"
+        ],
+        "sys": {
+            "id": "4bcBPExDg0UQurdezD0KWc"
+        }
+    },
+    {
+        "germanName": "Kleiststraße",
+        "polishNames": [
+            "Langiewicza"
+        ],
+        "sys": {
+            "id": "1NqnKqtJA1NJXWrMYrYICx"
+        }
+    },
+    {
+        "germanName": "Langer Markt",
+        "polishNames": [
+            "Długi Targ"
+        ],
+        "sys": {
+            "id": "2siss5apZk4tSf0QFRaVjZ"
+        }
+    },
+    {
+        "germanName": "Kürschnergasse",
+        "polishNames": [
+            "Kuśnierska"
+        ],
+        "sys": {
+            "id": "7mFWEfwewESKDaa2Zh4Rdy"
+        }
+    },
+    {
+        "germanName": "Apreckstraße",
+        "polishNames": [
+            "Żórawia",
+            "Żurawia"
+        ],
+        "sys": {
+            "id": "77flN81VXIb6zSmDh3SiPY"
+        }
+    },
+    {
+        "germanName": "Schellingsfelder Straße",
+        "polishNames": [
+            "Skrajna"
+        ],
+        "sys": {
+            "id": "1T4J4GmHMtfEolBJ7DXEDv"
+        }
+    },
+    {
+        "germanName": "Schlosstrasse",
+        "polishNames": [
+            "Grodzka"
+        ],
+        "sys": {
+            "id": "5c2ujxf29TIQhHZ78wAEDa"
+        }
+    },
+    {
+        "germanName": "Charlottenstraße",
+        "polishNames": [
+            "Kłosowa",
+            "Lipowa"
+        ],
+        "sys": {
+            "id": "5kI6ZO65Cwd24iMO54tq0f"
+        }
+    },
+    {
+        "germanName": "Drahtgang",
+        "polishNames": [
+            "Sowia"
+        ],
+        "sys": {
+            "id": "2UA5wBtsKxatV5M2PMieLe"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Lieblingsruh",
+        "polishNames": [
+            "Kolonia Przyszłość"
+        ],
+        "sys": {
+            "id": "1teH53Q70PJTfQQNmpYRE5"
+        }
+    },
+    {
+        "germanName": "Milchkannengasse",
+        "polishNames": [
+            "Stągiewna"
+        ],
+        "sys": {
+            "id": "5WHtHCqp4BsVwOGYeCIsvL"
+        }
+    },
+    {
+        "germanName": "Lohaußstraße",
+        "polishNames": [
+            "Mieszka I"
+        ],
+        "sys": {
+            "id": "52DlcCezt6eQrFFO6Jo9A4"
+        }
+    },
+    {
+        "germanName": "Hakelwerk",
+        "polishNames": [
+            "Osiek"
+        ],
+        "sys": {
+            "id": "3uUnFRooVM4GnAt5UVTywH"
+        }
+    },
+    {
+        "germanName": "Kleine Sandgrube",
+        "polishNames": [
+            "Wykop",
+            "n. e."
+        ],
+        "sys": {
+            "id": "18T7Hddr1NLPsB6lYpqEHq"
+        }
+    },
+    {
+        "germanName": "An der Steinschleuse",
+        "polishNames": [
+            "Grodza Kamienna"
+        ],
+        "sys": {
+            "id": "1YSpgYL7CkxFW4NjJnv68n"
+        }
+    },
+    {
+        "germanName": "Brombergstraße",
+        "polishNames": [
+            "Podgórna",
+            "Świerczewskiego, gen. Karola",
+            "Andersa"
+        ],
+        "sys": {
+            "id": "4En5oCzfQeYbos8z2rIRzS"
+        }
+    },
+    {
+        "germanName": "Am Karlsberg",
+        "polishNames": [
+            "Tatrzańska"
+        ],
+        "sys": {
+            "id": "1eoJ8axqJlL948cj7al5lA"
+        }
+    },
+    {
+        "germanName": "Rodenackerstraße",
+        "polishNames": [
+            "Niemcewicza"
+        ],
+        "sys": {
+            "id": "5YDTMxKtjVkMtzu0XJfuQ4"
+        }
+    },
+    {
+        "germanName": "Wassergasse",
+        "polishNames": [
+            "Wspornikowa"
+        ],
+        "sys": {
+            "id": "7q5OF6vIKucht2Y69Kd1h7"
+        }
+    },
+    {
+        "germanName": "Anton-Möller-Weg",
+        "polishNames": [
+            "Danusi"
+        ],
+        "sys": {
+            "id": "2tLYsRPOyKCWkVtxu9ahOz"
+        }
+    },
+    {
+        "germanName": "Kleine Wollwebergasse",
+        "polishNames": [
+            "Wełniarska"
+        ],
+        "sys": {
+            "id": "5aC9olhllrRlUpEPCpohyR"
+        }
+    },
+    {
+        "germanName": "Sandkante",
+        "polishNames": [
+            "Piaskowa"
+        ],
+        "sys": {
+            "id": "3YrNW1XrEk9y409dWDXCw8"
+        }
+    },
+    {
+        "germanName": "Emdener Straße",
+        "polishNames": [
+            "Śląska"
+        ],
+        "sys": {
+            "id": "1yCt4pDZmEnmzkTZOby6ZC"
+        }
+    },
+    {
+        "germanName": "Karlikauerstraße",
+        "polishNames": [
+            "Emilii Plater"
+        ],
+        "sys": {
+            "id": "4I0larWPEyFJZX7BaDDDfQ"
+        }
+    },
+    {
+        "germanName": "Langer Gang",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4n3D9ToDnhKhseEOSEIzo1"
+        }
+    },
+    {
+        "germanName": "Portechaisengasse",
+        "polishNames": [
+            "Lektykarska"
+        ],
+        "sys": {
+            "id": "1BNinmkE13yjKLbBUyjKSx"
+        }
+    },
+    {
+        "germanName": "Theaterplatz",
+        "polishNames": [
+            "Targ Węglowy"
+        ],
+        "sys": {
+            "id": "3tnFzQODM0VsyNAit1MFK9"
+        }
+    },
+    {
+        "germanName": "Schopenhauerweg",
+        "polishNames": [
+            "Kopernika"
+        ],
+        "sys": {
+            "id": "5dFFq5IVUjQa7tDrptDghm"
+        }
+    },
+    {
+        "germanName": "Mittelstraße",
+        "polishNames": [
+            "Ogińskiego"
+        ],
+        "sys": {
+            "id": "1bZDQqcZ50cjEcWhF1YnJJ"
+        }
+    },
+    {
+        "germanName": "Richard - Wagner - Straße",
+        "polishNames": [
+            "Wagnera"
+        ],
+        "sys": {
+            "id": "KeB2EySSnXtujxzb3Yakn"
+        }
+    },
+    {
+        "germanName": "Hafenstraße",
+        "polishNames": [
+            "Bugaj",
+            "n. e."
+        ],
+        "sys": {
+            "id": "6jHpZFCAzE8GCwnazHcAms"
+        }
+    },
+    {
+        "germanName": "Günther - Schaffer - Wall",
+        "polishNames": [
+            "Jedności Robotniczej",
+            "Oruńska 1"
+        ],
+        "sys": {
+            "id": "6gtgv4Qn9ZeiSr7HMQpFs9"
+        }
+    },
+    {
+        "germanName": "Jachmannstraße",
+        "polishNames": [
+            "Towarowa"
+        ],
+        "sys": {
+            "id": "2bq6FHTtOfV3lkW3jfv1kH"
+        }
+    },
+    {
+        "germanName": "Schlüterweg",
+        "polishNames": [
+            "Gomółki"
+        ],
+        "sys": {
+            "id": "13nEZla3Y24CNld1QscyLT"
+        }
+    },
+    {
+        "germanName": "Tagnete",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1ETuwPHnptSDFtRyYno5wI"
+        }
+    },
+    {
+        "germanName": "Am Lotsenberg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "25tHJhBduEfCBkm7y7niGE"
+        }
+    },
+    {
+        "germanName": "Rossgarten",
+        "polishNames": [
+            "Próżna"
+        ],
+        "sys": {
+            "id": "2aHxSHaQ6JHiFtiXWnMICC"
+        }
+    },
+    {
+        "germanName": "Vorstädtischer Graben",
+        "polishNames": [
+            "Podwale Przedmiejskie",
+            "Aleja Leningradzka"
+        ],
+        "sys": {
+            "id": "7mYH28Efo32YxDdf07ovi6"
+        }
+    },
+    {
+        "germanName": "Große Trift",
+        "polishNames": [
+            "Wołyńska"
+        ],
+        "sys": {
+            "id": "7u7PnWA7QwvsYXVhORF3zw"
+        }
+    },
+    {
+        "germanName": "Höhenweg",
+        "polishNames": [
+            "Zagórna"
+        ],
+        "sys": {
+            "id": "6oxz7N1C71yq1AK4uBwzbg"
+        }
+    },
+    {
+        "germanName": "Topfmarkt",
+        "polishNames": [
+            "Targ Maślany"
+        ],
+        "sys": {
+            "id": "4w5ClB9pQFtbW63YNHMEjZ"
+        }
+    },
+    {
+        "germanName": "Brentauer Weg",
+        "polishNames": [
+            "Słowackiego"
+        ],
+        "sys": {
+            "id": "5Q1ezGCudTOjo3SYQ8H8FY"
+        }
+    },
+    {
+        "germanName": "Karl-Freiburger-Straße",
+        "polishNames": [
+            "Deotymy"
+        ],
+        "sys": {
+            "id": "2nFomu47Fg2FEEvhcwK5A1"
+        }
+    },
+    {
+        "germanName": "Bahnwärterhäuser",
+        "polishNames": [
+            "n. e.",
+            "n. e."
+        ],
+        "sys": {
+            "id": "4D0DRziDuSruqL7Y7B46Sa"
+        }
+    },
+    {
+        "germanName": "Kleingartenweg",
+        "polishNames": [
+            "Małoogrodowa"
+        ],
+        "sys": {
+            "id": "3WXUBAuozo0iDhIbTetzJ6"
+        }
+    },
+    {
+        "germanName": "Schnüffelmarkt",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "58WIyuXuVk0muIjeLAzzsE"
+        }
+    },
+    {
+        "germanName": "Schüsseldamm",
+        "polishNames": [
+            "Łagiewniki"
+        ],
+        "sys": {
+            "id": "6qpBg74ADHIMYWEuSM0Dtm"
+        }
+    },
+    {
+        "germanName": "Heimstraße",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3BuqIIizKXaX6daAqorjAe"
+        }
+    },
+    {
+        "germanName": "Schneidemühle",
+        "polishNames": [
+            "Tartaczna"
+        ],
+        "sys": {
+            "id": "6G8M3bueQO3nAVgfRCemrH"
+        }
+    },
+    {
+        "germanName": "Schillingsgasse",
+        "polishNames": [
+            "Serbska"
+        ],
+        "sys": {
+            "id": "3bucnrbRz9GrgK2F1ap6gK"
+        }
+    },
+    {
+        "germanName": "Theodor-von-der-Pfordten-Straße",
+        "polishNames": [
+            "Zamiejska"
+        ],
+        "sys": {
+            "id": "3KcNscl3Uc9fDWG3HdimV"
+        }
+    },
+    {
+        "germanName": "Büttelhof",
+        "polishNames": [
+            "Mało Dobrych",
+            "n. e."
+        ],
+        "sys": {
+            "id": "2qnWF1nksXakPF6fg47Ehm"
+        }
+    },
+    {
+        "germanName": "Schmiedegang",
+        "polishNames": [
+            "Kowale",
+            "Kuźnia",
+            "n. e."
+        ],
+        "sys": {
+            "id": "Eqc8u168mKBNRq6MJrRXX"
+        }
+    },
+    {
+        "germanName": "Wandgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6DSgSoqzwEZkDekqIbnStu"
+        }
+    },
+    {
+        "germanName": "Schwabental",
+        "polishNames": [
+            "Bytowska"
+        ],
+        "sys": {
+            "id": "43y5tZyXXj8yu6vwFZUs1I"
+        }
+    },
+    {
+        "germanName": "Große Hosennähergasse",
+        "polishNames": [
+            "Pończoszników"
+        ],
+        "sys": {
+            "id": "5nOX8UB1KF6anQWzkjFgfV"
+        }
+    },
+    {
+        "germanName": "Wegnerstraße",
+        "polishNames": [
+            "Helska"
+        ],
+        "sys": {
+            "id": "4x1Sy7Sl5PZSZEk6svW1jJ"
+        }
+    },
+    {
+        "germanName": "Ellerbruch",
+        "polishNames": [
+            "Wrzosy"
+        ],
+        "sys": {
+            "id": "1IZoNwEdrdrnihJXCtR8b5"
+        }
+    },
+    {
+        "germanName": "Hoppenbruch",
+        "polishNames": [
+            "Ubocze"
+        ],
+        "sys": {
+            "id": "22LyKBZ5vqaBBBhTOvRgvn"
+        }
+    },
+    {
+        "germanName": "Bremer Straße",
+        "polishNames": [
+            "Lęborska"
+        ],
+        "sys": {
+            "id": "5OnY4ld205fOKSkKnpx6oa"
+        }
+    },
+    {
+        "germanName": "Am Johannisberg",
+        "polishNames": [
+            "Sobótki"
+        ],
+        "sys": {
+            "id": "1qytMJMRCYzU2rarAJsIl0"
+        }
+    },
+    {
+        "germanName": "Hildebrandtweg",
+        "polishNames": [
+            "Kubacza"
+        ],
+        "sys": {
+            "id": "1KuWdxJOrw2oj68QJPVq1I"
+        }
+    },
+    {
+        "germanName": "An der Kuhbrücke",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4u23RN2HPYStYQtHVuePP5"
+        }
+    },
+    {
+        "germanName": "Friedenssteg",
+        "polishNames": [
+            "Sienkiewicza"
+        ],
+        "sys": {
+            "id": "M9XGnQNxwzLiz8kroObpn"
+        }
+    },
+    {
+        "germanName": "Brodwinstraße",
+        "polishNames": [
+            "Obodrzyców"
+        ],
+        "sys": {
+            "id": "6GI8llEo1PfJ6KmVSSO6yW"
+        }
+    },
+    {
+        "germanName": "Ackerstraße",
+        "polishNames": [
+            "Skiby"
+        ],
+        "sys": {
+            "id": "1uGJC0RBjDbm62vx2L4Hba"
+        }
+    },
+    {
+        "germanName": "Pfarrgang",
+        "polishNames": [
+            "Charpantiera",
+            "Gafle"
+        ],
+        "sys": {
+            "id": "6qMhBrwCCcvZW3cMed9ujv"
+        }
+    },
+    {
+        "germanName": "Kapellenstraße",
+        "polishNames": [
+            "Kapliczna"
+        ],
+        "sys": {
+            "id": "1gqLf5EJKtoErCL2IZ74fL"
+        }
+    },
+    {
+        "germanName": "Philippstraße",
+        "polishNames": [
+            "Bliska"
+        ],
+        "sys": {
+            "id": "4a7du7dY4E6dD8fMncw4dP"
+        }
+    },
+    {
+        "germanName": "Hermannshoferweg",
+        "polishNames": [
+            "Piękna",
+            "Wassowskiego"
+        ],
+        "sys": {
+            "id": "7v7IWv7azihHGm5UOgOnx4"
+        }
+    },
+    {
+        "germanName": "Irrgarten",
+        "polishNames": [
+            "Błędnik"
+        ],
+        "sys": {
+            "id": "4EGEv4ch7NknGf55fcR1Lt"
+        }
+    },
+    {
+        "germanName": "Katergasse",
+        "polishNames": [
+            "Kocurki"
+        ],
+        "sys": {
+            "id": "kRva0FK77cjyai6AGdd6j"
+        }
+    },
+    {
+        "germanName": "Neuschottland",
+        "polishNames": [
+            "Wyspiańskiego"
+        ],
+        "sys": {
+            "id": "14DkGz2v8trN7zLwt7TEhH"
+        }
+    },
+    {
+        "germanName": "Sasper Straße",
+        "polishNames": [
+            "Na Zaspę"
+        ],
+        "sys": {
+            "id": "EqNjHrPde4CTLJF4ralFQ"
+        }
+    },
+    {
+        "germanName": "Gerichtsstraße",
+        "polishNames": [
+            "Grottgera"
+        ],
+        "sys": {
+            "id": "1qJbyd1j7IT9fkk8OBMm6v"
+        }
+    },
+    {
+        "germanName": "Stolzenberger Langgasse",
+        "polishNames": [
+            "Lubuska"
+        ],
+        "sys": {
+            "id": "7bL2YZfde9j0GGYcdwoiRH"
+        }
+    },
+    {
+        "germanName": "Kleine Hasennegergasse",
+        "polishNames": [
+            "Dziana"
+        ],
+        "sys": {
+            "id": "1uyfKFawhG3YPIXbfZwYGP"
+        }
+    },
+    {
+        "germanName": "Reinkesgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2nYwhuad5cF86O99n4OSUK"
+        }
+    },
+    {
+        "germanName": "St. Barbaragasse",
+        "polishNames": [
+            "Św. Barbary"
+        ],
+        "sys": {
+            "id": "6FSyVXw4KlRP89W5vnDXuY"
+        }
+    },
+    {
+        "germanName": "Am Heiligenbrunn",
+        "polishNames": [
+            "Traugutta"
+        ],
+        "sys": {
+            "id": "42zqoWYmwbcx7wOQh9sELJ"
+        }
+    },
+    {
+        "germanName": "Compost",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4fqrqZG865pVVxg13eivFj"
+        }
+    },
+    {
+        "germanName": "Mittelweg",
+        "polishNames": [
+            "Srodkowa"
+        ],
+        "sys": {
+            "id": "6Knaqq6s5jtHFB7TRmZD1B"
+        }
+    },
+    {
+        "germanName": "Blücherstraße",
+        "polishNames": [
+            "Beniowskiego"
+        ],
+        "sys": {
+            "id": "4Cgf7QEiWusI0WJLpzk2RW"
+        }
+    },
+    {
+        "germanName": "Stromweg",
+        "polishNames": [
+            "Mewy"
+        ],
+        "sys": {
+            "id": "4nZVo9ym59jTdYUx2haWB1"
+        }
+    },
+    {
+        "germanName": "Gorch-Fock-Straße",
+        "polishNames": [
+            "Paska"
+        ],
+        "sys": {
+            "id": "6Wj25lhGs4LoloQbwTIt8s"
+        }
+    },
+    {
+        "germanName": "Gallwitzstraße",
+        "polishNames": [
+            "Smoleńska"
+        ],
+        "sys": {
+            "id": "7l1Nw0oo1hyZpZ4rZcpIxK"
+        }
+    },
+    {
+        "germanName": "Mühlenhofer Weg",
+        "polishNames": [
+            "Wiatraczna"
+        ],
+        "sys": {
+            "id": "68LA6fyUdl0Pi6cmdrEDWf"
+        }
+    },
+    {
+        "germanName": "Promenadenstraße",
+        "polishNames": [
+            "Majkowskiego"
+        ],
+        "sys": {
+            "id": "65o9i3JZwDwj5xCri2FVrd"
+        }
+    },
+    {
+        "germanName": "Hinter der Schießstange",
+        "polishNames": [
+            "Kurkowa"
+        ],
+        "sys": {
+            "id": "2nWkgz1UbVAljJmIZ0GyYL"
+        }
+    },
+    {
+        "germanName": "Reitergasse",
+        "polishNames": [
+            "Ułańska"
+        ],
+        "sys": {
+            "id": "2sZHQrJ3WQsWUnSlEew5N9"
+        }
+    },
+    {
+        "germanName": "Schäferstraße",
+        "polishNames": [
+            "Wybickiego"
+        ],
+        "sys": {
+            "id": "5W8iinuBz45JEIpUzN02jj"
+        }
+    },
+    {
+        "germanName": "Eichendorffstraße",
+        "polishNames": [
+            "Chmielewskiego"
+        ],
+        "sys": {
+            "id": "7GY26Z0sI5guiIv5PjrzUd"
+        }
+    },
+    {
+        "germanName": "Andreas-Bauriedl-Straße",
+        "polishNames": [
+            "Raduńska"
+        ],
+        "sys": {
+            "id": "2TlpzKOY7EJCp7dZHm9cR3"
+        }
+    },
+    {
+        "germanName": "Ertelplatz",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4HMOK4zPuCX8wOhUGcHIVP"
+        }
+    },
+    {
+        "germanName": "Salzstraße",
+        "polishNames": [
+            "Solec"
+        ],
+        "sys": {
+            "id": "3quSku6QVsGIt05o0mw9tn"
+        }
+    },
+    {
+        "germanName": "Hungerchaussee",
+        "polishNames": [
+            "Gdańska",
+            "Hallera"
+        ],
+        "sys": {
+            "id": "2ubfbYQApVqRBUxFGwYB6N"
+        }
+    },
+    {
+        "germanName": "Bardewiekweg",
+        "polishNames": [
+            "Okrąg"
+        ],
+        "sys": {
+            "id": "4JnnKhDW9MKwOkw1FBLsmZ"
+        }
+    },
+    {
+        "germanName": "Neugasse an der Radaune",
+        "polishNames": [
+            "Stare Domki"
+        ],
+        "sys": {
+            "id": "6mUBNRFziK423YwEyo2zzS"
+        }
+    },
+    {
+        "germanName": "Heiliger Geist-Gang",
+        "polishNames": [
+            "Szpitalna"
+        ],
+        "sys": {
+            "id": "4CGd18PlqE6qonp9xXLySx"
+        }
+    },
+    {
+        "germanName": "An der Ostbahn",
+        "polishNames": [
+            "Dworcowa"
+        ],
+        "sys": {
+            "id": "5etnMyhRxWWfeGaPJJ8kQS"
+        }
+    },
+    {
+        "germanName": "Parallel Weg",
+        "polishNames": [
+            "ks. Józefa Zator - Przytockiego"
+        ],
+        "sys": {
+            "id": "35t45LN75kmiaVc9aFCm7X"
+        }
+    },
+    {
+        "germanName": "Altes Ross",
+        "polishNames": [
+            "Grząska",
+            "Rumacza"
+        ],
+        "sys": {
+            "id": "4z5Iyl17AMY4mgbflfwcFn"
+        }
+    },
+    {
+        "germanName": "Kurstraße",
+        "polishNames": [
+            "Zdrojowa"
+        ],
+        "sys": {
+            "id": "UBtNQfP1anv8ucTUAVBQc"
+        }
+    },
+    {
+        "germanName": "Dorfstraße",
+        "polishNames": [
+            "Bałtycka",
+            "Wodna"
+        ],
+        "sys": {
+            "id": "4Hz1oeXesi8UXTuZg01fCf"
+        }
+    },
+    {
+        "germanName": "Friedrichspassage",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6wNLm3cDO866MHdNg9yU4a"
+        }
+    },
+    {
+        "germanName": "Mühlenhof",
+        "polishNames": [
+            "Wiatraczna"
+        ],
+        "sys": {
+            "id": "70BM0XNWInVeiu3TeqnEMF"
+        }
+    },
+    {
+        "germanName": "Heckenweg",
+        "polishNames": [
+            "Opłotki"
+        ],
+        "sys": {
+            "id": "3F04ohqNIQRyNvOM3KHrOT"
+        }
+    },
+    {
+        "germanName": "Rossbachweg",
+        "polishNames": [
+            "Potokowa",
+            "Zamenhofa"
+        ],
+        "sys": {
+            "id": "7iS1MWg4aIP0179xltGYbS"
+        }
+    },
+    {
+        "germanName": "Mirchauer Promenadenweg",
+        "polishNames": [
+            "Matki Polki"
+        ],
+        "sys": {
+            "id": "4dyaWg9AtO8Jko3jukbMvp"
+        }
+    },
+    {
+        "germanName": "Bischofstal",
+        "polishNames": [
+            "Stoczniowców"
+        ],
+        "sys": {
+            "id": "5sRHqkY2PGRYVcjzs8ixFj"
+        }
+    },
+    {
+        "germanName": "Kleinsiedlung Waschke",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6yrSgUN2RmLnJmfr6zektv"
+        }
+    },
+    {
+        "germanName": "An der Mottlaubrücke",
+        "polishNames": [
+            "Pusta"
+        ],
+        "sys": {
+            "id": "WseWh975Xb4dH1QhNrTNP"
+        }
+    },
+    {
+        "germanName": "Am Schlossgarten",
+        "polishNames": [
+            "Opata Rybińskiego"
+        ],
+        "sys": {
+            "id": "2G6bYIpwrLd5C9ry2OxglS"
+        }
+    },
+    {
+        "germanName": "Saarlandweg",
+        "polishNames": [
+            "Orłowska"
+        ],
+        "sys": {
+            "id": "7xuS3YV86IZyLODvCfOaZM"
+        }
+    },
+    {
+        "germanName": "Maiglöckchenweg",
+        "polishNames": [
+            "Konwalii"
+        ],
+        "sys": {
+            "id": "6IcOaEEXw3UhdJjKtfmZRg"
+        }
+    },
+    {
+        "germanName": "Strackwitzweg",
+        "polishNames": [
+            "Kmieca"
+        ],
+        "sys": {
+            "id": "43kmbK2wPtok4yCz2X6Amr"
+        }
+    },
+    {
+        "germanName": "Stralsunder Straße",
+        "polishNames": [
+            "Arkońska"
+        ],
+        "sys": {
+            "id": "1yLL3Z8loLGa0jbw4H9ak4"
+        }
+    },
+    {
+        "germanName": "Tuschen beiden Brücken",
+        "polishNames": [
+            "Chmielna"
+        ],
+        "sys": {
+            "id": "6CCCv4r6xGkmYvaZ1dFMoA"
+        }
+    },
+    {
+        "germanName": "Große Wollwebergasse",
+        "polishNames": [
+            "Tkacka"
+        ],
+        "sys": {
+            "id": "7yHCdJeEZqhyGLLtEQT3mk"
+        }
+    },
+    {
+        "germanName": "Polnischer Haken",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1EMqTESZpuLrpOutSVof8g"
+        }
+    },
+    {
+        "germanName": "Teichhaus",
+        "polishNames": [
+            "?"
+        ],
+        "sys": {
+            "id": "5G6C7jmrmDALWEsvyTIjvG"
+        }
+    },
+    {
+        "germanName": "Lotsenweg",
+        "polishNames": [
+            "Przemysłowa"
+        ],
+        "sys": {
+            "id": "4AKCTFV75B5G2aSoV6RigT"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Meeresblick",
+        "polishNames": [
+            "Kolonia Jordana"
+        ],
+        "sys": {
+            "id": "5jvx24pAUt8uGwx42pFbNt"
+        }
+    },
+    {
+        "germanName": "Große Berggasse",
+        "polishNames": [
+            "Biskupia"
+        ],
+        "sys": {
+            "id": "2Cvl5CYhdasYSiMME3JsxA"
+        }
+    },
+    {
+        "germanName": "Schottischer Damm",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5YV38pfpuxHbj73X9iMo1N"
+        }
+    },
+    {
+        "germanName": "Am Schild",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2rRVog37b1wj06pqNKpLVW"
+        }
+    },
+    {
+        "germanName": "Heimstätte",
+        "polishNames": [
+            "Noakowskiego, Stanisława",
+            "Zacisze"
+        ],
+        "sys": {
+            "id": "3js59znIpufY0x6e5w2jrP"
+        }
+    },
+    {
+        "germanName": "Alt - Weinberg",
+        "polishNames": [
+            "Zakopiańska"
+        ],
+        "sys": {
+            "id": "7Dn28Tc4XUKramsac1umso"
+        }
+    },
+    {
+        "germanName": "Laubenweg",
+        "polishNames": [
+            "Krótka"
+        ],
+        "sys": {
+            "id": "2L2JgiLmtGnMl6cmZwjYOc"
+        }
+    },
+    {
+        "germanName": "St. Johannis - Kirchhof",
+        "polishNames": [
+            "Zaułek Zachariasza Zappio"
+        ],
+        "sys": {
+            "id": "4jPuwOGYuyee0rHEcAZaRk"
+        }
+    },
+    {
+        "germanName": "Burggrafenstraße",
+        "polishNames": [
+            "Podzamcze"
+        ],
+        "sys": {
+            "id": "3Rz5oUm0V1rXiakcDgxUv1"
+        }
+    },
+    {
+        "germanName": "Trojangasse",
+        "polishNames": [
+            "Seredyńskiego",
+            "Skotnicka"
+        ],
+        "sys": {
+            "id": "1jJ3jLQCC69rALwYsX94st"
+        }
+    },
+    {
+        "germanName": "Dorschstraße",
+        "polishNames": [
+            "Zakole"
+        ],
+        "sys": {
+            "id": "7CbnASCvAQNLlj6l5CeB6R"
+        }
+    },
+    {
+        "germanName": "Erntedankweg",
+        "polishNames": [
+            "Wrzeszczańska"
+        ],
+        "sys": {
+            "id": "3Fm5TC0qey9ERScGjoEaUa"
+        }
+    },
+    {
+        "germanName": "Mitteldamm",
+        "polishNames": [
+            "Grobla III"
+        ],
+        "sys": {
+            "id": "3iicBqsdsCqKOPrUudihpB"
+        }
+    },
+    {
+        "germanName": "Häkergasse",
+        "polishNames": [
+            "Straganiarska"
+        ],
+        "sys": {
+            "id": "5oLe9Ym3yzDCAdLyJQIqtz"
+        }
+    },
+    {
+        "germanName": "Theatergasse",
+        "polishNames": [
+            "Teatralna"
+        ],
+        "sys": {
+            "id": "7eP1zRWdkjtnF2H37LoDjF"
+        }
+    },
+    {
+        "germanName": "Grünholzstraße",
+        "polishNames": [
+            "Kubacza"
+        ],
+        "sys": {
+            "id": "4vt6Pxe95ZLrJX203iJLju"
+        }
+    },
+    {
+        "germanName": "Kranichgasse",
+        "polishNames": [
+            "Przyokopowa"
+        ],
+        "sys": {
+            "id": "2EnXsPvWa64FUES96TmdDn"
+        }
+    },
+    {
+        "germanName": "Münsterbergstraße",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7tm4bZlPvDYBAZElWQoaAp"
+        }
+    },
+    {
+        "germanName": "Grundgasse",
+        "polishNames": [
+            "Cmentarna"
+        ],
+        "sys": {
+            "id": "3NXKy0rBbNc0Cxio1DSRsV"
+        }
+    },
+    {
+        "germanName": "Hufschmiedegang",
+        "polishNames": [
+            "Kowale",
+            "Kuźnia",
+            "n. e."
+        ],
+        "sys": {
+            "id": "1sPVsi6QECAwdEbuOv5JDf"
+        }
+    },
+    {
+        "germanName": "Tempelburg",
+        "polishNames": [
+            "Karthäuser Straße"
+        ],
+        "sys": {
+            "id": "5kmmhqgM6HQ3PXkOTHgqwP"
+        }
+    },
+    {
+        "germanName": "Eckhof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5NOcoRTxVd5aWQldKBsGgc"
+        }
+    },
+    {
+        "germanName": "Hansmantel",
+        "polishNames": [
+            "Fortowa",
+            "n. e."
+        ],
+        "sys": {
+            "id": "7nTzmewdr2QOadrSI7VESZ"
+        }
+    },
+    {
+        "germanName": "Kaninchenberg",
+        "polishNames": [
+            "Górka"
+        ],
+        "sys": {
+            "id": "5VbviVGIBxGlztr9BMNp9x"
+        }
+    },
+    {
+        "germanName": "August-Lentze-Weg",
+        "polishNames": [
+            "Budzysza Wosia"
+        ],
+        "sys": {
+            "id": "6xfeke9y9QGCWPKgOfWY0L"
+        }
+    },
+    {
+        "germanName": "Papegogengasse",
+        "polishNames": [
+            "Jałmużnicza"
+        ],
+        "sys": {
+            "id": "4IfKir5jtUZIlexzNtAvIe"
+        }
+    },
+    {
+        "germanName": "Werftgasse",
+        "polishNames": [
+            "Doki"
+        ],
+        "sys": {
+            "id": "38BIrzirm8MPBExingDilA"
+        }
+    },
+    {
+        "germanName": "Elsenstraße",
+        "polishNames": [
+            "Grażyny"
+        ],
+        "sys": {
+            "id": "6tbRJ8IllHZUZV3ceTaH9x"
+        }
+    },
+    {
+        "germanName": "Neugasse",
+        "polishNames": [
+            "Stare Domki"
+        ],
+        "sys": {
+            "id": "6ZC0TExfoyI7gMvQv1IcRc"
+        }
+    },
+    {
+        "germanName": "Villenstraße",
+        "polishNames": [
+            "Obrońców Westerplatte"
+        ],
+        "sys": {
+            "id": "eVO1grBKNvo3HiuwbGKjH"
+        }
+    },
+    {
+        "germanName": "Fischmeisterweg",
+        "polishNames": [
+            "Wyzwolenia"
+        ],
+        "sys": {
+            "id": "1C2mFom7Lp61vEuSzPjDjE"
+        }
+    },
+    {
+        "germanName": "Kleine Gasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "oa7js3u1SOF3GzDKjsrbi"
+        }
+    },
+    {
+        "germanName": "Grüner Weg",
+        "polishNames": [
+            "Zielona"
+        ],
+        "sys": {
+            "id": "lBeC0D6FDE7hpqWtg27YS"
+        }
+    },
+    {
+        "germanName": "Kleiner Stinkgang",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2QPi8Z6uXvFvWG2588vQRQ"
+        }
+    },
+    {
+        "germanName": "Neue Welt",
+        "polishNames": [
+            "Nowiny"
+        ],
+        "sys": {
+            "id": "2QoBlyA0j7eLit6bZDxhad"
+        }
+    },
+    {
+        "germanName": "An der alten Radaune",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5n4dYxpTsFbuZtgW8utrNr"
+        }
+    },
+    {
+        "germanName": "Am Sande",
+        "polishNames": [
+            "Na Piaskach"
+        ],
+        "sys": {
+            "id": "69Jh69cum8gSInf91umW0C"
+        }
+    },
+    {
+        "germanName": "Kleine Ölmühlengasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4MB6yQObEHfCNPrCjv9oZb"
+        }
+    },
+    {
+        "germanName": "Pommersche Chaussee",
+        "polishNames": [
+            "Abrahama",
+            "Grunwaldzka"
+        ],
+        "sys": {
+            "id": "2XlEx8f21QUAF4XLHqTStd"
+        }
+    },
+    {
+        "germanName": "Heilsberger Weg",
+        "polishNames": [
+            "Dekerta"
+        ],
+        "sys": {
+            "id": "2t9rqrm6RIyt61XnOxjLXb"
+        }
+    },
+    {
+        "germanName": "Jägersteig",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3GCpl2GVJIYzGHalHNqUqI"
+        }
+    },
+    {
+        "germanName": "Krakauer Weg",
+        "polishNames": [
+            "Krakowska Droga"
+        ],
+        "sys": {
+            "id": "6bhVfqVjM9qIkJeOPDpkZD"
+        }
+    },
+    {
+        "germanName": "Kastanienweg",
+        "polishNames": [
+            "Lendziona"
+        ],
+        "sys": {
+            "id": "2CmD3iKQA2zmkgZGyvd2qc"
+        }
+    },
+    {
+        "germanName": "Karthäuser Straße",
+        "polishNames": [
+            "Kartuska"
+        ],
+        "sys": {
+            "id": "7odA9aUbzXUGjwmmXGUOMI"
+        }
+    },
+    {
+        "germanName": "Alfred-Schröter-Platz",
+        "polishNames": [
+            "Kolonia Żeńcy"
+        ],
+        "sys": {
+            "id": "1EeE1LpTZL5lRiCWYT2ta9"
+        }
+    },
+    {
+        "germanName": "Neufahrwasserweg",
+        "polishNames": [
+            "Krasickiego"
+        ],
+        "sys": {
+            "id": "3pEqTUK4dE4gYghzzUmDPE"
+        }
+    },
+    {
+        "germanName": "Marineweg",
+        "polishNames": [
+            "Klonowicza"
+        ],
+        "sys": {
+            "id": "6FIODljrkDpCVcuxpr0CKx"
+        }
+    },
+    {
+        "germanName": "Horst - Wessel - Straße",
+        "polishNames": [
+            "Jedności Robotniczej",
+            "Oruńska 3",
+            "Trakt Swiętego Wojciecha"
+        ],
+        "sys": {
+            "id": "6EBFBthmAlMo16TYirIvRs"
+        }
+    },
+    {
+        "germanName": "Curickeweg",
+        "polishNames": [
+            "Okrzei"
+        ],
+        "sys": {
+            "id": "21AgyxmkWoarCrRtFDYCRM"
+        }
+    },
+    {
+        "germanName": "Schönfelderweg",
+        "polishNames": [
+            "Małomiejska"
+        ],
+        "sys": {
+            "id": "1CjjqhT2xuoZ280Disvvim"
+        }
+    },
+    {
+        "germanName": "Prinzenweg",
+        "polishNames": [
+            "Podleśna"
+        ],
+        "sys": {
+            "id": "2WB0OUgHApYdFuANfus3Dv"
+        }
+    },
+    {
+        "germanName": "Beerenstraße",
+        "polishNames": [
+            "Krasickiego"
+        ],
+        "sys": {
+            "id": "2SWEiJsx9nChLZVvXXKeJN"
+        }
+    },
+    {
+        "germanName": "von-Morgen-Straße",
+        "polishNames": [
+            "Ramulta"
+        ],
+        "sys": {
+            "id": "7g2Z5PTQM1PjlTIQuEWbeH"
+        }
+    },
+    {
+        "germanName": "Wochenendkolonie",
+        "polishNames": [
+            "Wypoczynkowa"
+        ],
+        "sys": {
+            "id": "6vyaaLJYxhXW62tjlWEmJf"
+        }
+    },
+    {
+        "germanName": "Uhlandstraße",
+        "polishNames": [
+            "Mierosławskiego"
+        ],
+        "sys": {
+            "id": "6uE1ylrcOovOtemvXdyR0O"
+        }
+    },
+    {
+        "germanName": "Mittelmarkt",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "od8CgJhaoMK5IczSr1bcy"
+        }
+    },
+    {
+        "germanName": "Prittwitzweg",
+        "polishNames": [
+            "Kołłątaja"
+        ],
+        "sys": {
+            "id": "5MEOEfYMuM2TonO9L1h59v"
+        }
+    },
+    {
+        "germanName": "Liegnitzweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1UXd2BkjeV1ERZBpkaq3MR"
+        }
+    },
+    {
+        "germanName": "Luisental",
+        "polishNames": [
+            "Kossaka"
+        ],
+        "sys": {
+            "id": "3IK4PSnBpbU27evLRgRtfG"
+        }
+    },
+    {
+        "germanName": "Maßliebchenweg",
+        "polishNames": [
+            "Zaścianek"
+        ],
+        "sys": {
+            "id": "2wCZ73ZyTdEOVHX7PKtAnX"
+        }
+    },
+    {
+        "germanName": "Wilhelm - Liebknecht - Straße",
+        "polishNames": [
+            "Przyjemna"
+        ],
+        "sys": {
+            "id": "4MHPs0teWYE9tjuaR3161R"
+        }
+    },
+    {
+        "germanName": "Am Stolzenberger Klostergarten",
+        "polishNames": [
+            "Reformacka"
+        ],
+        "sys": {
+            "id": "3f9dQ0VOpNAwkLxJJatGdJ"
+        }
+    },
+    {
+        "germanName": "Glashüttenweg",
+        "polishNames": [
+            "Szklana Huta"
+        ],
+        "sys": {
+            "id": "6RJPsg9ZxjtEqDWovos8k9"
+        }
+    },
+    {
+        "germanName": "Schützengasse",
+        "polishNames": [
+            "Wspornikowa"
+        ],
+        "sys": {
+            "id": "IaNyCI7pJt0D0hAFW3VSM"
+        }
+    },
+    {
+        "germanName": "Baumannshof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3elS3UqsurIfsEtU1ahlIp"
+        }
+    },
+    {
+        "germanName": "Hennersdorfer Weg",
+        "polishNames": [
+            "Małachowskiego"
+        ],
+        "sys": {
+            "id": "7j9aLqke7I80GwbQDuDz9J"
+        }
+    },
+    {
+        "germanName": "Helaer Straße",
+        "polishNames": [
+            "Oksywska"
+        ],
+        "sys": {
+            "id": "7Cu1lz2E6zhKrpxMXezaVd"
+        }
+    },
+    {
+        "germanName": "Ziegengasse",
+        "polishNames": [
+            "Kozia"
+        ],
+        "sys": {
+            "id": "36jYUXDc4kPAOIqdc34S43"
+        }
+    },
+    {
+        "germanName": "Wolfram - Siedlung",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1ns3qWHmDSYSNWWWDDlF06"
+        }
+    },
+    {
+        "germanName": "Am Seestrande",
+        "polishNames": [
+            "Brzeźnieńska"
+        ],
+        "sys": {
+            "id": "3flircNGAgFmBbGt7XxDJR"
+        }
+    },
+    {
+        "germanName": "Karrengasse",
+        "polishNames": [
+            "Wałowa"
+        ],
+        "sys": {
+            "id": "3kRniZyOpV4FLCUKVquLcm"
+        }
+    },
+    {
+        "germanName": "Kahnstraße",
+        "polishNames": [
+            "Łodzie"
+        ],
+        "sys": {
+            "id": "zIZQfhonoO5BY8hsGy6s5"
+        }
+    },
+    {
+        "germanName": "Nätlergasse",
+        "polishNames": [
+            "Igielnicka"
+        ],
+        "sys": {
+            "id": "4ppSXkoakjZRB0ATmPV4a9"
+        }
+    },
+    {
+        "germanName": "An der Petrikirche",
+        "polishNames": [
+            "Św. Piotra"
+        ],
+        "sys": {
+            "id": "7hsybRxmW5qPJ2OfzDaOVy"
+        }
+    },
+    {
+        "germanName": "Hinter der Salvatorkirche",
+        "polishNames": [
+            "Spadzista"
+        ],
+        "sys": {
+            "id": "2PhpeCK52NfvjJh6MaAHrb"
+        }
+    },
+    {
+        "germanName": "Am Wiesendamm",
+        "polishNames": [
+            "Bursztynowa"
+        ],
+        "sys": {
+            "id": "3vxooTXIg20cOcLBNaD3ae"
+        }
+    },
+    {
+        "germanName": "Hühnerberg",
+        "polishNames": [
+            "Kurza"
+        ],
+        "sys": {
+            "id": "49kgRRbIi6MFUrVzJVq5k2"
+        }
+    },
+    {
+        "germanName": "Wonneberger Weg",
+        "polishNames": [
+            "Łostowicka"
+        ],
+        "sys": {
+            "id": "4Pl07kXWee9QWot6HOmU3C"
+        }
+    },
+    {
+        "germanName": "Entengasse",
+        "polishNames": [
+            "Szuwary"
+        ],
+        "sys": {
+            "id": "1YUMLUKkLMF2nxSqFuEhW1"
+        }
+    },
+    {
+        "germanName": "Große Bäckergasse",
+        "polishNames": [
+            "Piekary",
+            "n. e."
+        ],
+        "sys": {
+            "id": "3ZOjw6VJ66SAEwTxQ7y1xm"
+        }
+    },
+    {
+        "germanName": "Am Bärenwinkel",
+        "polishNames": [
+            "Niedźwiednik"
+        ],
+        "sys": {
+            "id": "29ZFZNaQtVl4RffQupnD1z"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Sternentraum",
+        "polishNames": [
+            "Kolonia Ochota"
+        ],
+        "sys": {
+            "id": "2eAeJuaWX27YMz2OWwk6Nl"
+        }
+    },
+    {
+        "germanName": "Kirchsteig",
+        "polishNames": [
+            "Katarzynki"
+        ],
+        "sys": {
+            "id": "4mFaIgCqLHKjZtwalTjw2g"
+        }
+    },
+    {
+        "germanName": "Am Wächterberg",
+        "polishNames": [
+            "Podhalańska"
+        ],
+        "sys": {
+            "id": "HSGIcYuNW9x8g5OHfIhXW"
+        }
+    },
+    {
+        "germanName": "Mollwitzweg",
+        "polishNames": [
+            "Śmiała",
+            "Modzelewskiego",
+            "Sychty"
+        ],
+        "sys": {
+            "id": "4h5WYDnvE6TZkhxcQoC8v3"
+        }
+    },
+    {
+        "germanName": "Radaunestraße",
+        "polishNames": [
+            "Raduńska"
+        ],
+        "sys": {
+            "id": "6gh6NMbIhpOnM43IUOeOTH"
+        }
+    },
+    {
+        "germanName": "Kollathstraße",
+        "polishNames": [
+            "Kasprowicza"
+        ],
+        "sys": {
+            "id": "7trB4mw8JCAec9euk8w1m1"
+        }
+    },
+    {
+        "germanName": "Ziezausche Gasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5ZOecFUkwqoQ7mj4bUnW83"
+        }
+    },
+    {
+        "germanName": "An der Sasper Kehle",
+        "polishNames": [
+            "Śnieżna"
+        ],
+        "sys": {
+            "id": "6ZHUbO2MLJJQG6SjeZ6PKH"
+        }
+    },
+    {
+        "germanName": "Robert - Reinick - Weg",
+        "polishNames": [
+            "Saperów"
+        ],
+        "sys": {
+            "id": "68TqHeBfsKJjdsZW3Pk3IF"
+        }
+    },
+    {
+        "germanName": "Brotbrücke",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1KSstHF8zH2cMpAKj52WGs"
+        }
+    },
+    {
+        "germanName": "Lichtstraße",
+        "polishNames": [
+            "Kolejarzy"
+        ],
+        "sys": {
+            "id": "3BtegeafSr8eCzG6YC0ZLv"
+        }
+    },
+    {
+        "germanName": "Dietrich-Eckart-Weg",
+        "polishNames": [
+            "Grodzieńska"
+        ],
+        "sys": {
+            "id": "LcfxB66onPFie4PbtF4Rs"
+        }
+    },
+    {
+        "germanName": "Stinkgang",
+        "polishNames": [
+            "n. e.",
+            "Ogrodowa"
+        ],
+        "sys": {
+            "id": "1KxJKRvOoAOb066TiQi57H"
+        }
+    },
+    {
+        "germanName": "Lengnichweg",
+        "polishNames": [
+            "Lengnicha"
+        ],
+        "sys": {
+            "id": "1y553lvEphVerE0tef78bu"
+        }
+    },
+    {
+        "germanName": "Erdbeermarkt",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1EIZP6ObebaOOlTjwHEXXE"
+        }
+    },
+    {
+        "germanName": "Mühlberg",
+        "polishNames": [
+            "Mylna"
+        ],
+        "sys": {
+            "id": "5uTIVimaiEnADQLp19Lpi2"
+        }
+    },
+    {
+        "germanName": "Kinderheilstättenweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4VvrZI4E3Q0C3f0L8kJhDc"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Zukunft",
+        "polishNames": [
+            "Kolonia Spójnia"
+        ],
+        "sys": {
+            "id": "5tZeWGwYu8jMiOENLYwR68"
+        }
+    },
+    {
+        "germanName": "Kleines Priesterhaus",
+        "polishNames": [
+            "Podmłyńska"
+        ],
+        "sys": {
+            "id": "2FfkBZqiQ7KCj9uF85kU27"
+        }
+    },
+    {
+        "germanName": "Schulweg",
+        "polishNames": [
+            "Żaków"
+        ],
+        "sys": {
+            "id": "Ki9W6qtZUXRUld01HiznC"
+        }
+    },
+    {
+        "germanName": "Weinbergstraße",
+        "polishNames": [
+            "Zakopiańska"
+        ],
+        "sys": {
+            "id": "wV8AJpSdfkXmpV3TWie1I"
+        }
+    },
+    {
+        "germanName": "Friedensschluss",
+        "polishNames": [
+            "Abrahama"
+        ],
+        "sys": {
+            "id": "2nCJXOkkaarCQo1oigJma4"
+        }
+    },
+    {
+        "germanName": "Jägerstraße",
+        "polishNames": [
+            "Struga Andrzeja"
+        ],
+        "sys": {
+            "id": "114f7HiGig5yX6QtuZQrSm"
+        }
+    },
+    {
+        "germanName": "Mühlengraben",
+        "polishNames": [
+            "Folwarczna"
+        ],
+        "sys": {
+            "id": "4s5yLA3K6i3BVM5vbCtgJl"
+        }
+    },
+    {
+        "germanName": "Am Mennonitenkirchhof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5J0UTBShcCwOA5ZdwtlZcH"
+        }
+    },
+    {
+        "germanName": "John - Gibsone - Straße",
+        "polishNames": [
+            "Na Lotnisko",
+            "Krzemienieckiej"
+        ],
+        "sys": {
+            "id": "1707GeWUiREnrF5EtcXIci"
+        }
+    },
+    {
+        "germanName": "Kohlengasse",
+        "polishNames": [
+            "Węglarska"
+        ],
+        "sys": {
+            "id": "SnTaeLjMCcMSaQm9B0Ewu"
+        }
+    },
+    {
+        "germanName": "Robert - Ley - Weg",
+        "polishNames": [
+            "Wileńska"
+        ],
+        "sys": {
+            "id": "5bXZEeqY0TgPlnPsXNaBz3"
+        }
+    },
+    {
+        "germanName": "Langer Lauf",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6LhUcQNfsyTEY1dieshnog"
+        }
+    },
+    {
+        "germanName": "Ludendorffstraße",
+        "polishNames": [
+            "Smętna"
+        ],
+        "sys": {
+            "id": "R3izB4RF9xnFhPPEFaa2Y"
+        }
+    },
+    {
+        "germanName": "Schleusenstraße",
+        "polishNames": [
+            "Zamknięta"
+        ],
+        "sys": {
+            "id": "2f55tCqx3KFHKCsF0fMpo"
+        }
+    },
+    {
+        "germanName": "Gartenweg",
+        "polishNames": [
+            "Maki"
+        ],
+        "sys": {
+            "id": "1o3IpPcTLCtPGlhmutOow2"
+        }
+    },
+    {
+        "germanName": "Eisenweg",
+        "polishNames": [
+            "Żelazna"
+        ],
+        "sys": {
+            "id": "314oYiF6YSuUZjm8GU4vg6"
+        }
+    },
+    {
+        "germanName": "Englischer Damm",
+        "polishNames": [
+            "Angielska Grobla"
+        ],
+        "sys": {
+            "id": "3XFw3PU42mZXJmz2sREbao"
+        }
+    },
+    {
+        "germanName": "Netzstraße",
+        "polishNames": [
+            "Sieciowa"
+        ],
+        "sys": {
+            "id": "3PXfZW6uQElc5VX6a3K0d9"
+        }
+    },
+    {
+        "germanName": "Winkel",
+        "polishNames": [
+            "Ogrodowa"
+        ],
+        "sys": {
+            "id": "74haudslRyAIrt6lb6Ji1g"
+        }
+    },
+    {
+        "germanName": "Cäcilienstraße",
+        "polishNames": [
+            "Mazurska"
+        ],
+        "sys": {
+            "id": "1hnOIDxAW0yJ3pMIy7eryf"
+        }
+    },
+    {
+        "germanName": "Broschkischerweg",
+        "polishNames": [
+            "Wiślna"
+        ],
+        "sys": {
+            "id": "3uiALifiS9zFejHvT5Erto"
+        }
+    },
+    {
+        "germanName": "Am Fort Kronprinz",
+        "polishNames": [
+            "Kujawska"
+        ],
+        "sys": {
+            "id": "7IVdZymWUUsn5tO4X7RFnM"
+        }
+    },
+    {
+        "germanName": "Jungstädtische Gasse",
+        "polishNames": [
+            "Nowomiejska"
+        ],
+        "sys": {
+            "id": "5H4wr7R4b29OExTESqhpuy"
+        }
+    },
+    {
+        "germanName": "Kehrwiedergasse",
+        "polishNames": [
+            "Zawrotna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "3nVZX2jWsOC7W58xwFn2NA"
+        }
+    },
+    {
+        "germanName": "Altstädtische Rittergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "zzjB7OtGkJsOBRKBSV8Nb"
+        }
+    },
+    {
+        "germanName": "Küperdamm",
+        "polishNames": [
+            "Równa"
+        ],
+        "sys": {
+            "id": "3QtB1piVgwF9W420Uwi4Y8"
+        }
+    },
+    {
+        "germanName": "Georg - Hotz - Weg",
+        "polishNames": [
+            "Traugutta"
+        ],
+        "sys": {
+            "id": "1hZoGshRV92U2wps0NSUkC"
+        }
+    },
+    {
+        "germanName": "Grenzmarkweg",
+        "polishNames": [
+            "Wejhera"
+        ],
+        "sys": {
+            "id": "7hgQ6aIMd3q3Mf82jFtFwr"
+        }
+    },
+    {
+        "germanName": "Am Lazarett",
+        "polishNames": [
+            "Kupiecka"
+        ],
+        "sys": {
+            "id": "2gjHPYPEtojmgGjElijlmi"
+        }
+    },
+    {
+        "germanName": "Kalkgasse",
+        "polishNames": [
+            "Rajska"
+        ],
+        "sys": {
+            "id": "7ygRsBEBNDKaIyJHdB31gL"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Ostseeperle",
+        "polishNames": [
+            "Kolonia Uroda"
+        ],
+        "sys": {
+            "id": "2ULYKikmz06eNg3ANwNJD9"
+        }
+    },
+    {
+        "germanName": "Bäckergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5F7wtSEl6ibt3iRURv65YN"
+        }
+    },
+    {
+        "germanName": "Rähm",
+        "polishNames": [
+            "Sukiennicza"
+        ],
+        "sys": {
+            "id": "7qHD9Lcda9of0t5qYDl9Ha"
+        }
+    },
+    {
+        "germanName": "Bahnstraße",
+        "polishNames": [
+            "Poczty Gdańskiej",
+            "Ścieżki"
+        ],
+        "sys": {
+            "id": "201AF6uwYhAUoQvB5lAxoX"
+        }
+    },
+    {
+        "germanName": "Hindenburg Allee",
+        "polishNames": [
+            "Aleja Zwycięstwa"
+        ],
+        "sys": {
+            "id": "5O5nWhAK9H2DoxDGNCojw6"
+        }
+    },
+    {
+        "germanName": "Am Anger",
+        "polishNames": [
+            "Otwarta"
+        ],
+        "sys": {
+            "id": "4NsKWoHjTsq6tGfkUhpdgb"
+        }
+    },
+    {
+        "germanName": "Conradshammerstraße",
+        "polishNames": [
+            "Łokietka",
+            "Wczasy"
+        ],
+        "sys": {
+            "id": "5svLL3uFsbuQZ1Nox6UArr"
+        }
+    },
+    {
+        "germanName": "Kirchenweg",
+        "polishNames": [
+            "Kłopot",
+            "Kościelna"
+        ],
+        "sys": {
+            "id": "C7Vza7caqfHGQMPQIWZTy"
+        }
+    },
+    {
+        "germanName": "Radauneufer",
+        "polishNames": [
+            "Brzegi"
+        ],
+        "sys": {
+            "id": "01l7tfUCLQkQTAR6FMzrd5"
+        }
+    },
+    {
+        "germanName": "Mühlenweg",
+        "polishNames": [
+            "Danusi",
+            "Wschodnia"
+        ],
+        "sys": {
+            "id": "7cH2kYO37Vq1BJOB0wMv9G"
+        }
+    },
+    {
+        "germanName": "Georgstraße",
+        "polishNames": [
+            "Obrońców Westerplatte"
+        ],
+        "sys": {
+            "id": "6Vu9O43ABXpIGu0orKUj2l"
+        }
+    },
+    {
+        "germanName": "Probenergasse",
+        "polishNames": [
+            "Profesorska"
+        ],
+        "sys": {
+            "id": "2jewtxwHpKbDCz5TtGBlik"
+        }
+    },
+    {
+        "germanName": "Ferberweg",
+        "polishNames": [
+            "Miszewskiego"
+        ],
+        "sys": {
+            "id": "61xQiNyDeu0kVNYxH1yuj6"
+        }
+    },
+    {
+        "germanName": "Kronprinzstraße",
+        "polishNames": [
+            "Armii Czerwonej",
+            "Armii Krajowej"
+        ],
+        "sys": {
+            "id": "6oLv7GGMKXb5e7iptC1uDn"
+        }
+    },
+    {
+        "germanName": "Heinrichsallee",
+        "polishNames": [
+            "Jana z Kolna"
+        ],
+        "sys": {
+            "id": "lySp3tHWaFsReeb278J7D"
+        }
+    },
+    {
+        "germanName": "Grauer Weg",
+        "polishNames": [
+            "Przy Torze"
+        ],
+        "sys": {
+            "id": "33cv8bVq5hCHhzJvriAnQ"
+        }
+    },
+    {
+        "germanName": "Graf-Spee-Straße",
+        "polishNames": [
+            "Łużycka"
+        ],
+        "sys": {
+            "id": "4HlzqFVsilO9MmgyDmuTyR"
+        }
+    },
+    {
+        "germanName": "Breitenbachstraße",
+        "polishNames": [
+            "Siennicka"
+        ],
+        "sys": {
+            "id": "15o8PmFzl8J7Y93d01pWg9"
+        }
+    },
+    {
+        "germanName": "Bülowallee",
+        "polishNames": [
+            "Mickiewicza"
+        ],
+        "sys": {
+            "id": "VMtWFRLORKoiU4slADC25"
+        }
+    },
+    {
+        "germanName": "Junkergasse",
+        "polishNames": [
+            "Pańska"
+        ],
+        "sys": {
+            "id": "79HdmkTMTHRYQxJwds3L6i"
+        }
+    },
+    {
+        "germanName": "Hindersinstraße",
+        "polishNames": [
+            "Na Gruzach",
+            "Kasztanowa"
+        ],
+        "sys": {
+            "id": "37q1JKNIAwprT2xfV6GZa9"
+        }
+    },
+    {
+        "germanName": "Jungstraße",
+        "polishNames": [
+            "Młodzieży Polskiej"
+        ],
+        "sys": {
+            "id": "7Fz3Pt1G25WCYHuLiMbQtL"
+        }
+    },
+    {
+        "germanName": "Wessel-Straße",
+        "polishNames": [
+            "Wiesława"
+        ],
+        "sys": {
+            "id": "7cf6GN0yEGX5WAzJ7RG2q0"
+        }
+    },
+    {
+        "germanName": "Friedrichs-Platz",
+        "polishNames": [
+            "Maczka, gen. Plac"
+        ],
+        "sys": {
+            "id": "74APdkfgMSlFjZID2g56PB"
+        }
+    },
+    {
+        "germanName": "Tendelmarkt",
+        "polishNames": [
+            "Tandeta"
+        ],
+        "sys": {
+            "id": "UkwGHhS2c0la2PAvZ7uDo"
+        }
+    },
+    {
+        "germanName": "Tannenbergstraße",
+        "polishNames": [
+            "Jodłowa"
+        ],
+        "sys": {
+            "id": "2R77CUVd5AD8fPD73QtJif"
+        }
+    },
+    {
+        "germanName": "Dornstraße",
+        "polishNames": [
+            "Sokola"
+        ],
+        "sys": {
+            "id": "4HBYkSXPvJByebnYXT6oMD"
+        }
+    },
+    {
+        "germanName": "Königstrasse",
+        "polishNames": [
+            "Armii Czerwonej",
+            "Armii Krajowej"
+        ],
+        "sys": {
+            "id": "3MOP9jBkUDvwqkGGiiHRtg"
+        }
+    },
+    {
+        "germanName": "Elsterweg",
+        "polishNames": [
+            "Smolna"
+        ],
+        "sys": {
+            "id": "7wSvPLZSmiQH6qTfarA1i"
+        }
+    },
+    {
+        "germanName": "Bastion Roggen",
+        "polishNames": [
+            "Reduta Miś"
+        ],
+        "sys": {
+            "id": "5NIpYjvnBETemDYbofZmC1"
+        }
+    },
+    {
+        "germanName": "Dan'scher Hof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7CRwgjAOObnB4Utw607YDJ"
+        }
+    },
+    {
+        "germanName": "Lerchenfeld",
+        "polishNames": [
+            "Bitwy Oliwskiej"
+        ],
+        "sys": {
+            "id": "71a9lY2GZPxUuN2vX2vAvG"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Bergeshöh",
+        "polishNames": [
+            "Kolonia Postęp"
+        ],
+        "sys": {
+            "id": "3i8uiKaiK7pmsSPWIoDl90"
+        }
+    },
+    {
+        "germanName": "Grenadiergasse",
+        "polishNames": [
+            "Na Stoku"
+        ],
+        "sys": {
+            "id": "7qTF5cL0Z67qG2taODdn4u"
+        }
+    },
+    {
+        "germanName": "Sedanstraße",
+        "polishNames": [
+            "Bema"
+        ],
+        "sys": {
+            "id": "FSwq2mRrDwEI7qwzOzYd2"
+        }
+    },
+    {
+        "germanName": "Petschowstraße",
+        "polishNames": [
+            "Dubois",
+            "Miedziana"
+        ],
+        "sys": {
+            "id": "3qGHnXxMZ6kPpiZIyMdwEl"
+        }
+    },
+    {
+        "germanName": "Haffnerstraße",
+        "polishNames": [
+            "Sobieskiego"
+        ],
+        "sys": {
+            "id": "5AxYS4jCNEV4ku12UggFce"
+        }
+    },
+    {
+        "germanName": "Pistoriusstraße",
+        "polishNames": [
+            "Miła"
+        ],
+        "sys": {
+            "id": "6to6PM85xEZwwzgUSMvWzO"
+        }
+    },
+    {
+        "germanName": "Klein-Rammbau",
+        "polishNames": [
+            "Krosienka"
+        ],
+        "sys": {
+            "id": "5goewinHYVg7XQ3EPylIRC"
+        }
+    },
+    {
+        "germanName": "Schellmühler Wiesendamm",
+        "polishNames": [
+            "Twarda"
+        ],
+        "sys": {
+            "id": "392KxquYLg7EaxoqcNEMVv"
+        }
+    },
+    {
+        "germanName": "Lange Gasse",
+        "polishNames": [
+            "Kamienna Grobla"
+        ],
+        "sys": {
+            "id": "4qX9xLsCyMq09PewvpLtnZ"
+        }
+    },
+    {
+        "germanName": "Vergessene Gasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4GEkMdm9f2vuBZs0oop2rP"
+        }
+    },
+    {
+        "germanName": "Jakobstorgasse",
+        "polishNames": [
+            "Przybramna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "2ygX7ItkyOGG6T8YTh7uCJ"
+        }
+    },
+    {
+        "germanName": "Wurstmachergasse",
+        "polishNames": [
+            "Rejtana"
+        ],
+        "sys": {
+            "id": "6of3spDTArfOkM01YIP5wv"
+        }
+    },
+    {
+        "germanName": "Heubuder Straße",
+        "polishNames": [
+            "Sienna"
+        ],
+        "sys": {
+            "id": "4JoOoUzFE41MyhjaUphEy2"
+        }
+    },
+    {
+        "germanName": "Pestalozzistraße",
+        "polishNames": [
+            "Pestalozziego"
+        ],
+        "sys": {
+            "id": "4IGG06GIkmH31wfikleHUr"
+        }
+    },
+    {
+        "germanName": "Erbsenmarkt",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "fAqbOGqpIXMXhti849QIr"
+        }
+    },
+    {
+        "germanName": "Schleicherts Gang",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7yWGO0olQ16cDUwonQLc3q"
+        }
+    },
+    {
+        "germanName": "Erichgang",
+        "polishNames": [
+            "Św. Barbary"
+        ],
+        "sys": {
+            "id": "5Dn0KjcgP8MT5GUO710Kvb"
+        }
+    },
+    {
+        "germanName": "Königstaler Weg",
+        "polishNames": [
+            "Sobieskiego"
+        ],
+        "sys": {
+            "id": "2YNfyLkMGOu1yJvdWv4Lwi"
+        }
+    },
+    {
+        "germanName": "Unterstraße",
+        "polishNames": [
+            "Szara"
+        ],
+        "sys": {
+            "id": "2xehK85slUhlZWzjw6a1zo"
+        }
+    },
+    {
+        "germanName": "Erdbeergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "60rUeDE0Qxzcq5cLKA77Lm"
+        }
+    },
+    {
+        "germanName": "Wallgang",
+        "polishNames": [
+            "Przebieg",
+            "n. e."
+        ],
+        "sys": {
+            "id": "7ASfy81MZC8Rw44HMcfKAy"
+        }
+    },
+    {
+        "germanName": "Trippenmachergasse",
+        "polishNames": [
+            "Szewska"
+        ],
+        "sys": {
+            "id": "vW8HdXHfFQdGmy2LE3isu"
+        }
+    },
+    {
+        "germanName": "Berholdsche Gasse",
+        "polishNames": [
+            "Mieszczańska"
+        ],
+        "sys": {
+            "id": "6P5TJOp3ZQpUHs5GZII251"
+        }
+    },
+    {
+        "germanName": "Niederfeld",
+        "polishNames": [
+            "Żuławska"
+        ],
+        "sys": {
+            "id": "PwDOt2Tq0ZTmUq7MeZqsB"
+        }
+    },
+    {
+        "germanName": "Nonnenbleiche",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "KUlO1ZURtou4iTc9kcKjJ"
+        }
+    },
+    {
+        "germanName": "Falkweg",
+        "polishNames": [
+            "Topolowa"
+        ],
+        "sys": {
+            "id": "1Ikr53xziREWEEVK3h6Kxn"
+        }
+    },
+    {
+        "germanName": "Scheibenrittergasse",
+        "polishNames": [
+            "Szklary"
+        ],
+        "sys": {
+            "id": "5RTBfpLLouQ6YsHUySuoVI"
+        }
+    },
+    {
+        "germanName": "St. Katharinenkirchenstieg",
+        "polishNames": [
+            "Katarzynki"
+        ],
+        "sys": {
+            "id": "1YDuwTE5rXVfLbW6a4O4Lg"
+        }
+    },
+    {
+        "germanName": "Eichendorffweg",
+        "polishNames": [
+            "Zawiszy Czarnego"
+        ],
+        "sys": {
+            "id": "bdEyhqyR93MeH7IaufsBs"
+        }
+    },
+    {
+        "germanName": "Letzter Graben",
+        "polishNames": [
+            "Przyokopowa",
+            "Zielona"
+        ],
+        "sys": {
+            "id": "5xq1r91q7HxXxvWjAcgy7q"
+        }
+    },
+    {
+        "germanName": "Dieckmannweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "n2GytGnBcoEFMQdERddIg"
+        }
+    },
+    {
+        "germanName": "Kohlenmarkt",
+        "polishNames": [
+            "Targ Węglowy"
+        ],
+        "sys": {
+            "id": "7t7ys9IMpCghpvtZDTEiJL"
+        }
+    },
+    {
+        "germanName": "An der Messehalle",
+        "polishNames": [
+            "Targowa",
+            "n. e."
+        ],
+        "sys": {
+            "id": "isBju1HV8KFPfHcJFlyCl"
+        }
+    },
+    {
+        "germanName": "Kagelzippel",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5CODKcYWTOUHJQer3DFLzB"
+        }
+    },
+    {
+        "germanName": "Schild",
+        "polishNames": [
+            "Więcierze"
+        ],
+        "sys": {
+            "id": "2e2l1KUKkIcto8NKCy1iOD"
+        }
+    },
+    {
+        "germanName": "Am Heitzkeberg",
+        "polishNames": [
+            "Kręta"
+        ],
+        "sys": {
+            "id": "GkBLSkHQbcjKMV7itjUEo"
+        }
+    },
+    {
+        "germanName": "Neuweinberg",
+        "polishNames": [
+            "Cienista"
+        ],
+        "sys": {
+            "id": "10Jky7eSYXGUMDS91MNfEa"
+        }
+    },
+    {
+        "germanName": "Reitbahn",
+        "polishNames": [
+            "Bogusławskiego"
+        ],
+        "sys": {
+            "id": "2IuAC6X5PQrEgfC1GgCQt2"
+        }
+    },
+    {
+        "germanName": "Budenweg",
+        "polishNames": [
+            "Wydmy"
+        ],
+        "sys": {
+            "id": "2gRdIzvdk7vk9F4qCGA7SX"
+        }
+    },
+    {
+        "germanName": "Lazarettgang",
+        "polishNames": [
+            "Szpitalna"
+        ],
+        "sys": {
+            "id": "4zfZ6vz03BaYTH9BY3In1d"
+        }
+    },
+    {
+        "germanName": "Thornsche Gasse",
+        "polishNames": [
+            "Toruńska"
+        ],
+        "sys": {
+            "id": "5VtjRO81Q469dhqbhDeDSK"
+        }
+    },
+    {
+        "germanName": "Schusterhof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2VCnm8jmCv55ctrZOjONYq"
+        }
+    },
+    {
+        "germanName": "Kleine Straße",
+        "polishNames": [
+            "Wilków Morskich"
+        ],
+        "sys": {
+            "id": "4gfL4zTIDalqAbFqqxo6Ln"
+        }
+    },
+    {
+        "germanName": "Am Weißen Turm",
+        "polishNames": [
+            "Augustyńskiego",
+            "Białowiejska"
+        ],
+        "sys": {
+            "id": "4agl6LYvpFN6TeHFjRjnVT"
+        }
+    },
+    {
+        "germanName": "Faulengasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6LSfvWCfH80iEypNufEctf"
+        }
+    },
+    {
+        "germanName": "Mozartweg",
+        "polishNames": [
+            "Mozarta"
+        ],
+        "sys": {
+            "id": "1MZccRBNNLToxRan6KQbkS"
+        }
+    },
+    {
+        "germanName": "Wichertstraße",
+        "polishNames": [
+            "Lenartowicza"
+        ],
+        "sys": {
+            "id": "2IstXLFu0gHwuiuEF9QaTJ"
+        }
+    },
+    {
+        "germanName": "Hindenburgstraße",
+        "polishNames": [
+            "Prusa"
+        ],
+        "sys": {
+            "id": "1atJqYPU83du2D354iHkzz"
+        }
+    },
+    {
+        "germanName": "Moltkestraße",
+        "polishNames": [
+            "Fiszera"
+        ],
+        "sys": {
+            "id": "6S9enwQdZNCO2aDKHnGiX6"
+        }
+    },
+    {
+        "germanName": "Langgarter Wall",
+        "polishNames": [
+            "Długa Grobla",
+            "Długi Wał"
+        ],
+        "sys": {
+            "id": "XVbs88CJsykCfHikQ8qi6"
+        }
+    },
+    {
+        "germanName": "Kieperdamm",
+        "polishNames": [
+            "Równa"
+        ],
+        "sys": {
+            "id": "JeW70t1llr4VcyNtAecO2"
+        }
+    },
+    {
+        "germanName": "Wellengang",
+        "polishNames": [
+            "Przybojna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "4i8SFHCwdWhOnChct0tgD2"
+        }
+    },
+    {
+        "germanName": "Feldweg",
+        "polishNames": [
+            "Dobra",
+            "Dworkowa",
+            "Łozy"
+        ],
+        "sys": {
+            "id": "4LZtYHUG6GPmEhSgteXK0S"
+        }
+    },
+    {
+        "germanName": "Lange Hopfengasse",
+        "polishNames": [
+            "Chmielna"
+        ],
+        "sys": {
+            "id": "73zdF47TM9duRvvutEJXL6"
+        }
+    },
+    {
+        "germanName": "Adolf-Hitler-Straße",
+        "polishNames": [
+            "Marszałka Stalina",
+            "Grunwaldzka",
+            "Grunwaldzka",
+            "Niepodległości"
+        ],
+        "sys": {
+            "id": "2h0ZUVfb5gSqoKWhT6p1dQ"
+        }
+    },
+    {
+        "germanName": "Herbertsteg",
+        "polishNames": [
+            "Orzeszkowej"
+        ],
+        "sys": {
+            "id": "17pjVplneNC7jLVDS0pflK"
+        }
+    },
+    {
+        "germanName": "Pantoffelmachergasse",
+        "polishNames": [
+            "Szewska"
+        ],
+        "sys": {
+            "id": "1CyHgzqAJ2ZnucWAn9H6v8"
+        }
+    },
+    {
+        "germanName": "Am Berge",
+        "polishNames": [
+            "Górna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "4t4kTT2F11DDTBZtlHaQ6s"
+        }
+    },
+    {
+        "germanName": "Jopengasse",
+        "polishNames": [
+            "Piwna"
+        ],
+        "sys": {
+            "id": "7aIYdWMef2CgrGedActUNr"
+        }
+    },
+    {
+        "germanName": "Malergasse",
+        "polishNames": [
+            "Malarska"
+        ],
+        "sys": {
+            "id": "3KSljIZG3vkFjwUtoTV8VR"
+        }
+    },
+    {
+        "germanName": "Zorndorfer Weg",
+        "polishNames": [
+            "Paderewskiego",
+            "Kisielewskiego"
+        ],
+        "sys": {
+            "id": "5ryvw99lsJyN3TIAiHo4g1"
+        }
+    },
+    {
+        "germanName": "Memellandweg",
+        "polishNames": [
+            "Helska"
+        ],
+        "sys": {
+            "id": "5U2cN43f5kvFNlLcp2yHka"
+        }
+    },
+    {
+        "germanName": "Spechtstraße",
+        "polishNames": [
+            "Szpaki"
+        ],
+        "sys": {
+            "id": "5a6fGdRQ230DOjZgbpkcqA"
+        }
+    },
+    {
+        "germanName": "Frantziusstraße",
+        "polishNames": [
+            "3 Maja"
+        ],
+        "sys": {
+            "id": "7g01By2aUltROnwJ3yGzTl"
+        }
+    },
+    {
+        "germanName": "Quellbergweg",
+        "polishNames": [
+            "Łęczycka"
+        ],
+        "sys": {
+            "id": "4rfGQirMLFz8bBCHDsleW"
+        }
+    },
+    {
+        "germanName": "Schuitensteg",
+        "polishNames": [
+            "Straży Portowej",
+            "Wiosny Ludów"
+        ],
+        "sys": {
+            "id": "79BJdATSmUZ9A6TQH6a3PA"
+        }
+    },
+    {
+        "germanName": "Segelstraße",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "51hr7d05fvTMgCsHPj9MgT"
+        }
+    },
+    {
+        "germanName": "Elsassweg",
+        "polishNames": [
+            "Gdyńska"
+        ],
+        "sys": {
+            "id": "52TCKOOcbdoFNKFnLNxxLh"
+        }
+    },
+    {
+        "germanName": "Hardenbergstraße",
+        "polishNames": [
+            "Żołnierek",
+            "Husa"
+        ],
+        "sys": {
+            "id": "15F12eP5QAemtud0b9jstk"
+        }
+    },
+    {
+        "germanName": "Augustastraße",
+        "polishNames": [
+            "Korzeniowskiego"
+        ],
+        "sys": {
+            "id": "64yT8XzX9wNKgCkSd2lsVv"
+        }
+    },
+    {
+        "germanName": "Brunnengang",
+        "polishNames": [
+            "Dolinka",
+            "n. e."
+        ],
+        "sys": {
+            "id": "4Wooe5Ta6QmBlQBDIikKTc"
+        }
+    },
+    {
+        "germanName": "Baumbachallee",
+        "polishNames": [
+            "Konopnickiej"
+        ],
+        "sys": {
+            "id": "7Dys1fiKJLZlw17800dvF5"
+        }
+    },
+    {
+        "germanName": "Schwarze Kreuze",
+        "polishNames": [
+            "Gnilna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "5KKomgOj21Hdb8ERDDNgYY"
+        }
+    },
+    {
+        "germanName": "Kuckuckengasse",
+        "polishNames": [
+            "Radna"
+        ],
+        "sys": {
+            "id": "6v9SmEWuBGIGNjVWiqpdJm"
+        }
+    },
+    {
+        "germanName": "Tönniesgasse auf der Tromme",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5EEovAXHJpuMQEseqZxaVi"
+        }
+    },
+    {
+        "germanName": "Buttermarkt",
+        "polishNames": [
+            "Targ Maślany"
+        ],
+        "sys": {
+            "id": "5YLT6cKtIalaiVzw8y8s1P"
+        }
+    },
+    {
+        "germanName": "Kölner Chaussee",
+        "polishNames": [
+            "Spacerowa"
+        ],
+        "sys": {
+            "id": "52d5hTnLdMxCalWNhfBakM"
+        }
+    },
+    {
+        "germanName": "Am Marienblick",
+        "polishNames": [
+            "Zakosy"
+        ],
+        "sys": {
+            "id": "ZN9RbYQkwOFYrhWMSlIQ4"
+        }
+    },
+    {
+        "germanName": "An der Mottlau",
+        "polishNames": [
+            "Kamienna Grobla",
+            "Przybrzeżna"
+        ],
+        "sys": {
+            "id": "5gK1DPbmH5D7hQSSVqa4eb"
+        }
+    },
+    {
+        "germanName": "Wilhelmstraße",
+        "polishNames": [
+            "Haffnera",
+            "Wolności",
+            "n. e."
+        ],
+        "sys": {
+            "id": "3YYEG1XbTZCVgZBn1Mqbho"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Sonnental",
+        "polishNames": [
+            "Kolonia Studentów"
+        ],
+        "sys": {
+            "id": "5z1OKh8iV1GSgd0zMpmTSb"
+        }
+    },
+    {
+        "germanName": "Zobelweg",
+        "polishNames": [
+            "Łukasiewicza"
+        ],
+        "sys": {
+            "id": "6yxH00qe5YKnEWEBuqhFDY"
+        }
+    },
+    {
+        "germanName": "Brunshöferweg",
+        "polishNames": [
+            "Libermana",
+            "Waryńskiego"
+        ],
+        "sys": {
+            "id": "2IZf85MI3HnQQSsQnZYMwr"
+        }
+    },
+    {
+        "germanName": "Mariengasse",
+        "polishNames": [
+            "Głucha"
+        ],
+        "sys": {
+            "id": "1RpjaymJv8U9yjv6eovuYp"
+        }
+    },
+    {
+        "germanName": "Kleine Mühlengasse",
+        "polishNames": [
+            "Podmłyńska"
+        ],
+        "sys": {
+            "id": "1cS8vzeaNoIUL4Njwb2eT2"
+        }
+    },
+    {
+        "germanName": "Bärenhof",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "16eFb6mv6yH9FiyWlTseJf"
+        }
+    },
+    {
+        "germanName": "Kleine Gerbergasse",
+        "polishNames": [
+            "Podgarbary"
+        ],
+        "sys": {
+            "id": "2Sl67BOac1PDTNaRsM8X24"
+        }
+    },
+    {
+        "germanName": "Heveliusplatz",
+        "polishNames": [
+            "Obrońców Poczty Polskiej, Pl."
+        ],
+        "sys": {
+            "id": "7s1jtUY0Y6LVA7XqjxiNPR"
+        }
+    },
+    {
+        "germanName": "Drehergasse",
+        "polishNames": [
+            "Tokarska"
+        ],
+        "sys": {
+            "id": "46vsuVu5KUXpdzdbrmNzt4"
+        }
+    },
+    {
+        "germanName": "Gneisenaustraße",
+        "polishNames": [
+            "Kaprów"
+        ],
+        "sys": {
+            "id": "75GgoX8EVh5up8JUAjeI8m"
+        }
+    },
+    {
+        "germanName": "Triftweg",
+        "polishNames": [
+            "Steczka"
+        ],
+        "sys": {
+            "id": "6Gi1HZ5eoVtaGPJ0aLAvLz"
+        }
+    },
+    {
+        "germanName": "An der Radaune",
+        "polishNames": [
+            "Karpia"
+        ],
+        "sys": {
+            "id": "731JOUVcgdNImhYIpb5Iuh"
+        }
+    },
+    {
+        "germanName": "Nehrunger Weg",
+        "polishNames": [
+            "Litewska"
+        ],
+        "sys": {
+            "id": "41HXzRgFm7XgKNmsp4EiQl"
+        }
+    },
+    {
+        "germanName": "Gustav - Radde - Weg",
+        "polishNames": [
+            "Pileckiego"
+        ],
+        "sys": {
+            "id": "2zt4KUI1ySSveXrTzQZtKj"
+        }
+    },
+    {
+        "germanName": "Lünette Knesebeck",
+        "polishNames": [
+            "Śnieżna",
+            "Słowińców"
+        ],
+        "sys": {
+            "id": "oqA5IXfDleQ6Z6Py33bcW"
+        }
+    },
+    {
+        "germanName": "Bartholomäikirchgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3lqgQMnyHZpNIrK953tYmN"
+        }
+    },
+    {
+        "germanName": "Große Bohnengasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6wv158W6MnuYybtuHV8n6a"
+        }
+    },
+    {
+        "germanName": "Breughelstraße",
+        "polishNames": [
+            "Głucha"
+        ],
+        "sys": {
+            "id": "7E49lZOwpsJ49cxXWRAyby"
+        }
+    },
+    {
+        "germanName": "Ketterhagergasse",
+        "polishNames": [
+            "Zbytki"
+        ],
+        "sys": {
+            "id": "7pTatkusmkGzAQV9cHyYzp"
+        }
+    },
+    {
+        "germanName": "Archenholzweg",
+        "polishNames": [
+            "Mierosławskiego"
+        ],
+        "sys": {
+            "id": "6KkaajcK3i82dKQapBQUMz"
+        }
+    },
+    {
+        "germanName": "Große Gerbergasse",
+        "polishNames": [
+            "Garbary"
+        ],
+        "sys": {
+            "id": "1dZi8ar0cZvZmdcalhDqhC"
+        }
+    },
+    {
+        "germanName": "Richard - Damme - Straße",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "U2zJp86noDrU6Ac5PaF2R"
+        }
+    },
+    {
+        "germanName": "Winterplatz",
+        "polishNames": [
+            "Targ Maślany"
+        ],
+        "sys": {
+            "id": "6tCmhEFob03pasx8UnW2nl"
+        }
+    },
+    {
+        "germanName": "Schwarzes Meer",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "650gLxSvnBSBh1DXV5takX"
+        }
+    },
+    {
+        "germanName": "Am Milchpeter",
+        "polishNames": [
+            "Podstoczna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "1TFxBQJORtrB8p1BoVfxYq"
+        }
+    },
+    {
+        "germanName": "Große Mühlengasse",
+        "polishNames": [
+            "Młyńska"
+        ],
+        "sys": {
+            "id": "4yq3uzlSejOcylvBQEOb64"
+        }
+    },
+    {
+        "germanName": "Irisweg",
+        "polishNames": [
+            "Modrzewiowa"
+        ],
+        "sys": {
+            "id": "y5RiJVS5UJGZSyqEbP0TN"
+        }
+    },
+    {
+        "germanName": "Am Kielgraben",
+        "polishNames": [
+            "Na Stępce"
+        ],
+        "sys": {
+            "id": "53zmeBlEx7HPzcxwYn0xJQ"
+        }
+    },
+    {
+        "germanName": "An der Kurve",
+        "polishNames": [
+            "Szymanowskiego"
+        ],
+        "sys": {
+            "id": "224fV8DEzCXkLf8diHDqeu"
+        }
+    },
+    {
+        "germanName": "Heilige-Geist-Gasse",
+        "polishNames": [
+            "Św. Ducha"
+        ],
+        "sys": {
+            "id": "4wQaEJkPidfu5r1r7GyG3Q"
+        }
+    },
+    {
+        "germanName": "Burgstraße",
+        "polishNames": [
+            "Grodzka"
+        ],
+        "sys": {
+            "id": "3GHQgD28yoYKGMwDfWBAEy"
+        }
+    },
+    {
+        "germanName": "Kronprinzallee",
+        "polishNames": [
+            "Sprzymierzonych",
+            "Wita Stwosza"
+        ],
+        "sys": {
+            "id": "4FCSgC0dNMcQgGoDyN9jlD"
+        }
+    },
+    {
+        "germanName": "Am Haustor",
+        "polishNames": [
+            "U Furty"
+        ],
+        "sys": {
+            "id": "77pzR1azWUGth1FZRhjyWt"
+        }
+    },
+    {
+        "germanName": "An der Neuen Mottlau",
+        "polishNames": [
+            "Motławska"
+        ],
+        "sys": {
+            "id": "4kXGzPWaC7dCRvPK1LpqRf"
+        }
+    },
+    {
+        "germanName": "Alte Sorge",
+        "polishNames": [
+            "Kłopot"
+        ],
+        "sys": {
+            "id": "70WDhfKZmh9WSEgbU3aRUd"
+        }
+    },
+    {
+        "germanName": "Schwerinweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6JiR4Q6DIqN5Y4ucLAy6tX"
+        }
+    },
+    {
+        "germanName": "Lange Reihe",
+        "polishNames": [
+            "Stągiewna"
+        ],
+        "sys": {
+            "id": "3rbCthSpiHbjQw58UnSvYO"
+        }
+    },
+    {
+        "germanName": "Kriegerzeile",
+        "polishNames": [
+            "Żołnierza Tułacza",
+            "Kunickiego"
+        ],
+        "sys": {
+            "id": "6Yx05I4deWckOrGqy4glAc"
+        }
+    },
+    {
+        "germanName": "Hinterweg",
+        "polishNames": [
+            "Zawiejska"
+        ],
+        "sys": {
+            "id": "1Uw1E665pNRCbSzKF3tPhv"
+        }
+    },
+    {
+        "germanName": "Husarengasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "50HMYm5RMHSwg9L81LqFfD"
+        }
+    },
+    {
+        "germanName": "von-Klug-Straße",
+        "polishNames": [
+            "Boczna"
+        ],
+        "sys": {
+            "id": "1Vy3yigObMtctQFkJeRoBL"
+        }
+    },
+    {
+        "germanName": "Hohenfriedbergerweg",
+        "polishNames": [
+            "Szymanowskiego"
+        ],
+        "sys": {
+            "id": "4Xui9jS6l3UTA1wBNiISUT"
+        }
+    },
+    {
+        "germanName": "Jagowstraße",
+        "polishNames": [
+            "Derdowskiego"
+        ],
+        "sys": {
+            "id": "5nRSnOO0uNH4OrqzNVN5Ek"
+        }
+    },
+    {
+        "germanName": "Heubuder Seeweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3AftHVJ5VAjAXwaf3X6K9b"
+        }
+    },
+    {
+        "germanName": "Zoppoter Chaussee",
+        "polishNames": [
+            "Grunwaldzka"
+        ],
+        "sys": {
+            "id": "25WSCcIi2cPdphkcMd4vTC"
+        }
+    },
+    {
+        "germanName": "Sternstraße",
+        "polishNames": [
+            "Szkolna"
+        ],
+        "sys": {
+            "id": "42Sylt2cAbdMtMh5zzspqT"
+        }
+    },
+    {
+        "germanName": "Carl-Peters-Straße",
+        "polishNames": [
+            "Wielopole"
+        ],
+        "sys": {
+            "id": "7BfuFQnj0i6gYMwGr5jYce"
+        }
+    },
+    {
+        "germanName": "Sterngang",
+        "polishNames": [
+            "Przechodnia",
+            "n. e."
+        ],
+        "sys": {
+            "id": "nxS0hRFsOdwr9vHXoo3RV"
+        }
+    },
+    {
+        "germanName": "Hochschulweg",
+        "polishNames": [
+            "Politechniczna"
+        ],
+        "sys": {
+            "id": "56fn8cFHKDzHO02lbI8HVl"
+        }
+    },
+    {
+        "germanName": "Bäckergang",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7uiu0Kiukx296ybGEz6guu"
+        }
+    },
+    {
+        "germanName": "Luisenstraße",
+        "polishNames": [
+            "Aldony",
+            "n. e.",
+            "Skłodowskiej-Curie"
+        ],
+        "sys": {
+            "id": "sJeFIv29ZUIMcpzSOSHSu"
+        }
+    },
+    {
+        "germanName": "Taubenweg",
+        "polishNames": [
+            "Pniewskiego"
+        ],
+        "sys": {
+            "id": "6VSB8Vq3cDcMSi5O92eatL"
+        }
+    },
+    {
+        "germanName": "Kiebitzgasse",
+        "polishNames": [
+            "Jaglana"
+        ],
+        "sys": {
+            "id": "i4QRacFJZBw7lLFeC6U0N"
+        }
+    },
+    {
+        "germanName": "Semischplatz",
+        "polishNames": [
+            "Park Konopnickiej"
+        ],
+        "sys": {
+            "id": "6X07I0fjDTYnLeggX8y1lM"
+        }
+    },
+    {
+        "germanName": "Groddeckgasse",
+        "polishNames": [
+            "Radna"
+        ],
+        "sys": {
+            "id": "5WuRinJzk4S9S172HdTNn3"
+        }
+    },
+    {
+        "germanName": "Arthur-Conrad-Straße",
+        "polishNames": [
+            "Zygmunta Augusta"
+        ],
+        "sys": {
+            "id": "3MvEyVJpbJdc8DCh55jePQ"
+        }
+    },
+    {
+        "germanName": "Ernststraße",
+        "polishNames": [
+            "Poniatowskiego",
+            "Sokola"
+        ],
+        "sys": {
+            "id": "7cG4Yk3DBgZphC0Va6IdiO"
+        }
+    },
+    {
+        "germanName": "Gelbe Reihe",
+        "polishNames": [
+            "Wiadrownia",
+            "n. e."
+        ],
+        "sys": {
+            "id": "2BGWfla2KTXjBaax2uX9EN"
+        }
+    },
+    {
+        "germanName": "Krusestraße",
+        "polishNames": [
+            "Piramowicza"
+        ],
+        "sys": {
+            "id": "4qQoFUQyEibmA7Zx90o97o"
+        }
+    },
+    {
+        "germanName": "An der Reitbahn",
+        "polishNames": [
+            "Kredytowa",
+            "Bogusławskiego"
+        ],
+        "sys": {
+            "id": "1jZeBBsd4sKDH97w1zMjIu"
+        }
+    },
+    {
+        "germanName": "Neue Schichaukolonie",
+        "polishNames": [
+            "Twarda"
+        ],
+        "sys": {
+            "id": "3F7d5w5CpEixiEEeR85PNV"
+        }
+    },
+    {
+        "germanName": "Große Pfaffengasse",
+        "polishNames": [
+            "Klesza"
+        ],
+        "sys": {
+            "id": "6xj5AycDRLNzy7c8yX6kPD"
+        }
+    },
+    {
+        "germanName": "Seyfertweg",
+        "polishNames": [
+            "Matki Polki"
+        ],
+        "sys": {
+            "id": "1bdueOT4beL6EHGmFedpSI"
+        }
+    },
+    {
+        "germanName": "Einhorngasse",
+        "polishNames": [
+            "Owsiana"
+        ],
+        "sys": {
+            "id": "3KnIgJvhT1SIW7ixeN73eK"
+        }
+    },
+    {
+        "germanName": "Große Molde",
+        "polishNames": [
+            "Skarpowa"
+        ],
+        "sys": {
+            "id": "5GPtH3Z4czfNQ1F1HgVBHs"
+        }
+    },
+    {
+        "germanName": "Pfeffergasse",
+        "polishNames": [
+            "Korzenna"
+        ],
+        "sys": {
+            "id": "1ldcLJeky8uW9mXT3PZXwE"
+        }
+    },
+    {
+        "germanName": "Steubenstraße",
+        "polishNames": [
+            "Bema"
+        ],
+        "sys": {
+            "id": "6jw5cQwYpHpG397U3kLNy5"
+        }
+    },
+    {
+        "germanName": "Sperberhof",
+        "polishNames": [
+            "Zagrodowa"
+        ],
+        "sys": {
+            "id": "73lPJIOuIsUUqRQ618fKGH"
+        }
+    },
+    {
+        "germanName": "Ziessausche Gasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2P48mZ2w22BiGW3968vxGL"
+        }
+    },
+    {
+        "germanName": "Hagelsberggraben",
+        "polishNames": [
+            "3-go Maja"
+        ],
+        "sys": {
+            "id": "7EMlzvGU7ezoeRPkGetjgm"
+        }
+    },
+    {
+        "germanName": "Ottostraße",
+        "polishNames": [
+            "Słoneczna"
+        ],
+        "sys": {
+            "id": "6zLE2CiDg0eOB2PCJiakNj"
+        }
+    },
+    {
+        "germanName": "Marienhüttenweg",
+        "polishNames": [
+            "Niecała"
+        ],
+        "sys": {
+            "id": "3NZJEUXd4tDRb8PVbfb2Dl"
+        }
+    },
+    {
+        "germanName": "Karl - Marx - Straße",
+        "polishNames": [
+            "Smoleńska"
+        ],
+        "sys": {
+            "id": "7BvB6NkYllsQtDchIv9WOX"
+        }
+    },
+    {
+        "germanName": "Laubenkolonie Erntedank",
+        "polishNames": [
+            "Kolonia Żeńcy"
+        ],
+        "sys": {
+            "id": "jurO0MjqPUsZ29sOJMHcc"
+        }
+    },
+    {
+        "germanName": "Pumpengang",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3fyOXfHK4nsTWALGotYIYb"
+        }
+    },
+    {
+        "germanName": "Langgasse",
+        "polishNames": [
+            "Długa"
+        ],
+        "sys": {
+            "id": "7vPiJlFZfHHcO6DaO9LrOh"
+        }
+    },
+    {
+        "germanName": "Troyl",
+        "polishNames": [
+            "Przetoczna"
+        ],
+        "sys": {
+            "id": "7sZwpvqik9CoSX3cfFmDTm"
+        }
+    },
+    {
+        "germanName": "Konradstraße",
+        "polishNames": [
+            "Lubelska"
+        ],
+        "sys": {
+            "id": "xFH4tFYR1T4NTHOgH2uBY"
+        }
+    },
+    {
+        "germanName": "Töpfergasse",
+        "polishNames": [
+            "Garncarska"
+        ],
+        "sys": {
+            "id": "78kPdgLrBH1IdUcZbZqJkS"
+        }
+    },
+    {
+        "germanName": "Weißmönchen-Kirchengasse",
+        "polishNames": [
+            "Bielańska"
+        ],
+        "sys": {
+            "id": "6S1nuQ4ntK0AcrYvaOIJOP"
+        }
+    },
+    {
+        "germanName": "Schönfelder Brücke",
+        "polishNames": [
+            "Podmiejska"
+        ],
+        "sys": {
+            "id": "3IP1buQAqKWdgnm9z17CJs"
+        }
+    },
+    {
+        "germanName": "Schlapker Gang",
+        "polishNames": [
+            "Starodworska"
+        ],
+        "sys": {
+            "id": "WrzecDWfWgrC3FckjYcPV"
+        }
+    },
+    {
+        "germanName": "Neue Gasse",
+        "polishNames": [
+            "Bednarska"
+        ],
+        "sys": {
+            "id": "4iLd3pIQM1d0fQREO4BBSO"
+        }
+    },
+    {
+        "germanName": "Am Stein",
+        "polishNames": [
+            "Stajenna"
+        ],
+        "sys": {
+            "id": "7FfTPXpRWrL4WjwpDon2UK"
+        }
+    },
+    {
+        "germanName": "Schäfereiweg",
+        "polishNames": [
+            "Kościerska"
+        ],
+        "sys": {
+            "id": "6jG6ZiCyQthLIJ1DNBpjPC"
+        }
+    },
+    {
+        "germanName": "Binsenweg",
+        "polishNames": [
+            "Sitowie"
+        ],
+        "sys": {
+            "id": "3cxOs0rPEQQXdllM7EP02y"
+        }
+    },
+    {
+        "germanName": "Friedrichstraße",
+        "polishNames": [
+            "Kazimierza Wielkiego",
+            "n. e."
+        ],
+        "sys": {
+            "id": "2fY5qe7E0rPwRW72lY6813"
+        }
+    },
+    {
+        "germanName": "Grenzfießer Straße",
+        "polishNames": [
+            "Niepodległości"
+        ],
+        "sys": {
+            "id": "50E8xTKJuzXaa7yz18B9Ns"
+        }
+    },
+    {
+        "germanName": "Ostseestraße",
+        "polishNames": [
+            "Hallera, Al. gen.",
+            "Marksa, Al. Karola",
+            "Roosevelta, Al."
+        ],
+        "sys": {
+            "id": "36lgfNYwMcnLAFul0bvEJp"
+        }
+    },
+    {
+        "germanName": "Schillerstraße",
+        "polishNames": [
+            "Kasprowicza",
+            "Polna"
+        ],
+        "sys": {
+            "id": "60XdZGL5BJVKkOWSY2iSNZ"
+        }
+    },
+    {
+        "germanName": "Hintergasse",
+        "polishNames": [
+            "Za Murami"
+        ],
+        "sys": {
+            "id": "5bAWcxK4HZWW1AmgzllWf5"
+        }
+    },
+    {
+        "germanName": "Elisabethkirchengasse",
+        "polishNames": [
+            "Elżbietańska"
+        ],
+        "sys": {
+            "id": "4qL7m6UlLGh6ES3JM1F3VB"
+        }
+    },
+    {
+        "germanName": "Daheimstraße",
+        "polishNames": [
+            "Zgody I"
+        ],
+        "sys": {
+            "id": "4NheXtyGqN5cJQlc7tm3Pq"
+        }
+    },
+    {
+        "germanName": "Lastadie",
+        "polishNames": [
+            "Lastadia"
+        ],
+        "sys": {
+            "id": "4bnGQPYXJECoVB7qR7ZKzg"
+        }
+    },
+    {
+        "germanName": "Birkenallee",
+        "polishNames": [
+            "Brzozowa",
+            "n. e."
+        ],
+        "sys": {
+            "id": "2KM1mlefa6LxzEJsNW3Rh1"
+        }
+    },
+    {
+        "germanName": "Kasernengasse",
+        "polishNames": [
+            "Koszarowa",
+            "n. e."
+        ],
+        "sys": {
+            "id": "5jeuKGXlKCZxMR6wFKzvW6"
+        }
+    },
+    {
+        "germanName": "Eissenhardtstraße",
+        "polishNames": [
+            "Chopina"
+        ],
+        "sys": {
+            "id": "6HFd03FUEo8lOwPzOYWzSx"
+        }
+    },
+    {
+        "germanName": "Ziegelstraße",
+        "polishNames": [
+            "Śniadeckich"
+        ],
+        "sys": {
+            "id": "42ONNSe0HCMU4wRYnJYFC"
+        }
+    },
+    {
+        "germanName": "Hinter dem Lazarett",
+        "polishNames": [
+            "Jana z Kolna"
+        ],
+        "sys": {
+            "id": "2ywx7roQQ3wXRjJiiLiM0k"
+        }
+    },
+    {
+        "germanName": "Lindenstraße",
+        "polishNames": [
+            "Lipowa",
+            "Tuwima",
+            "n. e.",
+            "Trakt św. Wojciecha"
+        ],
+        "sys": {
+            "id": "27JxisyaImpkl9hBimZYcz"
+        }
+    },
+    {
+        "germanName": "Eschenweg",
+        "polishNames": [
+            "Jesionowa"
+        ],
+        "sys": {
+            "id": "1sQPvc1OyNqFFjTpqFclra"
+        }
+    },
+    {
+        "germanName": "Kleine Seebadstraße",
+        "polishNames": [
+            "Pawia"
+        ],
+        "sys": {
+            "id": "61Hjp1prUPfOTE9Db6oGLz"
+        }
+    },
+    {
+        "germanName": "Schaderuten",
+        "polishNames": [
+            "Promowa"
+        ],
+        "sys": {
+            "id": "5shpFG3sGeYppUhv7dnWhO"
+        }
+    },
+    {
+        "germanName": "Otto â Schrey - Weg",
+        "polishNames": [
+            "Żywiecka"
+        ],
+        "sys": {
+            "id": "2bVHjKDWqCsgfyRCaAsM4a"
+        }
+    },
+    {
+        "germanName": "Lobeckshofer Weg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3L90bXR2hxx8iJIglS0PjS"
+        }
+    },
+    {
+        "germanName": "Rickertweg",
+        "polishNames": [
+            "Boh. Getta Warszawskiego"
+        ],
+        "sys": {
+            "id": "4FlBGSvHhUJybtGkieU8N7"
+        }
+    },
+    {
+        "germanName": "Richard - Wagner - Weg",
+        "polishNames": [
+            "Moniuszki"
+        ],
+        "sys": {
+            "id": "72Z3JTtXJBdYRHI20HUnyC"
+        }
+    },
+    {
+        "germanName": "Yorkstraße",
+        "polishNames": [
+            "Świętopełka",
+            "n. e."
+        ],
+        "sys": {
+            "id": "YxP5tZKW42dHywsvnx50W"
+        }
+    },
+    {
+        "germanName": "Am Durchbruch",
+        "polishNames": [
+            "Przełom"
+        ],
+        "sys": {
+            "id": "5fswaMO81Prc1fd8UoesBd"
+        }
+    },
+    {
+        "germanName": "Viktoriastraße",
+        "polishNames": [
+            "n. e.",
+            "Królowej Jadwigi",
+            "Walecznych"
+        ],
+        "sys": {
+            "id": "13K4v41axfMaHHr8nOIsJa"
+        }
+    },
+    {
+        "germanName": "Wilhelm - Tell - Straße",
+        "polishNames": [
+            "Błońska"
+        ],
+        "sys": {
+            "id": "3ghyYWPRTfIRjXvT2XKp3z"
+        }
+    },
+    {
+        "germanName": "Albrechtstraße",
+        "polishNames": [
+            "Gronkiewicza, Karola",
+            "Sportowa",
+            "Strajku Dokerów"
+        ],
+        "sys": {
+            "id": "6xDGgkXs4BB4UWbcCmdz1i"
+        }
+    },
+    {
+        "germanName": "Große Lawendelgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3WQS5ny6dR2rNfaGCQPWuY"
+        }
+    },
+    {
+        "germanName": "Hochstrieß",
+        "polishNames": [
+            "Słowackiego"
+        ],
+        "sys": {
+            "id": "3XDRBEbFwLghqIXyQpK63N"
+        }
+    },
+    {
+        "germanName": "Petrikirchhof",
+        "polishNames": [
+            "Św. Piotra"
+        ],
+        "sys": {
+            "id": "1mHJsUXa82k0gphdZfJ6IG"
+        }
+    },
+    {
+        "germanName": "Weichseluferstraße",
+        "polishNames": [
+            "Nad Brzegiem"
+        ],
+        "sys": {
+            "id": "K5EvPVpuQiIiyYHKG3CEU"
+        }
+    },
+    {
+        "germanName": "Schmiedegasse",
+        "polishNames": [
+            "Kowalska"
+        ],
+        "sys": {
+            "id": "33drYghVqmZjmzvjrfwQeE"
+        }
+    },
+    {
+        "germanName": "Parkweg",
+        "polishNames": [
+            "Pawłowskiego",
+            "Zielna"
+        ],
+        "sys": {
+            "id": "4iVVpqOkSzGpkBX8pc3O0C"
+        }
+    },
+    {
+        "germanName": "Marienstraße",
+        "polishNames": [
+            "Bałtycka",
+            "Wajdeloty"
+        ],
+        "sys": {
+            "id": "3KmbLP2p9GreKZLfqiUCI1"
+        }
+    },
+    {
+        "germanName": "Rammbau",
+        "polishNames": [
+            "Krosna"
+        ],
+        "sys": {
+            "id": "O0739O9eHQgsCk2KxZIxM"
+        }
+    },
+    {
+        "germanName": "Schichaugasse",
+        "polishNames": [
+            "Jana z Kolna"
+        ],
+        "sys": {
+            "id": "4NCNLSx0eV253KH0RQ5zfa"
+        }
+    },
+    {
+        "germanName": "Aschhofgasse",
+        "polishNames": [
+            "Chmielna"
+        ],
+        "sys": {
+            "id": "4N2YzUjohoht8Le41YDTRM"
+        }
+    },
+    {
+        "germanName": "Gossler Allee",
+        "polishNames": [
+            "Majakowskiego",
+            "Narutowicza"
+        ],
+        "sys": {
+            "id": "4Z5C2NVkKTb8L1aFLRtrO4"
+        }
+    },
+    {
+        "germanName": "Hühnergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "48MNJ3TKZ7pXL5IvnTE6Pg"
+        }
+    },
+    {
+        "germanName": "Johann-Rickmers-Straße",
+        "polishNames": [
+            "Gościnna"
+        ],
+        "sys": {
+            "id": "7dAW1RmUWTGpQEkWVU7fB1"
+        }
+    },
+    {
+        "germanName": "Danziger Chaussee",
+        "polishNames": [
+            "Grunwaldzka"
+        ],
+        "sys": {
+            "id": "1t7QEVcbRCp4EM6h4glSa2"
+        }
+    },
+    {
+        "germanName": "Kleine Molde",
+        "polishNames": [
+            "Wyczółkowskiego"
+        ],
+        "sys": {
+            "id": "2x9GPC6yOeubp458FO7Yu"
+        }
+    },
+    {
+        "germanName": "Försterstraße",
+        "polishNames": [
+            "Żeromskiego"
+        ],
+        "sys": {
+            "id": "2xpgyUlcBrvRSoECHuWHwW"
+        }
+    },
+    {
+        "germanName": "Löschinweg",
+        "polishNames": [
+            "Poprzeczna"
+        ],
+        "sys": {
+            "id": "5iEJ4L1pUB5jjX1ncb7Nm0"
+        }
+    },
+    {
+        "germanName": "Kreuzweg",
+        "polishNames": [
+            "Ukośna"
+        ],
+        "sys": {
+            "id": "6N8H2s7uzPxozAUFujLMA5"
+        }
+    },
+    {
+        "germanName": "Scherstraße",
+        "polishNames": [
+            "Tobrucka",
+            "Worcella"
+        ],
+        "sys": {
+            "id": "67YwPHTk5D6uDBUDqGT5GA"
+        }
+    },
+    {
+        "germanName": "Weinbrücke",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7cH8O3U7U9v1aFKr3LcJ6C"
+        }
+    },
+    {
+        "germanName": "Opitzstraße",
+        "polishNames": [
+            "Orzeszkowej"
+        ],
+        "sys": {
+            "id": "47dquktT1mJ81uQGSHArgX"
+        }
+    },
+    {
+        "germanName": "Kleiner Irrgarten",
+        "polishNames": [
+            "Park Konopnickiej"
+        ],
+        "sys": {
+            "id": "3nbak5CNQYAvRGLE58j7YK"
+        }
+    },
+    {
+        "germanName": "Schopenhauerstraße",
+        "polishNames": [
+            "Sambora"
+        ],
+        "sys": {
+            "id": "6wb75n8VkxHwavtvyB87zr"
+        }
+    },
+    {
+        "germanName": "An der Abtsmühle",
+        "polishNames": [
+            "Leczkowa"
+        ],
+        "sys": {
+            "id": "kFK7rlnjdVK2Lp3pAIokL"
+        }
+    },
+    {
+        "germanName": "Holzraum",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7s6BLEPXSNNRBUqMs9x0mQ"
+        }
+    },
+    {
+        "germanName": "Sasper Weg",
+        "polishNames": [
+            "Bora Komorowskiego"
+        ],
+        "sys": {
+            "id": "4emkOjsiEB7GX4AS0zmbmS"
+        }
+    },
+    {
+        "germanName": "Bärenweg",
+        "polishNames": [
+            "Mickiewicza"
+        ],
+        "sys": {
+            "id": "2USGmT9AUFvVg5PfwXf3Tu"
+        }
+    },
+    {
+        "germanName": "Alter Mühlenweg",
+        "polishNames": [
+            "Sępia"
+        ],
+        "sys": {
+            "id": "123eE37MAwDhCULtcdoQvI"
+        }
+    },
+    {
+        "germanName": "Conradiweg",
+        "polishNames": [
+            "Konarskiego"
+        ],
+        "sys": {
+            "id": "3yz9FUDVDN4FRj270kL5gV"
+        }
+    },
+    {
+        "germanName": "Halbengasse",
+        "polishNames": [
+            "n. e.",
+            "Na Piaskach"
+        ],
+        "sys": {
+            "id": "2zBja6Zx15m9wKDBzrFtNh"
+        }
+    },
+    {
+        "germanName": "Petersiliengasse",
+        "polishNames": [
+            "Warzywnicza"
+        ],
+        "sys": {
+            "id": "5R0h176AiXcFS8iXHzglaA"
+        }
+    },
+    {
+        "germanName": "Akazienweg",
+        "polishNames": [
+            "Akacjowa"
+        ],
+        "sys": {
+            "id": "3VNGRU6wVHq1foi2s2Znvp"
+        }
+    },
+    {
+        "germanName": "Kielmeisterweg",
+        "polishNames": [
+            "Stępkarska"
+        ],
+        "sys": {
+            "id": "3LvJoYHwbjtTqc2yJwgJsA"
+        }
+    },
+    {
+        "germanName": "Kolkowgasse",
+        "polishNames": [
+            "Zamenhofa",
+            "Królikarnia"
+        ],
+        "sys": {
+            "id": "CZG3t6S2Th1fdFlhF1O56"
+        }
+    },
+    {
+        "germanName": "Korintengasse",
+        "polishNames": [
+            "Nakielska"
+        ],
+        "sys": {
+            "id": "7I5uuTWmZ6Pn2QCcyqKUMx"
+        }
+    },
+    {
+        "germanName": "Bahnplatz",
+        "polishNames": [
+            "Kolejowy Pl.",
+            "Oruński Pl."
+        ],
+        "sys": {
+            "id": "59wQgH6IqqJs3MnLvuVvSD"
+        }
+    },
+    {
+        "germanName": "Brentauer Chaussee",
+        "polishNames": [
+            "Słowackiego"
+        ],
+        "sys": {
+            "id": "1egP6rORNBHj0q5pbIMsJu"
+        }
+    },
+    {
+        "germanName": "Kleine Tobiasgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2hjcQtasmA34Mj38y8CI1L"
+        }
+    },
+    {
+        "germanName": "Schulstraße",
+        "polishNames": [
+            "Gościnna",
+            "Kościuszki",
+            "n. e.",
+            "Szkolna"
+        ],
+        "sys": {
+            "id": "1voQLrK3IEBu4ueD75HLK6"
+        }
+    },
+    {
+        "germanName": "Ketterhager Thorgasse",
+        "polishNames": [
+            "Zbytki"
+        ],
+        "sys": {
+            "id": "6hgawFLYRrqSoKacVDvaab"
+        }
+    },
+    {
+        "germanName": "Müggenwinkel",
+        "polishNames": [
+            "Migowska"
+        ],
+        "sys": {
+            "id": "VGBtzqVgWUMR4aB7Km6dw"
+        }
+    },
+    {
+        "germanName": "Schottenweg",
+        "polishNames": [
+            "Wesoła"
+        ],
+        "sys": {
+            "id": "6niTovDiCR0takcT1JJ6k5"
+        }
+    },
+    {
+        "germanName": "Große Allee",
+        "polishNames": [
+            "Rokossowskiego",
+            "Aleja Zwycięstwa"
+        ],
+        "sys": {
+            "id": "1jWNVCA8dFwQIDG7MSXVc2"
+        }
+    },
+    {
+        "germanName": "Hamberger",
+        "polishNames": [
+            "Masztowa"
+        ],
+        "sys": {
+            "id": "N0i1RFQr6By6ddUQrjm7R"
+        }
+    },
+    {
+        "germanName": "Kumstgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3rd6VkXWPtgnHRJQZL49CM"
+        }
+    },
+    {
+        "germanName": "Wohnungsvereinigung",
+        "polishNames": [
+            "Wspólnota",
+            "Żuławska"
+        ],
+        "sys": {
+            "id": "1ermE4ohWbPg2wSCQJBr6V"
+        }
+    },
+    {
+        "germanName": "Brösener Straße",
+        "polishNames": [
+            "Kapliczna"
+        ],
+        "sys": {
+            "id": "1XncDHhbhYFKap4fugqdXY"
+        }
+    },
+    {
+        "germanName": "Bischofsgasse",
+        "polishNames": [
+            "Na Stoku"
+        ],
+        "sys": {
+            "id": "2hkWhU2hlqLhEKTW4Ilx4K"
+        }
+    },
+    {
+        "germanName": "Zerneckeweg",
+        "polishNames": [
+            "Brukowa"
+        ],
+        "sys": {
+            "id": "4usrYyddVGdIJDQm9SBlZH"
+        }
+    },
+    {
+        "germanName": "Grünes Dreieck",
+        "polishNames": [
+            "Kącik",
+            "Zielony Trójkąt"
+        ],
+        "sys": {
+            "id": "2VJiuVCrTSvMpFqhOz1UXO"
+        }
+    },
+    {
+        "germanName": "Laternengasse",
+        "polishNames": [
+            "Latarniana"
+        ],
+        "sys": {
+            "id": "5fNJvrYCRKF5aY5pmK3vqw"
+        }
+    },
+    {
+        "germanName": "Lübeckstraße",
+        "polishNames": [
+            "Kołobrzeska"
+        ],
+        "sys": {
+            "id": "4Mq5DJibzvPxhFhTHGTar1"
+        }
+    },
+    {
+        "germanName": "Rossmarkt",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "55dYMtquyCXqZkEjq4pzlN"
+        }
+    },
+    {
+        "germanName": "Thornscherweg",
+        "polishNames": [
+            "Toruńska"
+        ],
+        "sys": {
+            "id": "5Xldqs70XiMGkXsKHLZNZk"
+        }
+    },
+    {
+        "germanName": "Ulmenweg",
+        "polishNames": [
+            "Wiązowa",
+            "de Gaulle'a"
+        ],
+        "sys": {
+            "id": "1vXGAZwEmo1JfpV4TolHc6"
+        }
+    },
+    {
+        "germanName": "Boltengasse",
+        "polishNames": [
+            "Sandomierska"
+        ],
+        "sys": {
+            "id": "51khRVh7FFOhAkEmc7yXxS"
+        }
+    },
+    {
+        "germanName": "Brommystraße",
+        "polishNames": [
+            "Monte Cassino",
+            "Mariana Buczka"
+        ],
+        "sys": {
+            "id": "71tFf4s39PaoNsn2UmmMWE"
+        }
+    },
+    {
+        "germanName": "Waschküchenkolonie",
+        "polishNames": [
+            "Kolonia Rola"
+        ],
+        "sys": {
+            "id": "1ec89gNSFdNMt7Voerj5L8"
+        }
+    },
+    {
+        "germanName": "Schönstraße",
+        "polishNames": [
+            "Kręckiego"
+        ],
+        "sys": {
+            "id": "1gPOvYn4MuXwL2sXZIbwn1"
+        }
+    },
+    {
+        "germanName": "Manzenplatz",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2n5GFdqnZcX4NqY3yEq8sz"
+        }
+    },
+    {
+        "germanName": "Am Neuen Hafenbassin",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4GmhR7usolQYwUXKWEdXvW"
+        }
+    },
+    {
+        "germanName": "Wiesengasse",
+        "polishNames": [
+            "Wierzbowa"
+        ],
+        "sys": {
+            "id": "4ot6NmIHKBXcsPAYlzzy1w"
+        }
+    },
+    {
+        "germanName": "Colbatzer Straße",
+        "polishNames": [
+            "Bora Komorowskiego"
+        ],
+        "sys": {
+            "id": "4dUE5mbt6GtHDap4kn36lO"
+        }
+    },
+    {
+        "germanName": "Biebersteinstraße",
+        "polishNames": [
+            "Gęsia"
+        ],
+        "sys": {
+            "id": "3ZYhufiLli5RjtyaJLt5QS"
+        }
+    },
+    {
+        "germanName": "Neue Straße",
+        "polishNames": [
+            "Zamknięta"
+        ],
+        "sys": {
+            "id": "5cC1qYkUaKWzFW51RoVK77"
+        }
+    },
+    {
+        "germanName": "Mackensenallee",
+        "polishNames": [
+            "Kościuszki"
+        ],
+        "sys": {
+            "id": "7MSUShVwFhbIBHEbwcHqTL"
+        }
+    },
+    {
+        "germanName": "Stolzenfels",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "b3DrhZinMDk9TIDW3Z3Xf"
+        }
+    },
+    {
+        "germanName": "Drewkeweg",
+        "polishNames": [
+            "Sosnowa"
+        ],
+        "sys": {
+            "id": "6qSAhio2399Y9YDdJJDBhQ"
+        }
+    },
+    {
+        "germanName": "Günter - Deskowski - Straße",
+        "polishNames": [
+            "Malczewskiego"
+        ],
+        "sys": {
+            "id": "2HOSSQjUOrLJC4yC3fjJdQ"
+        }
+    },
+    {
+        "germanName": "Kaschubischer Markt",
+        "polishNames": [
+            "Kaszubska",
+            "n. e."
+        ],
+        "sys": {
+            "id": "37luOl4ZNJdrxN1FCbUnXo"
+        }
+    },
+    {
+        "germanName": "Boltengang",
+        "polishNames": [
+            "Sandomierska"
+        ],
+        "sys": {
+            "id": "39qDVUJRwP49Z5ZQPyty2c"
+        }
+    },
+    {
+        "germanName": "Bürgerschützenhaus",
+        "polishNames": [
+            "Moniuszki"
+        ],
+        "sys": {
+            "id": "3GzxG8WUmev2CCkTuL0ReK"
+        }
+    },
+    {
+        "germanName": "Kerhuthstraße",
+        "polishNames": [
+            "Strakowskiego"
+        ],
+        "sys": {
+            "id": "5NPULwVQcKFBq8GeF6FK9L"
+        }
+    },
+    {
+        "germanName": "Strohgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "12osLKv7h0u22sYpcYb1Xc"
+        }
+    },
+    {
+        "germanName": "Nordpromenade",
+        "polishNames": [
+            "3 Maja"
+        ],
+        "sys": {
+            "id": "3e6xJZczRsKFvFesCAOuWQ"
+        }
+    },
+    {
+        "germanName": "Rothahnchengang",
+        "polishNames": [
+            "Goszczyńskiego"
+        ],
+        "sys": {
+            "id": "4SpjECfFM7pfoQJEqQGFxS"
+        }
+    },
+    {
+        "germanName": "Muschelweg",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7z0Ry1twk5NWDxtizGcjBu"
+        }
+    },
+    {
+        "germanName": "Krähenberg",
+        "polishNames": [
+            "Wronia"
+        ],
+        "sys": {
+            "id": "4yhmRh66f4FPEHkrmUBFGK"
+        }
+    },
+    {
+        "germanName": "Münchengasse",
+        "polishNames": [
+            "Żytnia"
+        ],
+        "sys": {
+            "id": "2KeoojYA7HwkeieeniZ7A4"
+        }
+    },
+    {
+        "germanName": "Pfarrhof",
+        "polishNames": [
+            "Plebania"
+        ],
+        "sys": {
+            "id": "78iHSKhIjliOiDdcslCKcn"
+        }
+    },
+    {
+        "germanName": "Pulverstraße",
+        "polishNames": [
+            "Rejowa"
+        ],
+        "sys": {
+            "id": "2198UJaOme7xfCk71zaUr0"
+        }
+    },
+    {
+        "germanName": "Hopfengasse",
+        "polishNames": [
+            "Chmielna"
+        ],
+        "sys": {
+            "id": "01cLjVFIySJt9qOuGCk22S"
+        }
+    },
+    {
+        "germanName": "Kesselgasse",
+        "polishNames": [
+            "Przesmyk"
+        ],
+        "sys": {
+            "id": "q35ojtp06vGm9FypVGJiM"
+        }
+    },
+    {
+        "germanName": "Dünenstraße",
+        "polishNames": [
+            "Na Wydmach"
+        ],
+        "sys": {
+            "id": "4BOxRuhsTllHJXzVkmYXBy"
+        }
+    },
+    {
+        "germanName": "Englershöhe",
+        "polishNames": [
+            "Kolonia Anielinki"
+        ],
+        "sys": {
+            "id": "6ic6qNQlWXXFis1aZnvbiO"
+        }
+    },
+    {
+        "germanName": "Dammstraße",
+        "polishNames": [
+            "Tamka"
+        ],
+        "sys": {
+            "id": "23CeWGquY3kffl2GOr2cLP"
+        }
+    },
+    {
+        "germanName": "Simsonweg",
+        "polishNames": [
+            "Dzielna"
+        ],
+        "sys": {
+            "id": "2RdpwGLizwJ2GqFBywDBUt"
+        }
+    },
+    {
+        "germanName": "Knüppelgasse",
+        "polishNames": [
+            "Na Dylach"
+        ],
+        "sys": {
+            "id": "6lGpK11YkOwBIs0xRlwEXa"
+        }
+    },
+    {
+        "germanName": "Clüverstraße",
+        "polishNames": [
+            "Dantyszka"
+        ],
+        "sys": {
+            "id": "58Dc0QtEeJFYQTZ0Ubbozy"
+        }
+    },
+    {
+        "germanName": "Pferdetränke",
+        "polishNames": [
+            "Wodopój"
+        ],
+        "sys": {
+            "id": "2FacdV27oLhZNcFxwgIrrw"
+        }
+    },
+    {
+        "germanName": "Sandkrugweg",
+        "polishNames": [
+            "Kutnowska"
+        ],
+        "sys": {
+            "id": "fIajCndTpCSN8smAlB1CV"
+        }
+    },
+    {
+        "germanName": "Heiligenbrunnerweg",
+        "polishNames": [
+            "Morska",
+            "Władysława Hibnera",
+            "Do Studzienki"
+        ],
+        "sys": {
+            "id": "6cRdf66xYz0aofB9SeGfow"
+        }
+    },
+    {
+        "germanName": "Wäldchenstraße",
+        "polishNames": [
+            "Chrobrego"
+        ],
+        "sys": {
+            "id": "1FwmowQzsDmfzPsjdRuzVg"
+        }
+    },
+    {
+        "germanName": "An der Schiffchenbrücke",
+        "polishNames": [
+            "Mostek",
+            "Protazego"
+        ],
+        "sys": {
+            "id": "5BgLy5RcG5tVqdOvpGjTOa"
+        }
+    },
+    {
+        "germanName": "Steinfießer Weg",
+        "polishNames": [
+            "Sępia"
+        ],
+        "sys": {
+            "id": "HgtgKKJ0UezUrhV7q6ruq"
+        }
+    },
+    {
+        "germanName": "Dultzstraße",
+        "polishNames": [
+            "Majkowskiego"
+        ],
+        "sys": {
+            "id": "4nuBjw9byoqDhG4FySPqQF"
+        }
+    },
+    {
+        "germanName": "Kleine Hosennähergasse",
+        "polishNames": [
+            "Dziana"
+        ],
+        "sys": {
+            "id": "1OUX3HO8kUC0BIQaCVcvd0"
+        }
+    },
+    {
+        "germanName": "Große Vendet",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "6tCJKtr7FLieFWHseOr7fE"
+        }
+    },
+    {
+        "germanName": "Langgarter Hintergasse",
+        "polishNames": [
+            "Sadowa"
+        ],
+        "sys": {
+            "id": "2ir1uZ0VYgNGqNbgDeG1Wy"
+        }
+    },
+    {
+        "germanName": "Hubertusburger Allee",
+        "polishNames": [
+            "Chrzanowskiego"
+        ],
+        "sys": {
+            "id": "W8I3anOzmLia9tmmMRjYV"
+        }
+    },
+    {
+        "germanName": "Kirchenstraße",
+        "polishNames": [
+            "Piastów"
+        ],
+        "sys": {
+            "id": "6lmhxqdJCX4iNMpaHVCMk7"
+        }
+    },
+    {
+        "germanName": "Hinter der Langen Brücke",
+        "polishNames": [
+            "Chmielna"
+        ],
+        "sys": {
+            "id": "56eGD6bzC60XpFqvBfRw9k"
+        }
+    },
+    {
+        "germanName": "Hortstraße",
+        "polishNames": [
+            "Rozłogi"
+        ],
+        "sys": {
+            "id": "4dmdyPeHv240ch2ZyvCdkC"
+        }
+    },
+    {
+        "germanName": "Stadtgraben",
+        "polishNames": [
+            "Podwale Grodzkie"
+        ],
+        "sys": {
+            "id": "1DdnvboHoyaV6dw3Uvwphy"
+        }
+    },
+    {
+        "germanName": "Emil-Berenz-Straße",
+        "polishNames": [
+            "Fredry"
+        ],
+        "sys": {
+            "id": "NljtAijAp4Y4b9L60c7WE"
+        }
+    },
+    {
+        "germanName": "Heeresanger",
+        "polishNames": [
+            "Niedziałkowskiego",
+            "Dzierżyńskiego",
+            "Legionów"
+        ],
+        "sys": {
+            "id": "7noB6fAmBOMfVVWikcic76"
+        }
+    },
+    {
+        "germanName": "Zietenweg",
+        "polishNames": [
+            "Moniuszki, Stanisława"
+        ],
+        "sys": {
+            "id": "5rtXEarbeitxMlgIipFBfI"
+        }
+    },
+    {
+        "germanName": "Saltzmannstraße",
+        "polishNames": [
+            "Opacka"
+        ],
+        "sys": {
+            "id": "ON2IhNxEQBZNPEcbQ7Aro"
+        }
+    },
+    {
+        "germanName": "Kleine Gerggasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "11UojRt7DUW5BOGlv9WXni"
+        }
+    },
+    {
+        "germanName": "Schlageterstraße",
+        "polishNames": [
+            "Barlickiego",
+            "Dmowskiego",
+            "Dworcowa",
+            "Marchlewskiego",
+            "Żeromskiego"
+        ],
+        "sys": {
+            "id": "cwHt4sosEuFAn3z0Nphrv"
+        }
+    },
+    {
+        "germanName": "Dominiksplan",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5tXlS1dTQYSV1y7UHcRVZm"
+        }
+    },
+    {
+        "germanName": "Hochwasser, Schloß",
+        "polishNames": [
+            "Niepodległości"
+        ],
+        "sys": {
+            "id": "773sXvD4iFMrKTBIRNU8d1"
+        }
+    },
+    {
+        "germanName": "Hundewall",
+        "polishNames": [
+            "Motławska"
+        ],
+        "sys": {
+            "id": "2Y1fJ45Uv8K6ZHOtBdfO5m"
+        }
+    },
+    {
+        "germanName": "Südstraße",
+        "polishNames": [
+            "Południowa",
+            "Jedności Robotniczej",
+            "Oruńska 3",
+            "Trakt Swiętego Wojciecha",
+            "Grunwaldzka"
+        ],
+        "sys": {
+            "id": "72YcBcMTcnJrNvUyCO4rbW"
+        }
+    },
+    {
+        "germanName": "Weißer Gang",
+        "polishNames": [
+            "Rybaki Górne"
+        ],
+        "sys": {
+            "id": "1rYcU5dZCGnf3qYBaUNueY"
+        }
+    },
+    {
+        "germanName": "Brandstelle",
+        "polishNames": [
+            "Zgorzelisko",
+            "n. e."
+        ],
+        "sys": {
+            "id": "13Bc6Pkmj0XPm8a0hUAjZ6"
+        }
+    },
+    {
+        "germanName": "Schuhmachergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "mAEoYqiHzfRXug0axn0Lh"
+        }
+    },
+    {
+        "germanName": "Schutnickelgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4TFTafZsirK1JKAIWGafPW"
+        }
+    },
+    {
+        "germanName": "Sandgrube",
+        "polishNames": [
+            "Piaskowa",
+            "Rogaczewskiego"
+        ],
+        "sys": {
+            "id": "1Sd1LfhupsQBJpQqwhdPCm"
+        }
+    },
+    {
+        "germanName": "Wonneberger Grund",
+        "polishNames": [
+            "Madalińskiego",
+            "Modrzejewskiej"
+        ],
+        "sys": {
+            "id": "7lIjJAgHdOBe20KGPFipAp"
+        }
+    },
+    {
+        "germanName": "Zigankenbergweg",
+        "polishNames": [
+            "Giełguda"
+        ],
+        "sys": {
+            "id": "Q4aaLrQlDenq9LYfp4TPx"
+        }
+    },
+    {
+        "germanName": "Ertelweg",
+        "polishNames": [
+            "Krzywa"
+        ],
+        "sys": {
+            "id": "1bFiURGtRY48R5LvUYmFEE"
+        }
+    },
+    {
+        "germanName": "Wiesenweg",
+        "polishNames": [
+            "Łęgi"
+        ],
+        "sys": {
+            "id": "jOUZFPBl9p61be4jySAor"
+        }
+    },
+    {
+        "germanName": "Obergasse",
+        "polishNames": [
+            "Majkowskiego"
+        ],
+        "sys": {
+            "id": "2jMdE7M8yOL9ijdU0JaiBP"
+        }
+    },
+    {
+        "germanName": "Dominikanerplatz",
+        "polishNames": [
+            "Dominikański Pl."
+        ],
+        "sys": {
+            "id": "62CHZfyLifaSN8I9hf3Jso"
+        }
+    },
+    {
+        "germanName": "Braunrose",
+        "polishNames": [
+            "Zabłocka",
+            "Zabłotna"
+        ],
+        "sys": {
+            "id": "3v4kOpy2RKb0zGpUq4hVMq"
+        }
+    },
+    {
+        "germanName": "Labesweg",
+        "polishNames": [
+            "Lelewela"
+        ],
+        "sys": {
+            "id": "4mN2jNPNybe0oRQwP0h3qh"
+        }
+    },
+    {
+        "germanName": "Tirpitzstraße",
+        "polishNames": [
+            "Odrzańska"
+        ],
+        "sys": {
+            "id": "4Y9EDMSiseAfxGwvCfAZg7"
+        }
+    },
+    {
+        "germanName": "Stolzenfelsallee",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "5N6nFG8cSelNzf9wJ1eiS7"
+        }
+    },
+    {
+        "germanName": "Marienplatz",
+        "polishNames": [
+            "Wajdeloty"
+        ],
+        "sys": {
+            "id": "7ekWSSZiw4K1R8dCviIgRc"
+        }
+    },
+    {
+        "germanName": "Ranischweg",
+        "polishNames": [
+            "Rolna"
+        ],
+        "sys": {
+            "id": "5QJzcLoJNpQe4ogVBQx3y0"
+        }
+    },
+    {
+        "germanName": "Johannesstraße",
+        "polishNames": [
+            "Dębowa"
+        ],
+        "sys": {
+            "id": "4YTFpBHKriMryMTrNm7dcc"
+        }
+    },
+    {
+        "germanName": "Alte Münze",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "XigZOIGhRMjUEmj4KPcDC"
+        }
+    },
+    {
+        "germanName": "Schmeterlingweg",
+        "polishNames": [
+            "Jelinki"
+        ],
+        "sys": {
+            "id": "6292mrlmRyTSIn72IJYcNn"
+        }
+    },
+    {
+        "germanName": "Altschottland",
+        "polishNames": [
+            "Jedności Robotniczej",
+            "Oruńska 1",
+            "Trakt Swiętego Wojciecha"
+        ],
+        "sys": {
+            "id": "2uNH4pzhoHHdSKi9cREkov"
+        }
+    },
+    {
+        "germanName": "Am Festungsgraben",
+        "polishNames": [
+            "Wspólna"
+        ],
+        "sys": {
+            "id": "2OCYgYJcR37Khi60IGSJzs"
+        }
+    },
+    {
+        "germanName": "Kuschenecke",
+        "polishNames": [
+            "Dolna"
+        ],
+        "sys": {
+            "id": "6742CTRq3LnMHUC0ic5laf"
+        }
+    },
+    {
+        "germanName": "Rosenweg",
+        "polishNames": [
+            "Batorego"
+        ],
+        "sys": {
+            "id": "6RaP1BQLMeRhOpX1plu0vm"
+        }
+    },
+    {
+        "germanName": "Baumgartsche Gasse",
+        "polishNames": [
+            "Heweliusza"
+        ],
+        "sys": {
+            "id": "5fkAmXwL99yC1JzGgxvOz1"
+        }
+    },
+    {
+        "germanName": "Strandweg",
+        "polishNames": [
+            "Traugutta"
+        ],
+        "sys": {
+            "id": "6ICCgeY5eRjzR2UnfPwCod"
+        }
+    },
+    {
+        "germanName": "Heidebergstraße",
+        "polishNames": [
+            "Kochanowskiego"
+        ],
+        "sys": {
+            "id": "7eh458oG2ACoA9ogJwscGW"
+        }
+    },
+    {
+        "germanName": "Lenzgasse",
+        "polishNames": [
+            "Wiosenna",
+            "n. e."
+        ],
+        "sys": {
+            "id": "1MkPMsgnGx1J4b6BOefkHE"
+        }
+    },
+    {
+        "germanName": "Napoleonsplatz",
+        "polishNames": [
+            "Błędnik"
+        ],
+        "sys": {
+            "id": "5BxFc2zvMUddYH7WZifoA9"
+        }
+    },
+    {
+        "germanName": "Althoffweg",
+        "polishNames": [
+            "Fiszera"
+        ],
+        "sys": {
+            "id": "3OWUlRbmavQgktr1yrS4lZ"
+        }
+    },
+    {
+        "germanName": "Friedrich - Engels - Straße",
+        "polishNames": [
+            "Grabowa"
+        ],
+        "sys": {
+            "id": "7CGEffAvl7pv58hhZNGBQD"
+        }
+    },
+    {
+        "germanName": "Fuchswall",
+        "polishNames": [
+            "Lisia Grobla"
+        ],
+        "sys": {
+            "id": "wuzqvV2lly2v7h0svaupR"
+        }
+    },
+    {
+        "germanName": "Renneberg",
+        "polishNames": [
+            "Spacerowa"
+        ],
+        "sys": {
+            "id": "5xefTMb3xMKZ5eEa6hpZc5"
+        }
+    },
+    {
+        "germanName": "Ahornweg",
+        "polishNames": [
+            "Klonowa"
+        ],
+        "sys": {
+            "id": "3hgKvQrBVbWi32ksmSXaMK"
+        }
+    },
+    {
+        "germanName": "Jäschkentaler Weg",
+        "polishNames": [
+            "Jaśkowa Dolina"
+        ],
+        "sys": {
+            "id": "3M7ItSWAvFT8rBSufI5zQ"
+        }
+    },
+    {
+        "germanName": "Kuhgasse",
+        "polishNames": [
+            "Jana z Kolna",
+            "Krowia"
+        ],
+        "sys": {
+            "id": "7zvcDknhyJxo7JA87ag3ZV"
+        }
+    },
+    {
+        "germanName": "Alte Kommandantur",
+        "polishNames": [
+            "Krowoderska"
+        ],
+        "sys": {
+            "id": "69FXOkvaXx2qWvhzGPpj5I"
+        }
+    },
+    {
+        "germanName": "Dahlienweg",
+        "polishNames": [
+            "Daliowa"
+        ],
+        "sys": {
+            "id": "7hZpD9p11tv8BbwCF8RG6b"
+        }
+    },
+    {
+        "germanName": "Boltenbleiche",
+        "polishNames": [
+            "Sandomierska"
+        ],
+        "sys": {
+            "id": "19yDZOEOcW2Gh69UnYFmVn"
+        }
+    },
+    {
+        "germanName": "Schmiedestraße",
+        "polishNames": [
+            "Poznańska"
+        ],
+        "sys": {
+            "id": "3GC2p3NSBNfYxuhN8t0zC3"
+        }
+    },
+    {
+        "germanName": "Conzestraße",
+        "polishNames": [
+            "Pułaskiego"
+        ],
+        "sys": {
+            "id": "48zpDGxyNMiwpjYK6zTuds"
+        }
+    },
+    {
+        "germanName": "Seestraße",
+        "polishNames": [
+            "n. e.",
+            "Boh. Monte Cassino",
+            "Pomorska"
+        ],
+        "sys": {
+            "id": "1EykNH9KMIbN7AsBmUobpi"
+        }
+    },
+    {
+        "germanName": "Am Bahnhof",
+        "polishNames": [
+            "Podjazd"
+        ],
+        "sys": {
+            "id": "1hBCBhLDPxlNhXJZ1yDtHG"
+        }
+    },
+    {
+        "germanName": "An der Königshöhe",
+        "polishNames": [
+            "Na Wzgórzu"
+        ],
+        "sys": {
+            "id": "1jLh6AH0tTKUkri7mlcyn3"
+        }
+    },
+    {
+        "germanName": "Rähmtor",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4DhHg85r0byKb7JDveBKk4"
+        }
+    },
+    {
+        "germanName": "Holzgasse",
+        "polishNames": [
+            "Kładki"
+        ],
+        "sys": {
+            "id": "3GNwz4r5yNhFXxrrz1kQ3F"
+        }
+    },
+    {
+        "germanName": "Kleine Schwalbengasse",
+        "polishNames": [
+            "Szczygla"
+        ],
+        "sys": {
+            "id": "XJdStEKMDndyWkCu9URxK"
+        }
+    },
+    {
+        "germanName": "Brandtstraße",
+        "polishNames": [
+            "Armii Czerwonej",
+            "Armii Krajowej"
+        ],
+        "sys": {
+            "id": "5oiKAG36dvtIpb0NEYM6TY"
+        }
+    },
+    {
+        "germanName": "Kleine Kehrwiedergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "1Me16uvGoXcopBKJH0DPJB"
+        }
+    },
+    {
+        "germanName": "Matemblewoer Weg",
+        "polishNames": [
+            "Matemblewska"
+        ],
+        "sys": {
+            "id": "7eBQBquoV9xKXTlwUTw254"
+        }
+    },
+    {
+        "germanName": "Klosterstraße",
+        "polishNames": [
+            "Cystersów"
+        ],
+        "sys": {
+            "id": "1hazaEQXin4TIxjEAbF5Vu"
+        }
+    },
+    {
+        "germanName": "Genossenschaftsstraße",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "7fU6CincVQjyYxaSjcQDX"
+        }
+    },
+    {
+        "germanName": "Neuer Markt",
+        "polishNames": [
+            "Wybickiego Pl."
+        ],
+        "sys": {
+            "id": "7qEHQjL2rZn0SDCGpLmq3D"
+        }
+    },
+    {
+        "germanName": "Roonstraße",
+        "polishNames": [
+            "Dąbrowskiego"
+        ],
+        "sys": {
+            "id": "E8IXPYV3xHJwIhitRfbHS"
+        }
+    },
+    {
+        "germanName": "Neustädter Straße",
+        "polishNames": [
+            "Niepodległości"
+        ],
+        "sys": {
+            "id": "1SXEYtugxo6TByh9TDiZ1j"
+        }
+    },
+    {
+        "germanName": "Fischerstraße",
+        "polishNames": [
+            "Rybołowców",
+            "Ogrodowa"
+        ],
+        "sys": {
+            "id": "2OCgK3Vs1SJCppG52qOaKb"
+        }
+    },
+    {
+        "germanName": "Holzmarkt",
+        "polishNames": [
+            "Targ Drzewny"
+        ],
+        "sys": {
+            "id": "2v7PIbxm4KQvX8OL0JiUPf"
+        }
+    },
+    {
+        "germanName": "Kramerweg",
+        "polishNames": [
+            "Kolberga"
+        ],
+        "sys": {
+            "id": "2G42wt21nIuNO6BfV32jlU"
+        }
+    },
+    {
+        "germanName": "Große Gasse",
+        "polishNames": [
+            "Wielka",
+            "n. e."
+        ],
+        "sys": {
+            "id": "69260lqRq1Ddw72ELNHgxt"
+        }
+    },
+    {
+        "germanName": "Rimrottstraße",
+        "polishNames": [
+            "Bajki"
+        ],
+        "sys": {
+            "id": "4WJw6Zzf5b90fd7nCS2bZZ"
+        }
+    },
+    {
+        "germanName": "Mauergang",
+        "polishNames": [
+            "Podmurze"
+        ],
+        "sys": {
+            "id": "4LTbY0cfsYVRRmQ3Vlx7ww"
+        }
+    },
+    {
+        "germanName": "Hussitenweg",
+        "polishNames": [
+            "Husytów"
+        ],
+        "sys": {
+            "id": "2B1LnzGCzzNeecDJRCudb4"
+        }
+    },
+    {
+        "germanName": "Nietenweg",
+        "polishNames": [
+            "Sucha"
+        ],
+        "sys": {
+            "id": "7x5OP2VGc6BOfI3KbUeDSC"
+        }
+    },
+    {
+        "germanName": "Taubenwasserweg",
+        "polishNames": [
+            "23 Marca"
+        ],
+        "sys": {
+            "id": "579kBWum8Jmku6u537D8j1"
+        }
+    },
+    {
+        "germanName": "Unterführung",
+        "polishNames": [
+            "Podjazd"
+        ],
+        "sys": {
+            "id": "4rWlth8ERce6H2moOrM4fb"
+        }
+    },
+    {
+        "germanName": "Marxstraße",
+        "polishNames": [
+            "Załogowa"
+        ],
+        "sys": {
+            "id": "1Eer9hA6gDbPNQLtZoGz7i"
+        }
+    },
+    {
+        "germanName": "Kalkort",
+        "polishNames": [
+            "Wapiennicza"
+        ],
+        "sys": {
+            "id": "3njQ9XGMLxBnE1O9HSYKh4"
+        }
+    },
+    {
+        "germanName": "Kunstgasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "3y5WNZIUQPbZGprv4zhO4m"
+        }
+    },
+    {
+        "germanName": "Neu Hela",
+        "polishNames": [
+            "Burtowa"
+        ],
+        "sys": {
+            "id": "51VRjaSMyB7CPkOYQtl1gH"
+        }
+    },
+    {
+        "germanName": "Kirchengasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "18VsS0jTPJLIqECALz9sQj"
+        }
+    },
+    {
+        "germanName": "Kiefernweg",
+        "polishNames": [
+            "Konopnickiej"
+        ],
+        "sys": {
+            "id": "5NPCeS8ORLAAROv75mhJo8"
+        }
+    },
+    {
+        "germanName": "Paulastraße",
+        "polishNames": [
+            "Witkiewicza"
+        ],
+        "sys": {
+            "id": "7koaTVh3dFWPVTatI8QqCt"
+        }
+    },
+    {
+        "germanName": "Viktoriapassage",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "2tNUu1XDC33NGCo5BfYlsN"
+        }
+    },
+    {
+        "germanName": "Logengang",
+        "polishNames": [
+            "Masońska",
+            "n. e."
+        ],
+        "sys": {
+            "id": "9CGXPcSWkDdqPq5kDbzAz"
+        }
+    },
+    {
+        "germanName": "Seemannsstraße",
+        "polishNames": [
+            "Wilków Morskich"
+        ],
+        "sys": {
+            "id": "1OKp9pAh9Iv4gaMmtwo57M"
+        }
+    },
+    {
+        "germanName": "Seydlitzweg",
+        "polishNames": [
+            "Nowowiejskiego"
+        ],
+        "sys": {
+            "id": "3Ret3a51pizvTwsUCWSL8G"
+        }
+    },
+    {
+        "germanName": "Erwin-von-Scheubner-Richter-Straße",
+        "polishNames": [
+            "Piaskowa"
+        ],
+        "sys": {
+            "id": "7jQWES9sipWFk4RevQFiLp"
+        }
+    },
+    {
+        "germanName": "Schladahler Weg",
+        "polishNames": [
+            "Jasna"
+        ],
+        "sys": {
+            "id": "7y10xtr5MDQ1VvNaYFkLZN"
+        }
+    },
+    {
+        "germanName": "Kleine Fischergasse",
+        "polishNames": [
+            "Tobiasza"
+        ],
+        "sys": {
+            "id": "69MpCm7CE2tYeVKgQmvzsq"
+        }
+    },
+    {
+        "germanName": "Kleinhammerweg",
+        "polishNames": [
+            "Biała",
+            "Kilińskiego"
+        ],
+        "sys": {
+            "id": "3POobLxIKRtBYzkumSlpmQ"
+        }
+    },
+    {
+        "germanName": "Tobiasgasse",
+        "polishNames": [
+            "Tobiasza"
+        ],
+        "sys": {
+            "id": "76c2Im3b321btetjz8S2Zf"
+        }
+    },
+    {
+        "germanName": "Fürstliche Aussicht",
+        "polishNames": [
+            "Krzywoustego"
+        ],
+        "sys": {
+            "id": "4PbnzgeRk0neDwcqCiKRPF"
+        }
+    },
+    {
+        "germanName": "Spendhaussche Neugasse",
+        "polishNames": [
+            "Stare Domki"
+        ],
+        "sys": {
+            "id": "1lniBoiWvd0YSpw1NkgD5f"
+        }
+    },
+    {
+        "germanName": "Sandweg",
+        "polishNames": [
+            "Dobrzyńska",
+            "Miałki Szlak"
+        ],
+        "sys": {
+            "id": "5AgZkVVDRW0zwXOfCczOag"
+        }
+    },
+    {
+        "germanName": "Wiebenwall",
+        "polishNames": [
+            "Okopowa"
+        ],
+        "sys": {
+            "id": "6CuqqZSWk8wE5JvcWsKBrl"
+        }
+    },
+    {
+        "germanName": "Nordstraße",
+        "polishNames": [
+            "Północna",
+            "Powstańców Warszawy"
+        ],
+        "sys": {
+            "id": "OgFErpE9qaiKpch35i1ZL"
+        }
+    },
+    {
+        "germanName": "Am Brausenden Wasser",
+        "polishNames": [
+            "Wartka"
+        ],
+        "sys": {
+            "id": "6u9iHkydMuIhcozLeCWlix"
+        }
+    },
+    {
+        "germanName": "Cecilienstraße",
+        "polishNames": [
+            "Czyżewskiego"
+        ],
+        "sys": {
+            "id": "7zvUfzVybzbLTyyu4xG52t"
+        }
+    },
+    {
+        "germanName": "Neufährer Weg",
+        "polishNames": [
+            "Górecka"
+        ],
+        "sys": {
+            "id": "6L2ZlMAOsSZZC5gBlAfWUB"
+        }
+    },
+    {
+        "germanName": "Schornsteinfegergasse",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4lS1Ob1MZvh47RajnIZV6U"
+        }
+    },
+    {
+        "germanName": "Straußgasse",
+        "polishNames": [
+            "Chłodna"
+        ],
+        "sys": {
+            "id": "2j1o2jLaL5s6lI3Q4FS6wA"
+        }
+    },
+    {
+        "germanName": "Lützowstraße",
+        "polishNames": [
+            "Poznańska"
+        ],
+        "sys": {
+            "id": "6RE507uQOQFlUISBircBau"
+        }
+    },
+    {
+        "germanName": "Gustav - Nachtigal - Straße",
+        "polishNames": [
+            "Słowińców",
+            "Śnieżna"
+        ],
+        "sys": {
+            "id": "3aQVSligGETKexENPH9KjB"
+        }
+    },
+    {
+        "germanName": "Katzengasse",
+        "polishNames": [
+            "Wróbla"
+        ],
+        "sys": {
+            "id": "61SefLhYo7ONZxNCJr0OiO"
+        }
+    },
+    {
+        "germanName": "Am Glockentor",
+        "polishNames": [
+            "n. e."
+        ],
+        "sys": {
+            "id": "4PvpuZQXPh7kPapvw9qM8k"
+        }
+    },
+    {
+        "germanName": "Dünenweg",
+        "polishNames": [
+            "Kępna"
+        ],
+        "sys": {
+            "id": "2oxSubWVC6d79kk9ghdKeG"
+        }
+    },
+    {
+        "germanName": "Breitgasse",
+        "polishNames": [
+            "Szeroka"
+        ],
+        "sys": {
+            "id": "19ZPIPYWWa6KWlq4Mn15Lw"
+        }
+    },
+    {
+        "germanName": "Justweg",
+        "polishNames": [
+            "Modrzewskiego"
+        ],
+        "sys": {
+            "id": "6qAiXYSnyWZwwcNMFNhP9p"
+        }
+    },
+    {
+        "germanName": "Linienstraße",
+        "polishNames": [
+            "Parkowa"
+        ],
+        "sys": {
+            "id": "zgU9IAGYsMLWfZSnrZZW6"
+        }
+    },
+    {
+        "germanName": "Am Jakobstor",
+        "polishNames": [
+            "Przybramna",
+            "Wałowa"
+        ],
+        "sys": {
+            "id": "25u6NMaXbF5JEXAc4DhZLS"
+        }
+    },
+    {
+        "germanName": "Talmühlstraße",
+        "polishNames": [
+            "Tenisowa"
+        ],
+        "sys": {
+            "id": "6mFJCurRWVg6wYTCRCNFrD"
+        }
+    },
+    {
+        "germanName": "Hebbelstraße",
+        "polishNames": [
+            "Bażyńskiego, Jana"
+        ],
+        "sys": {
+            "id": "6ERmjDoVkIu64uFTKC8IU5"
+        }
+    },
+    {
+        "germanName": "Parkstraße",
+        "polishNames": [
+            "Parkowa"
+        ],
+        "sys": {
+            "id": "3qyY0qfT7RRtQJGEMOYcQk"
+        }
+    },
+    {
+        "germanName": "Ellernweg",
+        "polishNames": [
+            "Wrzosy"
+        ],
+        "sys": {
+            "id": "5fRcaueunYfgY0xgz7dEhQ"
+        }
+    },
+    {
+        "germanName": "Krebsmarkt",
+        "polishNames": [
+            "Bojowców",
+            "Targ Rakowy"
+        ],
+        "sys": {
+            "id": "1ByEcZ00W26UEOK13BDRrr"
+        }
+    },
+    {
+        "germanName": "Neugarten",
+        "polishNames": [
+            "Nowe Ogrody",
+            "Nowy Świat",
+            "Świerczewskiego, Gen. Karola"
+        ],
+        "sys": {
+            "id": "1bdxaDFmZZdnY5ZWVxd68q"
+        }
+    },
+    {
+        "germanName": "Pockenhausscher Gang",
+        "polishNames": [
+            "Szpitalna"
+        ],
+        "sys": {
+            "id": "5wkoiUV8ZPbND9JNC4iHUe"
+        }
+    },
+    {
+        "germanName": "Schluchtweg",
+        "polishNames": [
+            "Jarowa"
+        ],
+        "sys": {
+            "id": "3EtXOMVuGYImHOlhqYj8hc"
+        }
+    },
+    {
+        "germanName": "Kleine Unterführung",
+        "polishNames": [
+            "Marynarzy"
+        ],
+        "sys": {
+            "id": "5qqJ5uZqDsJiDqr1se1oNW"
+        }
+    },
+    {
+        "germanName": "Lessingstraße",
+        "polishNames": [
+            "Głowackiego",
+            "Grottgera"
+        ],
+        "sys": {
+            "id": "2gKipfkJXCEuxYXPCUktGB"
+        }
+    },
+    {
+        "germanName": "Groß - Katzer - Straße",
+        "polishNames": [
+            "Malczewskiego"
+        ],
+        "sys": {
+            "id": "2lftsnNHyRy2Jcj8MFByDR"
+        }
+    },
+    {
+        "germanName": "Franz-Schubert-Weg",
+        "polishNames": [
+            "Schuberta"
+        ],
+        "sys": {
+            "id": "1dJptsq36Vo3H5vT4uHs6h"
+        }
+    },
+    {
+        "germanName": "Brückengasse",
+        "polishNames": [
+            "Chmielna",
+            "Toruńska"
+        ],
+        "sys": {
+            "id": "zqpargH3T5iQd7806ufk1"
+        }
+    },
+    {
+        "germanName": "Dornenweg",
+        "polishNames": [
+            "Tarniny"
+        ],
+        "sys": {
+            "id": "3Lf1MK9TrpvIoYAGXvDq26"
+        }
+    },
+    {
+        "germanName": "Sperlingsgasse",
+        "polishNames": [
+            "Thälmanna, Ernesta",
+            "Wróbla"
+        ],
+        "sys": {
+            "id": "DsWw4D7s8mSb4GL5I1Pgc"
+        }
+    }
+]

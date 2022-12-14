@@ -11,12 +11,12 @@ export function FullpagePost(props: PostProps) {
 
     return (
         <>
-            <article className="max-w-2xl px-4 py-24 mx-auto space-y-16 dark:bg-gray-800 dark:text-gray-50">
-                <div className="w-full mx-auto space-y-4">
-                    <h1 className="text-5xl font-bold leading-none">{content.fields.title}</h1>
+            <article className="max-w-2xl px-4 py-16 mx-auto space-y-16 bg-mybg-light dark:bg-mybg-dark">
+                <div className="w-full mx-auto space-y-4 text-mytxt dark:text-mytxt-dark">
+                    <h1 className="text-5xl font-bold leading-none mx-0">{content.fields.title}</h1>
                     <div className="flex flex-wrap space-x-2 text-sm dark:text-gray-400">
                         {content.metadata.tags.map((tag, index) => (
-                            <a rel="noopener noreferrer" href={`/tags/${tag}`} className="p-1 hover:underline"><span>{tag.sys.id}</span></a>
+                            <a rel="noopener noreferrer" href={`/tags/${tag.sys.id}`} className="p-1 hover:underline"><span>#{tag.sys.id}</span></a>
                         ))}
                     </div>
                     <p className="text-sm dark:text-gray-400 space-x-1">by&nbsp;

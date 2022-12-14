@@ -1,0 +1,301 @@
+{
+    "metadata": {
+        "tags": []
+    },
+    "sys": {
+        "space": {
+            "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "9ieso0n2yz5w"
+            }
+        },
+        "id": "3mrTq71TxocSALuATZF0v",
+        "type": "Entry",
+        "createdAt": "2022-10-26T17:51:24.443Z",
+        "updatedAt": "2022-12-07T00:07:31.512Z",
+        "environment": {
+            "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+            }
+        },
+        "revision": 2,
+        "contentType": {
+            "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "street"
+            }
+        },
+        "locale": "en-US"
+    },
+    "fields": {
+        "germanName": "Abbegg-Gasse",
+        "polishNames": [
+            "Dobra"
+        ],
+        "district": "Niederstadt",
+        "history": {
+            "data": {},
+            "content": [
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": "In the beginning - in a map from 1796 - it was simply called Feldweg (\"dirt road\"), the southern part of which was then renamed in 1876 after the Abbegg Foundation property located here. The northern part retained its old name until at least 1895.",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": "Links with further information:",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "content": [
+                                {
+                                    "data": {},
+                                    "content": [
+                                        {
+                                            "data": {},
+                                            "marks": [],
+                                            "value": "Architectural plans for the ",
+                                            "nodeType": "text"
+                                        },
+                                        {
+                                            "data": {
+                                                "uri": "https://www.alamy.com/stock-photo/bauplan-fur-eine-siedlung-der-abegg-stiftung-mit-einem-normal-w.html?sortBy=relevant"
+                                            },
+                                            "content": [
+                                                {
+                                                    "data": {},
+                                                    "marks": [],
+                                                    "value": "Abegg Foundation",
+                                                    "nodeType": "text"
+                                                }
+                                            ],
+                                            "nodeType": "hyperlink"
+                                        },
+                                        {
+                                            "data": {},
+                                            "marks": [],
+                                            "value": "",
+                                            "nodeType": "text"
+                                        }
+                                    ],
+                                    "nodeType": "paragraph"
+                                }
+                            ],
+                            "nodeType": "list-item"
+                        },
+                        {
+                            "data": {},
+                            "content": [
+                                {
+                                    "data": {},
+                                    "content": [
+                                        {
+                                            "data": {},
+                                            "marks": [],
+                                            "value": "Dobra (PL) ",
+                                            "nodeType": "text"
+                                        },
+                                        {
+                                            "data": {
+                                                "uri": "http://www.opowiadaczehistorii.pl/dobra/"
+                                            },
+                                            "content": [
+                                                {
+                                                    "data": {},
+                                                    "marks": [],
+                                                    "value": "http://www.opowiadaczehistorii.pl/dobra/",
+                                                    "nodeType": "text"
+                                                }
+                                            ],
+                                            "nodeType": "hyperlink"
+                                        },
+                                        {
+                                            "data": {},
+                                            "marks": [],
+                                            "value": "",
+                                            "nodeType": "text"
+                                        }
+                                    ],
+                                    "nodeType": "paragraph"
+                                }
+                            ],
+                            "nodeType": "list-item"
+                        }
+                    ],
+                    "nodeType": "unordered-list"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": "",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                }
+            ],
+            "nodeType": "document"
+        },
+        "source": "Stephan, W. Danzig. Gründung und Straßennamen. Marburg 1954, S 161",
+        "city": {
+            "metadata": {
+                "tags": []
+            },
+            "sys": {
+                "space": {
+                    "sys": {
+                        "type": "Link",
+                        "linkType": "Space",
+                        "id": "9ieso0n2yz5w"
+                    }
+                },
+                "id": "3zagnFyPucQu39zUERI1Or",
+                "type": "Entry",
+                "createdAt": "2022-08-06T00:49:31.058Z",
+                "updatedAt": "2022-08-06T00:49:31.058Z",
+                "environment": {
+                    "sys": {
+                        "id": "master",
+                        "type": "Link",
+                        "linkType": "Environment"
+                    }
+                },
+                "revision": 1,
+                "contentType": {
+                    "sys": {
+                        "type": "Link",
+                        "linkType": "ContentType",
+                        "id": "city"
+                    }
+                },
+                "locale": "en-US"
+            },
+            "fields": {
+                "name": "Danzig"
+            }
+        },
+        "media": [
+            {
+                "metadata": {
+                    "tags": []
+                },
+                "sys": {
+                    "space": {
+                        "sys": {
+                            "type": "Link",
+                            "linkType": "Space",
+                            "id": "9ieso0n2yz5w"
+                        }
+                    },
+                    "id": "3CMqY6Klh837qQ2X1By2A6",
+                    "type": "Entry",
+                    "createdAt": "2022-12-05T20:00:56.116Z",
+                    "updatedAt": "2022-12-05T20:02:18.204Z",
+                    "environment": {
+                        "sys": {
+                            "id": "master",
+                            "type": "Link",
+                            "linkType": "Environment"
+                        }
+                    },
+                    "revision": 2,
+                    "contentType": {
+                        "sys": {
+                            "type": "Link",
+                            "linkType": "ContentType",
+                            "id": "imageWithFocalPoint"
+                        }
+                    },
+                    "locale": "en-US"
+                },
+                "fields": {
+                    "title": "Dobra (Abegg-Gasse)",
+                    "image": {
+                        "metadata": {
+                            "tags": []
+                        },
+                        "sys": {
+                            "space": {
+                                "sys": {
+                                    "type": "Link",
+                                    "linkType": "Space",
+                                    "id": "9ieso0n2yz5w"
+                                }
+                            },
+                            "id": "1TxV2nAp1kTG8CKYsVzAGa",
+                            "type": "Asset",
+                            "createdAt": "2022-12-05T19:59:36.915Z",
+                            "updatedAt": "2022-12-05T19:59:36.915Z",
+                            "environment": {
+                                "sys": {
+                                    "id": "master",
+                                    "type": "Link",
+                                    "linkType": "Environment"
+                                }
+                            },
+                            "revision": 1,
+                            "locale": "en-US"
+                        },
+                        "fields": {
+                            "title": "Ulica Abegg Gasse z logo.jpg",
+                            "description": "",
+                            "file": {
+                                "url": "//images.ctfassets.net/9ieso0n2yz5w/1TxV2nAp1kTG8CKYsVzAGa/ed53d61b9c946ea9b24ca9f912d4af22/Ulica_Abegg_Gasse_z_logo.jpg.webp",
+                                "details": {
+                                    "size": 101898,
+                                    "image": {
+                                        "width": 768,
+                                        "height": 552
+                                    }
+                                },
+                                "fileName": "Ulica_Abegg_Gasse_z_logo.jpg.webp",
+                                "contentType": "image/webp"
+                            }
+                        }
+                    },
+                    "focalPoint": {
+                        "focalPoint": {
+                            "x": 384,
+                            "y": 276
+                        }
+                    },
+                    "location": {
+                        "lon": 18.652912300502674,
+                        "lat": 54.340394051872416
+                    },
+                    "source": "Opowiadacze Historii.pl",
+                    "sourceUrl": "http://www.opowiadaczehistorii.pl/dobra/"
+                }
+            }
+        ],
+        "location": {
+            "lon": 18.653006,
+            "lat": 54.340471
+        }
+    }
+}

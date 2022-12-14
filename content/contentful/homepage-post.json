@@ -1,0 +1,197 @@
+{
+    "metadata": {
+        "tags": [
+            {
+                "sys": {
+                    "type": "Link",
+                    "linkType": "Tag",
+                    "id": "sticky"
+                }
+            }
+        ]
+    },
+    "sys": {
+        "space": {
+            "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "9ieso0n2yz5w"
+            }
+        },
+        "id": "64otR5hPDfuP0xYYvaODSG",
+        "type": "Entry",
+        "createdAt": "2022-10-31T16:43:19.399Z",
+        "updatedAt": "2022-12-12T00:40:29.883Z",
+        "environment": {
+            "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+            }
+        },
+        "revision": 8,
+        "contentType": {
+            "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "post"
+            }
+        },
+        "locale": "en-US"
+    },
+    "fields": {
+        "title": "Homepage Posts #1",
+        "slug": "homepage-posts-1",
+        "content": {
+            "data": {},
+            "content": [
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [
+                                {
+                                    "type": "italic"
+                                }
+                            ],
+                            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                }
+            ],
+            "nodeType": "document"
+        },
+        "excerpt": "This is an excerpt",
+        "coverImage": {
+            "metadata": {
+                "tags": []
+            },
+            "sys": {
+                "space": {
+                    "sys": {
+                        "type": "Link",
+                        "linkType": "Space",
+                        "id": "9ieso0n2yz5w"
+                    }
+                },
+                "id": "ov5Nu7JrDYMMcoE3q3hV3",
+                "type": "Asset",
+                "createdAt": "2022-10-31T16:56:42.638Z",
+                "updatedAt": "2022-10-31T16:56:42.638Z",
+                "environment": {
+                    "sys": {
+                        "id": "master",
+                        "type": "Link",
+                        "linkType": "Environment"
+                    }
+                },
+                "revision": 1,
+                "locale": "en-US"
+            },
+            "fields": {
+                "title": "Danzig Langgarten und Rathaus",
+                "description": "Ca. 1860, Danzig Langgarten, Rathaus, Neptunbrunnen.",
+                "file": {
+                    "url": "//images.ctfassets.net/9ieso0n2yz5w/ov5Nu7JrDYMMcoE3q3hV3/1c43822b4590e261c92a10480ce7da66/site-screenshot.png",
+                    "details": {
+                        "size": 1255134,
+                        "image": {
+                            "width": 1024,
+                            "height": 660
+                        }
+                    },
+                    "fileName": "site-screenshot.png",
+                    "contentType": "image/png"
+                }
+            }
+        },
+        "date": "2022-10-31T00:00-04:00",
+        "author": {
+            "metadata": {
+                "tags": []
+            },
+            "sys": {
+                "space": {
+                    "sys": {
+                        "type": "Link",
+                        "linkType": "Space",
+                        "id": "9ieso0n2yz5w"
+                    }
+                },
+                "id": "3CGd2dRtKiPi4YRL4NCvkR",
+                "type": "Entry",
+                "createdAt": "2022-10-27T00:00:13.597Z",
+                "updatedAt": "2022-11-27T20:35:07.173Z",
+                "environment": {
+                    "sys": {
+                        "id": "master",
+                        "type": "Link",
+                        "linkType": "Environment"
+                    }
+                },
+                "revision": 2,
+                "contentType": {
+                    "sys": {
+                        "type": "Link",
+                        "linkType": "ContentType",
+                        "id": "author"
+                    }
+                },
+                "locale": "en-US"
+            },
+            "fields": {
+                "name": "Jochen",
+                "picture": {
+                    "metadata": {
+                        "tags": []
+                    },
+                    "sys": {
+                        "space": {
+                            "sys": {
+                                "type": "Link",
+                                "linkType": "Space",
+                                "id": "9ieso0n2yz5w"
+                            }
+                        },
+                        "id": "2Nq4WjnS47TK5mNrQcLBIQ",
+                        "type": "Asset",
+                        "createdAt": "2022-10-26T17:22:47.352Z",
+                        "updatedAt": "2022-10-26T17:22:47.352Z",
+                        "environment": {
+                            "sys": {
+                                "id": "master",
+                                "type": "Link",
+                                "linkType": "Environment"
+                            }
+                        },
+                        "revision": 1,
+                        "locale": "en-US"
+                    },
+                    "fields": {
+                        "title": "Ankerschmiedegasse",
+                        "description": "",
+                        "file": {
+                            "url": "//images.ctfassets.net/9ieso0n2yz5w/2Nq4WjnS47TK5mNrQcLBIQ/441d87da5f4b5ebbaf04ead5b7e01c73/Ankerschmiedegasse.jpeg",
+                            "details": {
+                                "size": 217945,
+                                "image": {
+                                    "width": 960,
+                                    "height": 938
+                                }
+                            },
+                            "fileName": "Ankerschmiedegasse.jpeg",
+                            "contentType": "image/jpeg"
+                        }
+                    }
+                }
+            }
+        },
+        "showIn": [
+            "Homepage",
+            "Hero"
+        ]
+    }
+}
