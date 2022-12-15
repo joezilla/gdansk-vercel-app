@@ -14,19 +14,19 @@ export default function Footer() {
           </div>
           <ul className="flex flex-wrap items-center space-x-4 sm:space-x-8">
             <li>
-              Built with Contentful, Vercel, and Algolia.
+              Built with Contentful, NextJS, and Algolia.
             </li>
           </ul>
         </div>
         <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
-          <li>
+          {/*<li>
             <a rel="noopener noreferrer" href="#">Instagram</a>
           </li>
           <li>
             <a rel="noopener noreferrer" href="#">Facebook</a>
-          </li>
+  </li>*/}
           <li>
-            <a rel="noopener noreferrer" href="#">Twitter</a>
+            <a rel="noopener noreferrer" href="https://github.com/joezilla/gdansk-vercel-app">Source on Github</a>
           </li>
         </ul>
       </div>

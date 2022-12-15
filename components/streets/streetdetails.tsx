@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { IStreet, IImageWithFocalPoint } from '../../src/@types/contentful'
 import { RichtextComponent } from '../contentful'
-
+import { GoogleMap } from './googleMap'
 import React from "react";
 
 
@@ -13,7 +13,7 @@ function renderImage(image: IImageWithFocalPoint) {
   console.log("IMAGE: ", image)
   return (
     <div>
-      <img alt="" className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} /> 
+      <img alt="" className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} />
     </div>
   )
 }
@@ -26,7 +26,7 @@ export function StreetDetail(props: StreetDetailProps) {
 
   return (
     <>
-      <section className="dark:bg-gray-800 dark:text-gray-100 border border-fuchsia-200 ">
+      <section className="dark:bg-gray-800 dark:text-gray-100">
         <div className="container max-w-xl p-6 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">{street.fields.germanName}</h2>
@@ -34,12 +34,12 @@ export function StreetDetail(props: StreetDetailProps) {
           </div>
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">Geschichte</h3>
+              <h3 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">Geschichte</h3>
               <RichtextComponent content={street.fields.history} />
               <div className="mt-12 space-y-12">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-md dark:bg-violet-400 dark:text-gray-900">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-md bg-violet-400 dark:text-gray-900">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -52,7 +52,7 @@ export function StreetDetail(props: StreetDetailProps) {
                 </div>
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-md dark:bg-violet-400 dark:text-gray-900">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-md bg-violet-400 dark:text-gray-900">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -66,7 +66,7 @@ export function StreetDetail(props: StreetDetailProps) {
               </div>
             </div>
             <div aria-hidden="true" className="mt-10 lg:mt-0">
-              Google Map goes here.
+              <GoogleMap street={street} />
             </div>
             {/*
             <div aria-hidden="true" className="mt-10 lg:mt-0">
@@ -81,18 +81,18 @@ export function StreetDetail(props: StreetDetailProps) {
             */}
           </div>
         </div>
-      </section>
-
-
-      <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
-        <h3 className="p-6 text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">  Bilder</h3>
-        <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-          {street.fields?.media?.map(item =>
-            renderImage(item)
-          )}
+        <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
+          <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">Bilder</h3>
+          <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+            {street.fields?.media?.map(item =>
+              renderImage(item)
+            )}
+          </div>
         </div>
-        {/*             <img alt="" className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={item.url} /> */}
+
       </section>
+
+
 
     </>
 

@@ -1,9 +1,21 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { IPost } from '../../src/@types/contentful'
 
 import HeaderNavigationModule from './headerNavigation'
 
-// # sample data
-import post from '../../content/contentful/homepage-post.json';
+
+// load sample data
+const hydrated = require("../../content/contentful/homepage-post.json");
+let post = {
+  ...hydrated,
+  toPlainObject(): object {
+    return this;
+  },
+  update(): Promise<IPost> {
+    throw new Error("Method not implemented.");
+  }
+}
+
 
 //👇 This default export determines where your story goes in the story list
 export default {

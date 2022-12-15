@@ -89,10 +89,10 @@ const customMarkdownOptions = {
                 <p>{children}</p>
             </blockquote>),
         [BLOCKS.UL_LIST]: (node: Block | Inline, children: ReactNode) => (
-            <ul className="mx-8 list-disc">{children}</ul>
+            <ul className="mx-8 py-4 list-disc">{children}</ul>
         ),
         [BLOCKS.OL_LIST]: (node: Block | Inline, children: ReactNode) => (
-            <ol className="mx-8 list-decimal">{children}</ol>
+            <ol className="mx-8 py-4 list-decimal">{children}</ol>
         ),
         [BLOCKS.HEADING_1]: (node: Block | Inline, children: ReactNode) => (
             <h1 className="text-5xl mx-0 font-extrabold dark:text-white">{children}</h1>

@@ -16,7 +16,7 @@ export function Layout(props: LayoutProps) {
       <Meta />
       <div className="dark:bg-mybg-dark dark:text-mytxt-dark">
         <Navi navigationPosts={props.navigationPosts}/>
-        <main className="py-8">{props.children}</main>
+        <main className="py-16">{props.children}</main>
       </div>
       <Footer />
       <Script src="/scripts/darkmode.js" strategy="lazyOnload" />

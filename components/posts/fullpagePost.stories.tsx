@@ -1,9 +1,18 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import { IPost } from '../../src/@types/contentful'
 import { FullpagePost } from './fullpagePost'
 
 // # sample data
-import post from '../../content/contentful/richtext-test.json';
+const hydrated = require("../../content/contentful/richtext-test.json");
+let post = {
+  ...hydrated,
+  toPlainObject(): object {
+    return this;
+  },
+  update(): Promise<IPost> {
+    throw new Error("Method not implemented.");
+  }
+}
 
 //👇 This default export determines where your story goes in the story list
 export default {

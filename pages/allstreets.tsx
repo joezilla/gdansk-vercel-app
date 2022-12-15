@@ -27,7 +27,7 @@ export default function AllStreets(props: AllStreetProps) {
           <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
               <h1 className="text-4xl lg:text-6xl font-bold font-bold tracking-tighter md:pr-8 dark:text-white">
-                Alle Strassen Danzigs 22
+                Alle Strassen Danzigs
               </h1>
               <StreetOverview streets={allStreets} />
             </div>

@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Document } from '@contentful/rich-text-types'
 
 import { RichtextComponent } from './richtextComponent'
 
@@ -28,6 +29,6 @@ export default {
   export const Basic = Template.bind({});
   Basic.args = {
     /*👇 The args you need here will depend on your component */   
-    content: post.fields.content
+    content: post.fields.content as Document
     
   };

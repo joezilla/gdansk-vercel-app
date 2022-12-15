@@ -1,2 +1,3 @@
 export { StreetDetail } from './streetdetails'
-export { StreetOverview } from '../streets/streetoverview'
+export { StreetOverview } from './streetoverview'
+export { GoogleMap } from './googleMap'

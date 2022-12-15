@@ -14,10 +14,11 @@ export default {
   } as ComponentMeta<typeof Footer>;
   
   //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
+  const Template: ComponentStory<typeof Footer> = (args) => <Footer  />;
   
   export const Basic = Template.bind({});
   
   Basic.args = {
     /*👇 The args you need here will depend on your component */
+    
   };

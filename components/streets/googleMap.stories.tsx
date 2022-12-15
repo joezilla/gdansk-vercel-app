@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { IStreet } from '../../src/@types/contentful';
-import { StreetDetail } from './streetdetails'
+import { GoogleMap } from './googleMap'
 
 // # sample data
 const hydrated = require("../../content/contentful/Abbegg-Gasse.json");
@@ -20,12 +20,12 @@ export default {
     * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
     * to learn how to generate automatic titles
     */
-    title: 'Streets/Street Detail',
-    component: StreetDetail,
-  } as ComponentMeta<typeof StreetDetail>;
+    title: 'Streets/Google Map',
+    component: GoogleMap,
+  } as ComponentMeta<typeof GoogleMap>;
   
   //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof StreetDetail> = (args) => <StreetDetail {...args} />;
+  const Template: ComponentStory<typeof GoogleMap> = (args) => <GoogleMap {...args} />;
   
   export const Basic = Template.bind({});
   Basic.args = {

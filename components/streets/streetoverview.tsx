@@ -55,7 +55,7 @@ export function StreetOverview(props: AllStreetsProps) {
   let streets = props.streets;
   var sorted = sort2({ streets })
   return (
-    <div className="">
+    <div className="dark:bg-mybg-dark dark:text-mytxt-dark">
       <div className="dark:text-white">
         <ul className="alphabetlist dark:text-gray-200">
           {letters.map(l => <li key={`#alphabetlist-${l}`}><a href={`#alphabetlist-${l}`}>{l}</a></li>)}
