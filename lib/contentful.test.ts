@@ -1,12 +1,24 @@
 import { loadDefaultErrorComponents } from "next/dist/server/load-components";
 import { ContentfulLoader } from "./contentful";
 
+// clear logs
+import { log} from 'next-axiom'
+afterEach(async() => {
+    log.flush();
+ });
 
 // test loading by name
 test('getStreetByName', async () => {
     let loader = new ContentfulLoader( - 1 );
     let street = await loader.getStreetByName("Abbegg-Gasse");
     await expect(street.fields.germanName).toBe("Abbegg-Gasse");
+});
+
+// lower case fun
+test('getStreeyByName-lowercase', async () => {
+    let loader = new ContentfulLoader( - 1 );
+    let street = await loader.getStreetByName("am brausenden wasser");
+    await expect(street.fields.germanName).toBe("Am Brausenden Wasser");
 });
 
 // test loading all streets
@@ -56,5 +68,5 @@ test('getHomepageHeroPost', async () => {
     let post = await loader.getHomepageHeroPost();
     await expect(post).toBeDefined();
     if (post.fields?.showIn)
-        await expect(post.fields?.showIn[0]).toBe("Hero");
+        await expect(post.fields?.showIn[0]).toBe("Homepage");
 });

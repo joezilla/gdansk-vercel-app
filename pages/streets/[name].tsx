@@ -58,10 +58,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   log.debug("Loading street: " + name);
 
+  const street =  await loader.getStreetByName(name);
+  if(!street) {
+    log.error(`Cannot find street ${name}`);
+  }
+
   return {
     props: {
       preview: false,
-      street: await loader.getStreetByName(name),
+      street: street,
       navigationPosts: await loader.getNavigationPosts()
     }
   };

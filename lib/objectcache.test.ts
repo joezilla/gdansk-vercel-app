@@ -1,6 +1,10 @@
 import { loadDefaultErrorComponents } from "next/dist/server/load-components";
 import { ObjectCache } from "./objectcache";
 
+import { log} from 'next-axiom'
+afterEach(async() => {
+    log.flush();
+ });
 
 // test loading by name
 test('testCacheDisabled', async () => {
@@ -17,7 +21,6 @@ test('testCacheDisabled', async () => {
     }, -1);
 
     expect(first).not.toBe(second);
-    
 });
 
 test('testCacheAlways', async () => {
@@ -37,7 +40,6 @@ test('testCacheAlways', async () => {
     console.debug("first", first);
 
     expect(first).toBe(second);
-    
 });
 
 
@@ -55,8 +57,7 @@ test('testInvalidation', async () => {
     }, 0);
 
     expect(first).not.toBe(second);
-    
-});
+    });
 
 test('manualCache', async () => {
     let loader = new ObjectCache();

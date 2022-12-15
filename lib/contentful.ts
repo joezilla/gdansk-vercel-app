@@ -126,7 +126,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         // query by name
         const query = {
             content_type: 'street',
-            'fields.germanName': name
+            'fields.germanName[match]': name
         };
         const cacheKey = "street-by-name-" + name;
 
@@ -171,7 +171,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
     public async getHomepageHeroPost() {
         const query = {
             content_type: 'post',
-            'fields.showIn': "Hero",
+            'fields.showIn': "Homepage",
             limit: 1
         };
         const cacheKey = "homepage-hero-post";
