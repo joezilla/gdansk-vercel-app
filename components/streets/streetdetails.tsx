@@ -13,7 +13,7 @@ function renderImage(image: IImageWithFocalPoint) {
   console.log("IMAGE: ", image)
   return (
     <div>
-      <img alt="" className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} />
+      <img alt="" key={image.sys.id} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} />
     </div>
   )
 }

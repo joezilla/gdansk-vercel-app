@@ -3,10 +3,11 @@ import Head from 'next/head'
 import ErrorPage from 'next/error'
 import { Layout, Container } from '../../components/layout'
 import { StreetDetail } from '../../components/streets'
-import { IStreet, IPost} from '../../src/@types/contentful'
+import { IStreet, IPost } from '../../src/@types/contentful'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ContentfulLoader } from '../../lib/contentful'
-
+import { parseStreetURL, createStreetURL } from '../../lib/urlutil';
+import { log } from 'next-axiom'
 
 // component properties
 type StreetProps = {
@@ -32,10 +33,10 @@ export default function Street(content: StreetProps) {
             <article>
               <Head>
                 <title>
-                  {content.street.fields.germanName}
+                  The Streets of Danzig: {content.street.fields.germanName}
                 </title>
               </Head>
-              <StreetDetail street={content.street}/>
+              <StreetDetail street={content.street} />
             </article>
           </>
         )}
@@ -52,11 +53,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // can be array or single string
   name = Array.isArray(name) ? name[0] : name;
 
+  // parse
+  name = parseStreetURL(name);
+
+  log.debug("Loading street: " + name);
+
   return {
     props: {
       preview: false,
       street: await loader.getStreetByName(name),
-      navigationPosts: await loader.getNavigationPosts() 
+      navigationPosts: await loader.getNavigationPosts()
     }
   };
 }
@@ -65,6 +71,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   let loader = new ContentfulLoader()
   let allStreets = await loader.getAllStreets();
   return {
-    paths: allStreets?.map((street: any) => `/streets/${street.germanName}`) ?? [],
-    fallback: true  }
+    paths: allStreets?.map((street: any) => `${createStreetURL(street.germanName)}`) ?? [],
+    fallback: true
+  }
 }

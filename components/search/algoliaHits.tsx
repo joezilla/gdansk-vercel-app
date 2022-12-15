@@ -1,5 +1,6 @@
 // ./components/Search/AlgoliaHits.js
 import { connectStateResults } from "react-instantsearch-dom";
+import { createPostURL, createStreetURL } from '../../lib/urlutil';
 
 import { Hits, HitsProps } from 'react-instantsearch-dom';
 
@@ -37,14 +38,14 @@ function AlgoliaHitRenderer({ searchState, searchResults }: { searchState: any, 
                   <h3 className="text-sm text-gray-700 dark:text-white">
                     {/* STREET */}
                     {hit.type === 'street' &&
-                      <a href={`/streets/${hit.germanName}`}>
+                      <a href={createStreetURL(hit.germanName)}>
                         <span aria-hidden="true" className="absolute inset-0"></span>
                         {hit.germanName}
                       </a>
                     }
                     {/* POST */}
                     {hit.type === 'post' &&
-                      <a href={`/posts/${hit.slug}`}>
+                      <a href={createPostURL(hit.slug)}>
                         <span aria-hidden="true" className="absolute inset-0"></span>
                         {hit.title}
                       </a>

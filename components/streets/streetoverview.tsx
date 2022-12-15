@@ -4,6 +4,7 @@
  */
 import { StreetSummary } from '../../lib/contentful'
 import Link from 'next/link'
+import { createStreetURL } from '../../lib/urlutil';
 
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
   'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -68,7 +69,7 @@ export function StreetOverview(props: AllStreetsProps) {
                 <div className="w-64 dark:text-purple-400 pb-1"><h2 className="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
                 {Object.values(sorted[k] ?? new Array).map(v =>
                   <div key={v.sys.id} className="w-48 dark:text-gray-200">
-                    <Link href={`/streets/${encodeURIComponent(v.germanName)}`}>{v.germanName}</Link>
+                    <Link href={createStreetURL(v.germanName)}>{v.germanName}</Link>
                   </div>
                 )}
                 { Object.values(sorted[k] ?? new Array).length === 0 &&

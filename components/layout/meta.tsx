@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { HOME_OG_IMAGE_URL } from '../../lib/constants'
 import Script from 'next/script'
 
 export default function Meta() {
@@ -37,7 +36,7 @@ export default function Meta() {
         name="description"
         content={`Danzig | Streets, People, History.`}
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image" content="https://www.streetsofdanzig.com/images/site-screenshot.png" />
      
       <Script type='text/javascript' src='/freshworks.js' async defer></Script>
       <Script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' async defer></Script>

@@ -6,6 +6,8 @@ import { ContentfulLoader } from '../../lib/contentful'
 import { IPost } from '../../src/@types/contentful'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
+import { parsePostURL, createPostURL } from '../../lib/urlutil';
+import { log } from 'next-axiom'
 
 
 type PostPageProps = {
@@ -54,6 +56,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   let slug = context?.params?.slug ?? "";
   slug = Array.isArray(slug) ? slug[0] : slug;
 
+  // parse
+  slug = parsePostURL(slug);
+
+  log.debug("Loading post: " + slug);
+
   // load it
   let post = await loader.getPostBySlug(slug);
 
@@ -71,34 +78,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   let loader = new ContentfulLoader()
   let allPosts = await loader.getAllPosts();
   return {
-    paths: allPosts?.map((p: any) => `/posts/${p.slug}`) ?? [],
+    paths: allPosts?.map((p: any) => createPostURL(p.slug)) ?? [],
     fallback: true,
   }
 }
-
-
-
-
-{/*
-          <>
-            <article>
-              <Head>
-                <title>
-                  {post.fields.title}
-                </title>
-                <meta property="og:image" content={post..coverImage.fields.file.url} />
-              </Head>
-              <PostHeader
-                title={post.fields.title}
-                coverImage={post.fields.coverImage}
-                date={post.fields.date}
-                author={post.fields.author}
-              />
-              <PostBody content={post} />
-            </article>
-            <SectionSeparator />
-            {morePosts && morePosts.length > 0 && (
-              <MoreStories posts={morePosts} />
-            )}
-          </>
-            */}
