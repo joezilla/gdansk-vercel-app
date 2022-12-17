@@ -3,8 +3,24 @@
         "headlines": {
             "history": "History",
             "district": "District",
-            "polishNames": "Polish Names",
-            "pictures": "Pictures"
+            "polishNames": "Polish name(s)",
+            "pictures": "Pictures",
+            "previousNames": "Related and previous names"
+        },
+        "messages": {
+            "nostreets": "No streets found"
+        }
+    },
+    "de": {
+        "headlines": {
+            "history": "Geschichte",
+            "district": "Stadtteil",
+            "polishNames": "Polnische Namen",
+            "pictures": "Bilder",
+            "previousNames": "Vorherige Namen"
+        },
+        "messages": {
+            "nostreets": "Keine Strassen gefunden."
         }
     }
 }

@@ -9,7 +9,20 @@ import markdownStyles from './richtextComponent.module.css'
 import { ReactNode } from 'react';
 import { SmallCard } from '../cards/smallCard'
 import { ImageComponent } from './imageComponent';
+import { log } from 'next-axiom'
+import { IPost, IStreet } from '../../src/@types/contentful'
 
+function renderLink(target: any) {
+
+    if (target.sys?.contentType?.sys?.id === "street") {
+        return <a href={`/streets/${target.fields.germanName}`} className="text-accent underline">{target.fields.germanName}</a>
+    } else if (target.sys?.contentType?.sys?.id === "post") {
+        return <a href={`/posts/${target.fields.slug}`} className="text-accent underline">{target.fields.title}</a>
+    } else {
+        log.warn("Refusing to render a link to type ", target.sys?.contentType?.sys?.id);
+    }
+
+}
 
 export function renderEmbeddedEntry(node: Block | Inline, children: any) {
     const { data } = node;
@@ -78,7 +91,7 @@ const customMarkdownOptions = {
             renderEmbeddedAsset(node, children)
         ),
         [BLOCKS.PARAGRAPH]: (node: Block | Inline, children: ReactNode) => (
-            <p>{children}</p>
+            <p className="py-1">{children}</p>
         ),
         ["embedded-entry-inline"]: (node: Block | Inline, children: any) => (
             renderInlineEntry(node, children)
@@ -89,10 +102,10 @@ const customMarkdownOptions = {
                 <p>{children}</p>
             </blockquote>),
         [BLOCKS.UL_LIST]: (node: Block | Inline, children: ReactNode) => (
-            <ul className="mx-8 py-4 list-disc">{children}</ul>
+            <ul className="mx-8 py-2 list-disc">{children}</ul>
         ),
         [BLOCKS.OL_LIST]: (node: Block | Inline, children: ReactNode) => (
-            <ol className="mx-8 py-4 list-decimal">{children}</ol>
+            <ol className="mx-8 py-2 list-decimal">{children}</ol>
         ),
         [BLOCKS.HEADING_1]: (node: Block | Inline, children: ReactNode) => (
             <h1 className="text-5xl mx-0 font-extrabold dark:text-white">{children}</h1>
@@ -114,6 +127,9 @@ const customMarkdownOptions = {
         ),
         [BLOCKS.HR]: (node: Block | Inline, children: ReactNode) => (
             <hr className="mx-6 text-lg font-bold border-accent py-4 dark:text-white" />
+        ),
+        ["entry-hyperlink"]: (node: Block | Inline, children: ReactNode) => (
+            renderLink(node.data.target)
         ),
     },
 };

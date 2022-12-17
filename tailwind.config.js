@@ -4,6 +4,7 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   darkMode: 'class',
   theme: {
@@ -28,8 +29,8 @@ module.exports = {
         // standard background background. could not thing of a better name
         'mybg': {
           light: colors.white,
-          DEFAULT:  colors.black,
-          dark: colors.black,
+          DEFAULT:  colors.gray[800],
+          dark: colors.gray[800],
           // same as zinc
           100: colors.zinc[100],
           200: colors.zinc[200],
@@ -73,5 +74,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ]
+  ,
 }

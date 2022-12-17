@@ -5,6 +5,7 @@
 import { StreetSummary } from '../../lib/contentful'
 import Link from 'next/link'
 import { createStreetURL } from '../../lib/urlutil';
+import resources from './static.resources.json'
 
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
   'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -73,7 +74,7 @@ export function StreetOverview(props: AllStreetsProps) {
                   </div>
                 )}
                 { Object.values(sorted[k] ?? new Array).length === 0 &&
-                  <div className="w-48 dark:text-gray-200">Keine Straßen gefunden</div>
+                  <div className="w-48 dark:text-gray-200">{resources.en.messages.nostreets}</div>
                 }
             </div>
           </div>
