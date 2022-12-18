@@ -29,8 +29,8 @@ module.exports = {
         // standard background background. could not thing of a better name
         'mybg': {
           light: colors.white,
-          DEFAULT:  colors.gray[800],
-          dark: colors.gray[800],
+          DEFAULT:  colors.black,
+          dark: colors.black,
           // same as zinc
           100: colors.zinc[100],
           200: colors.zinc[200],

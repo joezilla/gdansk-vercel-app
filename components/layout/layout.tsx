@@ -14,9 +14,17 @@ export function Layout(props: LayoutProps) {
   return (
     <>
       <Meta />
-      <div className="dark:bg-gray-800 dark:text-gray-100">
+      <Script id="google-tag-manager" strategy="afterInteractive">
+        {`
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6NVS67"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+      `}
+      </Script>
+      <div className="dark:bg-mybg-dark dark:text-mytxt-dark">
         <Navi navigationPosts={props.navigationPosts}/>
-        <main className="py-16">{props.children}</main>
+        <main className="py-0">{props.children}</main>
       </div>
       <Footer />
       <Script src="/scripts/darkmode.js" strategy="lazyOnload" />

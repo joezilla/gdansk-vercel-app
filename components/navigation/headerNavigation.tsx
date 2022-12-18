@@ -30,7 +30,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
         <Navbar.Collapse>
 
           <Navbar.Link
-            href="/navbars"
+            href="/"
             active={true}>
             Home
           </Navbar.Link>

@@ -56,9 +56,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   let slug = context?.params?.slug ?? "";
   slug = Array.isArray(slug) ? slug[0] : slug;
 
-  // parse
-  slug = parsePostURL(slug);
-
   log.debug("Loading post: " + slug);
 
   // load it

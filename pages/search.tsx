@@ -65,7 +65,7 @@ export default function Search(props: any) {
         <title>Danzig Street Names</title>
       </Head>
 
-      <div className=" flex flex-col justify-left sm:py-6 lg:py-12 lg:flex-row lg:justify-between dark:bg-gray-800 dark:text-white">
+      <div className=" flex flex-col justify-left sm:py-6 lg:py-12 lg:flex-row lg:justify-between dark:bg-mybg-dark dark:text-white">
         <StreetSearch {...DEFAULT_PROPS}  
             searchState={searchState}
             resultsState={props.resultsState}

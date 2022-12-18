@@ -4,6 +4,15 @@ import Script from 'next/script'
 export default function Meta() {
   return (
     <Head>
+      <Script id="google-tag-manager" strategy="afterInteractive">
+        {`
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W6NVS67');
+      `}
+      </Script>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -37,11 +46,11 @@ export default function Meta() {
         content={`Danzig | Streets, People, History.`}
       />
       <meta property="og:image" content="https://www.streetsofdanzig.com/images/site-screenshot.png" />
-     
+
       <Script type='text/javascript' src='/freshworks.js' async defer></Script>
       <Script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' async defer></Script>
 
-      
+
     </Head>
   )
 }
