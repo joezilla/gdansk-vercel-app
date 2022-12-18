@@ -2,11 +2,8 @@
 import { Asset } from 'contentful'
 import Image from 'next/image'
 import { ImageLoaderProps, ImageProps } from 'next/image'
+import { contentfulLoader } from './imageLoader'
 
-const contentfulLoader = ({ src, width, quality }: ImageLoaderProps) => {
-  console.log(`*** contentfulLoader: ${src} ${width} ${quality}`);
-  return `${src}?w=${width}&q=${quality || 75}`;
-}
 
 type MyImageProps = {
   image: Asset,

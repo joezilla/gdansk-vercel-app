@@ -1,6 +1,9 @@
 module.exports = {
   images: {
-    loader: 'custom',
+    loader: 'custom',    
+    deviceSizes: [640, 1080, 1920],
+    formats: ['image/webp'],
+    minimumCacheTTL: 3600,
   },
   env: {
     ALGOLIA_APP_ID: process.env.ALGOLIA_APP_ID,

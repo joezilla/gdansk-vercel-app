@@ -11,6 +11,7 @@ import { SmallCard } from '../cards/smallCard'
 import { ImageComponent } from './imageComponent';
 import { log } from 'next-axiom'
 import { IPost, IStreet } from '../../src/@types/contentful'
+import { unwatchFile } from 'fs';
 
 function renderLink(target: any) {
 
@@ -51,11 +52,16 @@ export function renderEmbeddedEntry(node: Block | Inline, children: any) {
 
 export function renderEmbeddedAsset(node: Block | Inline, children: any) {
     const { data } = node;
-    return (
-        <div className="flex-shrink-0 mx-6 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
-            <ImageComponent image={data.target} width={200} height={200} />
-        </div>
-    );
+    if (data.target) {
+        return (
+            <div className="flex-shrink-0 mx-6 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
+                <ImageComponent image={data.target} width={200} height={200} />
+            </div>
+        );
+    }
+    else {
+        return (<>;</>)
+    }
 }
 
 export function renderInlineEntry(node: Block | Inline, children: any) {
@@ -78,8 +84,8 @@ const customMarkdownOptions = {
         return <>{text}</>;
     },
     renderMark: {
-        [MARKS.BOLD]: (text: ReactNode) => <b>{text}</b>,
-        [MARKS.CODE]: (text: ReactNode) => <pre className="border-l-4 text-l rounded-md border-accent mx-8 p-4  bg-mybg-300 text-mytxt-900 dark:text-mytxt-100 dark:bg-slate-900">{text}</pre>,
+        [MARKS.BOLD]: (text: ReactNode) => <strong>{text}</strong>,
+        [MARKS.CODE]: (text: ReactNode) => <code className="border-l-4 text-l rounded-md border-accent mx-8 p-4  bg-mybg-300 text-mytxt-900 dark:text-mytxt-100 dark:bg-slate-900">{text}</code>,
         [MARKS.ITALIC]: (text: ReactNode) => <em>{text}</em>,
         [MARKS.UNDERLINE]: (text: ReactNode) => <u>{text}</u>,
     },
@@ -99,13 +105,13 @@ const customMarkdownOptions = {
         [BLOCKS.QUOTE]: (node: Block | Inline, children: ReactNode) => (
             <blockquote className="text-l mx-8 italic font-semibold text-gray-900 dark:text-white">
                 <svg aria-hidden="true" className="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor" /></svg>
-                <p>{children}</p>
+                <div>{children}</div>
             </blockquote>),
         [BLOCKS.UL_LIST]: (node: Block | Inline, children: ReactNode) => (
             <ul className="mx-8 py-2 list-disc">{children}</ul>
         ),
         [BLOCKS.OL_LIST]: (node: Block | Inline, children: ReactNode) => (
-            <ol className="mx-8 py-2 list-decimal">{children}</ol>
+            <ol className="mx-8 py- list-decimal">{children}</ol>
         ),
         [BLOCKS.HEADING_1]: (node: Block | Inline, children: ReactNode) => (
             <h1 className="text-5xl mx-0 font-extrabold dark:text-white">{children}</h1>
