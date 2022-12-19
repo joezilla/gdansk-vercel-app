@@ -145,7 +145,6 @@ export type RichtextProps = {
 }
 
 export function RichtextComponent(props: RichtextProps) {
-    console.log(markdownStyles['markdown']);
     if (props.content) {
         return (
             <div className={markdownStyles['markdown']}>

@@ -62,6 +62,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const street =  await loader.getStreetByName(name);
   if(!street) {
     log.error(`Cannot find street ${name}`);
+    return {
+      notFound: true,
+    }
   }
 
   return {

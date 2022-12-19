@@ -61,6 +61,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // load it
   let post = await loader.getPostBySlug(slug);
 
+  if(!post) {
+    log.error(`Cannot find post ${slug}`);
+    return {
+      notFound: true,
+    }
+  }
+
   return {
     props: {
       preview: false,
