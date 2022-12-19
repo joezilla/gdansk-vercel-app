@@ -16,6 +16,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                    {/* <!-- Google Tag Manager --> */}
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -24,6 +25,15 @@ class MyDocument extends Document {
                         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
                         })(window,document,'script','dataLayer','GTM-W6NVS67'); `,
                         }}
+                    />
+                    {/* <!-- Dark mode fun --> */}
+                    <script dangerouslySetInnerHTML={{
+                        __html: `if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                                document.documentElement.classList.add('dark');
+                            } else {
+                                document.documentElement.classList.remove('dark')
+                            }`,
+                    }}
                     />
                     <script type='text/javascript' src='/scripts/freshworks.js' />
                     <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' />
@@ -36,9 +46,8 @@ class MyDocument extends Document {
                             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6NVS67" height="0" width="0" style="display: none; visibility: hidden;" />`,
                         }}
                     />
+                    <script type='text/javascript' src='/scripts/darkmode.js' />
                 </body>
-                <Script src="/scripts/darkmode.js" strategy='afterInteractive' />
-                <script type='text/javascript' src="/scripts/darkmode.js" />
             </Html>
         )
     }

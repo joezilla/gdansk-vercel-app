@@ -1,3 +1,5 @@
+
+// const { areIntervalsOverlappingWithOptions } = require("date-fns/fp");
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
@@ -9,9 +11,7 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
 }
 
 var themeToggleBtn = document.getElementById('theme-toggle');
-
-themeToggleBtn.addEventListener('x`click', function() {
-
+themeToggleBtn.addEventListener('click', function() {
     // toggle icons inside button
     themeToggleDarkIcon.classList.toggle('hidden');
     themeToggleLightIcon.classList.toggle('hidden');

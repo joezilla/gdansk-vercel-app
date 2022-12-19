@@ -6,10 +6,25 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
-  darkMode: 'media',
+  darkMode: 'class', // media
   theme: {
     extend: {
       colors: {
+        // overwrite 800 because react flowbite is confused and 
+        // doesn't take the classname overwrite..
+        'gray': {
+          '50': '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: colors.black,
+          900: '#111827',
+
+        },
         // standard text color. could not thing of a better name
         'mytxt': {
           light: colors.black,
@@ -29,7 +44,7 @@ module.exports = {
         // standard background background. could not thing of a better name
         'mybg': {
           light: colors.white,
-          DEFAULT:  colors.black,
+          DEFAULT: colors.black,
           dark: colors.black,
           // same as zinc
           100: colors.zinc[100],
@@ -49,7 +64,7 @@ module.exports = {
         },
         'header': {
           light: colors.white,
-          DEFAULT:  colors.gray[900],
+          DEFAULT: colors.gray[900],
           dark: colors.gray[900],
         }
       },

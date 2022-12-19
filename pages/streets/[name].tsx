@@ -49,13 +49,13 @@ export default function Street(content: StreetProps) {
 export const getStaticProps: GetStaticProps = async (context) => {
   let loader = new ContentfulLoader()
 
-  let name = context?.params?.name ?? "";
+  let nameParam = context?.params?.name ?? "";
 
   // can be array or single string
-  name = Array.isArray(name) ? name[0] : name;
+  nameParam = Array.isArray(nameParam) ? nameParam[0] : nameParam;
 
   // parse
-  name = parseStreetURL(name);
+  let name = parseStreetURL(nameParam);
 
   log.debug("Loading street: " + name);
 

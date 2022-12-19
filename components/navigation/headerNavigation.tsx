@@ -32,33 +32,37 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
           <Navbar.Collapse>
 
             <Navbar.Link
+              key="home"
               href="/"
               active={true}>
               Home
             </Navbar.Link>
 
-            <Navbar.Link href="/allstreets">
+            <Navbar.Link key="allstreets" href="/allstreets">
               All Streets
             </Navbar.Link>
 
-            <Navbar.Link href="/search">
+            <Navbar.Link key="search" href="/search">
               Search
             </Navbar.Link>
 
             {props.navigationPosts?.map(post =>
-              <Navbar.Link href={`/posts/${post.fields?.slug}`}>
+              <Navbar.Link key={post.fields?.slug} href={`/posts/${post.fields?.slug}`}>
                 {post.fields?.title}
               </Navbar.Link>
             )}
 
-            {/*
-          <Navbar.Link>
+            {
+          <Navbar.Link key="darkmode">
             <DarkmodeToggle/>         
           </Navbar.Link>
-          */}
+            }
           </Navbar.Collapse>
         </Navbar>
+      
+
       </div>
+
     </>
   );
 }

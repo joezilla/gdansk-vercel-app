@@ -45,14 +45,14 @@ export async function getServerSideProps({ res }: { res: any }) {
     let loader = new ContentfulLoader();
     const allStreets = (await loader.getAllStreets()) ?? []
     const allPosts = (await loader.getAllPosts()) ?? []
-
     res.setHeader('Content-Type', 'text/xml');
     // we send the XML to the browser
     res.write(generateSitemap({ allStreets, allPosts }));
     res.end();
 
     return {
-        props: {},
+        props: {
+        },
 
     };
 
