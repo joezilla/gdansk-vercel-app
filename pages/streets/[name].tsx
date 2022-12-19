@@ -20,6 +20,7 @@ export default function Street(content: StreetProps) {
   const router = useRouter()
 
   if (!router.isFallback && !content.street) {
+    log.error("Falling back to 404");
     return <ErrorPage statusCode={404} />
   }
 

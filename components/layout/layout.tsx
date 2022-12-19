@@ -14,12 +14,13 @@ export function Layout(props: LayoutProps) {
   return (
     <>
       <Meta />
-      <div className="dark:bg-mybg-dark dark:text-mytxt-dark">
+      <div className="flex flex-col h-full dark:bg-mybg-dark h-screen dark:text-mytxt-dark">
         <Navi navigationPosts={props.navigationPosts}/>
         <main className="py-0">{props.children}</main>
+        <Footer />
+
       </div>
-      <Footer />
-      <Script src="/scripts/darkmode.js" strategy="lazyOnload" />
+
     </>
   )
 }

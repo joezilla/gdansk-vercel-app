@@ -37,11 +37,6 @@ export default function Meta() {
         content={`Danzig | Streets, People, History.`}
       />
       <meta property="og:image" content="https://www.streetsofdanzig.com/images/site-screenshot.png" />
-
-      <Script type='text/javascript' src='/freshworks.js' async defer></Script>
-      <Script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' async defer></Script>
-
-
     </Head>
   )
 }
