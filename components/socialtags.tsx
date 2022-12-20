@@ -8,7 +8,7 @@ type SocialTagsProps = {
 export function DefaultSocialTags(props: SocialTagsProps) {
     return (
         <>
-            <title>{`The Streets of Danzig: ${name}`}</title>
+            <title>{`The Streets of Danzig: ${props.title}`}</title>
             <meta name="description" content={`Danzig | Streets | People.`} />
             <meta property="og:type" content="website" />
             <meta property="og:title" content={props.title} />
