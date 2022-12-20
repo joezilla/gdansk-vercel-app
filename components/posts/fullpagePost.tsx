@@ -20,14 +20,14 @@ export function FullpagePost(props: PostProps) {
                         ))}
                     </div>
                     <p className="text-sm dark:text-gray-400 space-x-1">by&nbsp;
-                    <a href={`/author/${content.fields.author.fields.name}`} rel="noopener noreferrer" className="hover:underline dark:text-violet-400">
+                        <a href={`/author/${content.fields.author.fields.name}`} rel="noopener noreferrer" className="hover:underline dark:text-violet-400">
                             <span>{content.fields.author.fields.name}</span>
                         </a>&nbsp;on
                         <DateComponent dateString={content.fields.date} />
                     </p>
                 </div>
                 <div className="dark:text-gray-100">
-                   <RichtextComponent content={content.fields.content}/>
+                    <RichtextComponent content={content.fields.content} />
                 </div>
             </article>
         </>
