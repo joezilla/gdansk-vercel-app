@@ -1,9 +1,10 @@
 import { Layout, Container } from '../components/layout'
 import { StreetOverview } from '../components/streets'
 import Head from 'next/head'
-import common_en from '../i18n/en/common.json'
 import { IPost } from '../src/@types/contentful'
 import { ContentfulLoader, StreetSummary } from '../lib/contentful'
+import { DefaultSocialTags } from '../components/socialtags'
+
 
 type AllStreetProps = {
   preview: boolean,
@@ -22,7 +23,8 @@ export default function AllStreets(props: AllStreetProps) {
     <>
       <Layout preview={preview} navigationPosts={navigationPosts}>
           <Head>
-            <title>Danzig Street Names</title>
+          <DefaultSocialTags title="The Streets of Danzig | All Streets" description="Overview of all old street names of Gdansk." />
+
           </Head>
           <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">

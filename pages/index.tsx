@@ -7,7 +7,7 @@ import { IPost } from '../src/@types/contentful'
 import { ContentfulLoader, StreetSummary } from '../lib/contentful'
 import { HeroPost } from '../components/posts'
 import { MoreStories } from '../components/posts'
-import {I18nextProvider} from 'react-i18next'
+import { DefaultSocialTags } from '../components/socialtags'
 
 type HomepageProps = {
   preview?: boolean,
@@ -16,13 +16,13 @@ type HomepageProps = {
   heroPost: IPost
 }
 
-export default function Index( props :  HomepageProps) {
+export default function Index(props: HomepageProps) {
   let { navigationPosts, allPosts, preview, heroPost } = props;
   return (
     <>
       <Layout preview={preview} navigationPosts={navigationPosts}>
         <Head>
-          <title>Danzig Street Names</title>
+          <DefaultSocialTags title="The Streets of Danzig" description="Danzig | Streets, People, History." />
         </Head>
         <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
           <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">

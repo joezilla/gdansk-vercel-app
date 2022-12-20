@@ -4,23 +4,28 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { slugify } from './lib/urlutil';
+import { log } from 'next-axiom';
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-   
-    console.log("**************");
-    console.log(request.url);
 
-    let path = slugify(new URL(request.url).pathname);
+    let pathName = new URL(request.url).pathname;
 
-    console.log("Redirecting to: " + path);
+    let slugified = slugify(pathName);
 
-    return NextResponse.redirect(new URL(path, request.url))
+    // wtf!? the config at the bottom is not working on vercel...
 
+    let sampleRegEx: RegExp = /^\/streets\/([A-Z].*)$/;
+    let match = sampleRegEx.exec(pathName);
 
+    if (match) {
+        log.debug(`Redirecting ${pathName} to ${slugified}`);
+        return NextResponse.redirect(new URL(slugified, request.url))
+    } 
+    
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-    matcher: '/streets/:name([A-Z].*)',
+     matcher: '/streets/:name([A-Z].*)',
 }

@@ -7,6 +7,7 @@ import { IStreet, IPost } from '../../src/@types/contentful'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ContentfulLoader } from '../../lib/contentful'
 import { parseStreetURL, createStreetURL } from '../../lib/urlutil';
+import { StreetMeta } from '../../components/streets/metatags'
 import { log } from 'next-axiom'
 
 // component properties
@@ -33,9 +34,8 @@ export default function Street(content: StreetProps) {
           <>
             <article>
               <Head>
-                <title>
-                  The Streets of Danzig: {content.street.fields.germanName}
-                </title>
+                <title>The Streets of Danzig: {content.street.fields.germanName}</title>
+                <StreetMeta street={content.street} />
               </Head>
               <StreetDetail street={content.street} />
             </article>

@@ -7,6 +7,8 @@ import { findResultsState } from 'react-instantsearch-dom/server';
 import qs from 'qs';
 import { StreetSearch } from '../components/search';
 import { useRouter } from 'next/router';
+import { DefaultSocialTags } from '../components/socialtags'
+
 
 // //// algolia
 const algoliaClient = algoliasearch(
@@ -38,9 +40,9 @@ const searchClient = {
 }
 
 const DEFAULT_PROPS = {
-    searchClient,
-    indexName: process.env.ALGOLIA_INDEX_NAME ?? "undefined",
-  };
+  searchClient,
+  indexName: process.env.ALGOLIA_INDEX_NAME ?? "undefined",
+};
 
 export default function Search(props: any) {
 
@@ -60,22 +62,22 @@ export default function Search(props: any) {
 
   return (
     <>
-    <Layout preview={props.preview} navigationPosts={props.navigationPosts}>
-      <Head>
-        <title>Danzig Street Names</title>
-      </Head>
+      <Layout preview={props.preview} navigationPosts={props.navigationPosts}>
+        <Head>
+          <DefaultSocialTags title="The Streets of Danzig" description="Danzig | Streets, People, History." />
+        </Head>
 
-      <div className=" flex flex-col justify-left sm:py-6 lg:py-12 lg:flex-row lg:justify-between dark:bg-mybg-dark dark:text-white">
-        <StreetSearch {...DEFAULT_PROPS}  
+        <div className=" flex flex-col justify-left sm:py-6 lg:py-12 lg:flex-row lg:justify-between dark:bg-mybg-dark dark:text-white">
+          <StreetSearch {...DEFAULT_PROPS}
             searchState={searchState}
             resultsState={props.resultsState}
             onSearchStateChange={(nextSearchState) => {
 
               // todo: fix this
-              
+
               clearTimeout(debouncedSetState.current);
 
-             let dx = setTimeout(() => {
+              let dx = setTimeout(() => {
                 const href = searchStateToURL(nextSearchState);
 
                 router.push(href, href, { shallow: true });
@@ -83,23 +85,23 @@ export default function Search(props: any) {
 
               debouncedSetState.current = dx;
               setSearchState(nextSearchState);
-            
-            
+
+
             }}
 
             createURL={createURL}
           />
-         </div>
-    </Layout>
-  </>
+        </div>
+      </Layout>
+    </>
   );
 }
 
-export async function getServerSideProps({ resolvedUrl } : { resolvedUrl: string }) {
+export async function getServerSideProps({ resolvedUrl }: { resolvedUrl: string }) {
   const preview = false;
   let loader = new ContentfulLoader();
   const navigationPosts = (await loader.getNavigationPosts()) ?? []
-  
+
   const searchState = pathToSearchState(resolvedUrl);
   const resultsState = await findResultsState(StreetSearch, {
     ...DEFAULT_PROPS,

@@ -8,6 +8,8 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 import { parsePostURL, createPostURL } from '../../lib/urlutil';
 import { log } from 'next-axiom'
+import { PostMeta } from '../../components/posts/metatags'
+
 
 
 type PostPageProps = {
@@ -36,6 +38,7 @@ export default function PostPage(props: PostPageProps) {
         <>
           <Head>
             <title>Danzig Street Names</title>
+            <PostMeta post={post}/>
           </Head>
           <section className="dark:bg-mybg-dark dark:text-gray-100">
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">

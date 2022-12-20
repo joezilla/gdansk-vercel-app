@@ -17,7 +17,7 @@ export default function NotFoundPage(props: ErrorpageProps) {
         <>
             <Layout preview={preview} navigationPosts={navigationPosts}>
                 <Head>
-                    <title>Danzig Street Names</title>
+                    <title>Not Found</title>
                 </Head>
                 <section className="grid md:grid-cols-2 dark:bg-mybg-dark dark:text-mytxt-dark">
                     <div className="max-w-4xl p-6 pt-24 mx-auto space-y-6 sm:space-y-12">
