@@ -56,7 +56,10 @@ test('testInvalidation', async () => {
         return Date.now();
     }, 0);
 
-    expect(first).not.toBe(second);
+    console.log(`fist: ${first}, second: ${second}`);
+
+    expect(first != second).toBe(true);
+
     });
 
 test('manualCache', async () => {
