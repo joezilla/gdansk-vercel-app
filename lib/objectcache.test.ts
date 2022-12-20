@@ -63,7 +63,7 @@ test('testInvalidation', async () => {
     });
 
 test('manualCache', async () => {
-    let loader = new ObjectCache();
+    let loader = new ObjectCache(500);
 
     await loader.invalidate("test");
 

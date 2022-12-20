@@ -12,12 +12,17 @@ type AssetCacheEntry = {
 }
 
 const redisClient = Redis.fromEnv();
-const defaultTimeout = +(process.env.CACHE_DEFAULT_TTL ?? "0");
 
 /**
  * Generic object cache backed by a simple redis db.
  */
 export class ObjectCache {
+    
+    constructor(private defaultTimeout: number = +(process.env.CACHE_DEFAULT_TTL ?? "0")) {}
+
+    setDefaultTimeout(timeout: number) {
+        this.defaultTimeout = timeout;
+    }
 
     /**
      * Cached lookup of objects
@@ -27,7 +32,7 @@ export class ObjectCache {
      * @param timeout timeout in seconds. 0 always caches, -1 never caches.
      * @returns cached or retrieved value
      */
-    async getCachedEntry<Any>(id: string, fn: (id: string) => any, timeout: number = defaultTimeout) {
+    async getCachedEntry<Any>(id: string, fn: (id: string) => any, timeout: number = this.defaultTimeout) {
         if (!id) {
             throw new Error("id is required");
         }
@@ -91,7 +96,7 @@ export class ObjectCache {
      * @param id
      * @returns 
      */
-    public async isStale(id: string, timeout: number = defaultTimeout) {
+    public async isStale(id: string, timeout: number = this.defaultTimeout) {
         if (timeout < 0)
             return true;
         const entry = await redisClient.get(id) as AssetCacheEntry;
