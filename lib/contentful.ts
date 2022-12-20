@@ -11,12 +11,13 @@ import { createClient } from "contentful";
 export const contentfulClient = createClient({
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
     space: process.env.CONTENTFUL_SPACE_ID ?? "",
+    environment: process.env.CONTENTFUL_ENVIRONMENT ?? "",
 });
 
 abstract class AbstractContentfulLoader {
     public async fetchGraphQL(query: string, preview = false) {
         return fetch(
-            `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+            `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}`,
             {
                 method: 'POST',
                 headers: {
