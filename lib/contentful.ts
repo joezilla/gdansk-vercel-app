@@ -151,7 +151,9 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         const query = {
             content_type: 'post',
             order: '-sys.createdAt',
+            'fields.showIn': "Homepage",
             'fields.showIn[nin]': "Hero",
+            // 'fields.showIn[nin]': "Hero",
             limit: 10
         };
         const cacheKey = "homepage-posts-3";
@@ -173,7 +175,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
     public async getHomepageHeroPost() {
         const query = {
             content_type: 'post',
-            'fields.showIn': "Homepage",
+            'fields.showIn': "Hero",
             limit: 1
         };
         const cacheKey = "homepage-hero-post";

@@ -8,7 +8,7 @@ import { BLOCKS, MARKS, Document, Node, Block, Inline } from '@contentful/rich-t
 import markdownStyles from './richtextComponent.module.css'
 import { ReactNode } from 'react';
 import { SmallCard } from '../cards/smallCard'
-import { ImageComponent } from './imageComponent';
+import { ImageComponent, NaturalImageComponent } from './imageComponent';
 import { log } from 'next-axiom'
 import { IPost, IStreet } from '../../src/@types/contentful'
 import { unwatchFile } from 'fs';
@@ -54,15 +54,21 @@ export function renderEmbeddedAsset(node: Block | Inline, children: any) {
     const { data } = node;
     if (data.target) {
         return (
-            <div className="flex-shrink-0 mx-6 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
-                <ImageComponent image={data.target} width={200} height={200} />
-            </div>
+
+
+            <div className="mx-6 ml-12 mt-6 mb-6 flex-shrink-0 overflow-hidden">
+
+                <a className="example-image-link" href={data.target.fields.file.url} data-lightbox="street-pics" data-title={`${data.target.fields.title}, Source: ${data.target.fields.source}`}>
+                    <NaturalImageComponent image={data.target} layout={'responsive'} objectFit={'scale-down'} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500" />
+                    <div className="text-xs ml-1">{data.target.fields.title}{data.target.fields.source && <>, source: {data.target.fields.source}</>}</div>
+                </a> </div>
         );
     }
     else {
-        return (<>;</>)
+        return (<></>)
     }
 }
+
 
 export function renderInlineEntry(node: Block | Inline, children: any) {
     const { data } = node;
@@ -137,6 +143,18 @@ const customMarkdownOptions = {
         ["entry-hyperlink"]: (node: Block | Inline, children: ReactNode) => (
             renderLink(node.data.target)
         ),
+        /// tables
+        [BLOCKS.TABLE]: (node: Block | Inline, children: ReactNode) => (
+            <table className="table-auto m-4"><tbody>{children}</tbody></table>
+        ),
+        [BLOCKS.TABLE_HEADER_CELL]: (node: Block | Inline, children: ReactNode) => (
+            <th className="bg-slate-200 dark:bg-slate-900 border">{children}</th>
+        ),
+        [BLOCKS.TABLE_CELL]: (node: Block | Inline, children: ReactNode) => (
+            <td className="border p-2">{children}</td>
+        ),
+
+
     },
 };
 

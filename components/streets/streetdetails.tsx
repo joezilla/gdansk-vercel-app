@@ -13,8 +13,10 @@ import { StreetSearch } from "../search";
 function renderImage(image: IImageWithFocalPoint) {
   return (
     <div>
-      <img alt="" key={image.sys.id} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} />
-      <span className="text-xs">Source: {image.fields.source}</span>
+      <a className="example-image-link" href={image.fields.image.fields.file.url} data-lightbox="street-pics" data-title={`${image.fields.title}, Source: ${image.fields.source}`}>
+        <img alt="" key={image.sys.id} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} />
+        <span className="text-xs">Source: {image.fields.source}</span>
+      </a>
     </div>
   )
 }
@@ -87,14 +89,14 @@ export function StreetDetail(props: StreetDetailProps) {
           </div>
         </div>
         {street.fields?.media &&
-        <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
-          <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">{resources.en.headlines.pictures}</h3>
-          <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-            {street.fields?.media?.map(item =>
-              renderImage(item)
-            )}
+          <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
+            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">{resources.en.headlines.pictures}</h3>
+            <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+              {street.fields?.media?.map(item =>
+                renderImage(item)
+              )}
+            </div>
           </div>
-        </div>
         }
 
       </section>

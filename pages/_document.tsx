@@ -37,6 +37,7 @@ class MyDocument extends Document {
                     />
                     <script type='text/javascript' src='/scripts/freshworks.js' />
                     <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' />
+                    <link href="/lb2/css/lightbox.css" rel="stylesheet" />
                 </Head>
                 <body>
                     <Main />
@@ -47,6 +48,8 @@ class MyDocument extends Document {
                         }}
                     />
                     <script type='text/javascript' src='/scripts/darkmode.js' />
+                    <script type='text/javascript' src='/lb2/js/lightbox-plus-jquery.js' />
+
                 </body>
             </Html>
         )
