@@ -1,14 +1,50 @@
+import React, { useState, useEffect } from 'react';
 
+/**
+ * Initializes dark mode based on browser preference but then also allows
+ * toggle and stores the toggle in localStorage.
+ * 
+ * @returns 
+ */
 export function DarkmodeToggle() {
+
+    let prefersDark = false;
+
+    // see if we have the theme preference stored somewhere
+    if (typeof window !== "undefined") {
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            prefersDark = true;
+         }
+    }
+
+    // use React state to manage it all
+    const [ darkMode, setDarkMode ] = React.useState(prefersDark);
+
+    // allow toggle
+    function handleToggle() {
+        setDarkMode(!darkMode);
+        if (typeof window !== "undefined") {
+            localStorage.setItem('color-theme', darkMode ? 'dark' : 'light');
+        }
+    }
+
+    // apply theme
+    useEffect(() => {
+        darkMode ?  document.documentElement.classList.add('dark') : 
+                    document.documentElement.classList.remove('dark');
+     }, [darkMode ? 'dark' : 'light']);
+
+    // render the icon
     return (
         <button
             id="theme-toggle"
             type="button"
+            onClick={handleToggle}
             className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none "
         >
             <svg
                 id="theme-toggle-dark-icon"
-                className="w-5 h-5 hidden"
+                className={`w-5 h-5 ${darkMode ? '' : 'hidden'}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +55,7 @@ export function DarkmodeToggle() {
             </svg>
             <svg
                 id="theme-toggle-light-icon"
-                className="w-5 h-5 hidden"
+                className={`w-5 h-5 ${darkMode ? 'hidden' : ''}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"

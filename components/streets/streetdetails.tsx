@@ -12,7 +12,7 @@ import { StreetSearch } from "../search";
 
 function renderImage(image: IImageWithFocalPoint) {
   return (
-    <div>
+    <div className="mb-4" key={image.sys.id}>
       <a className="example-image-link" href={image.fields.image.fields.file.url} data-lightbox="street-pics" data-title={`${image.fields.title}, Source: ${image.fields.source ?? "-"}`}>
         <img alt="" key={image.sys.id} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} />
         <span className="text-xs">Source: {image.fields.source}</span>
@@ -77,7 +77,7 @@ export function StreetDetail(props: StreetDetailProps) {
                     </div>
                     <div className="ml-4">
                       <h4 className="text-lg font-medium leading-6 dark:text-gray-50 mb-2">{resources.en.headlines.previousNames}</h4>
-                      {street.fields.previousNames?.split(",").map(name => <p className="mt-1 dark:text-gray-400">{name}</p>)}
+                      {street.fields.previousNames?.split(",").map((name,index) => <p className="mt-1 dark:text-gray-400" key={`pn-${index}`}>{name}</p>)}
                     </div>
                   </div>}
               </div>

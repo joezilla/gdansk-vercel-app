@@ -10,11 +10,10 @@ class MyDocument extends Document {
 
         return initialProps
     }
-
     // document with GTM tag.
     render() {
         return (
-            <Html>
+            <Html className="dark">
                 <Head>
                     {/* <!-- Google Tag Manager --> */}
                     <script
@@ -34,7 +33,7 @@ class MyDocument extends Document {
                                 document.documentElement.classList.remove('dark')
                             }`,
                     }}
-                    />
+                />
                     <script type='text/javascript' src='/scripts/freshworks.js' />
                     <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' />
                     <link href="/lb2/css/lightbox.css" rel="stylesheet" />
@@ -47,7 +46,7 @@ class MyDocument extends Document {
                             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6NVS67" height="0" width="0" style="display: none; visibility: hidden;" />`,
                         }}
                     />
-                    <script type='text/javascript' src='/scripts/darkmode.js' />
+                    {/*<script type='text/javascript' src='/scripts/darkmode.js' />*/}
                     <script type='text/javascript' src='/lb2/js/lightbox-plus-jquery.js' />
 
                 </body>

@@ -3,24 +3,25 @@ import Meta from './meta'
 import Navi from '../navigation'
 import Script from 'next/script'
 import { IPost } from '../../src/@types/contentful'
+import React from 'react'
+
 
 type LayoutProps = {
-    children: React.ReactNode,
-    preview?: boolean
-    navigationPosts: IPost[]
-  }
+  children: React.ReactNode,
+  preview?: boolean
+  navigationPosts: IPost[]
+}
 
 export function Layout(props: LayoutProps) {
+  const [darkMode] = React.useState(false);
   return (
     <>
       <Meta />
       <div className="flex flex-col h-full dark:bg-mybg-dark h-screen dark:text-mytxt-dark">
-        <Navi navigationPosts={props.navigationPosts}/>
+        <Navi navigationPosts={props.navigationPosts} />
         <main className="py-0">{props.children}</main>
         <Footer />
-
       </div>
-
     </>
   )
 }
