@@ -26,7 +26,7 @@ export function FullpagePost(props: PostProps) {
                         <DateComponent dateString={content.fields.date} />
                     </p>
                 </div>
-                <div className="dark:text-gray-100">
+                <div className="dark:text-gray-100 mt-0">
                     <RichtextComponent content={content.fields.content} />
                 </div>
             </article>

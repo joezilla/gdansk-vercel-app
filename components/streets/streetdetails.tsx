@@ -13,7 +13,7 @@ import { StreetSearch } from "../search";
 function renderImage(image: IImageWithFocalPoint) {
   return (
     <div>
-      <a className="example-image-link" href={image.fields.image.fields.file.url} data-lightbox="street-pics" data-title={`${image.fields.title}, Source: ${image.fields.source}`}>
+      <a className="example-image-link" href={image.fields.image.fields.file.url} data-lightbox="street-pics" data-title={`${image.fields.title}, Source: ${image.fields.source ?? "-"}`}>
         <img alt="" key={image.sys.id} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} />
         <span className="text-xs">Source: {image.fields.source}</span>
       </a>

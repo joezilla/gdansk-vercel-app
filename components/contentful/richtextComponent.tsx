@@ -54,11 +54,8 @@ export function renderEmbeddedAsset(node: Block | Inline, children: any) {
     const { data } = node;
     if (data.target) {
         return (
-
-
             <div className="mx-6 ml-12 mt-6 mb-6 flex-shrink-0 overflow-hidden">
-
-                <a className="example-image-link" href={data.target.fields.file.url} data-lightbox="street-pics" data-title={`${data.target.fields.title}, Source: ${data.target.fields.source}`}>
+                <a className="example-image-link" href={data.target.fields.file.url} data-lightbox="street-pics" data-title={`${data.target.fields.title}, ${data.target.fields.description ?? "-"}`}>
                     <NaturalImageComponent image={data.target} layout={'responsive'} objectFit={'scale-down'} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500" />
                     <div className="text-xs ml-1">{data.target.fields.title}{data.target.fields.source && <>, source: {data.target.fields.source}</>}</div>
                 </a> </div>

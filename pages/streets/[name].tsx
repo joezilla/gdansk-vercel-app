@@ -71,7 +71,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       preview: false,
       street: street,
-      navigationPosts: await loader.getNavigationPosts()
+      navigationPosts: await loader.getNavigationPosts(),
+      revalidate: 60 * 60 * 24 // daily
     }
   };
 }

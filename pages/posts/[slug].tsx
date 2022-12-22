@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       post: post,
       navigationPosts: await loader.getNavigationPosts()
     },
-    revalidate: 3600
+    revalidate: 60 * 60 * 24 // daily
   };
 }
 
