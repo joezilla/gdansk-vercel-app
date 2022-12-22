@@ -8,31 +8,34 @@ import React, { useState, useEffect } from 'react';
  */
 export function DarkmodeToggle() {
 
-    let prefersDark = false;
-
-    // see if we have the theme preference stored somewhere
-    if (typeof window !== "undefined") {
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            prefersDark = true;
-         }
-    }
-
     // use React state to manage it all
-    const [ darkMode, setDarkMode ] = React.useState(prefersDark);
+    const [darkMode, setDarkMode] = React.useState(() => {
+        if (typeof window === "undefined") {
+            return false;
+        }
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            return true;
+        }
+        return false;
+    }
+    );
 
     // allow toggle
     function handleToggle() {
         setDarkMode(!darkMode);
         if (typeof window !== "undefined") {
-            localStorage.setItem('color-theme', darkMode ? 'dark' : 'light');
+            window.localStorage.setItem('color-theme', !darkMode ? 'dark' : 'light');
+        } else {
+            console.log("Cannot update local storage.");
         }
     }
 
     // apply theme
     useEffect(() => {
-        darkMode ?  document.documentElement.classList.add('dark') : 
-                    document.documentElement.classList.remove('dark');
-     }, [darkMode ? 'dark' : 'light']);
+        // console.log(`darkmode: ${darkMode}, localStorage: ${window?.localStorage.getItem('color-theme')}`);
+        darkMode ? document.documentElement.classList.add('dark') :
+            document.documentElement.classList.remove('dark');
+    }, [darkMode ? 'dark' : 'light']);
 
     // render the icon
     return (

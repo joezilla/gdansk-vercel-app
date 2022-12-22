@@ -46,9 +46,7 @@ class MyDocument extends Document {
                             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6NVS67" height="0" width="0" style="display: none; visibility: hidden;" />`,
                         }}
                     />
-                    {/*<script type='text/javascript' src='/scripts/darkmode.js' />*/}
                     <script type='text/javascript' src='/lb2/js/lightbox-plus-jquery.js' />
-
                 </body>
             </Html>
         )

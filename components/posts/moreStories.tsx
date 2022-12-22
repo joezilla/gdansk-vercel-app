@@ -13,7 +13,7 @@ export function MoreStories(props: PostProps) {
       <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
         <div className="grid p-6 justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {content.map((post) => (
-            <a rel="noopener noreferrer" href={`/posts/${post.fields.slug}`} className="w-full bg-zinc-50 max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-mybg-dark">
+            <a rel="noopener noreferrer" key={`post-${post.sys.id}`} href={`/posts/${post.fields.slug}`} className="w-full bg-zinc-50 max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-mybg-dark">
               <img role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src={post.fields.coverImage.fields.file.url} />
               <div className="p-6 space-y-2">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{post.fields.title}</h3>
