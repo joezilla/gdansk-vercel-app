@@ -32,11 +32,17 @@ class MyDocument extends Document {
                             } else {
                                 document.documentElement.classList.remove('dark')
                             }`,
-                    }}
-                />
+                    }} />
                     <script type='text/javascript' src='/scripts/freshworks.js' />
                     <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' />
                     <link href="/lb2/css/lightbox.css" rel="stylesheet" />
+                    {/* CONSENT THING */}
+                    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.0.0/cookie-consent.js"></script>
+                    <script dangerouslySetInnerHTML={{
+                        __html: `document.addEventListener('DOMContentLoaded', function () {
+                            cookieconsent.run({"notice_banner_type":"simple","consent_type":"implied","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"Streets of Danzig"});
+                            });
+                        `}} />
                 </Head>
                 <body>
                     <Main />
