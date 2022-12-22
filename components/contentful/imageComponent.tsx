@@ -12,7 +12,7 @@ type MyImageProps = {
   width?: number,
   height?: number,
   alt?: string,
-  objectFit?: string | undefined,
+  objectFit?: any,
   layout?: "fill" | "fixed" | "intrinsic" | "responsive" | undefined
 }
 
