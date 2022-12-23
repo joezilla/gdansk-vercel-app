@@ -1,6 +1,7 @@
 
 import { IStreet } from '../../src/@types/contentful'
 import GoogleMapReact from 'google-map-react';
+import { log } from 'next-axiom'
 
 function MarkerComponent({ lat, lng }: { lat: number, lng: number }) {
     return (
@@ -39,11 +40,16 @@ export function GoogleMap(props: GoogleMapProps) {
         return marker;
     };
 
+
+    if(!process.env.GOOGLE_MAP_KEY) {
+        log.warn("Google maps key not set");
+    }
+
     return (
         // Important! Always set the container height explicitly
         <div style={{ height: '60vh', width: '100%' }}>
             <GoogleMapReact
-                bootstrapURLKeys={{ key: "AIzaSyDwBYSDzXDHuwh1aIpaOwm_ZWsut3Of0c8" }}
+                bootstrapURLKeys={{ key: process.env.GOOGLE_MAP_KEY ?? "" }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
                 yesIWantToUseGoogleMapApiInternals
