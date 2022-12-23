@@ -159,7 +159,7 @@ export interface IPostFields {
   author: IAuthor;
 
   /** showIn */
-  showIn?: ("Homepage" | "Navigation" | "Search")[] | undefined;
+  showIn?: ("Homepage" | "Navigation" | "Search" | "Hero")[] | undefined;
 }
 
 export interface IPost extends Entry<IPostFields> {
@@ -182,6 +182,9 @@ export interface IPost extends Entry<IPostFields> {
 export interface IStreetFields {
   /** German Name */
   germanName: string;
+
+  /** slug */
+  slug?: string | undefined;
 
   /** Polish Names */
   polishNames?: string[] | undefined;

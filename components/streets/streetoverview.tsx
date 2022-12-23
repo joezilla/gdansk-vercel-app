@@ -70,7 +70,7 @@ export function StreetOverview(props: AllStreetsProps) {
                 <div className="w-64 dark:text-purple-400 pb-1"><h2 className="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
                 {Object.values(sorted[k] ?? new Array).map(v =>
                   <div key={v.sys.id} className="w-48 dark:text-gray-200">
-                    <Link href={createStreetURL(v.germanName)}>{v.germanName}</Link>
+                    <Link href={createStreetURL(v.slug)}>{v.germanName}</Link>
                   </div>
                 )}
                 { Object.values(sorted[k] ?? new Array).length === 0 &&

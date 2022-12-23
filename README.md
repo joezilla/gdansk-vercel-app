@@ -5,6 +5,15 @@
 
 ## How this code works
 
+Contains both the public facing website as well as custom feeders for algolia that are triggered as web services (und pages/api). 
+
+Directory structure:
+
+components - Nextjs components
+pages - Nextjs page templates, custom middleware (redirects)
+pages/api - web services implementing custom feeders for algolia
+lib - misc. classes that provide the functionality behind the rest of the sites. includes jest-based unit tests.
+
 ### wrapper generation
 
 Wrappers of the contentful contentmodel are generated via 

@@ -10,14 +10,14 @@ afterEach(async() => {
 // test loading by name
 test('getStreetByName', async () => {
     let loader = new ContentfulLoader( - 1 );
-    let street = await loader.getStreetByName("Abbegg-Gasse");
+    let street = await loader.getStreetBySlug("abbegg-gasse");
     await expect(street.fields.germanName).toBe("Abbegg-Gasse");
 });
 
 // lower case fun
 test('getStreeyByName-lowercase', async () => {
     let loader = new ContentfulLoader( - 1 );
-    let street = await loader.getStreetByName("am brausenden wasser");
+    let street = await loader.getStreetBySlug("am-brausenden-wasser");
     await expect(street.fields.germanName).toBe("Am Brausenden Wasser");
 });
 
@@ -60,7 +60,7 @@ test('getNavigationPosts', async () => {
 test('getPostBySlug', async () => {
     let loader = new ContentfulLoader( -1 );
     let post = await loader.getPostBySlug("about");
-    await expect(post.fields.title).toBe("Overview");
+    await expect(post.fields.title).toBe("About");
 });
 
 test('getHomepageHeroPost', async () => {

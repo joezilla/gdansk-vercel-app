@@ -17,10 +17,10 @@ export default function generateSitemap(props: SitemapProps) {
        <loc>/allstreets</loc>
      </url>
      ${props.allStreets
-            .map(({ germanName }) => {
+            .map(({ slug }) => {
                 return `
        <url>
-           <loc>${createStreetURL(germanName)}</loc>
+           <loc>${createStreetURL(slug)}</loc>
        </url>
      `;
             })

@@ -3,12 +3,12 @@ import { IPost, IStreet } from "../src/@types/contentful";
 /**
  * URL utils
  */
-export function createStreetURL( germanName: string ) {
-    return `/streets/${slugify(germanName)}`;
+export function createStreetURL( slug: string ) {
+    return `/streets/${slug}`;
 }
 
 export function parseStreetURL( url: string ) {
-    return unslugify(url.replace('/streets/', ''));
+    return url.replace('/streets/', '');
 }
 
 export function createPostURL(  slug: string ) {

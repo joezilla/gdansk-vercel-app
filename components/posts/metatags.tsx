@@ -1,5 +1,5 @@
 import { IPost } from "../../src/@types/contentful"
-import { createPostURL, createStreetURL } from "../../lib/urlutil";
+import { createPostURL } from "../../lib/urlutil";
 
 type PostMetaProps = {
     post: IPost
@@ -26,7 +26,7 @@ export function PostMeta(props: PostMetaProps) {
             }
             <meta name="twitter:card" content="summary_large_image" />
             <meta property="twitter:domain" content={process.env.SOD_BASE_URL} />
-            <meta property="twitter:url" content={`${process.env.SOD_BASE_URL}${createStreetURL(name)}`} />
+            <meta property="twitter:url" content={`${process.env.SOD_BASE_URL}${createPostURL(name)}`} />
             <meta name="twitter:title" content={`The Streets of Danzig: ${name}`} />
             <meta name="twitter:description" content="Danzig | Streets, People, History." />
             {image ?

@@ -1,4 +1,7 @@
-
+/**
+ * Contentful API wrapper and content access.
+ * 
+ */
 import { IStreet, IPost } from '../src/@types/contentful';
 import { ObjectCache } from './objectcache';
 
@@ -16,6 +19,7 @@ export const contentfulClient = createClient({
 });
 
 abstract class AbstractContentfulLoader {
+
     public async fetchGraphQL(query: string, preview = false) {
         return fetch(
             `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}`,
@@ -42,6 +46,7 @@ abstract class AbstractContentfulLoader {
 export type StreetSummary = {
     germanName: string,
     polishNames: string[],
+    slug: string,
     sys: {
         id: string
     }
@@ -61,10 +66,17 @@ export class ContentfulLoader extends AbstractContentfulLoader {
 
     private cacheTimeout: number;
 
-    constructor(cacheTimeout : number = 60*60) {
+    constructor(cacheTimeout: number = 60 * 60) {
         super();
         this.cacheTimeout = cacheTimeout;
     }
+
+
+    /** return the contentful client */
+    public getClient() {
+        return contentfulClient;
+    }
+
 
     /**
      * Return all streets
@@ -73,7 +85,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
      * @returns StreetSummary[]
      * @todo: add city name at some point
      */
-    public async getAllStreets(preview = false,  limit = 2000) {
+    public async getAllStreets(preview = false, limit = 2000) {
         const cacheKey = "all-streets";
         const entries = await cache.getCachedEntry(cacheKey, () => {
             return this.fetchGraphQL(
@@ -82,6 +94,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                     items {
                         germanName    
                         polishNames
+                        slug
                         sys {
                             id
                         }
@@ -89,18 +102,18 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 }
                 }`
             )
-        }, this.cacheTimeout); 
+        }, this.cacheTimeout);
         return entries?.data?.streetCollection?.items as StreetSummary[];
     }
 
-     /**
-     * Return all posts
-     * @param preview 
-     * @param limit up to how many to return, defaults to 2000
-     * @returns PostSummary[]
-     * @todo: add city name at some point
-     */
-      public async getAllPosts(preview = false,  limit = 2000) {
+    /**
+    * Return all posts
+    * @param preview 
+    * @param limit up to how many to return, defaults to 2000
+    * @returns PostSummary[]
+    * @todo: add city name at some point
+    */
+    public async getAllPosts(preview = false, limit = 2000) {
         const cacheKey = "all-posts";
         const entries = await cache.getCachedEntry(cacheKey, () => {
             return this.fetchGraphQL(
@@ -116,28 +129,30 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 }
                 }`
             )
-        }, this.cacheTimeout); 
-        return entries?.data?.postCollection?.items as PostSummary[];}
+        }, this.cacheTimeout);
+        return entries?.data?.postCollection?.items as PostSummary[];
+    }
 
-    
+
     /**
      * get a street object from contentful by name
      */
-    public async getStreetByName(name: string) {
+    public async getStreetBySlug(slug: string) {
 
         // query by name
         const query = {
             content_type: 'street',
-            'fields.germanName[match]': name
+            'fields.slug': slug
+            // 'fields.germanName[match]': name
         };
-        const cacheKey = "street-by-name-" + name;
+        const cacheKey = "street-by-name-" + slug;
 
         const entry = await cache.getCachedEntry(cacheKey, () => {
             //const queryString = JSON.stringify(query);
             return contentfulClient.getEntries(query).then((entries) => {
                 // check if we got a result
                 return entries.items.length == 0 ? null : entries.items[0];
-            }); 
+            });
 
         }, this.cacheTimeout) as IStreet;
         return entry;
@@ -162,7 +177,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             return contentfulClient.getEntries(query).then((entries) => {
                 // check if we got a result
                 return entries.items;
-            }); 
+            });
 
         }, 60 * 60 /* cache for an hour */);
 
@@ -184,11 +199,11 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             return contentfulClient.getEntries(query).then((entries) => {
                 // check if we got a result
                 return entries.items.length == 0 ? null : entries.items[0];
-            }); 
+            });
 
         }, 60 * 60 /* cache for an hour */);
         // ok
-        if(!entry || entry.length == 0) return [];
+        if (!entry || entry.length == 0) return [];
         // just fetched one
         return entry;
     }
@@ -208,7 +223,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             return contentfulClient.getEntries(query).then((entries) => {
                 // check if we got a result
                 return entries.items;
-            }); 
+            });
 
         }, this.cacheTimeout);
         return entries as IPost[];
@@ -226,7 +241,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             return contentfulClient.getEntries(query).then((entries) => {
                 // check if we got a result
                 return entries.items.length == 0 ? null : entries.items[0];
-            }); 
+            });
         }, this.cacheTimeout) as IPost;
         return entry;
     }

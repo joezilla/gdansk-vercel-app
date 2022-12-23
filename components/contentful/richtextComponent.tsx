@@ -16,7 +16,7 @@ import { unwatchFile } from 'fs';
 function renderLink(target: any) {
 
     if (target.sys?.contentType?.sys?.id === "street") {
-        return <a href={`/streets/${target.fields.germanName}`} className="text-accent underline">{target.fields.germanName}</a>
+        return <a href={`/streets/${target.fields.slug}`} className="text-accent underline">{target.fields.germanName}</a>
     } else if (target.sys?.contentType?.sys?.id === "post") {
         return <a href={`/posts/${target.fields.slug}`} className="text-accent underline">{target.fields.title}</a>
     } else {
@@ -33,7 +33,7 @@ export function renderEmbeddedEntry(node: Block | Inline, children: any) {
                 <SmallCard
                     headline={node.data.target.fields.germanName}
                     excerpt={node.data.target.fields.polishNames}
-                    targetLink={`/streets/${node.data.target.fields.germanName}`}
+                    targetLink={`/streets/${node.data.target.fields.slug}`}
                     imageUrl="https://source.unsplash.com/100x100/?portrait?1"
                 />
             }
@@ -72,7 +72,7 @@ export function renderInlineEntry(node: Block | Inline, children: any) {
     return (
         <span className="border-l-4 border-y border-r text-l rounded-md border-accent px-4">
             {node.data.target.sys.contentType.sys.id === "street" &&
-                <a href={`/streets/${node.data.target.fields.germanName}`} className="text-accent underline">{node.data.target.fields.germanName}</a>
+                <a href={`/streets/${node.data.target.fields.slug}`} className="text-accent underline">{node.data.target.fields.germanName}</a>
             }
             {node.data.target.sys.contentType.sys.id === "post" &&
                 <a href={`/posts/${node.data.target.fields.slug}`} className="text-accent underline">{node.data.target.fields.title}</a>

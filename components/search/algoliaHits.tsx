@@ -8,8 +8,8 @@ function renderImage(hit: any) {
   return (
     hit.images && hit.images.length > 0
       ?
-      <img src={hit.images[0].fields?.file?.url}
-        alt={hit.images[0].fields?.title} className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+      <img src={hit.images[0].url}
+        alt={hit.images[0].title} className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
       :
       <img src="/images/No-Image-Placeholder.png"
         alt="no picture" className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
@@ -38,7 +38,7 @@ function AlgoliaHitRenderer({ searchState, searchResults }: { searchState: any, 
                   <h3 className="text-sm text-gray-700 dark:text-white">
                     {/* STREET */}
                     {hit.type === 'street' &&
-                      <a href={createStreetURL(hit.germanName)}>
+                      <a href={createStreetURL(hit.slug)}>
                         <span aria-hidden="true" className="absolute inset-0"></span>
                         {hit.germanName}
                       </a>

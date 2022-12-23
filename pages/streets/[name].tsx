@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   log.debug("Loading street: " + name);
 
-  const street =  await loader.getStreetByName(name);
+  const street =  await loader.getStreetBySlug(name);
   if(!street) {
     log.error(`Cannot find street ${name}`);
     return {
@@ -81,7 +81,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   let loader = new ContentfulLoader()
   let allStreets = await loader.getAllStreets();
   return {
-    paths: allStreets?.map((street: any) => `${createStreetURL(street.germanName)}`) ?? [],
+    paths: allStreets?.map((street: any) => `${createStreetURL(street.slug)}`) ?? [],
     fallback: true
   }
 }

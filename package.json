@@ -27,6 +27,7 @@
     "instantsearch.css": "^7.4.5",
     "next": "latest",
     "next-axiom": "^0.16.0",
+    "prettier": "^2.8.1",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.8",
     "react-dom": "^18.2.0",
