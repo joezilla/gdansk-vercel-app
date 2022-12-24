@@ -23,6 +23,15 @@ type GoogleMapProps = {
 
 export function GoogleMap(props: GoogleMapProps) {
 
+    // try to guess the address if the geolocation isn't set
+    if (!props.street.fields.location?.lat) {
+
+
+    }
+    if ( props.street.fields.polishNames ) {}
+
+
+
     const defaultProps = {
         center: {
             lat: props.street.fields.location?.lat ?? 54.349802,
@@ -41,7 +50,7 @@ export function GoogleMap(props: GoogleMapProps) {
         return marker;
     };
 
-    if(!process.env.GOOGLE_MAP_KEY) {
+    if(!process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY) {
         log.warn("Google maps key not set.");
     }
 

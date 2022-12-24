@@ -13,6 +13,9 @@ components - Nextjs components
 pages - Nextjs page templates, custom middleware (redirects)
 pages/api - web services implementing custom feeders for algolia
 lib - misc. classes that provide the functionality behind the rest of the sites. includes jest-based unit tests.
+content/migrations - contentful content type migration scripts
+content/images - source images (also in contentful)
+content/contentful - backups
 
 ### wrapper generation
 
