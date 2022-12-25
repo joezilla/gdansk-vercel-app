@@ -1,6 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import Document, { DocumentContext, DocumentInitialProps } from 'next/document'
 import Script from 'next/script'
+import { DefaultSeo } from "next-seo";
 
 class MyDocument extends Document {
     static async getInitialProps(
@@ -13,7 +14,7 @@ class MyDocument extends Document {
     // document with GTM tag.
     render() {
         return (
-            <Html className="dark">
+            <Html className="dark" lang="en">
                 <Head>
                     {/* <!-- Google Tag Manager --> */}
                     <script

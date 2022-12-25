@@ -32,11 +32,8 @@ export default function Street(content: StreetProps) {
           <Container>Loading...</Container>
         ) : (
           <>
+            <StreetMeta street={content.street} />
             <article>
-              <Head>
-                <title>The Streets of Danzig: {content.street.fields.germanName}</title>
-                <StreetMeta street={content.street} />
-              </Head>
               <StreetDetail street={content.street} />
             </article>
           </>
@@ -59,8 +56,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   log.debug("Loading street: " + name);
 
-  const street =  await loader.getStreetBySlug(name);
-  if(!street) {
+  const street = await loader.getStreetBySlug(name);
+  if (!street) {
     log.error(`Cannot find street ${name}`);
     return {
       notFound: true,

@@ -22,18 +22,17 @@ export default function AllStreets(props: AllStreetProps) {
   return (
     <>
       <Layout preview={preview} navigationPosts={navigationPosts}>
-          <Head>
+        <Head>
           <DefaultSocialTags title="The Streets of Danzig | All Streets" description="Overview of all old street names of Gdansk." />
-
-          </Head>
-          <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
-            <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-              <h1 className="text-4xl lg:text-6xl font-bold font-bold tracking-tighter md:pr-8 dark:text-white">
-                Street Summary
-              </h1>
-              <StreetOverview streets={allStreets} />
-            </div>
-          </section>
+        </Head>
+        <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
+          <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+            <h1 className="text-4xl lg:text-6xl font-bold font-bold tracking-tighter md:pr-8 dark:text-white">
+              Street Summary
+            </h1>
+            <StreetOverview streets={allStreets} />
+          </div>
+        </section>
       </Layout>
     </>
   )

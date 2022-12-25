@@ -1,5 +1,6 @@
 import { IPost } from "../../src/@types/contentful"
 import { createPostURL } from "../../lib/urlutil";
+import { Head } from "next/document";
 
 type PostMetaProps = {
     post: IPost
@@ -12,7 +13,7 @@ export function PostMeta(props: PostMetaProps) {
         image = props.post.fields.coverImage.fields?.file?.url ?? "";
     }
     return (
-        <>
+        <Head>
             <title>{`The Streets of Danzig: ${name}`}</title>
             <meta name="description" content={`Danzig | Streets | ${name}.`} />
             <meta property="og:url" content={`${process.env.SOD_BASE_URL}${createPostURL(name)}`} />
@@ -34,6 +35,6 @@ export function PostMeta(props: PostMetaProps) {
                 :
                 <meta name="twitter:image" content="https://www.streetsofdanzig.com/images/site-screenshot.png" />
             }
-        </>
+        </Head>
     );
 }

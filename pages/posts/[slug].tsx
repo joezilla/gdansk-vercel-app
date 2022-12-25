@@ -5,8 +5,7 @@ import { FullpagePost } from '../../components/posts'
 import { ContentfulLoader } from '../../lib/contentful'
 import { IPost } from '../../src/@types/contentful'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import Head from 'next/head'
-import { parsePostURL, createPostURL } from '../../lib/urlutil';
+import { createPostURL } from '../../lib/urlutil';
 import { log } from 'next-axiom'
 import { PostMeta } from '../../components/posts/metatags'
 
@@ -36,10 +35,7 @@ export default function PostPage(props: PostPageProps) {
         <h1>Loading…</h1>
       ) : (
         <>
-          <Head>
-            <title>Danzig Street Names</title>
-            <PostMeta post={post}/>
-          </Head>
+          <PostMeta post={post} />
           <section className="dark:bg-mybg-dark dark:text-gray-100">
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
               <FullpagePost content={post} />
@@ -64,7 +60,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // load it
   let post = await loader.getPostBySlug(slug);
 
-  if(!post) {
+  if (!post) {
     log.error(`Cannot find post ${slug}`);
     return {
       notFound: true,

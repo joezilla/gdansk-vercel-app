@@ -8,7 +8,8 @@
     "setup": "node ./contentful/setup.js",
     "generate:types": "contentful-typescript-codegen --output src/@types/contentful.d.ts",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "clearCache": "ts-node lib/cmd/clearCache.ts"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
@@ -27,6 +28,7 @@
     "instantsearch.css": "^7.4.5",
     "next": "latest",
     "next-axiom": "^0.16.0",
+    "next-seo": "^5.15.0",
     "prettier": "^2.8.1",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.8",
@@ -65,6 +67,7 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.2.1",
     "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
   },
   "resolutions": {

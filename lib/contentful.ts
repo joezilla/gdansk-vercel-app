@@ -85,9 +85,10 @@ export class ContentfulLoader extends AbstractContentfulLoader {
      * @returns StreetSummary[]
      * @todo: add city name at some point
      */
-    public async getAllStreets(preview = false, limit = 2000) {
+    public async getAllStreets(preview = false) {
         const cacheKey = "all-streets";
         const entries = await cache.getCachedEntry(cacheKey, () => {
+            /*
             return this.fetchGraphQL(
                 `query {
                     streetCollection(limit: ${limit}, preview: ${preview ? 'true' : 'false'}) {
@@ -101,10 +102,48 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                     }
                 }
                 }`
-            )
+            )*/
+            return this.doGetStreets();
         }, this.cacheTimeout);
-        return entries?.data?.streetCollection?.items as StreetSummary[];
+        return entries as StreetSummary[];
     }
+
+    /**
+     * Get the streets in batches since there's an annoying query limit of 1000 results
+     * in contentful's graphql api.
+     * 
+     * Uncached.
+     * 
+     * @param limit 
+     * @param preview 
+     */
+    private async doGetStreets(batchSize: number = 1000, preview: boolean = false) {
+        let currentBatchSize = 0;
+        let offset = 0;
+        let result = [] as PostSummary[];
+        do {
+            let currentResult = await this.fetchGraphQL(
+                `query {
+                    streetCollection(limit: ${batchSize}, skip: ${offset} preview: ${preview ? 'true' : 'false'}) {
+                        items {
+                            germanName    
+                            polishNames
+                            slug
+                            sys {
+                                id
+                            }
+                        }
+                    }
+                    }`
+            )
+            currentBatchSize = currentResult?.data?.streetCollection?.items?.length ?? 0;
+            offset += currentBatchSize;
+            result = result.concat(currentResult?.data?.streetCollection?.items);
+        } while (currentBatchSize > 0);
+        console.log(">>>>> got " + result.length + " streets");
+        return result;
+    }
+
 
     /**
     * Return all posts
@@ -113,8 +152,9 @@ export class ContentfulLoader extends AbstractContentfulLoader {
     * @returns PostSummary[]
     * @todo: add city name at some point
     */
-    public async getAllPosts(preview = false, limit = 2000) {
+    public async getAllPosts(preview = false, limit = 1000) {
         const cacheKey = "all-posts";
+
         const entries = await cache.getCachedEntry(cacheKey, () => {
             return this.fetchGraphQL(
                 `query {

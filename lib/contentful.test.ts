@@ -26,8 +26,10 @@ test('getAllStreets', async () => {
     let loader = new ContentfulLoader( -1 );
     let streets = await loader.getAllStreets();
     await expect(streets.length).toBeGreaterThan(0);
+    await expect(streets.length).toBe(1222);
     await expect(streets[0].germanName).toBeDefined();
 });
+
 
 // test loading all posts
 test('getAllPosts', async () => {
