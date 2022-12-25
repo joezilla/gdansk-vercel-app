@@ -88,21 +88,6 @@ export class ContentfulLoader extends AbstractContentfulLoader {
     public async getAllStreets(preview = false) {
         const cacheKey = "all-streets";
         const entries = await cache.getCachedEntry(cacheKey, () => {
-            /*
-            return this.fetchGraphQL(
-                `query {
-                    streetCollection(limit: ${limit}, preview: ${preview ? 'true' : 'false'}) {
-                    items {
-                        germanName    
-                        polishNames
-                        slug
-                        sys {
-                            id
-                        }
-                    }
-                }
-                }`
-            )*/
             return this.doGetStreets();
         }, this.cacheTimeout);
         return entries as StreetSummary[];
@@ -120,7 +105,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
     private async doGetStreets(batchSize: number = 1000, preview: boolean = false) {
         let currentBatchSize = 0;
         let offset = 0;
-        let result = [] as PostSummary[];
+        let result = [] as StreetSummary[];
         do {
             let currentResult = await this.fetchGraphQL(
                 `query {
@@ -140,7 +125,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             offset += currentBatchSize;
             result = result.concat(currentResult?.data?.streetCollection?.items);
         } while (currentBatchSize > 0);
-        console.log(">>>>> got " + result.length + " streets");
+        log.debug(`Loaded ${result.length} streets in batches of ${batchSize}`);
         return result;
     }
 

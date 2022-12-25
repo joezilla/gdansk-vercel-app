@@ -55,7 +55,7 @@ export class ObjectCache {
                     await redisClient.set(key, JSON.stringify({ id, timestamp: Date.now(), value }));
                 return value;
             } else {
-                log.debug(`cache hit for ${key} yielded ${entry.value}`);
+                log.debug(`cache hit for ${key} yielded entry.`);
                 return entry.value;
             }
         } else {
