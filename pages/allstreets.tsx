@@ -30,7 +30,7 @@ export default function AllStreets(props: AllStreetProps) {
             <h1 className="text-4xl lg:text-6xl font-bold font-bold tracking-tighter md:pr-8 dark:text-white">
               List of All Streets
             </h1>
-            <span className="text-sm">{allStreets.length} catalogued streets of Danzig (Gdansk).</span>
+            <span className="text-sm">{allStreets.length} cataloged streets of Danzig (Gdansk).</span>
             <StreetOverview streets={allStreets} />
           </div>
         </section>
