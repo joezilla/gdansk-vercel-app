@@ -74,17 +74,20 @@ export function StreetDetail(props: StreetDetailProps) {
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium leading-6 dark:text-gray-50 mb-2">{resources.en.headlines.previousNames}</h3>
-                      {street.fields.previousNames?.split(",").map((name,index) => <p className="mt-1 dark:text-gray-400" key={`pn-${index}`}>{name}</p>)}
+                      {street.fields.previousNames?.split(",").map((name, index) => <p className="mt-1 dark:text-gray-400" key={`pn-${index}`}>{name}</p>)}
                     </div>
                   </div>}
               </div>
             </div>
-            <div aria-hidden="true" className="mt-10 lg:mt-0 top-0">
+            <div aria-hidden="true" className="mt-4 lg:mt-0 top-0">
               <h2 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">Map</h2>
               <GoogleMap street={street} />
             </div>
           </div>
         </div>
+        {street.fields.source &&
+                <div className="text-sm p-6 mx-auto space-y-6 lg:px-8 ">Source(s): {street.fields.source}</div>
+              }
         {street.fields?.media &&
           <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
             <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">{resources.en.headlines.pictures}</h3>
