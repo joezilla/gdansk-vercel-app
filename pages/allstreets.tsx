@@ -44,7 +44,7 @@ export async function getStaticProps({ preview = false }) {
   const navigationPosts = (await loader.getNavigationPosts()) ?? []
   return {
     props: { preview, allStreets, navigationPosts },
-    // refresh content once a day
-    revalidate: 86400
+    // refresh content weekly
+    revalidate: 60 * 60 * 24 * 7,
   }
 }

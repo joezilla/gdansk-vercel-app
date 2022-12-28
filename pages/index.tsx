@@ -44,7 +44,7 @@ export async function getStaticProps({ preview = false }) {
   const heroPost = (await loader.getHomepageHeroPost());
   return {
     props: { preview, allPosts, navigationPosts, heroPost },
-    // refresh content once a day
-    revalidate: 86400
+    // refresh content weekly
+    revalidate: 60 * 60 * 24 * 7,
   }
 }

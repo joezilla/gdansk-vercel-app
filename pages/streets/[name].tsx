@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import Head from 'next/head'
 import ErrorPage from 'next/error'
 import { Layout, Container } from '../../components/layout'
 import { StreetDetail } from '../../components/streets'
@@ -69,8 +68,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       preview: false,
       street: street,
       navigationPosts: await loader.getNavigationPosts(),
-      revalidate: 60 * 60 * 24 // daily
-    }
+    },
+    revalidate: 60 * 60 * 24 * 5 // weekly
   };
 }
 
