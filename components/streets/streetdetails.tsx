@@ -86,8 +86,10 @@ export function StreetDetail(props: StreetDetailProps) {
           </div>
         </div>
         {street.fields.source &&
-                <div className="text-sm p-6 mx-auto space-y-6 lg:px-8 ">Source(s): {street.fields.source}</div>
-              }
+          <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
+            <span className="text-sm">Source(s): {street.fields.source}</span>
+          </div>
+        }
         {street.fields?.media &&
           <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
             <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">{resources.en.headlines.pictures}</h3>
