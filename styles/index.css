@@ -46,7 +46,7 @@
 }
 
 .bigletter {
-  font-family: "Wiegel Kurrent", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 76pt;
   display: inline;
   /*display: block; */
@@ -119,7 +119,7 @@
 
 body {
   /*padding: 10px;*/
-  font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 1em 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 * {
