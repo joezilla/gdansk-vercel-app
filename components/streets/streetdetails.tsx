@@ -60,7 +60,7 @@ export function StreetDetail(props: StreetDetailProps) {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium leading-6 dark:text-gray-50">{resources.en.headlines.polishNames}</h3>
-                    <p className="mt-2 dark:text-gray-400">{street.fields.polishNames}</p>
+                    {street.fields.polishNames?.map((name, index) => <p className="mt-1 dark:text-gray-400" key={`pn-${index}`}>{name}</p>)}
                   </div>
                 </div>
                 {street.fields.previousNames &&
@@ -96,7 +96,7 @@ export function StreetDetail(props: StreetDetailProps) {
             <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
               {street.fields?.media?.map(item =>
                 renderImage(item)
-              )}
+              )}  
             </div>
           </div>
         }
