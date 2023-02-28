@@ -22,7 +22,9 @@ function AlgoliaHitRenderer({ searchState, searchResults }: { searchState: any, 
   return (
     <>
       {searchResults?.hits.length === 0 && validQuery && (
+         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         <p>Aw snap! No search results were found.</p>
+        </div>
       )}
       {searchResults?.hits.length > 0 && validQuery && (
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 grid-cols-2 lg:grid-cols-4 xl:gap-x-8">

@@ -117,10 +117,10 @@ const customMarkdownOptions = {
             <ol className="mx-8 py- list-decimal">{children}</ol>
         ),
         [BLOCKS.HEADING_1]: (node: Block | Inline, children: ReactNode) => (
-            <h1 className="text-5xl mx-0 font-extrabold dark:text-white">{children}</h1>
+            <h1 className="text-5xl mx-0 font-extrabold text-accent">{children}</h1>
         ),
         [BLOCKS.HEADING_2]: (node: Block | Inline, children: ReactNode) => (
-            <h2 className="text-4xl font-bold dark:text-white">{children}</h2>
+            <h2 className="text-4xl font-bold dark:text-white my-2">{children}</h2>
         ),
         [BLOCKS.HEADING_3]: (node: Block | Inline, children: ReactNode) => (
             <h3 className="text-3xl font-bold dark:text-white">{children}</h3>

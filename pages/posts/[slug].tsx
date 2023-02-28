@@ -37,7 +37,7 @@ export default function PostPage(props: PostPageProps) {
         <>
           <PostMeta post={post} />
           <section className="dark:bg-mybg-dark dark:text-gray-100">
-            <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+            <div className="container  p-6 mx-auto space-y-6 sm:space-y-12">
               <FullpagePost content={post} />
             </div>
           </section>

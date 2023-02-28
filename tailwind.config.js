@@ -58,9 +58,9 @@ module.exports = {
           900: colors.zinc[900],
         },
         'accent': {
-          light: colors.teal[500],
-          DEFAULT: colors.teal[500],
-          dark: colors.teal[500],
+          light: colors.red[600],
+          DEFAULT: colors.red[600],
+          dark: colors.red[600],
         },
         'header': {
           light: colors.white,

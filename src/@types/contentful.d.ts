@@ -71,7 +71,21 @@ export interface IImageWithFocalPointFields {
 
   /** source url */
   sourceUrl?: string | undefined;
+
+  /** aiTags */
+  aiTags?: string[] | undefined;
+
+  /** Alignment (Embedded) */
+  alignment?: ("left" | "right" | "center")[] | undefined;
+
+  /** Float Mode (Embedded) */
+  float?: ("square" | "none")[] | undefined;
+
+  /** Size (Embedded) */
+  embbedSize?: ("small" | "medium" | "large")[] | undefined;
 }
+
+/** Asset Wrapper with Metadata */
 
 export interface IImageWithFocalPoint
   extends Entry<IImageWithFocalPointFields> {
@@ -97,6 +111,9 @@ export interface IPersonFields {
 
   /** birthDate */
   birthDate?: string | undefined;
+
+  /** slug */
+  slug?: string | undefined;
 
   /** bornIn */
   bornIn?: ICity | undefined;
@@ -192,7 +209,7 @@ export interface IStreetFields {
   /** District */
   district?: string | undefined;
 
-  /** Previous Names */
+  /** Previous and Other Names */
   previousNames?: string | undefined;
 
   /** History */

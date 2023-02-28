@@ -21,7 +21,7 @@ export function StreetSearch(props : InstantSearchProps) {
         <Configure hitsPerPage={12} />
         <div className="container">
           <div className="flex flex-row">
-            <aside className="w-full p-6 w-36 sm:w-60 dark:bg-mybg-dark dark:text-gray-100">
+            <aside className="p-6 w-96 dark:bg-mybg-dark dark:text-gray-100">
               <nav className="space-y-4 text-sm">
                 {/* City */}
                 <div className="space-y-2">
