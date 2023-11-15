@@ -25,7 +25,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
               alt="Danzig Coat Of Arms"
             />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              Danzig
+              The Streets of Danzig
             </span>
           </Navbar.Brand>
           <Navbar.Toggle />
