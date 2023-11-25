@@ -7,8 +7,10 @@ module.exports = {
             "../components/**/*.stories.@(js|jsx|ts|tsx)",
             "../pages/**/*.stories.@(js|jsx|ts|tsx)",
             '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+
   /** Expose public folder to storybook as static */
   staticDirs: ['../public'],
+
   addons: [
     'storybook-addon-next',
     '@storybook/addon-links',
@@ -26,10 +28,13 @@ module.exports = {
         },
       },
     },
+    '@storybook/addon-mdx-gfm'
   ],
+
   core: {
     builder: 'webpack5',
   },
+
   webpackFinal: (config) => {
     /**
      * Add support for alias-imports
@@ -51,4 +56,8 @@ module.exports = {
 
     return config;
   },
+
+  docs: {
+    autodocs: true
+  }
 };

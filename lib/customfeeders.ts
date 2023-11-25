@@ -16,7 +16,7 @@
 *   }
 * }
 **/
-import { IStreet, IPost } from "../src/@types/contentful";
+import { IStreet, IPost } from './contentmodel/wrappertypes';
 import { Asset } from 'contentful';
 import { AbstractIndexObject, AbstractFeeder,DependencyManager } from "./indexer";
 import { isEmptyString } from "./util";
@@ -75,7 +75,7 @@ export class StreetFeeder extends AbstractFeeder<IStreet> {
     var imagesToIndex: IndexImage[] = [];
     sourceObject.fields?.media?.forEach(image => {
       var i = {
-        url: image.fields.image.fields.file.url,
+        url: image.fields.image.fields.file?.url,
         title: image.fields.title,
         source: image.fields.source,
         sourceUrl: image.fields.sourceUrl

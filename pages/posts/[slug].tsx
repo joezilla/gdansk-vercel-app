@@ -3,7 +3,7 @@ import ErrorPage from 'next/error'
 import { Layout } from '../../components/layout'
 import { FullpagePost } from '../../components/posts'
 import { ContentfulLoader } from '../../lib/contentful'
-import { IPost } from '../../src/@types/contentful'
+import { IPost } from '../../lib/contentmodel/wrappertypes'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { createPostURL } from '../../lib/urlutil';
 import { log } from 'next-axiom'

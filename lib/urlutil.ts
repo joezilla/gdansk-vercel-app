@@ -1,5 +1,3 @@
-import { IPost, IStreet } from "../src/@types/contentful";
-
 /**
  * URL utils
  */

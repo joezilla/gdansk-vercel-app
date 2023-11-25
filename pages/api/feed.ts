@@ -17,10 +17,8 @@
 * }
 **/
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { IStreet, IPost } from "../../src/@types/contentful";
 import { IndexingController, FeederObject } from "../../lib/indexer";
 import { StreetFeeder, PostFeeder } from "../../lib/customfeeders";
-import { isEmptyString } from "../../lib/util";
 import { log } from 'next-axiom'
 
 

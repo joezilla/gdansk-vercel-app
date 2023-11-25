@@ -2,7 +2,7 @@
  * Summary module that shows all available streets in 3 columns
  * and links to the individual street pages.
  */
-import { StreetSummary } from '../../lib/contentful'
+import { StreetSummary } from '../../lib/contentmodel/wrappertypes';
 import Link from 'next/link'
 import { createStreetURL } from '../../lib/urlutil';
 import resources from './static.resources.json'

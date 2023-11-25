@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { DateComponent, ImageComponent, RichtextComponent } from '../contentful'
-import { IPost } from '../../src/@types/contentful'
+import { IPost } from '../../lib/contentmodel/wrappertypes';
 
 type PostProps = {
     content: IPost

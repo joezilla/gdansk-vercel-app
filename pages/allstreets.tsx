@@ -1,8 +1,9 @@
 import { Layout, Container } from '../components/layout'
 import { StreetOverview } from '../components/streets'
 import Head from 'next/head'
-import { IPost } from '../src/@types/contentful'
-import { ContentfulLoader, StreetSummary } from '../lib/contentful'
+import { IPost } from '../lib/contentmodel/wrappertypes'
+import { ContentfulLoader } from '../lib/contentful'
+import { StreetSummary } from '../lib/contentmodel/wrappertypes'
 import { DefaultSocialTags } from '../components/socialtags'
 
 

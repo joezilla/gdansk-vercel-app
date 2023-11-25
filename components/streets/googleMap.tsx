@@ -1,5 +1,5 @@
 
-import { IStreet } from '../../src/@types/contentful'
+import { IStreet } from '../../lib/contentmodel/wrappertypes';
 import GoogleMapReact from 'google-map-react';
 import { log } from 'next-axiom'
 import React from 'react';

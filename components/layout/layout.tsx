@@ -2,7 +2,7 @@ import Footer from '../footer'
 import Meta from './meta'
 import Navi from '../navigation'
 import Script from 'next/script'
-import { IPost } from '../../src/@types/contentful'
+import { IPost } from '../../lib/contentmodel/wrappertypes';
 import React from 'react'
 
 

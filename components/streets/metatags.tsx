@@ -1,7 +1,7 @@
 /**
  * Metatags for streets.
  */
-import { IStreet } from "../../src/@types/contentful"
+import { IStreet } from '../../lib/contentmodel/wrappertypes';
 import { createStreetURL, slugify } from "../../lib/urlutil";
 import Head from 'next/head'
 
@@ -14,7 +14,7 @@ export function StreetMeta(props: StreetMetaProps) {
     let slug = props.street.fields.slug ?? slugify(name);
     let image = "";
     if (props.street.fields.media && props.street.fields.media.length > 0) {
-        image = props.street.fields.media[0].fields?.image?.fields?.file?.url ?? "";
+        image = props.street.fields.media[0].fields?.image?.fields?.file?.url as string ?? "";
     }
     let polishName = props.street.fields.polishNames && props.street.fields.polishNames.length
         > 0 ? props.street.fields.polishNames[0] : "";

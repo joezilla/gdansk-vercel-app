@@ -1,6 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { IStreet } from '../../src/@types/contentful';
-import { GoogleMap } from './googleMap'
+import { IStreet } from '../../lib/contentmodel/wrappertypes';
+  
+  
+  import { GoogleMap } from './googleMap'
 
 // # sample data
 const hydrated = require("../../content/contentful/Abbegg-Gasse.json");

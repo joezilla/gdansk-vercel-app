@@ -10,7 +10,6 @@ import { ReactNode } from 'react';
 import { SmallCard } from '../cards/smallCard'
 import { ImageComponent, NaturalImageComponent } from './imageComponent';
 import { log } from 'next-axiom'
-import { IPost, IStreet } from '../../src/@types/contentful'
 import { unwatchFile } from 'fs';
 
 function renderLink(target: any) {
@@ -27,6 +26,7 @@ function renderLink(target: any) {
 
 export function renderEmbeddedEntry(node: Block | Inline, children: any) {
     const { data } = node;
+    
     return (
         <>
             {node.data.target.sys.contentType.sys.id === "street" &&
@@ -76,6 +76,9 @@ export function renderInlineEntry(node: Block | Inline, children: any) {
             }
             {node.data.target.sys.contentType.sys.id === "post" &&
                 <a href={`/posts/${node.data.target.fields.slug}`} className="text-accent underline">{node.data.target.fields.title}</a>
+            }
+            {node.data.target.sys.contentType.sys.id === "imageWithFocalPoint" &&
+                <span>Yo</span>
             }
         </span>
     );
