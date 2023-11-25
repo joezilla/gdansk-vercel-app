@@ -11,4 +11,4 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 // logging
-export { reportWebVitals } from 'next-axiom';
+export { useReportWebVitals } from 'next-axiom';

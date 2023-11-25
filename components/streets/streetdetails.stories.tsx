@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { IStreet } from '../../src/@types/contentful';
+import { IStreet } from '../../lib/contentmodel/wrappertypes';
 import { StreetDetail } from './streetdetails'
 
 // # sample data

@@ -3,8 +3,8 @@
  */
 import { Layout } from '../components/layout'
 import Head from 'next/head'
-import { IPost } from '../src/@types/contentful'
 import { ContentfulLoader } from '../lib/contentful'
+import { IPost } from '../lib/contentmodel/wrappertypes'
 
 type ErrorpageProps = {
     navigationPosts: IPost[],

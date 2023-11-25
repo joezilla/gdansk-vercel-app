@@ -20,11 +20,14 @@ type MyImageProps = {
 export function NaturalImageComponent(props: MyImageProps) {
   const [ratio, setRatio] = useState(16 / 9) // default to 16:9
 
+  const fileUrl = (props.image.fields.file ? props.image.fields.file.url : "no_url") as string;
+  const altTag = ( props.alt ? props.alt : props.image.fields.title ) as string;
+
   return (
     <Image
       loader={contentfulLoader}
-      src={props.image.fields.file.url}
-      alt={props.alt ? props.alt : props.image.fields.title}
+      src={fileUrl}  
+      alt={altTag}
       className={props.className}
       width={props.width ?? 400}
       height={(props.height ?? 400) / ratio}
@@ -39,14 +42,17 @@ export function NaturalImageComponent(props: MyImageProps) {
 
 export function ImageComponent(props: MyImageProps) {
 
-  if (!props.image || !props.image.fields.file.url) {
+  if (!props.image || !props.image.fields.file || !!props.image.fields.file.url) {
     throw new Error("missing image");
   }
 
+  const fileUrl = (props.image.fields.file ? props.image.fields.file.url : "no_url") as string;
+  const altTag = ( props.alt ? props.alt : props.image.fields.title ) as string;
+
   return <Image
     loader={contentfulLoader}
-    src={props.image.fields.file.url}
-    alt={props.alt ? props.alt : props.image.fields.title}
+    src={fileUrl}  
+    alt={altTag}
     className={props.className}
     width={props.width ?? 400}
     height={props.height ?? 400}

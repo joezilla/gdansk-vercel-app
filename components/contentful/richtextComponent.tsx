@@ -10,7 +10,6 @@ import { ReactNode } from 'react';
 import { SmallCard } from '../cards/smallCard'
 import { ImageComponent, NaturalImageComponent } from './imageComponent';
 import { log } from 'next-axiom'
-import { IPost, IStreet } from '../../src/@types/contentful'
 import { unwatchFile } from 'fs';
 
 function renderLink(target: any) {

@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { IPost } from '../../src/@types/contentful'
+import { IPost } from '../../lib/contentmodel/wrappertypes';
 import { HeroPost } from './heroPost'
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 // load sample data
 const hydrated = require("../../content/contentful/homepage-post.json");

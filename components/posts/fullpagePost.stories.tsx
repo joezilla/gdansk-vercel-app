@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { IPost } from '../../src/@types/contentful'
 import { FullpagePost } from './fullpagePost'
+import { IPost } from '../../lib/contentmodel/wrappertypes';
 
 // # sample data
 const hydrated = require("../../content/contentful/richtext-test.json");

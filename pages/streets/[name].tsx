@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { Layout, Container } from '../../components/layout'
 import { StreetDetail } from '../../components/streets'
-import { IStreet, IPost } from '../../src/@types/contentful'
+import { IStreet, IPost } from '../../lib/contentmodel/wrappertypes'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ContentfulLoader } from '../../lib/contentful'
 import { parseStreetURL, createStreetURL } from '../../lib/urlutil';

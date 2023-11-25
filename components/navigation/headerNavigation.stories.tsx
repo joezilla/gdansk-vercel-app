@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { IPost } from '../../src/@types/contentful'
+import { IPost } from '../../lib/contentmodel/wrappertypes';
 
 import HeaderNavigationModule from './headerNavigation'
 

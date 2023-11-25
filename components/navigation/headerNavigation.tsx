@@ -1,6 +1,6 @@
 import { push as Menu } from 'react-burger-menu'
 import { DarkmodeToggle } from './darkmodeToggle'
-import { IPost } from '../../src/@types/contentful'
+import { IPost } from '../../lib/contentmodel/wrappertypes';
 import Script from 'next/script'
 import { Navbar } from 'flowbite-react';
 

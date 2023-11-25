@@ -1,6 +1,6 @@
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { IStreet, IImageWithFocalPoint } from '../../src/@types/contentful'
+import { IStreet, IImageWithFocalPoint } from '../../lib/contentmodel/wrappertypes';
 import { RichtextComponent } from '../contentful'
 import { GoogleMap } from './googleMap'
 import React from "react";
@@ -10,8 +10,8 @@ import resources from './static.resources.json'
 function renderImage(image: IImageWithFocalPoint) {
   return (
     <div className="mb-4" key={image.sys.id}>
-      <a className="example-image-link" href={image.fields.image.fields.file.url} data-lightbox="street-pics" data-title={`${image.fields.title}, Source: ${image.fields.source ?? "-"}`}>
-        <img alt={image.fields.title} key={image.sys.id} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file.url} />
+      <a className="example-image-link" href={image.fields.image.fields.file?.url as string} data-lightbox="street-pics" data-title={`${image.fields.title}, Source: ${image.fields.source ?? "-"}`}>
+        <img alt={image.fields.title} key={image.sys.id} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file?.url as string} />
         <span className="text-xs">Source: {image.fields.source}</span>
       </a>
     </div>

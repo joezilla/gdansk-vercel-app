@@ -1,4 +1,3 @@
-import { loadDefaultErrorComponents } from "next/dist/server/load-components";
 import { ObjectCache } from "./objectcache";
 
 import { log} from 'next-axiom'

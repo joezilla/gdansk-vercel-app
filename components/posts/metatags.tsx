@@ -1,7 +1,7 @@
-import { IPost } from "../../src/@types/contentful"
 import { createPostURL } from "../../lib/urlutil";
 import Head from "next/head";
 import { isEmptyString } from "../../lib/util";
+import { IPost } from "../../lib/contentmodel/wrappertypes";
 
 type PostMetaProps = {
     post: IPost
@@ -12,7 +12,7 @@ export function PostMeta(props: PostMetaProps) {
     let name = props.post?.fields?.title;
     let image = "";
     if (props.post.fields.coverImage) {
-        image = props.post.fields?.coverImage?.fields?.file?.url ?? "";
+        image = props.post.fields?.coverImage?.fields?.file?.url as string ?? "";
     }
     return (
         <Head>

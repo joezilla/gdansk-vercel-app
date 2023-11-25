@@ -3,8 +3,8 @@
  */
 import { Layout } from '../components/layout'
 import Head from 'next/head'
-import { IPost } from '../src/@types/contentful'
-import { ContentfulLoader, StreetSummary } from '../lib/contentful'
+import { IPost } from '../lib/contentmodel/wrappertypes'
+import { ContentfulLoader } from '../lib/contentful'
 import { HeroPost } from '../components/posts'
 import { MoreStories } from '../components/posts'
 import { DefaultSocialTags } from '../components/socialtags'

@@ -2,8 +2,9 @@
  * Contentful API wrapper and content access.
  * 
  */
-import { IStreet, IPost } from '../src/@types/contentful';
+import { IStreet, IPost, StreetSummary, PostSummary } from './contentmodel/wrappertypes';
 import { ObjectCache } from './objectcache';
+
 
 // REDIS cache
 const cache = new ObjectCache();
@@ -41,25 +42,6 @@ abstract class AbstractContentfulLoader {
 //////////////////////////////////////////////////////////////////////////////////////////////// 
 // 
 //////////////////////////////////////////////////////////////////////////////////////////////// 
-
-/// shortform of streets
-export type StreetSummary = {
-    germanName: string,
-    polishNames: string[],
-    slug: string,
-    sys: {
-        id: string
-    }
-}
-
-// shortform of posts
-export type PostSummary = {
-    title: string,
-    slug: string,
-    sys: {
-        id: string
-    }
-}
 
 ////// 
 export class ContentfulLoader extends AbstractContentfulLoader {
@@ -206,7 +188,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
 
         }, 60 * 60 /* cache for an hour */);
 
-        console.log("homepage posts", entries);
+        console.log("homepage posts", entries as IPost[]);
 
         return entries as IPost[];
     }

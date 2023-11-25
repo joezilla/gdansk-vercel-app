@@ -1,5 +1,6 @@
 
-import { ContentfulLoader, StreetSummary, PostSummary } from '../lib/contentful'
+import { ContentfulLoader } from '../lib/contentful'
+import { StreetSummary, PostSummary } from '../lib/contentmodel/wrappertypes';
 import { createPostURL, createStreetURL } from '../lib/urlutil';
 
 type SitemapProps = {

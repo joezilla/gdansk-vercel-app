@@ -6,7 +6,6 @@
 import * as contentful from 'contentful'
 import { Asset } from 'contentful'
 import { Metadata } from 'contentful'
-import { EntitySys } from 'contentful';
 import { EntrySys } from 'contentful'
 import { EntrySkeletonType } from 'contentful'
 import { Document, Node } from '@contentful/rich-text-types'
@@ -21,73 +20,61 @@ export type IAuthor = {
     contentTypeId: 'author'
     fields: {
         title: contentful.EntryFieldTypes.Text,
-        image: Asset // contentful.EntryFieldTypes.AssetLink
+        image: Asset 
     }
 } & IBaseEntry
 
 export type IImageWithFocalPoint = {
     contentTypeId: 'imageWithFocalPoint'
     fields: {
-        title: string, //contentful.EntryFieldTypes.Text,
-        image: Asset, // contentful.EntryFieldTypes.AssetLink,
+        title: string,
+        image: Asset, 
         focalPoint: contentful.EntryFieldTypes.Object,
-        location: EntryFields.Location, //contentful.EntryFieldTypes.Location,
-        dateTaken: EntryFields.Date, // string, // contentful.EntryFieldTypes.Date,
-        source: string, // contentful.EntryFieldTypes.Text,
-        sourceUrl: string, // contentful.EntryFieldTypes.Text,
-        aiTags: string[], // contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.Symbol>,
-        alignment: string[], //contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.Symbol>,
-        float: string[], //contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.Symbol>,
-        embbedSize: string[], //contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.Symbol>,
+        location: EntryFields.Location, 
+        dateTaken: EntryFields.Date, 
+        source: string,
+        sourceUrl: string, 
+        aiTags: string[], 
+        alignment: string[], 
+        float: string[], 
+        embbedSize: string[], 
     }
 } & IBaseEntry
 
 export type IPerson = {
     contentTypeId: 'person',
     fields: {
-        name: string, // contentful.EntryFieldTypes.Text,
-        birthDate: EntryFields.Date, // contentful.EntryFieldTypes.Date,
-        slug: string, //contentful.EntryFieldTypes.Text,
-        bornIn: ICity /* contentful.EntryFieldTypes.Array<
-            contentful.EntryFieldTypes.EntryLink<ICity>
-        >, */
-        diedIn: ICity, /* contentful.EntryFieldTypes.Array<
-            contentful.EntryFieldTypes.EntryLink<ICity>
-        >, */
-        deathDate: EntryFields.Date, // contentful.EntryFieldTypes.Date,
-        description: Document, // contentful.EntryFieldTypes.RichText,
-        pictures: IImageWithFocalPoint[], /*contentful.EntryFieldTypes.Array<
-            contentful.EntryFieldTypes.EntryLink<IImageWithFocalPoint>
-        >, */
-        livedAt: IStreet[], /*contentful.EntryFieldTypes.Array<
-            contentful.EntryFieldTypes.EntryLink<IStreet>
-        >,*/
+        name: string, 
+        birthDate: EntryFields.Date, 
+        slug: string, 
+        bornIn: ICity 
+        diedIn: ICity,
+        deathDate: EntryFields.Date, 
+        description: Document, 
+        pictures: IImageWithFocalPoint[], 
+        livedAt: IStreet[], 
     }
 } & IBaseEntry
 
 export type ICity = {
     contentTypeId: 'city',
     fields: {
-        name: string, //contentful.EntryFieldTypes.Text,
+        name: string, 
     }
 } & IBaseEntry
 
 export type IStreet = {
     contentTypeId: 'street'
     fields: {
-        germanName: string, // contentful.EntryFieldTypes.Text,
-        slug: string, // contentful.EntryFieldTypes.Text,
-        polishNames: string[], // contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.Symbol>,
-        district: string, // contentful.EntryFieldTypes.Text,
-        previousNames: string, // contentful.EntryFieldTypes.Text,
-        history: Document, // contentful.EntryFieldTypes.RichText,
-        source: string, // contentful.EntryFieldTypes.Text,
-        city: ICity,  /*contentful.EntryFieldTypes.Array<
-            contentful.EntryFieldTypes.EntryLink<ICity>
-        >, */
-        media: IImageWithFocalPoint[], /* contentful.EntryFieldTypes.Array<
-            contentful.EntryFieldTypes.EntryLink<IImageWithFocalPoint>
-        >, */
+        germanName: string, 
+        slug: string, 
+        polishNames: string[], 
+        district: string,
+        previousNames: string, 
+        history: Document, 
+        source: string, 
+        city: ICity,  
+        media: IImageWithFocalPoint[], 
         location: EntryFields.Location,
     }
 } & IBaseEntry
@@ -117,14 +104,14 @@ export type PostSummary = {
 export type IPost = {
     contentTypeId: 'post',
     fields: {
-        title: string, //contentful.EntryFieldTypes.Text,
-        slug: string, //contentful.EntryFieldTypes.Text,
-        content: Document, // contentful.EntryFieldTypes.RichText,
-        excerpt: string, //contentful.EntryFieldTypes.Text,
-        coverImage: Asset, // contentful.EntryFieldTypes.AssetLink,
-        date: EntryFields.Date, // contentful.EntryFieldTypes.Date,
-        author: IPerson, // contentful.EntryFieldTypes.EntryLink<IPerson>,
-        showIn: string[] // contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.Symbol>
+        title: string, 
+        slug: string,
+        content: Document,
+        excerpt: string, 
+        coverImage: Asset, 
+        date: EntryFields.Date, 
+        author: IPerson,
+        showIn: string[] 
     }
 } & IBaseEntry
 
