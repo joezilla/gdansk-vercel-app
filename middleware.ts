@@ -1,6 +1,8 @@
 //
 // This middleware redirects all requests to slugified lowercase paths for streets.
 //
+
+
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { slugify } from './lib/urlutil';
@@ -10,8 +12,8 @@ import { log } from 'next-axiom';
 export function middleware(request: NextRequest) {
 
     let pathName = new URL(request.url).pathname;
-
     let slugified = slugify(pathName);
+
 
     // wtf!? the config at the bottom is not working on vercel...
 
@@ -22,10 +24,12 @@ export function middleware(request: NextRequest) {
         log.debug(`Redirecting ${pathName} to ${slugified}`);
         return NextResponse.redirect(new URL(slugified, request.url))
     } 
-    
+
+    return; 
+      
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-     matcher: '/streets/:name([A-Z].*)',
+  // matcher: [ '/streets/:name([A-Z].*)', '/(de|en)/streets/:name([A-Z].*)', ]  
 }

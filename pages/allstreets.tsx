@@ -10,19 +10,21 @@ import { DefaultSocialTags } from '../components/socialtags'
 type AllStreetProps = {
   preview: boolean,
   allStreets: StreetSummary[],
-  navigationPosts: IPost[]
+  navigationPosts: IPost[],
+  locale: string
 }
 
 export default function AllStreets(props: AllStreetProps) {
   let {
     preview,
     allStreets,
-    navigationPosts
+    navigationPosts,
+    locale
   } = props;
 
   return (
     <>
-      <Layout preview={preview} navigationPosts={navigationPosts}>
+      <Layout preview={preview} navigationPosts={navigationPosts} locale={locale}>
         <Head>
           <DefaultSocialTags title="The Streets of Danzig | All Streets" description="Overview of all old street names of Gdansk." />
         </Head>

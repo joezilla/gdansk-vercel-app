@@ -1,0 +1,10 @@
+{
+    "title": {
+        "title": "Hello World!",
+        "description": "Happy {{ year }}!"
+    },
+    "test": {
+        "foo": "DE-bar",
+        "baz": "DE-bang {{param1}}, {{param2}}"
+    }
+}

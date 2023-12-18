@@ -19,7 +19,8 @@ function renderImage(image: IImageWithFocalPoint) {
 }
 
 type StreetDetailProps = {
-  street: IStreet
+  street: IStreet,
+  locale: string
 }
 export function StreetDetail(props: StreetDetailProps) {
   let street = props.street;

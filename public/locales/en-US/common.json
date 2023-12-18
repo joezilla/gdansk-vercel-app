@@ -1,0 +1,11 @@
+{
+    "title": {
+        "title": "Hello World!",
+        "description": "Happy {{ year }}!"
+    },
+    "test": {
+        "foo": "US-bar",
+        "baz": "US-bang {{ param1 }}, {{ param2 }}",
+        "fallback": "US-fallback"
+    }
+}

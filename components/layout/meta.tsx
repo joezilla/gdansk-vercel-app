@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Script from 'next/script'
 
+type MetaProps = {
+  locale: string
+}
+
 // meta, but not the social tags, those are handled on a per-page basis
-export default function Meta() {
+export default function Meta(props: MetaProps) {
   return (
     <Head>
       <link

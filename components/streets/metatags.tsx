@@ -6,7 +6,8 @@ import { createStreetURL, slugify } from "../../lib/urlutil";
 import Head from 'next/head'
 
 type StreetMetaProps = {
-    street: IStreet
+    street: IStreet,
+    locale: string
 }
 
 export function StreetMeta(props: StreetMetaProps) {

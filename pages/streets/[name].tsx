@@ -9,15 +9,20 @@ import { parseStreetURL, createStreetURL } from '../../lib/urlutil';
 import { StreetMeta } from '../../components/streets/metatags'
 import { log } from 'next-axiom'
 
+
 // component properties
 type StreetProps = {
   street: IStreet,
   navigationPosts: IPost[],
-  preview: boolean
+  preview: boolean,
+  locale: string
 }
 
 export default function Street(content: StreetProps) {
   const router = useRouter()
+
+  let locale = content.locale;
+  console.debug("wtf: " + router.locale + " or " + content.locale);
 
   if (!router.isFallback && !content.street) {
     log.error("Falling back to 404");
@@ -25,15 +30,15 @@ export default function Street(content: StreetProps) {
   }
 
   return (
-    <Layout preview={content.preview} navigationPosts={content.navigationPosts}>
+    <Layout preview={content.preview} navigationPosts={content.navigationPosts} locale={locale}>
       <Container>
         {router.isFallback ? (
           <Container>Loading...</Container>
         ) : (
           <>
-            <StreetMeta street={content.street} />
+            <StreetMeta street={content.street} locale={locale} />
             <article>
-              <StreetDetail street={content.street} />
+              <StreetDetail street={content.street} locale={locale} />
             </article>
           </>
         )}
@@ -42,8 +47,13 @@ export default function Street(content: StreetProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  let loader = new ContentfulLoader()
+ export const getStaticProps: GetStaticProps = async (context) => {
+
+  let locale = context.locale;
+
+ console.debug("===> " + locale);
+
+  let loader = new ContentfulLoader(3600, locale);
 
   let nameParam = context?.params?.name ?? "";
 
@@ -67,11 +77,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       preview: false,
       street: street,
+      locale: locale,
       navigationPosts: await loader.getNavigationPosts(),
     },
     revalidate: 60 * 60 * 24 * 5 // weekly
   };
 }
+
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let loader = new ContentfulLoader()

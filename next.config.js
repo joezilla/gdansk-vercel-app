@@ -12,5 +12,9 @@ module.exports = {
   },
   compiler: {
     styledComponents: true // needed so that the dom manipulation of the darkmode icon works
-  }
+  },
+  i18n: {
+    locales: ['en-US', 'de'],
+    defaultLocale: 'en-US',
+  },
 }

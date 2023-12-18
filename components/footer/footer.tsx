@@ -1,8 +1,13 @@
+
+type FooterProps = {
+  locale: string
+}
+
 /**
  * Footer.
  * @returns 
  */
-export default function Footer() {
+export default function Footer(props: FooterProps) {
   return (
     <footer className="py-8 mt-auto dark:bg-mybg-dark dark:text-mytxt-dark border-t border-gray-200 dark:border-gray-600">
       <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">

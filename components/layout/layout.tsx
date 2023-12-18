@@ -9,18 +9,19 @@ import React from 'react'
 type LayoutProps = {
   children: React.ReactNode,
   preview?: boolean
-  navigationPosts: IPost[]
+  navigationPosts: IPost[],
+  locale: string
 }
 
 export function Layout(props: LayoutProps) {
   const [darkMode] = React.useState(false);
   return (
     <>
-      <Meta />
+      <Meta locale={props.locale}/>
       <div className="flex flex-col h-full dark:bg-mybg-dark h-screen dark:text-mytxt-dark">
-        <Navi navigationPosts={props.navigationPosts} />
+        <Navi navigationPosts={props.navigationPosts} locale={props.locale} />
         <main className="py-0">{props.children}</main>
-        <Footer />
+        <Footer locale={props.locale}/>
       </div>
     </>
   )
