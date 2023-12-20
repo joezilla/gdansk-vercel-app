@@ -1,7 +1,6 @@
 import { DarkmodeToggle } from './darkmodeToggle'
 import { IPost } from '../../lib/contentmodel/wrappertypes';
 import { Navbar } from 'flowbite-react';
-import { getTranslator } from "../../lib/i18n";
 
 type HeaderNaviProps = {
   currentPage?: string,
@@ -19,8 +18,6 @@ function addLocale(link: string, locale: string) {
 
 export default function HeaderNavigationModule(props: HeaderNaviProps) {
 
-  const t = getTranslator(props.locale);
-
   return (
     <>
       <div className="border-b-1 border-slate-100">
@@ -36,7 +33,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
               alt="Danzig Coat Of Arms"
             />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              {t('site.title')}
+              SITE TITLE HERE TODO
             </span>
           </Navbar.Brand>
           <Navbar.Toggle />
