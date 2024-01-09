@@ -1,4 +1,14 @@
 {
+    "homepage": {
+        "title": "Die Strassen von Danzig"
+    },
+    "streetdetail": {
+        "history": "Geschichte",
+        "map": "Karte",
+        "pictures": "Bilder",
+        "polishNames": "Polnische Namen",
+        "previousNames": "Andere Namen"
+    },
     "title": {
         "title": "Hello World!",
         "description": "Happy {{ year }}!"

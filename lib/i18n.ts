@@ -1,3 +1,8 @@
+/**
+ * Simple resource bundle for static text that implements fallback 
+ * logic to default locale as well as text formatting with parameter 
+ * replacement.
+ */
 export const defaultLocale = "en-US";
 export const locales = ["en-US", "de"] as const;
 export type ValidLocale = typeof locales[number];
@@ -5,46 +10,15 @@ export type ValidLocale = typeof locales[number];
 // logging
 import { log } from 'next-axiom'
 
-/*
-// i18n.ts
-const dictionaries: Record<string, any> = {
-  "en-US": () => import("../public/locales/en-US/common.json").then((module) => module.default),
-  "de": () => import("../public/locales/de/common.json").then((module) => module.default),
-} as const;
-
-
-function getTranslation(key: string, dictionary: Record<string, any>) {
-  return key
-    .split(".")
-    .reduce((obj, key) => obj && obj[key], dictionary);
-}
-
-export const getTranslator = async (locale: string) => {
-  const dictionary = await dictionaries[locale]();
-  const fallback = await dictionaries[fallbackLocale]();
-  return (key: string, params?: { [key: string]: string | number }) => {
-    let translation = getTranslation(key, dictionary);
-    if (!translation) {
-      log.warn("Cannot find static i18n entry " + key + " for locale: " + locale);
-      translation = getTranslation(key, fallback);
-    }
-    // dang
-    if (!translation) {
-      log.error("Cannot find static i18n entry anywhere: " + key);
-      return key;
-    }
-    if (params && Object.entries(params).length) {
-      Object.entries(params).forEach(([key, value]) => {
-        translation = translation!.replace(`{{ ${key} }}`, String(value));
-      });
-    }
-    return translation;
-  };
-};*/
+import de_dict from '../public/locales/de/common.json';
+import en_dict from '../public/locales/en-US/common.json';
 
 export class I18N {
   // i18n.ts
-  private dictionaries: Record<string, any>;
+  private dictionaries: Record<string, any> =  {
+    "en-US": en_dict,
+    "de": de_dict
+  };
   private locale: string;
   private fallbackLocale = "en-US";
 
@@ -52,22 +26,15 @@ export class I18N {
     this.locale = locale;
   }
 
-  public async init() {
-    this.dictionaries = {
-      "en-US": () => import("../public/locales/en-US/common.json").then((module) => module.default),
-      "de": () => import("../public/locales/de/common.json").then((module) => module.default),
-    } as const;
-  }
-
   private getTranslation(key: string, dictionary: Record<string, any>) {
-    return key
+   return key
       .split(".")
       .reduce((obj, key) => obj && obj[key], dictionary);
   }
 
   public getTranslator = () => {
-    const dictionary =  this.dictionaries[this.locale]();
-    const fallback = this.dictionaries[this.fallbackLocale]();
+    const dictionary =  this.dictionaries[this.locale];
+    const fallback = this.dictionaries[this.fallbackLocale];
     return (key: string, params?: { [key: string]: string | number }) => {
       let translation = this.getTranslation(key, dictionary);
       if (!translation) {
@@ -84,7 +51,7 @@ export class I18N {
           translation = translation!.replace(`{{ ${key} }}`, String(value));
         });
       }
-      return translation;
+      return typeof translation === "string" ? translation : "oops";
     };
   };
 

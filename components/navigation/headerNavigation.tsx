@@ -1,6 +1,8 @@
 import { DarkmodeToggle } from './darkmodeToggle'
 import { IPost } from '../../lib/contentmodel/wrappertypes';
-import { Navbar } from 'flowbite-react';
+import { Navbar, Dropdown, Avatar } from 'flowbite-react';
+import { useRouter } from 'next/router'
+import { I18N } from "../../lib/i18n";
 
 type HeaderNaviProps = {
   currentPage?: string,
@@ -10,14 +12,15 @@ type HeaderNaviProps = {
 
 function addLocale(link: string, locale: string) {
   let r = link;
-  if(locale == "de") {
+  if (locale == "de") {
     r = "/de" + r;
   }
   return r;
 }
 
 export default function HeaderNavigationModule(props: HeaderNaviProps) {
-
+  const i18n = new I18N(props.locale).getTranslator();
+  const router = useRouter()
   return (
     <>
       <div className="border-b-1 border-slate-100">
@@ -33,7 +36,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
               alt="Danzig Coat Of Arms"
             />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              SITE TITLE HERE TODO
+              {i18n("homepage.title")}
             </span>
           </Navbar.Brand>
           <Navbar.Toggle />
@@ -60,14 +63,34 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
               </Navbar.Link>
             )}
 
-            {
-          <Navbar.Link key="darkmode">
-            <DarkmodeToggle/>         
-          </Navbar.Link>
-            }
+<div className="flex items-center gap-4">
+            <Dropdown
+              arrowIcon={false}
+              inline
+              label={
+                <img src={`/locales/${props.locale}.svg`} alt={props.locale} className="mr-3 h-6 sm:h-3" />
+              }
+            >
+              <Dropdown.Item className="w-28"><div
+                onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: 'en-US' });
+                }}
+              >English</div>
+              </Dropdown.Item>
+              <Dropdown.Item className="w-28"> <div
+                onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: 'de' });
+                }}
+              >German</div></Dropdown.Item>
+
+            </Dropdown>
+          </div>
+
+
+
           </Navbar.Collapse>
         </Navbar>
-      
+
 
       </div>
 

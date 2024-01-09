@@ -22,7 +22,6 @@ export default function Street(content: StreetProps) {
   const router = useRouter()
 
   let locale = content.locale;
-  console.debug("wtf: " + router.locale + " or " + content.locale);
 
   if (!router.isFallback && !content.street) {
     log.error("Falling back to 404");
@@ -50,8 +49,6 @@ export default function Street(content: StreetProps) {
  export const getStaticProps: GetStaticProps = async (context) => {
 
   let locale = context.locale;
-
- console.debug("===> " + locale);
 
   let loader = new ContentfulLoader(3600, locale);
 
@@ -89,8 +86,17 @@ export default function Street(content: StreetProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   let loader = new ContentfulLoader()
   let allStreets = await loader.getAllStreets();
+  let pathsDe =  allStreets?.map((street: any) =>  ({ params: { name: String(street.slug) }, locale: 'de' } ) ) ?? [];
+  let pathsEn =  allStreets?.map((street: any) =>  ({ params: { name: String(street.slug) }, locale: 'en-US' } ) ) ?? [];
+
+  // let pathsDe =  allStreets?.map((street: any) => `{ params: { name: '${street.slug}' }, locale: 'en-US' }, )` ?? [];
+
+  console.log(pathsEn.concat(pathsDe));
+
+
+  // let pathsDe =  allStreets?.map((street: any) => `${createStreetURL(street.slug)}`) ?? []
   return {
-    paths: allStreets?.map((street: any) => `${createStreetURL(street.slug)}`) ?? [],
+    paths: pathsEn.concat(pathsDe),
     fallback: true
   }
 }

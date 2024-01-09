@@ -83,8 +83,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   let loader = new ContentfulLoader()
   let allPosts = await loader.getAllPosts();
+  let pathsDe =  allPosts?.map((post: any) =>  ({ params: { slug: String(post.slug) }, locale: 'de' } ) ) ?? [];
+  let pathsEn =  allPosts?.map((post: any) =>  ({ params: { slug: String(post.slug) }, locale: 'en-US' } ) ) ?? [];
+  // allPosts?.map((p: any) => createPostURL(p.slug)) ?? [],
+
   return {
-    paths: allPosts?.map((p: any) => createPostURL(p.slug)) ?? [],
+    paths: pathsEn.concat(pathsDe),
     fallback: true,
   }
 }

@@ -1,4 +1,14 @@
 {
+    "homepage": {
+        "title": "The Streets of Danzig"
+    },
+    "streetdetail": {
+        "history": "History",
+        "map": "Map",
+        "pictures": "Pictures",
+        "polishNames": "Polish Names",
+        "previousNames": "Previous Names"
+    },
     "title": {
         "title": "Hello World!",
         "description": "Happy {{ year }}!"

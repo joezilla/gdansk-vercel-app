@@ -23,8 +23,6 @@ export default async function handler(
     const API_KEY = process.env.API_KEY;
     const SECRET = req?.headers?.apisecret ?? "";
 
-    console.log("Secret is " + SECRET);
-
     try {
         if (SECRET === API_KEY) {
             // Process the POST request

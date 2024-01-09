@@ -8,14 +8,15 @@ import { IPost } from '../lib/contentmodel/wrappertypes'
 
 type ErrorpageProps = {
     navigationPosts: IPost[],
-    preview: boolean
+    preview: boolean,
+    locale: string
 }
 
 export default function NotFoundPage(props: ErrorpageProps) {
     let { navigationPosts, preview } = props;
     return (
         <>
-            <Layout preview={preview} navigationPosts={navigationPosts}>
+            <Layout preview={preview} navigationPosts={navigationPosts} locale={props.locale}>
                 <Head>
                     <title>Not Found</title>
                 </Head>

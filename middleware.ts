@@ -9,7 +9,7 @@ import { slugify } from './lib/urlutil';
 import { log } from 'next-axiom';
 
 // This function can be marked `async` if using `await` inside
-export function middleware(request: NextRequest) {
+/* export function middleware(request: NextRequest) {
 
     let pathName = new URL(request.url).pathname;
     let slugified = slugify(pathName);
@@ -28,8 +28,27 @@ export function middleware(request: NextRequest) {
     return; 
       
 }
-
+*/
 // See "Matching Paths" below to learn more
-export const config = {
+/* export const config = {
   // matcher: [ '/streets/:name([A-Z].*)', '/(de|en)/streets/:name([A-Z].*)', ]  
+}*/
+
+
+const PUBLIC_FILE = /\.(.*)$/
+
+export async function middleware(request: NextRequest) {
+  /*
+    const localeCookie = request.cookies.get("NEXT_LOCALE");
+    // console.log("Local cookie is " + localeCookie.value);
+    // console.log("curent locale is " + request.nextUrl.locale);
+    // redirect if there's a mismatch
+    if (localeCookie !== undefined && request.nextUrl.locale !== localeCookie.value) {
+      console.debug("redirecting to " + {localeCookie});
+      return NextResponse.redirect(new URL(`/${localeCookie}${request.nextUrl.pathname}`, request.url));
+    }
+    */
 }
+export const config = {
+  // matcher: ["/", "/about"], // paths on which middleware will work
+};
