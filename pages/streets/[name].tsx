@@ -88,13 +88,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   let allStreets = await loader.getAllStreets();
   let pathsDe =  allStreets?.map((street: any) =>  ({ params: { name: String(street.slug) }, locale: 'de' } ) ) ?? [];
   let pathsEn =  allStreets?.map((street: any) =>  ({ params: { name: String(street.slug) }, locale: 'en-US' } ) ) ?? [];
-
-  // let pathsDe =  allStreets?.map((street: any) => `{ params: { name: '${street.slug}' }, locale: 'en-US' }, )` ?? [];
-
-  console.log(pathsEn.concat(pathsDe));
-
-
-  // let pathsDe =  allStreets?.map((street: any) => `${createStreetURL(street.slug)}`) ?? []
   return {
     paths: pathsEn.concat(pathsDe),
     fallback: true
