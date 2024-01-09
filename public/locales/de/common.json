@@ -2,6 +2,10 @@
     "homepage": {
         "title": "Die Strassen von Danzig"
     },
+    "nav": {
+        "allstreets": "Alle Strassen",
+        "search": "Suche"
+    },
     "streetdetail": {
         "history": "Geschichte",
         "map": "Karte",

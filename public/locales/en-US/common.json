@@ -2,6 +2,11 @@
     "homepage": {
         "title": "The Streets of Danzig"
     },
+    "nav": {
+        "allstreets": "All Streets",
+        "search": "Search"
+
+    },
     "streetdetail": {
         "history": "History",
         "map": "Map",

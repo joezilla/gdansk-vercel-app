@@ -50,11 +50,11 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
             </Navbar.Link>
 
             <Navbar.Link key="allstreets" href={addLocale("/allstreets", props.locale)}>
-              All Streets
+              {i18n("nav.allstreets")}
             </Navbar.Link>
 
             <Navbar.Link key="search" href={addLocale("/search", props.locale)}>
-              Search
+              {i18n("nav.search")}
             </Navbar.Link>
 
             {props.navigationPosts?.map(post =>
@@ -63,28 +63,28 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
               </Navbar.Link>
             )}
 
-<div className="flex items-center gap-4">
-            <Dropdown
-              arrowIcon={false}
-              inline
-              label={
-                <img src={`/locales/${props.locale}.svg`} alt={props.locale} className="mr-3 h-6 sm:h-3" />
-              }
-            >
-              <Dropdown.Item className="w-28"><div
-                onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: 'en-US' });
-                }}
-              >English</div>
-              </Dropdown.Item>
-              <Dropdown.Item className="w-28"> <div
-                onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: 'de' });
-                }}
-              >German</div></Dropdown.Item>
+            <div className="flex items-center gap-4">
+              <Dropdown
+                arrowIcon={false}
+                inline
+                label={
+                  <img src={`/locales/${props.locale}.svg`} alt={props.locale} className="mr-3 h-6 sm:h-3" />
+                }
+              >
+                <Dropdown.Item className="w-28"><div
+                  onClick={() => {
+                    router.push(router.asPath, router.asPath, { locale: 'en-US' });
+                  }}
+                >English</div>
+                </Dropdown.Item>
+                <Dropdown.Item className="w-28"> <div
+                  onClick={() => {
+                    router.push(router.asPath, router.asPath, { locale: 'de' });
+                  }}
+                >German</div></Dropdown.Item>
 
-            </Dropdown>
-          </div>
+              </Dropdown>
+            </div>
 
 
 
