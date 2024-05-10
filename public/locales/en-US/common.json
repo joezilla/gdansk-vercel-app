@@ -2,6 +2,10 @@
     "homepage": {
         "title": "The Streets of Danzig"
     },
+    "allstreets": {
+        "header": "List of All Streets",
+        "subhead": "{{count}} streets indexed in Danzig."
+    },
     "nav": {
         "allstreets": "All Streets",
         "search": "Search"

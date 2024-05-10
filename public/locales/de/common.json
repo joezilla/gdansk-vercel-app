@@ -2,8 +2,12 @@
     "homepage": {
         "title": "Die Strassen von Danzig"
     },
+    "allstreets": {
+        "header": "Alle Straßen",
+        "subtitle": "{{count}} indizierte Straßen in Danzig."
+    },
     "nav": {
-        "allstreets": "Alle Strassen",
+        "allstreets": "Übersicht aller Strassen",
         "search": "Suche"
     },
     "streetdetail": {

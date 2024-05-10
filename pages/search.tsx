@@ -28,7 +28,7 @@ const searchStateToURL = (searchState: any) =>
 // turn off initial empty requests
 const searchClient = {
   ...algoliaClient,
-  /*
+  /* 
   search(requests) {
     console.log("requests", requests);
     if (requests.every(({ params }) => !params.query)) {
@@ -93,6 +93,7 @@ export default function Search(props: any) {
             createURL={createURL}
           />
         </div>
+
       </Layout>
     </>
   );

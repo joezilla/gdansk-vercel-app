@@ -7,10 +7,11 @@
     "test": "jest",
     "start": "next start",
     "setup": "node ./contentful/setup.js",
-    "generate:types": "contentful-typescript-codegen --output src/@types/contentful.d.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "clearCache": "ts-node lib/cmd/clearCache.ts"
+    "clearCache": "ts-node lib/cmd/clearCache.ts",
+    "reindex": "ts-node lib/cmd/reindex.ts"
+
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.19.0",
@@ -20,7 +21,6 @@
     "algoliasearch": "4.20.0",
     "classnames": "2.3.2",
     "contentful": "^10.6.12",
-    "contentful-typescript-codegen": "^3.4.0",
     "date-fns": "2.30.0",
     "dotenv": "^16.3.1",
     "eslint-config-next": "^14.0.2",
