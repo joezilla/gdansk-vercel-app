@@ -15,13 +15,13 @@ export default function generateSitemap(props: SitemapProps) {
     return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
-       <loc>/allstreets</loc>
+       <loc>https://www.streetsofdanzig.com/allstreets</loc>
      </url>
      ${props.allStreets
             .map(({ slug }) => {
                 return `
        <url>
-           <loc>${createStreetURL(slug)}</loc>
+           <loc>https://www.streetsofdanzig.com${createStreetURL(slug)}</loc>
        </url>
      `;
             })
@@ -30,7 +30,7 @@ export default function generateSitemap(props: SitemapProps) {
             .map(({ slug }) => {
                 return `
                     <url>
-                        <loc>${createPostURL(slug)}</loc>
+                        <loc>https://www.streetsofdanzig.com/${createPostURL(slug)}</loc>
                     </url>
                     `;
             })
