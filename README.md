@@ -17,6 +17,8 @@ content/migrations - contentful content type migration scripts
 content/images - source images (also in contentful)
 content/contentful - backups
 
+### Reindex Algolia Index
+
 
 ### Components
 The entire site uses Tailwind CSS.

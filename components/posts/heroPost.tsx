@@ -25,6 +25,8 @@ export function HeroPost(props: HeroPostProps) {
             </Link>
         </div>
       </section>
+
     </>
   );
 }
+

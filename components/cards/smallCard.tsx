@@ -1,6 +1,6 @@
 import { Button } from '../buttons/Button'
 
-export type smallCardProps = {
+export type SmallCardProps = {
     headline: string,
     excerpt: string,
     targetLink: string,
@@ -16,7 +16,7 @@ export type smallCardProps = {
  * @returns 
  */
 
-export function SmallCard(props: smallCardProps) {
+export function SmallCard(props: SmallCardProps) {
     return (
         <div className="max-w-md p-8 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
         <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
