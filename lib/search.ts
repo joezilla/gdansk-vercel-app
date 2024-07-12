@@ -3,14 +3,9 @@
 /**
  * Generic Algolia Indexer
  */
-import { ObjectCache } from "./objectcache"
-import { Entry } from "contentful";
-import { IStreet } from "./contentmodel/wrappertypes";
-import { SearchResponse } from '@algolia/client-search';
 // logging
 import { log } from 'next-axiom'
-//
-import {  StreetSummary } from '../types/streetApi'
+import { StreetSummary } from '../types/streetApi'
 // util
 
 // //// algolia
@@ -22,15 +17,17 @@ const searchClient = algoliasearch(
 const algoliaIndexEn = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-en-US" ?? "");
 const algoliaIndexDe = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-de" ?? "");
 
- type AlgoliaHits = {
+type AlgoliaHits = {
     hits: AlgoliaHit[];
 };
 
- type AlgoliaHit = {
+type AlgoliaHit = {
     identifier: string;
     germanName: string;
     polishNames: string[];
-    images: string[];
+    images: {
+        url: string
+    }[],
     district: string;
     slug: string;
     hasImages: boolean;
@@ -71,20 +68,27 @@ export class AlgoliaApi {
                 facetFilters: 'type:street'
             });
 
-         content.hits.forEach((x) =>
-             // console.log(`===> [${x.germanName}, ${x.type}, ${x.hasImages}, ${x.images}]`);
-             console.log(x.images[0])
-         );
+        content.hits.forEach((x) =>
+            console.log(x.images[0])
+        );
 
         var data: StreetSummary[] = [];
 
-        content.hits.forEach((e) =>
+        content.hits.forEach((e) => {
+            var imageUrl;
+            if (/^(https?:).*/.test(e.images[0].url)) {
+                imageUrl = e.images[0].url;
+            } else {
+                imageUrl = `https:${e.images[0].url}`;
+            }
+
             data.push({
                 germanName: e.germanName,
-                imageUrl: 'https:' + e.images[0].url,
+                imageUrl: imageUrl,
                 polishNames: e.polishNames,
                 slug: e.slug
             })
+        }
         );
         return data;
 

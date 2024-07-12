@@ -17,7 +17,7 @@ export default function Index({ navigationPosts, allPosts, preview, heroPost, lo
     <>
       <Layout preview={preview} navigationPosts={navigationPosts} locale={locale}>
         <Head>
-          <DefaultSocialTags title="title todo" description="" />
+        <DefaultSocialTags title="The Streets of Danzig" description="Danzig | Streets, People, History." />
         </Head>
         <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
           <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">

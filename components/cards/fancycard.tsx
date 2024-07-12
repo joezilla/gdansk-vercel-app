@@ -51,21 +51,21 @@ export function PostCard(props: PostCardData) {
 export function FancyCard(props: CardProps) {
 
     // annoying, but contentful returns images with a // and no protocol
-    var imageUrl ;
-    if (/^(https?:).*/.test(props.imageUrl)) {        
-        imageUrl = props.imageUrl;
-      } else {
-        imageUrl = `https:${props.imageUrl}`;        
-      }      
+    // var imageUrl ;
+    // if (/^(https?:).*/.test(props.imageUrl)) {        
+    //     imageUrl = props.imageUrl;
+    //   } else {
+    //     imageUrl = `https:${props.imageUrl}`;        
+    //   }      
 
     return (
-        <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-82">            
+        <div className="relative flex flex-col mt-6 text-gray-700 bg-white dark:bg-black shadow-md bg-clip-border rounded-xl w-82">            
             {/* TODO: won't work with i18n */}
             <a href={props.targetLink}>                
                 {props.imageUrl &&         
-                    <div className="relative h-48 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+                    <div className="relative h-48 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 dark:shadow-blue-gray-800/40">
                         <Image
-                            src={`${imageUrl}`}
+                            src={`${props.imageUrl}`}
                             alt="Picture of the street"
                             width={500}
                             height={500}
@@ -73,10 +73,10 @@ export function FancyCard(props: CardProps) {
                     </div>
                 }
                 <div className="p-6">
-                    <h5 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                    <h5 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white">
                         {props.headline}
                     </h5>
-                    <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                    <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit dark:text-white">
                         {props.excerpt}
                     </p>
                 </div>

@@ -67,58 +67,48 @@ export default function Search(props: any) {
         <Head>
           <DefaultSocialTags title="The Streets of Danzig" description="Danzig | Streets, People, History." />
         </Head>
-
         <div className=" flex flex-col justify-left sm:py-6 lg:py-12 lg:flex-row lg:justify-between dark:bg-mybg-dark dark:text-white">
           <StreetSearch {...DEFAULT_PROPS}
             searchState={searchState}
+            locale={locale}
             resultsState={props.resultsState}
             onSearchStateChange={(nextSearchState) => {
-
-              // todo: fix this
-
               clearTimeout(debouncedSetState.current);
-
               let dx = setTimeout(() => {
                 const href = searchStateToURL(nextSearchState);
 
                 router.push(href, href, { shallow: true });
               }, updateAfter);
-
               debouncedSetState.current = dx;
               setSearchState(nextSearchState);
-
-
             }}
-
             createURL={createURL}
           />
         </div>
-
       </Layout>
     </>
   );
 }
 
-export async function getServerSideProps({ resolvedUrl }: { resolvedUrl: string }) {
+export async function getServerSideProps({ resolvedUrl, locale }: { resolvedUrl: string, locale: string }) {
   const preview = false;
-  let loader = new ContentfulLoader();
+  let loader = new ContentfulLoader(3600, locale);
   const navigationPosts = (await loader.getNavigationPosts()) ?? []
 
   const searchState = pathToSearchState(resolvedUrl);
   const resultsState = await findResultsState(StreetSearch, {
     ...DEFAULT_PROPS,
     searchState,
+    locale
   });
-
-  console.log("searchState", searchState);
-  console.log("resultsState", resultsState);
 
   return {
     props: {
       resultsState: JSON.parse(JSON.stringify(resultsState)),
       searchState,
       navigationPosts,
-      preview
+      preview,
+      locale
     },
   };
 } 

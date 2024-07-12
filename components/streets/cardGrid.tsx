@@ -2,7 +2,7 @@
 import { FancyCard } from '../cards/fancycard';
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer'
-import { StreetAPIResponse, StreetSummary } from '@/types/streetApi'
+import { StreetAPIResponse, StreetSummary } from '../../types/streetApi'
 import { createStreetURL, createPostURL } from '../../lib/urlutil';
 import { I18N } from "../../lib/i18n";
 

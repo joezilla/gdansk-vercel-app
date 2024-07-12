@@ -32,5 +32,9 @@
     },
     "cardGrid": {
         "headline": "Select Streets"
+    },
+    "search": {
+        "headline": "Search Results"
     }
+
 }

@@ -30,5 +30,8 @@
     },
     "cardGrid": {
         "headline": "Ausgewählte Strassen"
+    },
+    "search": {
+        "headline": "Suchergebnisse"
     }
 }
