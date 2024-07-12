@@ -13,7 +13,7 @@ export type CardProps = {
 }
 
 export type StreetCardData = {
-    street: IStreet, 
+    street: IStreet,
     locale: string
 }
 export function StreetCard(props: StreetCardData) {
@@ -49,27 +49,23 @@ export function PostCard(props: PostCardData) {
 // </Link>&nbsp;on
 
 export function FancyCard(props: CardProps) {
-
     // annoying, but contentful returns images with a // and no protocol
-    // var imageUrl ;
-    // if (/^(https?:).*/.test(props.imageUrl)) {        
-    //     imageUrl = props.imageUrl;
-    //   } else {
-    //     imageUrl = `https:${props.imageUrl}`;        
-    //   }      
-
+    var imageUrl = props.imageUrl;
+    if (/^\/\/.*/.test(imageUrl)) {
+        imageUrl = `https:${imageUrl}`;
+    }
     return (
-        <div className="relative flex flex-col mt-6 text-gray-700 bg-white dark:bg-black shadow-md bg-clip-border rounded-xl w-82">            
+        <div className="relative flex flex-col mt-6 text-gray-700 bg-white dark:bg-black shadow-md bg-clip-border rounded-xl w-82">
             {/* TODO: won't work with i18n */}
-            <a href={props.targetLink}>                
-                {props.imageUrl &&         
+            <a href={props.targetLink}>
+                {props.imageUrl &&
                     <div className="relative h-48 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 dark:shadow-blue-gray-800/40">
                         <Image
-                            src={`${props.imageUrl}`}
+                            src={`${imageUrl}`}
                             alt="Picture of the street"
                             width={500}
                             height={500}
-                          />
+                        />
                     </div>
                 }
                 <div className="p-6">
