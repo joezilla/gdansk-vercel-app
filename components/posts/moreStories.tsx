@@ -16,7 +16,7 @@ export function MoreStories(props: PostProps) {
         <h2 className="text-center text-xl font-bold">Resources</h2>
         <div className="grid p-6 justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {content.map((post) => (
-            <PostCard post={post} />             
+            <PostCard post={post} key={post.fields.slug}/>             
           ))}
         </div>
         

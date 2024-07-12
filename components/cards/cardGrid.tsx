@@ -1,14 +1,10 @@
 // 'use client'
-
-import { DateComponent } from '../contentful'
-import { IPost } from '../../lib/contentmodel/wrappertypes';
 import { FancyCard } from './fancycard';
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer'
 import { StreetAPIResponse, StreetSummary } from '@/types/streetApi'
 
 const NUMBER_OF_STREETs_TO_FETCH = 6
-
 
 type CardGridProps = {
   initialStreets: StreetSummary[]
