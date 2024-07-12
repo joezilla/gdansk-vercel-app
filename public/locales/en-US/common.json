@@ -26,5 +26,11 @@
         "foo": "US-bar",
         "baz": "US-bang {{ param1 }}, {{ param2 }}",
         "fallback": "US-fallback"
+    },
+    "moreStories": {
+        "headline": "Helpful Content"
+    },
+    "cardGrid": {
+        "headline": "Select Streets"
     }
 }

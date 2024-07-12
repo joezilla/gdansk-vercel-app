@@ -1,40 +1,45 @@
 
 import { IStreet, IPost, IImageWithFocalPoint } from '../../lib/contentmodel/wrappertypes';
 import Image from 'next/image'
+import { createStreetURL, createPostURL } from '../../lib/urlutil';
 
 export type CardProps = {
     headline: string,
     excerpt: string,
     targetLink: string,
     imageUrl: string,
-    key: string
+    key: string,
+    locale: string
 }
-
 
 export type StreetCardData = {
     street: IStreet, 
+    locale: string
 }
 export function StreetCard(props: StreetCardData) {
     var p = {
         headline: props.street.fields.germanName,
         excerpt: "t",
-        targetLink: "#",
+        targetLink: createStreetURL(props.street.fields.slug, props.locale),
         imageUrl: "#",
-        key: props.street.fields.slug
+        key: props.street.fields.slug,
+        locale: props.locale
     } as CardProps;
     return FancyCard(p);
 }
 
 export type PostCardData = {
-    post: IPost
+    post: IPost,
+    locale: string
 }
 export function PostCard(props: PostCardData) {
     var p = {
         headline: props.post.fields.title,
         excerpt: props.post.fields.excerpt,
-        targetLink: `/posts/${props.post.fields.slug}`, // todo: add locale
+        targetLink: createPostURL(props.post.fields.slug, props.locale), // todo: add locale
         imageUrl: props.post.fields.coverImage.fields.file?.url,
-        key: props.post.fields.slug
+        key: props.post.fields.slug,
+        locale: props.locale
     } as CardProps;
     return FancyCard(p);
 }

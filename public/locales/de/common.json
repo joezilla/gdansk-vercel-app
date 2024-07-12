@@ -24,5 +24,11 @@
     "test": {
         "foo": "DE-bar",
         "baz": "DE-bang {{param1}}, {{param2}}"
+    },
+    "moreStories": {
+        "headline": "Informationen"
+    },
+    "cardGrid": {
+        "headline": "Ausgewählte Strassen"
     }
 }
