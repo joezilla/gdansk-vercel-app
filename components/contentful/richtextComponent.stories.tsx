@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 import { Document } from '@contentful/rich-text-types'
 
 import { RichtextComponent } from './richtextComponent'
@@ -21,10 +21,10 @@ export default {
         </div>
       ),
     ],
-  } as ComponentMeta<typeof RichtextComponent>;
+  } as Meta<typeof RichtextComponent>;
   
   //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof RichtextComponent> = (args) => <RichtextComponent {...args} />;
+  const Template: StoryFn<typeof RichtextComponent> = (args) => <RichtextComponent {...args} />;
  
   export const Basic = Template.bind({});
   Basic.args = {

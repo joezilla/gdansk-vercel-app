@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 import { IPost } from '../../lib/contentmodel/wrappertypes';
 
 import HeaderNavigationModule from './headerNavigation'
@@ -25,10 +25,10 @@ export default {
     */
     title: 'Components/HeaderNavigation',
     component: HeaderNavigationModule,
-  } as ComponentMeta<typeof HeaderNavigationModule>;
+  } as Meta<typeof HeaderNavigationModule>;
   
   //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof HeaderNavigationModule> = (args) => <HeaderNavigationModule {...args} />;
+  const Template: StoryFn<typeof HeaderNavigationModule> = (args) => <HeaderNavigationModule {...args} />;
   
   export const Basic = Template.bind({});
   Basic.args = {

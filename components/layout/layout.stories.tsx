@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 import { Layout } from './layout'
 
 // # sample data
@@ -13,10 +12,10 @@ export default {
     */
     title: 'Pages/Main Layout',
     component: Layout,
-} as ComponentMeta<typeof Layout>;
+} as Meta<typeof Layout>;
 
 //👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof Layout> = (args) => <Layout {...args} />;
+const Template: StoryFn<typeof Layout> = (args) => <Layout {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = {

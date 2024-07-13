@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 import { IStreet } from '../../lib/contentmodel/wrappertypes';
   
   
@@ -24,10 +24,10 @@ export default {
     */
     title: 'Streets/Google Map',
     component: GoogleMap,
-  } as ComponentMeta<typeof GoogleMap>;
+  } as Meta<typeof GoogleMap>;
   
   //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof GoogleMap> = (args) => <GoogleMap {...args} />;
+  const Template: StoryFn<typeof GoogleMap> = (args) => <GoogleMap {...args} />;
   
   export const Basic = Template.bind({});
   Basic.args = {

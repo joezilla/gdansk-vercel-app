@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 import { FullpagePost } from './fullpagePost'
 import { IPost } from '../../lib/contentmodel/wrappertypes';
 
@@ -22,10 +22,10 @@ export default {
     */
     title: 'Components/FullpagePost',
     component: FullpagePost,
-  } as ComponentMeta<typeof FullpagePost>;
+  } as Meta<typeof FullpagePost>;
   
   //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof FullpagePost> = (args) => <FullpagePost {...args} />;
+  const Template: StoryFn<typeof FullpagePost> = (args) => <FullpagePost {...args} />;
  
   export const Basic = Template.bind({});
   Basic.args = {

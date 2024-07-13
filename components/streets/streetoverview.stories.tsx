@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 import { StreetOverview } from './streetoverview'
 
 // # sample data
@@ -13,10 +12,10 @@ export default {
     */
     title: 'Streets/Street Overview',
     component: StreetOverview,
-  } as ComponentMeta<typeof StreetOverview>;
+  } as Meta<typeof StreetOverview>;
   
-  //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof StreetOverview> = (args) => <StreetOverview {...args} />;
+  //👇 We create a StoryFn of how args map to rendering
+  const Template: StoryFn<typeof StreetOverview> = (args) => <StreetOverview {...args} />;
   
   export const Basic = Template.bind({});
   Basic.args = {
