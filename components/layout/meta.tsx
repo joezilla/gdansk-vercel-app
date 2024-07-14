@@ -35,7 +35,7 @@ export default function Meta(props: MetaProps) {
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
+      <meta name="theme-color" content="#000" />      
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
     </Head>
   )

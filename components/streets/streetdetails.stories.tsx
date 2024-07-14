@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 import { IStreet } from '../../lib/contentmodel/wrappertypes';
 import { StreetDetail } from './streetdetails'
 
@@ -22,10 +22,10 @@ export default {
     */
     title: 'Streets/Street Detail',
     component: StreetDetail,
-  } as ComponentMeta<typeof StreetDetail>;
+  } as Meta<typeof StreetDetail>;
   
   //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof StreetDetail> = (args) => <StreetDetail {...args} />;
+  const Template: StoryFn<typeof StreetDetail> = (args) => <StreetDetail {...args} />;
   
   export const Basic = Template.bind({});
   Basic.args = {

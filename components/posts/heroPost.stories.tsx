@@ -1,6 +1,6 @@
 import { IPost } from '../../lib/contentmodel/wrappertypes';
 import { HeroPost } from './heroPost'
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 
 // load sample data
 const hydrated = require("../../content/contentful/homepage-post.json");
@@ -22,10 +22,10 @@ export default {
     */
     title: 'Components/HeroPost',
     component: HeroPost,
-  } as ComponentMeta<typeof HeroPost>;
+  } as Meta<typeof HeroPost>;
   
   //👇 We create a “template” of how args map to rendering
-  const Template: ComponentStory<typeof HeroPost> = (args) => <HeroPost {...args} />;
+  const Template: StoryFn<typeof HeroPost> = (args) => <HeroPost {...args} />;
  
   export const Basic = Template.bind({});
   Basic.args = {

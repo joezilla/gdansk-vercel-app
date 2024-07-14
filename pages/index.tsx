@@ -9,18 +9,15 @@ import { MoreStories } from '../components/posts'
 import { DefaultSocialTags } from '../components/socialtags'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AlgoliaApi } from '../lib/search'
-import { FancyCard } from '../components/cards/fancycard'
+import { CardGrid } from '../components/streets/cardGrid'
 
-
-import { SmallCard, SmallCardProps } from '../components/cards/smallCard'
-import { CardGrid } from '../components/cards/cardGrid'
 
 export default function Index({ navigationPosts, allPosts, preview, heroPost, locale, cards}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Layout preview={preview} navigationPosts={navigationPosts} locale={locale}>
         <Head>
-          <DefaultSocialTags title="title todo" description="" />
+        <DefaultSocialTags title="The Streets of Danzig" description="Danzig | Streets, People, History." />
         </Head>
         <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
           <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
@@ -28,26 +25,13 @@ export default function Index({ navigationPosts, allPosts, preview, heroPost, lo
               <HeroPost locale={locale} content={heroPost} />
             }
             <MoreStories content={allPosts} locale={locale} />
-            <CardGrid initialStreets={cards}/>
+            <CardGrid initialStreets={cards} locale={locale}/>
           </div>
         </section>
       </Layout>
     </>
   )
 }
-
-/*
-function getCards(): Promise<SmallCardProps[]> {
-  // For now, consider the data is stored on a static `users.json` file
-  return fetch('http://localhost:3000/api/content/cardfeed')
-    // the JSON body is taken from the response
-    .then(res => res.json())
-    .then(res => {
-      // The response has an `any` type, so we need to cast
-      // it to the `User` type, and return it from the promise
-      return res.result as SmallCardProps[]
-    })
-}*/
 
 export const getStaticProps: GetStaticProps = async (context) => {
   let locale = context.locale;

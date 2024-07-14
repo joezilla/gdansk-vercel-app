@@ -19,19 +19,19 @@ function renderButtons(currentRefinement: number, createURL: any, nbPages: numbe
     let upperBound = Math.max(nbPages, currentRefinement + 3);
     let showPages = Math.min(MAX_PAGES, upperBound - lowerBound + 1);
 
-    console.log("lower bound is " + lowerBound);
-    console.log("current refinement: " + currentRefinement);
-    console.log("nbPages: " + nbPages);
-    console.log("upper bound is " + upperBound);
-    console.log("showPages: " + showPages);
+    // console.log("lower bound is " + lowerBound);
+    // console.log("current refinement: " + currentRefinement);
+    // console.log("nbPages: " + nbPages);
+    // console.log("upper bound is " + upperBound);
+    // console.log("showPages: " + showPages);
 
     return (
         <>
             {Array.apply(lowerBound, Array(showPages)).map((x, index) =>
                 lowerBound + index === currentRefinement ?
-                    <button type="button" title={`Page ${index + lowerBound}`} className="inline-flex items-center justify-center w-8 h-8 text-sm font-semibold border rounded shadow-md dark:bg-gray-900 dark:text-violet-400 dark:border-violet-400">{index + lowerBound}</button>
+                    <button key={`pg-${index + lowerBound}`} type="button" title={`Page ${index + lowerBound}`} className="inline-flex items-center justify-center w-8 h-8 text-sm font-semibold border rounded shadow-md dark:bg-gray-900 dark:text-violet-400 dark:border-violet-400">{index + lowerBound}</button>
                     :
-                    <button type="button" title={`Page ${index + lowerBound}`} className="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md dark:bg-gray-900 dark:border-gray-800"><a href={createURL(index + lowerBound)}>{index + lowerBound}</a></button>
+                    <button key={`pg-${index + lowerBound}`} type="button" title={`Page ${index + lowerBound}`} className="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md dark:bg-gray-900 dark:border-gray-800"><a href={createURL(index + lowerBound)}>{index + lowerBound}</a></button>
             )}
         </>
     );

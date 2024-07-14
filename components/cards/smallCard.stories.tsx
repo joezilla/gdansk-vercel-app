@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/react';
 
 import { SmallCard } from './smallCard'
 
@@ -13,10 +13,10 @@ export default {
     */
     title: 'Cards/Small Card',
     component: SmallCard,
-} as ComponentMeta<typeof SmallCard>;
+} as Meta<typeof SmallCard>;
 
 //👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof SmallCard> = (args) => <SmallCard {...args} />;
+const Template: StoryFn<typeof SmallCard> = (args) => <SmallCard {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = {

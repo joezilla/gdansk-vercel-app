@@ -13,8 +13,8 @@ import {
 } from 'react-instantsearch-dom';
 
 
-export function StreetSearch(props : InstantSearchProps) {
-  const { query } = props.searchState;
+export function StreetSearch(props : InstantSearchProps & { locale: string  } ) {
+  const { query } = props.searchState;  
   return (
     <>
       <InstantSearch {...props}>
@@ -47,7 +47,7 @@ export function StreetSearch(props : InstantSearchProps) {
                   {/* searchAsYouType={true} */}
                   <AlgoliaSearchBox />
                 </div>
-                <AlgoliaHitRenderer />
+                <AlgoliaHitRenderer locale={props.locale}/>
               </div>
             </div>
           </div>
