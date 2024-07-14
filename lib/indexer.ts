@@ -17,7 +17,9 @@ import algoliasearch from 'algoliasearch';
 const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "");
-const algoliaIndex = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME ?? "");
+
+const algoliaIndexEn = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-en-US" ?? "");
+const algoliaIndexDe = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-de" ?? "");
 
 log.info(`Feeding into algolia with app id ${searchClient.appId} and index ${process.env.ALGOLIA_INDEX_NAME}`);
 
@@ -60,16 +62,21 @@ export interface Feeder<T> {
 
     // delete the object in the index
     delete: (id: string) => void;
+
+    // set locale for the feeder
+    setLocale: (loc: string) => void;
 }
 
 // baseline feeder
 export abstract class AbstractFeeder<T> implements Feeder<T> {
 
+    locale: string = "en-US";
+
     abstract index(object: T, DependencyManager: DependencyManager): void;
 
     async delete(id: string) {
         log.debug(`deleting entry ${id}`);
-        await algoliaIndex.deleteObject(id);
+        await this.getIndex().deleteObject(id);
     }
 
     async doIndex(toIndex: AbstractIndexObject) {
@@ -78,9 +85,23 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
             throw new Error("invalid object");
         }
         // log.debug("indexing", toIndex);
-        let response = await algoliaIndex.saveObject(toIndex);
+        let response = await this.getIndex().saveObject(toIndex);
         log.debug("response", response);
     }
+
+    async setLocale(loc: string) {
+        this.locale = loc;    
+    }
+
+    getIndex() {
+        console.log(`Locale is ${this.locale}`);
+        if(this.locale === "en-US")
+            return algoliaIndexEn;
+        if(this.locale === "de")
+            return algoliaIndexDe;        
+        throw "Locale not defined here.";
+    }    
+
 }
 
 // common index structure
@@ -172,19 +193,20 @@ export class IndexingController {
         }
     }
 
-    public async indexAll(type: string) {
+    public async indexAll(type: string, locale: string) {
         let dependencyManager = new DefaultDependencyManager();
         let offset = 0;
         let batch = 0;
         // find the right feeder for this type
         let feeder = this.getFeeder(type);
+        feeder?.setLocale(locale);
         if (!feeder) {
             throw new Error("no feeder found");
         }
         // go in batches of 100, until nothing else is returned.
         do {
             batch = 0;
-            await contentfulClient.getEntries({ locale: "en-US", content_type: type, skip: offset, limit: 100}).then((response) =>
+            await contentfulClient.getEntries({ locale: locale, content_type: type, skip: offset, limit: 100}).then((response) =>
                 response.items.map(item => {
                     log.debug(`Reindexing ${item.sys.contentType.sys.id}-${item.sys.id}`);
                     // index
@@ -201,6 +223,7 @@ export class IndexingController {
             /// console.log("current batch size was: ", batch);
         } while (batch > 0);
         log.info(`Reindexed ${offset} items`);
+        return offset;
     }
 
 }

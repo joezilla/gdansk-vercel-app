@@ -1,13 +1,14 @@
 import Link from 'next/link'
-import { DateComponent, ImageComponent, RichtextComponent } from '../contentful'
+import { DateComponent, RichtextComponent } from '../contentful'
 import { IPost } from '../../lib/contentmodel/wrappertypes';
 
 type PostProps = {
-    content: IPost
+    content: IPost,
+    locale: string
 }
 
 export function FullpagePost(props: PostProps) {
-    let { content } = props;
+    let { content, locale } = props;
 
     return (
         <>
@@ -20,14 +21,14 @@ export function FullpagePost(props: PostProps) {
                         ))}
                     </div>
                     <p className="text-sm dark:text-gray-400 space-x-1">by&nbsp;
-                        <a href={`/author/${content.fields.author.fields.name}`} rel="noopener noreferrer" className="hover:underline dark:text-accent">
+                        <Link locale={locale} href={`/author/${content.fields.author.fields.name}`} rel="noopener noreferrer" className="hover:underline dark:text-accent">
                             <span>{content.fields.author.fields.name}</span>
-                        </a>&nbsp;on
-                        <DateComponent dateString={content.fields.date} />
+                        </Link>&nbsp;on
+                        <DateComponent dateString={content.fields.date} locale={locale}/>
                     </p>
                 </div>
                 <div className="dark:text-gray-100 m-0">
-                    <RichtextComponent content={content.fields.content} />
+                    <RichtextComponent content={content.fields.content} locale={locale} />
                 </div>
             </article>
         </>

@@ -17,21 +17,11 @@ content/migrations - contentful content type migration scripts
 content/images - source images (also in contentful)
 content/contentful - backups
 
-### wrapper generation
+### Reindex Algolia Index
 
-Wrappers of the contentful contentmodel are generated via 
-https://github.com/intercom/contentful-typescript-codegen
-
-Any chance to the content model will require the command
-
-```
-npm run generate:types 
-```
-
-to run.
 
 ### Components
-The entire site uses Tailwind CSS and an occasional Flowbite React component (nav).
+The entire site uses Tailwind CSS.
 
 ### storybook
 Storybook stories exist for most components.

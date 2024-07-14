@@ -1,14 +1,22 @@
 import '../styles/index.css'
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
-import Script from 'next/script'
-///
 
+
+///
 export default function App({ Component, pageProps }: AppProps) {
-  return (<>
-    <Component {...pageProps} />
-  </>);
+	if (!pageProps.i18n) {
+		// probably an Error page
+		return <Component {...pageProps} />
+	}
+
+	return (
+		<div className="App">
+			<Component {...pageProps} />
+		</div>
+	)
 }
+
 
 // logging
 export { useReportWebVitals } from 'next-axiom';

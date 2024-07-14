@@ -1,10 +1,20 @@
 module.exports = {
   images: {
-    loader: 'custom',    
+    // loader: 'custom',    
     deviceSizes: [640, 1080, 1920],
     formats: ['image/webp'],
     minimumCacheTTL: 3600,
+    // loaderFile: ''
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'images.ctfassets.net',
+          port: '',
+          pathname: '/9ieso0n2yz5w/**',
+        },
+      ],
   },
+  
   env: {
     ALGOLIA_APP_ID: process.env.ALGOLIA_APP_ID,
     ALGOLIA_ACCESS_TOKEN: process.env.ALGOLIA_ACCESS_TOKEN,
@@ -12,5 +22,9 @@ module.exports = {
   },
   compiler: {
     styledComponents: true // needed so that the dom manipulation of the darkmode icon works
-  }
+  },
+  i18n: {
+    locales: ['en-US', 'de'],
+    defaultLocale: 'en-US',
+  },
 }

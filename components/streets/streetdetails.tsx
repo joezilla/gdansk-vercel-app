@@ -4,7 +4,7 @@ import { IStreet, IImageWithFocalPoint } from '../../lib/contentmodel/wrappertyp
 import { RichtextComponent } from '../contentful'
 import { GoogleMap } from './googleMap'
 import React from "react";
-import resources from './static.resources.json'
+import { I18N } from "../../lib/i18n";
 
 // image for carousel
 function renderImage(image: IImageWithFocalPoint) {
@@ -19,11 +19,12 @@ function renderImage(image: IImageWithFocalPoint) {
 }
 
 type StreetDetailProps = {
-  street: IStreet
+  street: IStreet,
+  locale: string
 }
 export function StreetDetail(props: StreetDetailProps) {
   let street = props.street;
-
+  const i18n = new I18N(props.locale).getTranslator();
   return (
     <>
       <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
@@ -34,8 +35,8 @@ export function StreetDetail(props: StreetDetailProps) {
           </div>
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-start">
             <div>
-              <h2 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">{resources.en.headlines.history}</h2>
-              <RichtextComponent content={street.fields.history} />
+              <h2 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">{i18n("streetdetail.history")}</h2>
+              <RichtextComponent content={street.fields.history} locale={props.locale}/>
               <div className="mt-12 space-y-12">
                 <div className="flex">
                   <div className="flex-shrink-0">
@@ -46,7 +47,7 @@ export function StreetDetail(props: StreetDetailProps) {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium leading-6 dark:text-gray-50">{resources.en.headlines.district}</h3>
+                    <h3 className="text-lg font-medium leading-6 dark:text-gray-50">{i18n("streetdetail.history")}</h3>
                     <p className="mt-2 dark:text-gray-400">{street.fields.district}</p>
                   </div>
                 </div>
@@ -59,7 +60,7 @@ export function StreetDetail(props: StreetDetailProps) {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium leading-6 dark:text-gray-50">{resources.en.headlines.polishNames}</h3>
+                    <h3 className="text-lg font-medium leading-6 dark:text-gray-50">{i18n("streetdetail.polishNames")}</h3>
                     {street.fields.polishNames?.map((name, index) => <p className="mt-1 dark:text-gray-400" key={`pn-${index}`}>{name}</p>)}
                   </div>
                 </div>
@@ -73,14 +74,14 @@ export function StreetDetail(props: StreetDetailProps) {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-medium leading-6 dark:text-gray-50 mb-2">{resources.en.headlines.previousNames}</h3>
+                      <h3 className="text-lg font-medium leading-6 dark:text-gray-50 mb-2">{i18n("streetdetail.previousNames")}</h3>
                       {street.fields.previousNames?.split(",").map((name, index) => <p className="mt-1 dark:text-gray-400" key={`pn-${index}`}>{name}</p>)}
                     </div>
                   </div>}
               </div>
             </div>
             <div aria-hidden="true" className="mt-4 lg:mt-0 top-0">
-              <h2 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">Map</h2>
+              <h2 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">{i18n("streetdetail.map")}</h2>
               <GoogleMap street={street} />
             </div>
           </div>
@@ -92,7 +93,7 @@ export function StreetDetail(props: StreetDetailProps) {
         }
         {street.fields?.media &&
           <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
-            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">{resources.en.headlines.pictures}</h3>
+            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">{i18n("streetdetail.pictures")}</h3>
             <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
               {street.fields?.media?.map(item =>
                 renderImage(item)

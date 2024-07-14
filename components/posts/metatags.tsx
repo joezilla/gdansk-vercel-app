@@ -4,7 +4,8 @@ import { isEmptyString } from "../../lib/util";
 import { IPost } from "../../lib/contentmodel/wrappertypes";
 
 type PostMetaProps = {
-    post: IPost
+    post: IPost,
+    locale: string
 }
 
 export function PostMeta(props: PostMetaProps) {

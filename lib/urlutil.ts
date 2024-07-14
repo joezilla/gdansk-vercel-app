@@ -1,16 +1,16 @@
 /**
  * URL utils
  */
-export function createStreetURL( slug: string ) {
-    return `/streets/${slug}`;
+export function createStreetURL( slug: string, locale: string = "" ) {
+    return locale == "de" ? `/de/streets/${slug}` : `/streets/${slug}`;
 }
 
-export function parseStreetURL( url: string ) {
+export function parseStreetURL( url: string, locale: string = "" ) {
     return url.replace('/streets/', '');
 }
 
-export function createPostURL(  slug: string ) {
-    return `/posts/${slugify(slug)}`;
+export function createPostURL(  slug: string, locale: string = "" ) {
+    return locale == "de" ?  `/de/posts/${slugify(slug)}` : `/posts/${slugify(slug)}`;
 }
 
 export function parsePostURL( url: string ) {

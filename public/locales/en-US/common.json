@@ -1,0 +1,30 @@
+{
+    "homepage": {
+        "title": "The Streets of Danzig"
+    },
+    "allstreets": {
+        "header": "List of All Streets",
+        "subhead": "{{count}} streets indexed in Danzig."
+    },
+    "nav": {
+        "allstreets": "All Streets",
+        "search": "Search"
+
+    },
+    "streetdetail": {
+        "history": "History",
+        "map": "Map",
+        "pictures": "Pictures",
+        "polishNames": "Polish Names",
+        "previousNames": "Previous Names"
+    },
+    "title": {
+        "title": "Hello World!",
+        "description": "Happy {{ year }}!"
+    },
+    "test": {
+        "foo": "US-bar",
+        "baz": "US-bang {{ param1 }}, {{ param2 }}",
+        "fallback": "US-fallback"
+    }
+}

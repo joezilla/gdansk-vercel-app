@@ -37,7 +37,7 @@ export default async function handler(
                 const ft = Array.isArray(type) ?type[0] : type;
                             
                 if(isEmptyString(ft)) {
-                    throw new Error("No content type given.");
+                    throw new Error("No content type given (try street or post).");
                 }
                 
                 let ic = new IndexingController();
@@ -47,7 +47,10 @@ export default async function handler(
 
                 log.info(`Re-Indexing all of type >${type}<`);
 
-                ic.indexAll(ft as string);
+                // prob should make this parameterized
+                ic.indexAll(ft as string, "en-US");
+
+                ic.indexAll(ft as string, "de");
                 
                 res.status(200).json({ result: "ok" })
             } catch (e) {

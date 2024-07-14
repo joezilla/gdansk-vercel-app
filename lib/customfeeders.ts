@@ -51,6 +51,7 @@ class StreetIndexObject extends AbstractIndexObject {
     city: string | undefined;
     source: string | undefined;
     images: IndexImage[] = []; /* array of images */
+    hasImages: boolean = false;
     slug: string | undefined;
   
     validate(): boolean {
@@ -95,7 +96,8 @@ export class StreetFeeder extends AbstractFeeder<IStreet> {
       slug: sourceObject.fields.slug,
       city: sourceObject.fields.city?.fields.name as string,
       source: sourceObject.fields.source,
-      images: imagesToIndex
+      images: imagesToIndex,
+      hasImages: imagesToIndex && imagesToIndex.length > 0,
     });
     // delegate to super
     this.doIndex(toIndex);
@@ -122,7 +124,7 @@ class PostIndexObject extends AbstractIndexObject {
     excerpt: any;
     coverImage: any;
     createDate: string | undefined;
-    author: any;
+    author: any;    
   
     validate(): boolean {
       if (isEmptyString(this.title)) {
@@ -150,7 +152,8 @@ export class PostFeeder extends AbstractFeeder<IPost> {
       tags: myTags,
       coverImage: sourceObject.fields.coverImage,
       createDate: sourceObject.fields.date,
-      author: sourceObject.fields.date
+      author: sourceObject.fields.date,      
+      locale: this.locale,
     });
 
     // delegate to super

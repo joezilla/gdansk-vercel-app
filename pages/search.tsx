@@ -28,7 +28,7 @@ const searchStateToURL = (searchState: any) =>
 // turn off initial empty requests
 const searchClient = {
   ...algoliaClient,
-  /*
+  /* 
   search(requests) {
     console.log("requests", requests);
     if (requests.every(({ params }) => !params.query)) {
@@ -49,6 +49,7 @@ export default function Search(props: any) {
   const [searchState, setSearchState] = React.useState(props.searchState);
   const router = useRouter();
   const debouncedSetState = React.useRef<any>();// todo: defaults to undefined type
+  const locale = props.locale;
 
   React.useEffect(() => {
     if (router) {
@@ -62,7 +63,7 @@ export default function Search(props: any) {
 
   return (
     <>
-      <Layout preview={props.preview} navigationPosts={props.navigationPosts}>
+      <Layout preview={props.preview} navigationPosts={props.navigationPosts} locale={locale}>
         <Head>
           <DefaultSocialTags title="The Streets of Danzig" description="Danzig | Streets, People, History." />
         </Head>
@@ -92,6 +93,7 @@ export default function Search(props: any) {
             createURL={createURL}
           />
         </div>
+
       </Layout>
     </>
   );

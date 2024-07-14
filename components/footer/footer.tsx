@@ -1,8 +1,19 @@
+
+
+import { DarkmodeToggle } from '../navigation/darkmodeToggle'
+import { useRouter } from 'next/router'
+
+
+type FooterProps = {
+  locale: string
+}
+
 /**
  * Footer.
  * @returns 
  */
-export default function Footer() {
+export default function Footer(props: FooterProps) {
+  const router = useRouter();
   return (
     <footer className="py-8 mt-auto dark:bg-mybg-dark dark:text-mytxt-dark border-t border-gray-200 dark:border-gray-600">
       <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
@@ -19,12 +30,17 @@ export default function Footer() {
           </ul>
         </div>
         <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
-          {/*<li>
-            <a rel="noopener noreferrer" href="#">Instagram</a>
-          </li>
-          <li>
-            <a rel="noopener noreferrer" href="#">Facebook</a>
-  </li>*/}
+            <div
+              onClick={() => {
+                router.push(router.asPath, router.asPath, { locale: 'en-US' })
+              }}
+            >English</div>
+            <div
+              onClick={() => {
+                router.push(router.asPath, router.asPath, { locale: 'de' })
+              }}
+            >German</div>
+            <li><DarkmodeToggle/></li>
           <li>
             <a rel="noopener noreferrer" href="https://github.com/joezilla/gdansk-vercel-app">Source on Github</a>
           </li>

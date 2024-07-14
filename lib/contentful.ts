@@ -47,10 +47,12 @@ abstract class AbstractContentfulLoader {
 export class ContentfulLoader extends AbstractContentfulLoader {
 
     private cacheTimeout: number;
+    private locale: string;
 
-    constructor(cacheTimeout: number = 60 * 60) {
+    constructor(cacheTimeout: number = 60 * 60, locale: string = "en-US") {
         super();
         this.cacheTimeout = cacheTimeout;
+        this.locale = locale;
     }
 
 
@@ -140,19 +142,18 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         return entries?.data?.postCollection?.items as PostSummary[];
     }
 
-
     /**
      * get a street object from contentful by name
      */
-    public async getStreetBySlug(slug: string) {
+    public async getStreetBySlug(slug: string, locale: string = this.locale) {
 
         // query by name
         const query = {
             content_type: 'street',
-            'fields.slug': slug
-            // 'fields.germanName[match]': name
+            'fields.slug': slug,
+            'locale': locale,
         };
-        const cacheKey = "street-by-name-" + slug;
+        const cacheKey = "street-by-name-" + slug + "-" + locale;
 
         const entry = await cache.getCachedEntry(cacheKey, () => {
             //const queryString = JSON.stringify(query);
@@ -169,16 +170,17 @@ export class ContentfulLoader extends AbstractContentfulLoader {
      * 
      * @returns get the posts for the homepage
      */
-    public async getHomepagePosts() {
+    public async getHomepagePosts(locale: string = this.locale) {
         const query = {
             content_type: 'post',
             order: '-sys.createdAt',
             'fields.showIn': "Homepage",
             'fields.showIn[nin]': "Hero",
+            'locale': locale,
             // 'fields.showIn[nin]': "Hero",
             limit: 10
         };
-        const cacheKey = "homepage-posts-3";
+        const cacheKey = "homepage-posts-3-" + locale;
         const entries = await cache.getCachedEntry(cacheKey, () => {
             //const queryString = JSON.stringify(query);
             return contentfulClient.getEntries(query).then((entries) => {
@@ -194,13 +196,15 @@ export class ContentfulLoader extends AbstractContentfulLoader {
     }
 
     /** Homepage Hero */
-    public async getHomepageHeroPost() {
+    public async getHomepageHeroPost(locale: string = this.locale) {
         const query = {
             content_type: 'post',
             'fields.showIn': "Hero",
-            limit: 1
+            'locale': locale,
+            limit: 1,
+            'include': 2
         };
-        const cacheKey = "homepage-hero-post";
+        const cacheKey = "homepage-hero-post-" + locale;
         const entry = await cache.getCachedEntry(cacheKey, () => {
             //const queryString = JSON.stringify(query);
             return contentfulClient.getEntries(query).then((entries) => {
@@ -210,21 +214,24 @@ export class ContentfulLoader extends AbstractContentfulLoader {
 
         }, 60 * 60 /* cache for an hour */);
         // ok
+
         if (!entry || entry.length == 0) return [];
         // just fetched one
+
         return entry;
     }
 
 
     /** Get the posts to put into the navigation */
-    public async getNavigationPosts() {
+    public async getNavigationPosts(locale: string = this.locale) {
         const query = {
             content_type: 'post',
             order: '-sys.createdAt',
             'fields.showIn': "Navigation",
+            'locale': locale,
             limit: 10
         };
-        const cacheKey = "navigation-posts";
+        const cacheKey = "navigation-posts-" + locale;
         const entries = await cache.getCachedEntry(cacheKey, () => {
             //const queryString = JSON.stringify(query);
             return contentfulClient.getEntries(query).then((entries) => {
@@ -237,12 +244,13 @@ export class ContentfulLoader extends AbstractContentfulLoader {
     }
 
     // get a post by slug
-    public async getPostBySlug(slug: string) {
+    public async getPostBySlug(slug: string, locale: string = this.locale) {
         const query = {
             content_type: 'post',
-            'fields.slug': slug
+            'fields.slug': slug,
+            'locale': locale,
         };
-        const cacheKey = "post-by-slug-" + slug;
+        const cacheKey = "post-by-slug-" + slug + "-" + locale;
         const entry = await cache.getCachedEntry(cacheKey, () => {
             // const queryString = JSON.stringify(query);
             return contentfulClient.getEntries(query).then((entries) => {
@@ -252,6 +260,5 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         }, this.cacheTimeout) as IPost;
         return entry;
     }
-
 
 }
