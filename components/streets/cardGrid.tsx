@@ -6,7 +6,9 @@ import { StreetAPIResponse, StreetSummary } from '../../types/streetApi'
 import { createStreetURL, createPostURL } from '../../lib/urlutil';
 import { I18N } from "../../lib/i18n";
 
-const NUMBER_OF_STREETs_TO_FETCH = 6
+const NUMBER_OF_STREETs_TO_FETCH = 6;
+const DOMAIN = process.env.SOD_BASE_URL;
+
 
 type CardGridProps = {
   initialStreets: StreetSummary[],
@@ -23,7 +25,8 @@ export function CardGrid(props: CardGridProps) {
 
 
   const loadMoreStreets = async () => {
-    const url = `http://localhost:3000/api/content/cardfeed/${offset}`
+    const url = `/api/content/cardfeed/${offset}`
+    console.log("DOMAIN: " + url);
     const response = await fetch(url);
     const data = (await response.json()) as StreetAPIResponse;
     console.log(data);
