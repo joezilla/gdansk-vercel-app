@@ -21,7 +21,7 @@ type DistrictPageProps = {
 export default function PostPage(props: DistrictPageProps) {
   const { navigationPosts, allStreets, district, locale } = props;
   const router = useRouter();
-  const t = new I18N(props.locale).getTranslator();
+  const i18n = new I18N(props.locale).getTranslator();
 
   if (!router.isFallback && !district) {
     return <ErrorPage statusCode={404} />
@@ -33,7 +33,7 @@ export default function PostPage(props: DistrictPageProps) {
         <h1>Loading…</h1>
       ) : (
         <>
-           <DistrictMeta district={district} locale={locale}/> 
+          <DistrictMeta district={district} locale={locale}/> 
           <section className="dark:bg-mybg-dark dark:text-gray-100">
             <div className="container  p-6 mx-auto space-y-6 sm:space-y-12">
              {/*} <FullpagePost content={post} locale={locale} /> */}
@@ -83,12 +83,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let loader = new ContentfulLoader()
-  // let pathsDe =  allPosts?.map((post: any) =>  ({ params: { slug: String(post.slug) }, locale: 'de' } ) ) ?? [];
-  // let pathsEn =  allPosts?.map((post: any) =>  ({ params: { slug: String(post.slug) }, locale: 'en-US' } ) ) ?? [];
+  let allDistricts = await loader.getAllDistricts();
+
+  let pathsDe =  allDistricts?.map((district: any) =>  ({ params: { slug: String(district.slug) }, locale: 'de' } ) ) ?? [];
+  let pathsEn =  allDistricts?.map((district: any) =>  ({ params: { slug: String(district.slug) }, locale: 'en-US' } ) ) ?? [];
 
   return {
-    // paths: pathsEn.concat(pathsDe),
-    paths: [],
+    paths: pathsEn.concat(pathsDe),
     fallback: true,
   }
 }
