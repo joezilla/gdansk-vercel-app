@@ -11,7 +11,6 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AlgoliaApi } from '../lib/search'
 import { CardGrid } from '../components/streets/cardGrid'
 
-
 export default function Index({ navigationPosts, allPosts, preview, heroPost, locale, cards}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -21,7 +20,7 @@ export default function Index({ navigationPosts, allPosts, preview, heroPost, lo
         </Head>
         <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
           <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-            {heroPost &&
+          {heroPost &&
               <HeroPost locale={locale} content={heroPost} />
             }
             <MoreStories content={allPosts} locale={locale} />

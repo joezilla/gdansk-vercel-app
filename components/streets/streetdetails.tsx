@@ -2,6 +2,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { IStreet, IImageWithFocalPoint } from '../../lib/contentmodel/wrappertypes';
 import { RichtextComponent } from '../contentful'
+import {DistrictNames} from './districtNames'
 import { GoogleMap } from './googleMap'
 import React from "react";
 import { I18N } from "../../lib/i18n";
@@ -47,8 +48,8 @@ export function StreetDetail(props: StreetDetailProps) {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium leading-6 dark:text-gray-50">{i18n("streetdetail.history")}</h3>
-                    <p className="mt-2 dark:text-gray-400">{street.fields.district}</p>
+                    <h3 className="text-lg font-medium leading-6 dark:text-gray-50">{i18n("streetdetail.district")}</h3>
+                    <p className="mt-2 dark:text-gray-400"><DistrictNames street={street} locale={props.locale} linkable={false}/></p>
                   </div>
                 </div>
                 <div className="flex">
@@ -66,7 +67,7 @@ export function StreetDetail(props: StreetDetailProps) {
                 </div>
                 {street.fields.previousNames &&
                   <div className="flex">
-                    <div className="flex-shrink-0">
+                    <div className="flex- shrink-0">
                       <div className="flex items-center justify-center w-12 h-12 rounded-md bg-violet-400 dark:text-gray-900">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
