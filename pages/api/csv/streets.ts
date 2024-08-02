@@ -16,7 +16,7 @@ type ServiceResponse = {
 // 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<ServiceResponse>
+    res: NextApiResponse<string>
 ) {
     const API_KEY = process.env.API_KEY;
     const SECRET = req?.headers?.apisecret ?? "";
@@ -28,9 +28,9 @@ export default async function handler(
             // Process the POST request
             try {
                 let streets = await loader.getAllStreets();
-                let result = "slug, german_name, district, polish_name_1, polish_name_2, polish_name_3, polish_name_5, , polish_name_5\n";
+                let result = "slug, german_name, district, district_1, district_2, district_3, polish_name_1, polish_name_2, polish_name_3, polish_name_5, , polish_name_5\n";
                 streets.map(street => {
-                    result = result.concat(`${street.slug}, ${street.germanName}, ${street.district},,,,,\n`);
+                    result = result.concat(`${street.slug}, ${street.germanName}, ,,,,,,\n`);
                 });
                 res
                     .setHeader("Content-Type", "text/csv")
@@ -38,13 +38,13 @@ export default async function handler(
                     .send(result);
             } catch (e) {
                 console.log(e);
-                res.status(500).json({ result: `error: ${e}` });
+                res.status(500).send(`error: ${e}`);
             }
         } else {
-            res.status(401).json({ result: "unauthenticated." });
+            res.status(401).json("unauthenticated");
         }
     } catch (err) {
         log.error("Error in handler", (err as Error));
-        res.status(500).json({ result: `error: ${err}` });
+        res.status(500).json(`error: ${err}`);
     }
 }
