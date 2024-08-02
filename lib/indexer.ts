@@ -86,21 +86,23 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
         }
         // log.debug("indexing", toIndex);
         let response = await this.getIndex().saveObject(toIndex);
+
+      //  let response = { "result": this.getIndex().indexName };
         log.debug("response", response);
     }
 
     async setLocale(loc: string) {
-        this.locale = loc;    
+        this.locale = loc;
     }
 
     getIndex() {
-        console.log(`Locale is ${this.locale}`);
-        if(this.locale === "en-US")
+        console.log(`** Locale is ${this.locale}`);
+        if (this.locale === "en-US")
             return algoliaIndexEn;
-        if(this.locale === "de")
-            return algoliaIndexDe;        
-        throw "Locale not defined here.";
-    }    
+        if (this.locale === "de")
+            return algoliaIndexDe;
+        throw "Locale not defined!!!!";
+    }
 
 }
 
@@ -203,16 +205,17 @@ export class IndexingController {
         if (!feeder) {
             throw new Error("no feeder found");
         }
+        console.log(`Feeding for locale ${locale}`);
         // go in batches of 100, until nothing else is returned.
         do {
             batch = 0;
-            await contentfulClient.getEntries({ locale: locale, content_type: type, skip: offset, limit: 100}).then((response) =>
+            await contentfulClient.getEntries({ locale: locale, content_type: type, skip: offset, limit: 100 }).then((response) =>
                 response.items.map(item => {
                     log.debug(`Reindexing ${item.sys.contentType.sys.id}-${item.sys.id}`);
                     // index
-                    try {                                               
-                         // feed it
-                         feeder?.index(item, dependencyManager);                    
+                    try {
+                        // feed it
+                        feeder?.index(item, dependencyManager);
                     } catch (e) {
                         log.error(`Failed to index ${item.sys.id}`, (e as Error));
                     }

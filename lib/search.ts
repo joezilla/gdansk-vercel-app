@@ -45,7 +45,7 @@ type SimpleStreetHit = {
 export class AlgoliaApi {
     constructor(private locale: string = "en-US") { }
 
-    getIndex() {
+    public getIndex() {
         console.log(`Locale is ${this.locale}`);
         if (this.locale === "en-US")
             return algoliaIndexEn;
@@ -75,6 +75,9 @@ export class AlgoliaApi {
         var data: StreetSummary[] = [];
 
         content.hits.forEach((e) => {
+
+            console.debug(e);
+
             var imageUrl;
             if (/^(https?:).*/.test(e.images[0].url)) {
                 imageUrl = e.images[0].url;

@@ -49,8 +49,7 @@ export default async function handler(
 
                 // prob should make this parameterized
                 ic.indexAll(ft as string, "en-US");
-
-                ic.indexAll(ft as string, "de");
+               //  ic.indexAll(ft as string, "de");
                 
                 res.status(200).json({ result: "ok" })
             } catch (e) {
