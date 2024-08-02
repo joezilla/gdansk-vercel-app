@@ -69,23 +69,32 @@ export type IStreet = {
         germanName: string, 
         slug: string, 
         polishNames: string[], 
-        district: string,
+       //  district: string,
         previousNames: string, 
         history: Document, 
         source: string, 
         city: ICity,  
         media: IImageWithFocalPoint[], 
         location: EntryFields.Location,
+        district_ref: IDistrict[]
     }
 } & IBaseEntry
 
 
 /// shortform of streets
 // todo - probably best to eliminate these
+export type DistrictRefItem = {
+    slug: string;
+}
+export type DistrictRefCollection = {
+    items: DistrictRefItem[]
+}
 export type StreetSummary = {
     germanName: string,
     polishNames: string[],
     slug: string,
+    districtRefCollection: DistrictRefCollection,
+    // district: string,
     sys: {
         id: string
     }
@@ -115,11 +124,33 @@ export type IPost = {
     }
 } & IBaseEntry
 
+/// shortform of streets
+// todo - probably best to eliminate these
+export type DistrictSummary = {
+    name: string,
+    slug: string,
+    polishName: string,
+    sys: {
+        id: string
+    }
+}
+
+export type IDistrict = {
+    contentTypeId: 'district',
+    fields: {
+        name: string, 
+        slug: string, 
+        description: Document,
+        polishName: string
+    }
+} & IBaseEntry
+
 export type IEntry =
     | IAuthor
     | ICity
     | IImageWithFocalPoint
     | IPerson
     | IPost
+    | IDistrict
     | IStreet;
 

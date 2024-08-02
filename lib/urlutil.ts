@@ -23,6 +23,21 @@ export function parseStreetURL( url: string, locale: string = "" ) {
  * @param locale 
  * @returns 
  */
+export function createDistrictURL( slug: string, locale: string = "" ) {
+    return locale == "de" ? `/de/districts/${slug}` : `/districts/${slug}`;
+}
+
+export function parseDistrictURL( url: string, locale: string = "" ) {
+    return url.replace('/districts/', '');
+}
+
+
+/**
+ * Add locale and encode
+ * @param slug 
+ * @param locale 
+ * @returns 
+ */
 export function createPostURL(  slug: string, locale: string = "" ) {
     return locale == "de" ?  `/de/posts/${slugify(slug)}` : `/posts/${slugify(slug)}`;
 }

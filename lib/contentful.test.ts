@@ -36,6 +36,8 @@ test('getAllStreets', async () => {
     await expect(streets.length).toBeGreaterThan(0);
     await expect(streets.length).toBe(1222);
     await expect(streets[0].germanName).toBeDefined();
+    await expect(streets[0].slug).toBeDefined();
+
 });
 
 
@@ -84,4 +86,13 @@ test('getHomepageHeroPost', async () => {
     await expect(post).toBeDefined();
     if (post.fields?.showIn)
         await expect(post.fields?.showIn[0]).toBe("Homepage");
+});
+
+
+// test loading all streets
+test('getAllDistricts', async () => {
+    let loader = new ContentfulLoader( -1 );
+    let streets = await loader.getAllDistricts();
+    await expect(streets.length).toBeGreaterThan(1);
+    await expect(streets[0].name).toBeDefined();
 });

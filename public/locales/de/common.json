@@ -4,10 +4,15 @@
     },
     "allstreets": {
         "header": "Alle Straßen",
-        "subtitle": "{{count}} indizierte Straßen in Danzig."
+        "subtitle": "{{ count }} indizierte Straßen in Danzig."
+    },
+    "alldistricts": {
+        "header": "Alle Danziger Stadtteike",
+        "subhead": "{{ count }} Stadtteile."
     },
     "nav": {
-        "allstreets": "Übersicht aller Strassen",
+        "allstreets": "All Strassen",
+        "alldistricts": "Stadtteile",
         "search": "Suche"
     },
     "streetdetail": {
@@ -15,7 +20,8 @@
         "map": "Karte",
         "pictures": "Bilder",
         "polishNames": "Polnische Namen",
-        "previousNames": "Andere Namen"
+        "previousNames": "Andere Namen",
+        "district": "Stadtteil"
     },
     "title": {
         "title": "Hello World!",
@@ -23,7 +29,7 @@
     },
     "test": {
         "foo": "DE-bar",
-        "baz": "DE-bang {{param1}}, {{param2}}"
+        "baz": "DE-bang {{ param1 }}, {{ param2 }}"
     },
     "moreStories": {
         "headline": "Informationen"
@@ -33,5 +39,8 @@
     },
     "search": {
         "headline": "Suchergebnisse"
+    },
+    "streetsByDistrict":{
+        "headline" : "Strassen in {{ district }}"
     }
 }
