@@ -31,9 +31,9 @@ export default async function handler(
             try {
                 const fromHook = req.body as any;
 
-                log.debug(`request body: ${ JSON.stringify(req.body)}`);
+                //log.debug(`request body: ${ JSON.stringify(req.body)}`);
+                log.debug(req.body);
                
-
                 var slug = fromHook.fields.slug['en-US'];
                 var id = fromHook.sys.id;
                 var type = fromHook.sys.contentType.sys.id;
