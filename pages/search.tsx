@@ -101,7 +101,6 @@ export async function getServerSideProps({ resolvedUrl, locale }: { resolvedUrl:
 
   let indexName = `${process.env.ALGOLIA_INDEX_NAME}-${locale}`;
 
-
   const searchState = pathToSearchState(resolvedUrl);
   const resultsState = await findResultsState(StreetSearch, {
     ...DEFAULT_PROPS,
