@@ -6,6 +6,7 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { log } from 'next-axiom'
+import { revalidatePath } from 'next/cache';
 
 type ServiceResponse = {
     result: any
@@ -33,8 +34,8 @@ export default async function handler(
 
                 const fullPath = '/' + ft;
                 console.log(`Revalidating path ${fullPath}`);
-                res.revalidate(fullPath);
-
+                revalidatePath(fullPath);
+                
                 res.status(200).json({ result: "ok" })
             } catch (e) {
                 console.log(e);
