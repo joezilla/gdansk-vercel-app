@@ -7,10 +7,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { log } from 'next-axiom'
 import { revalidatePath } from 'next/cache';
+import { revalidateTag } from "next/cache";
+import { NextResponse } from "next/server";
 
 type ServiceResponse = {
     result: any
 }
+
 
 // 
 export default async function handler(
@@ -24,19 +27,30 @@ export default async function handler(
         if (SECRET === API_KEY) {
             // Process the POST request
             try {
+                const fromHook = req.body as any;
 
-                const {
-                    query: { path },
-                    method,
-                } = req;
+                var slug = fromHook.fields.slug;
+                var id = fromHook.sys.id;
+                var type = fromHook.sys.type;
 
-                const ft = Array.isArray(path) ? path.join('/') : path;
+                log.info(`Revalidating type ${type} and slug ${slug}`);
+                if(type === "street") {
+                    revalidatePath(`/streets/${slug}`);
+                    revalidatePath(`/de/streets/${slug}`);
+                } 
+                else if(type === "street") { 
+                    revalidatePath(`/posts/${slug}`);
+                    revalidatePath(`/de/posts/${slug}`);
+                }
+                else if(type === "district") { 
+                    revalidatePath(`/districts/${slug}`);
+                    revalidatePath(`/de/districts/${slug}`);                
+                } else {
+                    log.error(`Cannot handle type ${type}`);
+                }
 
-                const fullPath = '/' + ft;
-                console.log(`Revalidating path ${fullPath}`);
-                revalidatePath(fullPath);
-                
                 res.status(200).json({ result: "ok" })
+
             } catch (e) {
                 console.log(e);
                 res.status(500).json({ result: `error: ${e}` });
