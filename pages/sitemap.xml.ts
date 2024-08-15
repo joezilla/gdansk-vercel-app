@@ -7,9 +7,6 @@ type SitemapProps = {
     allStreets: StreetSummary[],
     allPosts: PostSummary[]
 }
-//pages/sitemap.xml.js
-const EXTERNAL_DATA_URL = 'https://jsonplaceholder.typicode.com/posts';
-
 
 export default function generateSitemap(props: SitemapProps) {
     return `<?xml version="1.0" encoding="UTF-8"?>
@@ -30,7 +27,7 @@ export default function generateSitemap(props: SitemapProps) {
             .map(({ slug }) => {
                 return `
                     <url>
-                        <loc>https://www.streetsofdanzig.com/${createPostURL(slug)}</loc>
+                        <loc>https://www.streetsofdanzig.com${createPostURL(slug)}</loc>
                     </url>
                     `;
             })

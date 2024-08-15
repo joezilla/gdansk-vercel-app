@@ -19,7 +19,7 @@
     "@upstash/redis": "^1.32.0",
     "algoliasearch": "^4.24.0",
     "classnames": "2.5.1",
-    "contentful": "^10.12.8",
+    "contentful": "^10.13.3",
     "date-fns": "3.6.0",
     "dotenv": "^16.4.5",
     "eslint-config-next": "^14.2.5",
@@ -60,7 +60,7 @@
     "@storybook/react": "^8.2.2",
     "@storybook/testing-library": "^0.2.2",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.14.14",
     "@types/qs": "^6.9.15",
     "@types/react": "^18.3.3",
     "@types/react-instantsearch-dom": "^6.12.8",
@@ -76,7 +76,7 @@
     "tailwindcss": "^3.4.4",
     "ts-jest": "^29.2.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "resolutions": {
     "webpack": "^5"

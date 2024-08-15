@@ -1,6 +1,6 @@
 import { StoryObj, StoryFn, Meta } from '@storybook/react';
 
-import { SmallCard } from './smallCard'
+import { TinyCard } from './tinyCard'
 
 // # sample data
 // import post from '../../content/contentful/richtext-test.json';
@@ -11,12 +11,12 @@ export default {
     * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
     * to learn how to generate automatic titles
     */
-    title: 'Cards/Small Card',
-    component: SmallCard,
-} as Meta<typeof SmallCard>;
+    title: 'Cards/Tiny Card',
+    component: TinyCard,
+} as Meta<typeof TinyCard>;
 
 //👇 We create a “template” of how args map to rendering
-const Template: StoryFn<typeof SmallCard> = (args) => <SmallCard {...args} />;
+const Template: StoryFn<typeof TinyCard> = (args) => <TinyCard {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = {

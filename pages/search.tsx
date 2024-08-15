@@ -8,6 +8,7 @@ import qs from 'qs';
 import { StreetSearch } from '../components/search';
 import { useRouter } from 'next/router';
 import { DefaultSocialTags } from '../components/socialtags'
+import { AlgoliaApi } from '../lib/search';
 
 
 // //// algolia
@@ -39,9 +40,10 @@ const searchClient = {
   },*/
 }
 
+
 const DEFAULT_PROPS = {
   searchClient,
-  indexName: process.env.ALGOLIA_INDEX_NAME ?? "undefined",
+//   indexName: process.env.ALGOLIA_INDEX_NAME + "-en-US" ?? "undefined",
 };
 
 export default function Search(props: any) {
@@ -60,6 +62,7 @@ export default function Search(props: any) {
     }
   }, [router]);
 
+  let indexName = `${process.env.ALGOLIA_INDEX_NAME}-${locale}`;
 
   return (
     <>
@@ -70,6 +73,7 @@ export default function Search(props: any) {
         <div className=" flex flex-col justify-left sm:py-6 lg:py-12 lg:flex-row lg:justify-between dark:bg-mybg-dark dark:text-white">
           <StreetSearch {...DEFAULT_PROPS}
             searchState={searchState}
+            indexName={indexName}
             locale={locale}
             resultsState={props.resultsState}
             onSearchStateChange={(nextSearchState) => {
@@ -95,10 +99,13 @@ export async function getServerSideProps({ resolvedUrl, locale }: { resolvedUrl:
   let loader = new ContentfulLoader(3600, locale);
   const navigationPosts = (await loader.getNavigationPosts()) ?? []
 
+  let indexName = `${process.env.ALGOLIA_INDEX_NAME}-${locale}`;
+
   const searchState = pathToSearchState(resolvedUrl);
   const resultsState = await findResultsState(StreetSearch, {
     ...DEFAULT_PROPS,
     searchState,
+    indexName,
     locale
   });
 

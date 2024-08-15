@@ -2,7 +2,7 @@
  * Contentful API wrapper and content access.
  * 
  */
-import { IStreet, IPost, StreetSummary, PostSummary } from './contentmodel/wrappertypes';
+import { IStreet, IPost, StreetSummary, PostSummary, DistrictSummary } from './contentmodel/wrappertypes';
 import { ObjectCache } from './objectcache';
 
 
@@ -86,7 +86,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
      * @param limit 
      * @param preview 
      */
-    private async doGetStreets(batchSize: number = 1000, preview: boolean = false) {
+    private async doGetStreets(batchSize: number = 100, preview: boolean = false) {
         let currentBatchSize = 0;
         let offset = 0;
         let result = [] as StreetSummary[];
@@ -98,6 +98,11 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                             germanName    
                             polishNames
                             slug
+                            districtRefCollection {
+                                items {
+                                    slug
+                                }
+                            }
                             sys {
                                 id
                             }
@@ -251,6 +256,55 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             'locale': locale,
         };
         const cacheKey = "post-by-slug-" + slug + "-" + locale;
+        const entry = await cache.getCachedEntry(cacheKey, () => {
+            // const queryString = JSON.stringify(query);
+            return contentfulClient.getEntries(query).then((entries) => {
+                // check if we got a result
+                return entries.items.length == 0 ? null : entries.items[0];
+            });
+        }, this.cacheTimeout) as IPost;
+        return entry;
+    }
+
+    /**
+     * 
+     * @param locale 
+     * @returns array of DistrictSummary
+     */
+    public async getAllDistricts(locale: string = this.locale) {
+        let result = [] as DistrictSummary[];
+        let currentResult = await this.fetchGraphQL(
+            `query {
+                    districtCollection(limit: 50) {
+                        items {
+                            slug    
+                            name
+                            polishName
+                            sys {
+                                id
+                            }
+                        }
+                    }
+                    }`
+        )
+        result = result.concat(currentResult?.data?.districtCollection?.items);
+        return result;
+    }
+
+
+    /**
+     * Retrieve a district by slug
+     * @param slug 
+     * @param locale 
+     * @returns 
+     */
+    public async getDistrictBySlug(slug: string, locale: string = this.locale) {
+        const query = {
+            content_type: 'district',
+            'fields.slug': slug,
+            'locale': locale,
+        };
+        const cacheKey = "district-by-slug-" + slug + "-" + locale;
         const entry = await cache.getCachedEntry(cacheKey, () => {
             // const queryString = JSON.stringify(query);
             return contentfulClient.getEntries(query).then((entries) => {
