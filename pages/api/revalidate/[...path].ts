@@ -6,10 +6,6 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { log } from 'next-axiom'
-import { ObjectCache } from '../../../lib/objectcache';
-import { IndexingController } from '../../../lib/indexer';
-import { isEmptyString } from "../../../lib/util";
-import { StreetFeeder, PostFeeder } from "../../../lib/customfeeders";
 
 type ServiceResponse = {
     result: any
