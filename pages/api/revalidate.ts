@@ -32,7 +32,8 @@ export default async function handler(
                 const fromHook = req.body as any;
 
                 //log.debug(`request body: ${ JSON.stringify(req.body)}`);
-                log.debug(req.body);
+                console.log("/revalidate");
+                console.log(req.body);
                
                 var slug = fromHook.fields.slug['en-US'];
                 var id = fromHook.sys.id;
