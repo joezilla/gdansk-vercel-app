@@ -9,7 +9,6 @@ type DistrictMetaProps = {
 }
 
 export function DistrictMeta(props: DistrictMetaProps) {
-    console.log(props);
     let name = props.district?.fields?.name;
     let slug = props.district?.fields?.slug;
     let image = "";

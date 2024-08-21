@@ -2,7 +2,7 @@
  * Contentful API wrapper and content access.
  * 
  */
-import { IStreet, IPost, StreetSummary, PostSummary, DistrictSummary } from './contentmodel/wrappertypes';
+import { IStreet, IPost, IDistrict, StreetSummary, PostSummary, DistrictSummary } from './contentmodel/wrappertypes';
 import { ObjectCache } from './objectcache';
 
 
@@ -52,15 +52,16 @@ export class ContentfulLoader extends AbstractContentfulLoader {
     constructor(cacheTimeout: number = 60 * 60, locale: string = "en-US") {
         super();
         this.cacheTimeout = cacheTimeout;
-        this.locale = locale;
+        if (locale == "en")
+            this.locale = "en-US";
+        else
+            this.locale = locale;
     }
-
 
     /** return the contentful client */
     public getClient() {
         return contentfulClient;
     }
-
 
     /**
      * Return all streets
@@ -195,7 +196,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
 
         }, 60 * 60 /* cache for an hour */);
 
-        console.log("homepage posts", entries as IPost[]);
+        // console.log("homepage posts", entries as IPost[]);
 
         return entries as IPost[];
     }
@@ -311,7 +312,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 // check if we got a result
                 return entries.items.length == 0 ? null : entries.items[0];
             });
-        }, this.cacheTimeout) as IPost;
+        }, this.cacheTimeout) as IDistrict;
         return entry;
     }
 

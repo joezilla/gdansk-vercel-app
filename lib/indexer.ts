@@ -96,8 +96,8 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
     }
 
     getIndex() {
-        console.log(`** Locale is ${this.locale}`);
-        if (this.locale === "en-US")
+        // console.log(`** Locale is ${this.locale}`);
+        if (this.locale === "en-US" || this.locale === "en")
             return algoliaIndexEn;
         if (this.locale === "de")
             return algoliaIndexDe;

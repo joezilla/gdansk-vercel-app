@@ -10,8 +10,8 @@ export type ValidLocale = typeof locales[number];
 // logging
 import { log } from 'next-axiom'
 
-import de_dict from '../public/locales/de/common.json';
-import en_dict from '../public/locales/en-US/common.json';
+import de_dict from '../public/resources/locales/de/common.json';
+import en_dict from '../public/resources/locales/en/common.json';
 
 export class I18N {
   // i18n.ts

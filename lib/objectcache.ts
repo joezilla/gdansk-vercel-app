@@ -71,6 +71,7 @@ export class ObjectCache {
      * Clear the entire cache
      */
     public async clearCache() {
+        log.info("Clearing redis cache");
         await redisClient.flushdb();
     }
 
@@ -103,7 +104,7 @@ export class ObjectCache {
         if (entry) {
             return timeout == 0 ? false : entry.timestamp + timeout * 1000 < Date.now();
         }
-        console.log("no etnry");
+        // console.log("no etnry");
         return true;
     }
 }
