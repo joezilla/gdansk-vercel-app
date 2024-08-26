@@ -16,7 +16,7 @@ import en_dict from '../public/resources/locales/en/common.json';
 export class I18N {
   // i18n.ts
   private dictionaries: Record<string, any> =  {
-    "en-US": en_dict,
+    "en": en_dict,
     "de": de_dict
   };
   private locale: string;

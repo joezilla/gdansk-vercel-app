@@ -95,7 +95,7 @@ export default async function RootLayout({
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6NVS67" height="0" width="0" style="display: none; visibility: hidden;" />`,
           }}
         />
-        <script type='text/javascript' src='/lb2/js/lightbox-plus-jquery.js' />
+        <script type='text/javascript' src='/resources/lb2/js/lightbox-plus-jquery.js' />
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
       </body>
     </html>

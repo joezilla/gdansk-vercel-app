@@ -1,21 +1,21 @@
 import { ObjectCache } from "./objectcache";
 
-import { log} from 'next-axiom'
-afterEach(async() => {
+import { log } from 'next-axiom'
+afterEach(async () => {
     log.flush();
- });
+});
 
 // test loading by name
 test('testCacheDisabled', async () => {
     let loader = new ObjectCache();
 
     await loader.invalidate("test");
-   
-    let first = await loader.getCachedEntry("test", () => {
+
+    let first = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, -1);
 
-    let second = await loader.getCachedEntry("test", () => {
+    let second = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, -1);
 
@@ -24,14 +24,14 @@ test('testCacheDisabled', async () => {
 
 test('testCacheAlways', async () => {
     let loader = new ObjectCache();
-   
+
     await loader.invalidate("test");
 
-    let first = await loader.getCachedEntry("test", () => {
+    let first = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, 0);
 
-    let second = await loader.getCachedEntry("test", () => {
+    let second = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, 0);
 
@@ -44,14 +44,14 @@ test('testCacheAlways', async () => {
 
 test('testInvalidation', async () => {
     let loader = new ObjectCache();
-   
-    let first = await loader.getCachedEntry("test", () => {
+
+    let first = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, 0);
 
     await loader.invalidate("test");
 
-    let second = await loader.getCachedEntry("test", () => {
+    let second = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, 0);
 
@@ -59,7 +59,7 @@ test('testInvalidation', async () => {
 
     expect(first != second).toBe(true);
 
-    });
+});
 
 test('manualCache', async () => {
     let loader = new ObjectCache(500);
@@ -69,12 +69,12 @@ test('manualCache', async () => {
     await loader.put("test", "testvalue");
 
     expect(await loader.isStale("test", 0)).toBe(false);
-    
+
     expect(await loader.isStale("test", -1)).toBe(true);
 
     expect(await loader.isStale("test", 10)).toBe(false);
-    
+
     loader.invalidate("test");
-    
+
     expect(await loader.isStale("test", 10)).toBe(true);
 });

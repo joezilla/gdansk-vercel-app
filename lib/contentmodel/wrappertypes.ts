@@ -34,10 +34,8 @@ export type IImageWithFocalPoint = {
         dateTaken: EntryFields.Date, 
         source: string,
         sourceUrl: string, 
-        aiTags: string[], 
-        alignment: string[], 
-        float: string[], 
-        embbedSize: string[], 
+        embeddedAlign: string,
+        embeddedSize: string
     }
 } & IBaseEntry
 

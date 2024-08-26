@@ -12,6 +12,7 @@ import { ImageComponent, NaturalImageComponent } from './imageComponent';
 import { log } from 'next-axiom'
 import { unwatchFile } from 'fs';
 import Link from 'next/link'
+import { IImageWithFocalPoint } from '../../../lib/contentmodel/wrappertypes';
 
 function renderLink(target: any, locale: string) {
     if (target.sys?.contentType?.sys?.id === "street") {
@@ -26,7 +27,7 @@ function renderLink(target: any, locale: string) {
 
 export function renderEmbeddedEntry(node: Block | Inline, children: any, locale: string) {
     const { data } = node;
-    
+
     return (
         <>
             {node.data.target.sys.contentType.sys.id === "street" &&
@@ -66,21 +67,52 @@ export function renderEmbeddedAsset(node: Block | Inline, children: any, locale:
     }
 }
 
+export function renderImageWithFocalPoint(image: IImageWithFocalPoint) {
+    // embeddedAlign: left, right, center
+    // embeddedSize : small, medium, large
+    let size = 72;
+    if (image.fields.embeddedSize === "medium") {
+        size = 144;
+    } else if (image.fields.embeddedSize === "large") {
+        size = 288;
+    }
+    // embeddedAlign: left, right, center
+    let align = "float-none"
+    if (image.fields.embeddedAlign === "left") {
+        align = "float-left"
+    } else if (image.fields.embeddedAlign === "right") {
+        align = "float-right"
+    }
+
+    return (
+        <>
+            <NaturalImageComponent image={image.fields.image} width={size} height={size} layout={'responsive'} objectFit={'scale-down'} className={`${align} rounded mx-2 shadow-sm dark:bg-gray-500`} />
+        </>
+    );
+}
+
 
 export function renderInlineEntry(node: Block | Inline, children: any, locale: string) {
     const { data } = node;
     return (
-        <span className="border-l-4 border-y border-r text-l rounded-md border-accent px-4">
-            {node.data.target.sys.contentType.sys.id === "street" &&
-                <Link locale={locale} href={`/streets/${node.data.target.fields.slug}`} className="text-accent underline">{node.data.target.fields.germanName}</Link>
+        <>
+            {
+                node.data.target.sys.contentType.sys.id === "street" &&
+                <span className="border-l-4 border-y border-r text-l rounded-md border-accent px-4">
+                    <Link locale={locale} href={`/streets/${node.data.target.fields.slug}`} className="text-accent underline">{node.data.target.fields.germanName}</Link>
+                </span>
             }
-            {node.data.target.sys.contentType.sys.id === "post" &&
-                <Link locale={locale} href={`/posts/${node.data.target.fields.slug}`} className="text-accent underline">{node.data.target.fields.title}</Link>
+            {
+                node.data.target.sys.contentType.sys.id === "post" &&
+                <span className="border-l-4 border-y border-r text-l rounded-md border-accent px-4">
+                    <Link locale={locale} href={`/posts/${node.data.target.fields.slug}`} className="text-accent underline">{node.data.target.fields.title}</Link>
+                </span>
             }
-            {node.data.target.sys.contentType.sys.id === "imageWithFocalPoint" &&
-                <span>TODO - implement images in richtext</span>
+            {
+                node.data.target.sys.contentType.sys.id === "imageWithFocalPoint" &&
+                renderImageWithFocalPoint(node.data.target)
             }
-        </span>
+        </>
     );
 }
 
@@ -89,10 +121,10 @@ class MyOptions implements Options {
 
     constructor(locale: string) {
         this.locale = locale;
-      }
+    }
 
 
-    renderText(text:string)   {
+    renderText(text: string) {
         return <>{text}</>;
     }
 

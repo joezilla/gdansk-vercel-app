@@ -31,7 +31,7 @@ export default async function HeaderNavigationModule(props: HeaderNaviProps) {
   }
 
   const i18n = new I18N(props.locale).getTranslator();
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
