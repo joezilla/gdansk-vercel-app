@@ -47,7 +47,7 @@ export function middleware(request: NextRequest) {
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
 
-  console.log(`Path ${pathname} missing locale? ${pathnameIsMissingLocale}`);
+  //console.log(`Path ${pathname} missing locale? ${pathnameIsMissingLocale}`);
 
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {

@@ -1,3 +1,5 @@
+export const dynamic = 'force-static'
+
 import { ContentfulLoader } from '../../../../lib/contentful'
 import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";

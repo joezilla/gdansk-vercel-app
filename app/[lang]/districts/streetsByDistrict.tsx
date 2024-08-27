@@ -2,6 +2,8 @@
  * Summary module that shows all available streets in 3 columns
  * and links to the individual street pages.
  */
+export const dynamic = 'force-dynamic'
+
 import { StreetSummary, IDistrict } from '../../../lib/contentmodel/wrappertypes';
 import Link from 'next/link'
 import { createStreetURL } from '../../../lib/urlutil';

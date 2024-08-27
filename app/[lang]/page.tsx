@@ -1,3 +1,5 @@
+export const dynamic = 'force-static'
+
 import { Metadata } from 'next'
 import { ContentfulLoader } from '../../lib/contentful'
 import { HeroPost } from './posts/heroPost'

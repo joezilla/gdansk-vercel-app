@@ -1,3 +1,5 @@
+export const dynamic = 'force-static'
+
 import { I18N } from '../../../../lib/i18n';
 import { Container } from '../../layout/container'
 import { StreetDetail } from '../streetdetails'

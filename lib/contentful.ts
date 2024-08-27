@@ -313,7 +313,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             )
             result = result.concat(currentResult?.data?.districtCollection?.items);
             return result;
-        }, this.cacheTimeout);
+        }, this.cacheTimeout) as DistrictSummary[];
     }
 
 

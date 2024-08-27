@@ -1,3 +1,5 @@
+export const dynamic = 'force-static'
+
 // import { useRouter } from 'next/router'
 import { ContentfulLoader } from '../../../../lib/contentful'
 import { log } from 'next-axiom'

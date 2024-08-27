@@ -1,4 +1,5 @@
-// import { useRouter } from 'next/router'
+export const dynamic = 'force-static'
+
 import ErrorPage from 'next/error'
 import { Container } from '../../layout/container'
 import { IStreet, IPost } from '../../../../lib/contentmodel/wrappertypes'
