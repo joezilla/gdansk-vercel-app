@@ -1,9 +1,6 @@
 'use client';
 
-import { DarkmodeToggle } from './darkmodeToggle'
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
-import { Navbar, Dropdown, Avatar } from 'flowbite-react';
-import { useRouter } from 'next/navigation'
 import { I18N } from "../../../lib/i18n";
 import { usePathname } from 'next/navigation'
 
@@ -21,17 +18,14 @@ function addLocale(link: string, locale: string) {
   return r;
 }
 
-export default async function HeaderNavigationModule(props: HeaderNaviProps) {
+export default function HeaderNavigationModule(props: HeaderNaviProps) {
   const pathname = usePathname();
-
   function switchLocale(locale: string) {
     // e.g. '/en/about' or '/fr/contact'
     const newPath = `/${locale}${pathname}`
     window.history.replaceState(null, '', newPath)
   }
-
   const i18n = new I18N(props.locale).getTranslator();
-  // const router = useRouter();
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -55,11 +49,11 @@ export default async function HeaderNavigationModule(props: HeaderNaviProps) {
               <li key="home">
                 <a href={addLocale("/", props.locale)} className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
               </li>
-              <li key="all">
+              <li key="allstreets">
                 <a href={addLocale("/streets/all", props.locale)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.allstreets")}</a>
               </li>
-              <li key="all">
-                <a href={addLocale("/alldistricts", props.locale)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.alldistricts")}</a>
+              <li key="alldistricts">
+                <a href={addLocale("/districts/all", props.locale)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.alldistricts")}</a>
               </li>
               <li key="search">
                 <a href={addLocale("/search", props.locale)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.search")}</a>

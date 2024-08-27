@@ -38,7 +38,7 @@ export class ObjectCache {
         if (!id) {
             throw new Error("id is required");
         }
-        log.debug(`Cache timeout is ${timeout}`);
+        // log.debug(`Cache timeout is ${timeout}`);
         if(process.env.CACHE_DISABLED == "true") {
             log.warn("CACHE DISABLED");
             timeout = -1;

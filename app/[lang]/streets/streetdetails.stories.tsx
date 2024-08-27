@@ -1,5 +1,5 @@
 import { StoryObj, StoryFn, Meta } from '@storybook/react';
-import { IStreet } from '../../lib/contentmodel/wrappertypes';
+import { IStreet } from '../../../lib/contentmodel/wrappertypes';
 import { StreetDetail } from './streetdetails'
 
 // # sample data

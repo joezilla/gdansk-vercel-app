@@ -1,88 +1,87 @@
-// import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
-import { Container } from '../../layout/container'
-import { IStreet, IPost } from '../../../../lib/contentmodel/wrappertypes'
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { Metadata } from 'next'
 import { ContentfulLoader } from '../../../../lib/contentful'
-import { parseStreetURL, createStreetURL } from '../../../../lib/urlutil';
-// import { StreetMeta } from '../../components/streets/metatags'
-import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";
 import { notFound } from 'next/navigation'
 import { FullpagePost } from '../fullpagePost'
+import { log } from 'next-axiom'
+import { I18N } from '../../../../lib/i18n';
+import { IPost } from '../../../../lib/contentmodel/wrappertypes';
 
-// component properties
-// type StreetProps = {
-//   street: IStreet,
-//   navigationPosts: IPost[],
-//   preview: boolean,
-//   locale: string
-// }
-
-export default async function Page({ params: { lang, slug }, }: { params: { lang: Locale, slug: string }; }) {
-
-    let loader = new ContentfulLoader(3600, lang);
-
-    const post = await loader.getPostBySlug(slug);
-    if (!post) {
-        log.error(`Cannot find post ${slug}`);
-        return notFound();
-    }
-
-    return (
-        <section className="dark:bg-mybg-dark dark:text-gray-100">
-            <div className="container  p-6 mx-auto space-y-6 sm:space-y-12">
-              <FullpagePost content={post} locale={lang} />
-            </div>
-          </section>
-    )
-}
-/*
- export const getStaticProps: GetStaticProps = async (context) => {
-
-  let locale = context.locale;
-
-  let loader = new ContentfulLoader(3600, locale);
-
-  let nameParam = context?.params?.name ?? "";
-
-  // can be array or single string
-  nameParam = Array.isArray(nameParam) ? nameParam[0] : nameParam;
-
-  // parse
-  let name = parseStreetURL(nameParam);
-
-  log.debug("Loading street: " + name);
-
-  const street = await loader.getStreetBySlug(name);
-  if (!street) {
-    log.error(`Cannot find street ${name}`);
-    return {
-      notFound: true,
-    }
+async function getPostData(lang: Locale, slug: string) {
+  let loader = new ContentfulLoader(3600, lang);
+  const post = await loader.getPostBySlug(slug);
+  if (!post) {
+    log.error(`Cannot find post ${slug}`);
+    return null;
   }
+  return post;
+}
 
+
+export async function generateMetadata({ params: { lang, slug }, }: { params: { lang: Locale, slug: string } }):
+  Promise<Metadata> {
+  //
+  const post = await getPostData(lang, slug);
+  if (!post) return notFound();
+
+  let name = post.fields?.title;
+  let image = "";
+  if (post.fields.coverImage) {
+      image = post.fields?.coverImage?.fields?.file?.url as string ?? "";
+  }
+  let excerpt = post.fields.excerpt;
+
+  //
+  const i18n = new I18N(lang).getTranslator();
+
+  // You can fetch data here if needed for dynamic metadata
   return {
-    props: {
-      preview: false,
-      street: street,
-      locale: locale,
-      navigationPosts: await loader.getNavigationPosts(),
+    title: name,
+    description: excerpt,
+    openGraph: {
+      title: name,
+      description: i18n('homepage.description'),
+      url: `https://www.streetsofdanzig.com/{lang}/posts/{slug}`,
+      siteName: i18n('homepage.title'),
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: lang,
+      type: 'website',
     },
-    revalidate: 60 * 60 * 24 * 5 // weekly
-  };
-}
-*/
-/*
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  let loader = new ContentfulLoader()
-  let allStreets = await loader.getAllStreets();
-  let pathsDe =  allStreets?.map((street: any) =>  ({ params: { name: String(street.slug) }, locale: 'de' } ) ) ?? [];
-  let pathsEn =  allStreets?.map((street: any) =>  ({ params: { name: String(street.slug) }, locale: 'en-US' } ) ) ?? [];
-  return {
-    paths: pathsEn.concat(pathsDe),
-    fallback: true
+    twitter: {
+      card: 'summary_large_image',
+      title: name,
+      description: excerpt,
+      images: [image],
+    },
   }
 }
-*/
+
+export async function generateStaticParams() {
+  let loader = new ContentfulLoader()
+  let allPosts = await loader.getAllPosts();
+
+  return allPosts?.flatMap((post: any) => [
+    { lang: 'de', slug: post.slug },
+    { lang: 'en', slug: post.slug }
+  ]) ?? [];
+}
+
+export default async function Page({ params: { lang, slug } }: { params: { lang: Locale, slug: string } }) {
+
+  const post = await getPostData(lang, slug);
+  if (!post) return notFound();
+
+  return (
+    <section className="dark:bg-mybg-dark dark:text-gray-100">
+      <div className="container  p-6 mx-auto space-y-6 sm:space-y-12">
+        <FullpagePost content={post} locale={lang} />
+      </div>
+    </section>
+  )
+}

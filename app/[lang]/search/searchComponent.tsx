@@ -69,7 +69,7 @@ export default async function SearchComponent(
                     indexName={indexName}
                     locale={locale}
                     resultsState={resultsState}
-                    onSearchStateChange={(nextSearchState) => {
+                    onSearchStateChange={(nextSearchState: any) => {
                         clearTimeout(debouncedSetState.current);
                         let dx = setTimeout(() => {
                             const href = searchStateToURL(nextSearchState);

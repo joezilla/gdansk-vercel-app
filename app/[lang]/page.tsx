@@ -1,55 +1,61 @@
+import { Metadata } from 'next'
 import { ContentfulLoader } from '../../lib/contentful'
 import { HeroPost } from './posts/heroPost'
 import { MoreStories } from './posts/moreStories'
-import { DefaultSocialTags } from '../../components/socialtags'
 import { AlgoliaApi } from '../../lib/search'
 import { CardGrid } from './streets/cardGrid'
 import { Locale } from "../../i18n-config";
+import { I18N } from '../../lib/i18n'
 
-export default async function Page({ params: { lang }, }: { params: { lang: Locale }; }) { 
+export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
+  const i18n = new I18N(lang).getTranslator();
+  // You can fetch data here if needed for dynamic metadata
+  return {
+    title: i18n('homepage.title'),
+    description: i18n('homepage.description'),
+    openGraph: {
+      title: i18n('homepage.title'),
+      description: i18n('homepage.description'),
+      url: 'https://www.streetsofdanzig.com',
+      siteName: i18n('homepage.title'),
+      images: [
+        {
+          url: 'https://www.streetsofdanzig.com/resources/images/site-screenshot.png', 
+          width: 1200,
+          height: 630,
+          alt: i18n('homepage.title'),
+        },
+      ],
+      locale: lang,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',  
+      title: i18n('homepage.title'),
+      description: i18n('homepage.description'),
+      images: ['https://www.streetsofdanzig.com/resources/images/site-screenshot.png'],
+    },
+  }
+}
 
-  console.log(`HOMEPAGE WITH LOCALE ${lang}`);
-
+export default async function Page({ params: { lang } }: { params: { lang: Locale } }) { 
   let loader = new ContentfulLoader(3600, lang);
 
   const allPosts = await loader.getHomepagePosts() ?? []
-  // const navigationPosts = await loader.getNavigationPosts() ?? []
   const heroPost = await loader.getHomepageHeroPost();
   const cards = await new AlgoliaApi(lang).getStreetsWithImages(0,12);  
-  
+
   return (
     <>
-     {/* <Layout navigationPosts={navigationPosts} locale={locale}> */}
-       {/* <Head>
-        <DefaultSocialTags title="The Streets of Danzig" description="Danzig | Streets, People, History." />
-  </Head> */}
-        <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
-          <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+      <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
+        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           {heroPost &&
-              <HeroPost locale={lang} content={heroPost} />
-            }
-            <MoreStories content={allPosts} locale={lang} />
-            <CardGrid initialStreets={cards} locale={lang}/>
-          </div>
-        </section>
-     {/* </Layout> */}
+            <HeroPost locale={lang} content={heroPost} />
+          }
+          <MoreStories content={allPosts} locale={lang} />
+          <CardGrid initialStreets={cards} locale={lang}/>
+        </div>
+      </section>
     </>
   );
 }
-// }
-
-// export const getStaticProps: GetStaticProps = async (context) => {
-//   let locale = context.locale;
-//   let loader = new ContentfulLoader(3600, locale);
-//   const allPosts = await loader.getHomepagePosts() ?? []
-//   const navigationPosts = await loader.getNavigationPosts() ?? []
-//   const heroPost = await loader.getHomepageHeroPost();
-//   const cards = await new AlgoliaApi(locale).getStreetsWithImages(0,12);  
-//   const preview = true;
-//   return {
-//     props: { preview, allPosts, navigationPosts, heroPost, locale, cards },
-//     // refresh content weekly
-//     revalidate: 60 * 60 * 24 * 7,
-//   }
-// }
-

@@ -4,7 +4,8 @@ import { ContentfulLoader } from '../../../lib/contentful'
 import algoliasearch from 'algoliasearch/lite';
 import { findResultsState } from 'react-instantsearch-dom/server';
 import qs from 'qs';
-import { useRouter } from 'next/router';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useCallback } from 'react';
 import { StreetSearch } from './streetsearch';
 
 // //// algolia
@@ -43,25 +44,22 @@ const DEFAULT_PROPS = {
 };
 
 export default function Search(props: any) {
-
-
-  
-
   const [searchState, setSearchState] = React.useState(props.searchState);
   const router = useRouter();
-  const debouncedSetState = React.useRef<any>();// todo: defaults to undefined type
+  const searchParams = useSearchParams();
+  const debouncedSetState = React.useRef<NodeJS.Timeout>();
   const locale = props.locale;
 
-  React.useEffect(() => {
-    if (router) {
-      router.beforePopState(({ url }) => {
-        setSearchState(pathToSearchState(url));
-        return true;
-      });
-    }
-  }, [router]);
+  const createURL = useCallback((state: any) => {
+    const currentParams = new URLSearchParams(searchParams.toString());
+    Object.entries(state).forEach(([key, value]) => {
+      if (value !== undefined) currentParams.set(key, String(value));
+      else currentParams.delete(key);
+    });
+    return `?${currentParams.toString()}`;
+  }, [searchParams]);
 
-  let indexName = `${process.env.ALGOLIA_INDEX_NAME}-${locale}`;
+  let indexName = `${process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}-${locale}`;
 
   return (
     <>
@@ -74,14 +72,12 @@ export default function Search(props: any) {
             indexName={indexName}
             locale={locale}
             resultsState={props.resultsState}
-            onSearchStateChange={(nextSearchState) => {
+            onSearchStateChange={(nextSearchState: any) => {
               clearTimeout(debouncedSetState.current);
-              let dx = setTimeout(() => {
-                const href = searchStateToURL(nextSearchState);
-
-                router.push(href, href, { shallow: true });
+              debouncedSetState.current = setTimeout(() => {
+                const href = createURL(nextSearchState);
+                router.push(href);
               }, updateAfter);
-              debouncedSetState.current = dx;
               setSearchState(nextSearchState);
             }}
             createURL={createURL}
@@ -99,7 +95,7 @@ export async function getServerSideProps({ resolvedUrl, locale }: { resolvedUrl:
   let indexName = `${process.env.ALGOLIA_INDEX_NAME}-${locale}`;
 
   const searchState = pathToSearchState(resolvedUrl);
-  const resultsState = await findResultsState(StreetSearch, {
+  const resultsState = await findResultsState(Search, {
     ...DEFAULT_PROPS,
     searchState,
     indexName,

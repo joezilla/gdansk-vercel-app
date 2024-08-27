@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Asset } from 'contentful'
@@ -33,11 +32,13 @@ export function NaturalImageComponent(props: MyImageProps) {
       className={props.className}
       width={props.width ?? 400}
       height={(props.height ?? 400) / ratio}
-      // set the dimension (affected by layout)
-      layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
-      onLoadingComplete={({ naturalWidth, naturalHeight }) =>
-        setRatio(naturalWidth / naturalHeight)
-      }
+      onLoad={(event) => {
+        const target = event.target as HTMLImageElement;
+        if (target.naturalWidth && target.naturalHeight) {
+          setRatio(target.naturalWidth / target.naturalHeight)
+        }
+      }}
+      // Remove the layout prop as it's no longer supported
     />
   )
 }

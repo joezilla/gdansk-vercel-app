@@ -291,25 +291,29 @@ export class ContentfulLoader extends AbstractContentfulLoader {
      * @returns array of DistrictSummary
      */
     public async getAllDistricts(locale: string = this.locale, preview: boolean = false) {
-        let result = [] as DistrictSummary[];
-        let currentResult = await this.fetchGraphQL(
-            `query {
-                    districtCollection(limit: 50) {
-                        items {
-                            slug    
-                            name
-                            polishName
-                            sys {
-                                id
+        const cacheKey = `all-districts-${locale}-${preview}`;
+        return await cache.getCachedEntry(cacheKey, ['districts'], async () => {
+            let result = [] as DistrictSummary[];
+            
+            let currentResult = await this.fetchGraphQL(
+                `query {
+                        districtCollection(limit: 50) {
+                            items {
+                                slug    
+                                name
+                                polishName
+                                sys {
+                                    id
+                                }
                             }
                         }
-                    }
-                    }`,
-                    preview,
-                    ['districts']
-        )
-        result = result.concat(currentResult?.data?.districtCollection?.items);
-        return result;
+                        }`,
+                        preview,
+                        ['districts']
+            )
+            result = result.concat(currentResult?.data?.districtCollection?.items);
+            return result;
+        }, this.cacheTimeout);
     }
 
 

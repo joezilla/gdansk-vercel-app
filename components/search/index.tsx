@@ -1,2 +1,0 @@
-
-export {StreetSearch} from './streetsearch'

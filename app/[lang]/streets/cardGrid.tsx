@@ -26,8 +26,8 @@ export function CardGrid(props: CardGridProps) {
 
 
   const loadMoreStreets = async () => {
-    const url = `/api/content/cardfeed/${offset}`
-    console.log("DOMAIN: " + url);
+    const url = `/api/streetfeed/${offset}`
+    // console.log("DOMAIN: " + url);
     const response = await fetch(url);
     const data = (await response.json()) as StreetAPIResponse;
     // console.log(data);

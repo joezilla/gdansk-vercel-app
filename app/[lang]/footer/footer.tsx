@@ -1,8 +1,7 @@
-
 'use client';
 
 import { DarkmodeToggle } from '../navigation/darkmodeToggle'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 
 type FooterProps = {
@@ -15,6 +14,12 @@ type FooterProps = {
  */
 export default function Footer(props: FooterProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  function switchLocale(locale: string) {
+    // e.g. '/en/about' or '/fr/contact'
+    const newPath = `/${locale}${pathname}`
+    window.history.replaceState(null, '', newPath)
+  }
   return (
     <footer className="py-8 mt-auto dark:bg-mybg-dark dark:text-mytxt-dark border-t border-gray-200 dark:border-gray-600">
       <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
@@ -33,12 +38,12 @@ export default function Footer(props: FooterProps) {
         <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
             <div
               onClick={() => {
-                router.push(router.asPath, router.asPath, { locale: 'en-US' })
+                switchLocale('en');
               }}
             >English</div>
             <div
               onClick={() => {
-                router.push(router.asPath, router.asPath, { locale: 'de' })
+                switchLocale('de');
               }}
             >German</div>
             <li><DarkmodeToggle/></li>

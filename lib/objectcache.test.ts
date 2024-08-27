@@ -55,7 +55,7 @@ test('testInvalidation', async () => {
         return Date.now();
     }, 0);
 
-    console.log(`fist: ${first}, second: ${second}`);
+    // console.log(`fist: ${first}, second: ${second}`);
 
     expect(first != second).toBe(true);
 

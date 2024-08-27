@@ -2,7 +2,7 @@ import { StoryObj, StoryFn, Meta } from '@storybook/react';
 import { StreetOverview } from './streetoverview'
 
 // # sample data
-import allStreets from '../../content/contentful/all-streets.json';
+import allStreets from '../../../content/contentful/all-streets.json';
 
 //👇 This default export determines where your story goes in the story list
 export default {

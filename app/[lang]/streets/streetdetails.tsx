@@ -2,10 +2,11 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { IStreet, IImageWithFocalPoint } from '../../../lib/contentmodel/wrappertypes';
 import { RichtextComponent } from '../contentful'
-import {DistrictNames} from './districtNames'
+import { DistrictNames } from './districtNames'
 import { GoogleMap } from './googleMap'
 import React from "react";
 import { I18N } from "../../../lib/i18n";
+import Lightbox2 from './lightbox';
 
 // image for carousel
 function renderImage(image: IImageWithFocalPoint) {
@@ -26,6 +27,7 @@ type StreetDetailProps = {
 export function StreetDetail(props: StreetDetailProps) {
   let street = props.street;
   const i18n = new I18N(props.locale).getTranslator();
+
   return (
     <>
       <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
@@ -37,7 +39,7 @@ export function StreetDetail(props: StreetDetailProps) {
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-start">
             <div>
               <h2 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">{i18n("streetdetail.history")}</h2>
-              <RichtextComponent content={street.fields.history} locale={props.locale}/>
+              <RichtextComponent content={street.fields.history} locale={props.locale} />
               <div className="mt-12 space-y-12">
                 <div className="flex">
                   <div className="flex-shrink-0">
@@ -49,7 +51,7 @@ export function StreetDetail(props: StreetDetailProps) {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium leading-6 dark:text-gray-50">{i18n("streetdetail.district")}</h3>
-                    <p className="mt-2 dark:text-gray-400"><DistrictNames street={street} locale={props.locale} linkable={false}/></p>
+                    <div className="mt-2 dark:text-gray-400"><DistrictNames street={street} locale={props.locale} linkable={false} /></div>
                   </div>
                 </div>
                 <div className="flex">
@@ -96,9 +98,7 @@ export function StreetDetail(props: StreetDetailProps) {
           <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
             <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">{i18n("streetdetail.pictures")}</h3>
             <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-              {street.fields?.media?.map(item =>
-                renderImage(item)
-              )}  
+              <Lightbox2 slides={street.fields?.media?.map(item => ({ src: item.fields.image.fields.file?.url as string, title: item.fields.title, source: item.fields.source, id: item.sys.id, description: item.fields.description })) ?? []} />
             </div>
           </div>
         }

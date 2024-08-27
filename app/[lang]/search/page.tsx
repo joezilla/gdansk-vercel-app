@@ -57,8 +57,13 @@ export default async function Page({ params: { lang }, }:
                     </div>
                 </div>
                 <div className="w-1/3 mx-auto">
-            <Pagination />
-          </div>
+                    <Pagination classNames={
+                        {
+                            list: 'flex items-center justify-center mx-auto my-2',
+                            item: 'mx-2',
+                        }
+                    } />
+                </div>
             </div>
         </InstantSearchNext>
     </>);

@@ -1,6 +1,7 @@
 {
     "homepage": {
-        "title": "The Streets of Danzig"
+        "title": "The Streets of Danzig",
+        "description": "Explore the rich history and culture of Danzig through its streets, people, and stories."
     },
     "allstreets": {
         "header": "List of All Streets",
@@ -16,7 +17,19 @@
         "search": "Search"
 
     },
+    "districtdetail": {
+        "title": "The Streets of Danzig: {{ name }}",
+        "description": "{{ name }} is the German name of {{ polishName }}, a street in Gdansk, Poland, formerly Danzig.",
+        "history": "History",
+        "map": "Map",
+        "pictures": "Pictures",
+        "polishNames": "Polish Names",
+        "previousNames": "Previous Names",
+        "district": "District"
+    },
     "streetdetail": {
+        "title": "The Streets of Danzig: {{ name }}",
+        "description": "{{ name }} is the German name of {{ polishName }}, a street in Gdansk, Poland, formerly Danzig.",
         "history": "History",
         "map": "Map",
         "pictures": "Pictures",
