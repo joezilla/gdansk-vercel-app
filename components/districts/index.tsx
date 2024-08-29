@@ -1,1 +1,0 @@
-export {DistrictMeta} from './districtMeta'

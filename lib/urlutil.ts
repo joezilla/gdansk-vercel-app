@@ -10,7 +10,7 @@
  * @returns 
  */
 export function createStreetURL( slug: string, locale: string = "" ) {
-    return locale == "de" ? `/de/streets/${slug}` : `/streets/${slug}`;
+    return locale == "de" ? `/de/streets/${slug}` : `/en/streets/${slug}`;
 }
 
 export function parseStreetURL( url: string, locale: string = "" ) {
@@ -24,7 +24,7 @@ export function parseStreetURL( url: string, locale: string = "" ) {
  * @returns 
  */
 export function createDistrictURL( slug: string, locale: string = "" ) {
-    return locale == "de" ? `/de/districts/${slug}` : `/districts/${slug}`;
+    return locale == "de" ? `/de/districts/${slug}` : `/en/districts/${slug}`;
 }
 
 export function parseDistrictURL( url: string, locale: string = "" ) {
@@ -39,7 +39,7 @@ export function parseDistrictURL( url: string, locale: string = "" ) {
  * @returns 
  */
 export function createPostURL(  slug: string, locale: string = "" ) {
-    return locale == "de" ?  `/de/posts/${slugify(slug)}` : `/posts/${slugify(slug)}`;
+    return locale == "de" ?  `/de/posts/${slugify(slug)}` : `/en/posts/${slugify(slug)}`;
 }
 
 export function parsePostURL( url: string ) {

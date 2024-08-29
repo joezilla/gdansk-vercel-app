@@ -96,8 +96,8 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
     }
 
     getIndex() {
-        console.log(`** Locale is ${this.locale}`);
-        if (this.locale === "en-US")
+        // console.log(`** Locale is ${this.locale}`);
+        if (this.locale === "en-US" || this.locale === "en")
             return algoliaIndexEn;
         if (this.locale === "de")
             return algoliaIndexDe;
@@ -180,7 +180,7 @@ export class IndexingController {
                 throw new Error("no feeder found");
             }
             // get entry
-            const entry = await cache.getCachedEntry(data.id, () => {
+            const entry = await cache.getCachedEntry(data.id, [ 'streets' ], () => {
                 // log.debug(`Querying contentful entry with id ${data.id}`);
                 return contentfulClient.getEntry(data.id);
             }) as Entry<any>;

@@ -8,7 +8,8 @@ import { log } from 'next-axiom'
 type AssetCacheEntry = {
     id: string,
     timestamp: number,
-    value: string
+    value: string,
+    tags: string[]
 }
 
 const redisClient = Redis.fromEnv();
@@ -28,15 +29,16 @@ export class ObjectCache {
      * Cached lookup of objects
      * 
      * @param id identifier, string
+     * @param tags additional cache tags for invalidation
      * @param fn function to call to get the value
      * @param timeout timeout in seconds. 0 always caches, -1 never caches.
      * @returns cached or retrieved value
      */
-    async getCachedEntry<Any>(id: string, fn: (id: string) => any, timeout: number = this.defaultTimeout) {
+    async getCachedEntry<Any>(id: string, tags: string[] = [], fn: (id: string) => any, timeout: number = this.defaultTimeout) {
         if (!id) {
             throw new Error("id is required");
         }
-        log.debug(`Cache timeout is ${timeout}`);
+        // log.debug(`Cache timeout is ${timeout}`);
         if(process.env.CACHE_DISABLED == "true") {
             log.warn("CACHE DISABLED");
             timeout = -1;
@@ -52,7 +54,7 @@ export class ObjectCache {
                 var value = await fn(id);
                 // save back into cache
                 if (value)
-                    await redisClient.set(key, JSON.stringify({ id, timestamp: Date.now(), value }));
+                    await redisClient.set(key, JSON.stringify({ id, timestamp: Date.now(), value, tags }));
                 return value;
             } else {
                 log.debug(`cache hit for ${key} yielded entry.`);
@@ -62,7 +64,7 @@ export class ObjectCache {
             log.debug(`cache miss for ${key}`);
             var value = await fn(id);
             if (value)
-                await redisClient.set(key, JSON.stringify({ id, timestamp: Date.now(), value }));
+                await redisClient.set(key, JSON.stringify({ id, timestamp: Date.now(), value, tags }));
             return value;
         }
     }
@@ -71,6 +73,7 @@ export class ObjectCache {
      * Clear the entire cache
      */
     public async clearCache() {
+        log.info("Clearing redis cache");
         await redisClient.flushdb();
     }
 
@@ -81,6 +84,15 @@ export class ObjectCache {
     public async invalidate(id: string) {
         await redisClient.del(id);
     }
+
+    /**
+     * Invalidate all strings with a given tag
+     * @param tag 
+     */
+    public async invalidateByTag(tag: string) {
+        throw "not supported";
+    }
+
 
     /**
      * Manually add something to the cache
@@ -103,7 +115,7 @@ export class ObjectCache {
         if (entry) {
             return timeout == 0 ? false : entry.timestamp + timeout * 1000 < Date.now();
         }
-        console.log("no etnry");
+        // console.log("no etnry");
         return true;
     }
 }

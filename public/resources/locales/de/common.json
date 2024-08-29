@@ -1,0 +1,62 @@
+{
+    "homepage": {
+        "title": "Die Straßen von Danzig",
+        "description": "Entdecken Sie die reiche Geschichte und Kultur von Danzig durch seine Straßen, Menschen und Geschichten."
+    },
+    "allstreets": {
+        "header": "Alle Straßen",
+        "subtitle": "{{ count }} indizierte Straßen in Danzig."
+    },
+    "alldistricts": {
+        "header": "Alle Danziger Stadtteike",
+        "subhead": "{{ count }} Stadtteile."
+    },
+    "nav": {
+        "allstreets": "Straßenübersicht",
+        "alldistricts": "Stadtteile",
+        "search": "Suche"
+    },
+    "districtdetail": {
+        "title": "Die Straßen von Danzig: {{ name }}",
+        "description": "{{ name }} ist der deutsche Name von {{ polishName }}, eine Straße in Gdansk, Polen, früher Danzig.",
+        "history": "Geschichte",
+        "map": "Karte",
+        "pictures": "Bilder",
+        "polishNames": "Polnische Namen",
+        "previousNames": "Andere Namen",
+        "district": "Stadtteil"
+    },
+    "streetdetail": {
+        "title": "Die Straßen von Danzig: {{ name }}",
+        "description": "{{ name }} ist der deutsche Name von {{ polishName }}, eine Straße in Gdansk, Polen, früher Danzig.",
+        "history": "Geschichte",
+        "map": "Karte",
+        "pictures": "Bilder",
+        "polishNames": "Polnische Namen",
+        "previousNames": "Andere Namen",
+        "district": "Stadtteil"
+    },
+    "title": {
+        "title": "Hello World!",
+        "description": "Happy {{ year }}!"
+    },
+    "test": {
+        "foo": "DE-bar",
+        "baz": "DE-bang {{ param1 }}, {{ param2 }}"
+    },
+    "moreStories": {
+        "headline": "Informationen"
+    },
+    "cardGrid": {
+        "headline": "Ausgewählte Straßen"
+        
+    },
+    "search": {
+        "headline": "Suchergebnise",
+        "title": "Suche",
+        "description": "Suche nach Straßen, Menschen und Geschichte in Danzig auf Deutsch."
+    },
+    "streetsByDistrict":{
+        "headline" : "Straßen in {{ district }}" 
+    }
+}

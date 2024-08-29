@@ -47,11 +47,11 @@ export class AlgoliaApi {
 
     public getIndex() {
         console.log(`Locale is ${this.locale}`);
-        if (this.locale === "en-US")
+        if (this.locale === "en-US" || this.locale === "en")
             return algoliaIndexEn;
         if (this.locale === "de")
             return algoliaIndexDe;
-        throw `Locale ${this.locale} not defined.`;
+        throw `Locale ${this.locale} not defined or supported for algolia indexing.`;
     }
 
     /**
@@ -68,9 +68,9 @@ export class AlgoliaApi {
                 facetFilters: 'type:street'
             });
 
-        content.hits.forEach((x) =>
-            console.log(x.images[0])
-        );
+        // content.hits.forEach((x) =>
+        //     console.log(x.images[0])
+        // );
 
         var data: StreetSummary[] = [];
 
