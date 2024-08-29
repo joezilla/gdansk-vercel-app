@@ -30,7 +30,8 @@ export default function Footer(props: FooterProps) {
           </div>
           <ul className="flex flex-wrap items-center space-x-4 sm:space-x-8">
             <li>
-              Built with the help of AI.
+              <p>Built with the help of AI.<a href="#" id="open_preferences_center">Update cookies preferences</a></p>
+              <p><a href="#" id="open_preferences_center">Update cookies preferences</a></p>
             </li>
           </ul>
         </div>

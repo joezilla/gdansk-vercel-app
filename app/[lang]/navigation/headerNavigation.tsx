@@ -42,7 +42,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
                 <a href={`/${props.locale}`} className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
               </li>
               <li key="allstreets">
-                <a href={`/${props.locale}/streets/all`}className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.allstreets")}</a>
+                <a href={`/${props.locale}/streets/all`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.allstreets")}</a>
               </li>
               <li key="alldistricts">
                 <a href={`/${props.locale}/districts/all`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.alldistricts")}</a>
@@ -53,7 +53,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
               {/* nav posts */}
               {props.navigationPosts?.map(post =>
                 <li key={post.fields?.slug}>
-                  <a href= {`/${props.locale}/${post.fields?.slug}`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{post.fields?.title}</a>
+                  <a href={`/${props.locale}/posts/${post.fields?.slug}`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{post.fields?.title}</a>
                 </li>
               )}
               {/* language toggle*/}
@@ -68,11 +68,13 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                     <li key="en">
                       <div className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        <a href={switchLocalePath('en')}>English</a></div>
+                        <a href={switchLocalePath('en')}>English</a>
+                      </div>
                     </li>
                     <li key="de">
                       <div className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        <a href={switchLocalePath('de')}>German</a></div>
+                        <a href={switchLocalePath('de')}>German</a>
+                      </div>
                     </li>
                   </ul>
                 </div>

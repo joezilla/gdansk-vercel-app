@@ -32,9 +32,7 @@ export function DarkmodeToggle() {
 
     // apply theme
     useEffect(() => {
-        // console.log(`darkmode: ${darkMode}, localStorage: ${window?.localStorage.getItem('color-theme')}`);
-        darkMode ? document.documentElement.classList.add('dark') :
-            document.documentElement.classList.remove('dark');
+        darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
     }, [darkMode ? 'dark' : 'light']);
 
     // render the icon
