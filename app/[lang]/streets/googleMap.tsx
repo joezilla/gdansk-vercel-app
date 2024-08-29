@@ -82,11 +82,13 @@ export function GoogleMap(props: GoogleMapProps) {
                     libraries: ['marker'],
                     id: process.env.NEXT_PUBLIC_GOOGLE_MAP_ID ?? ""
                 }}
+                options={{
+                    mapId: process.env.NEXT_PUBLIC_GOOGLE_MAP_ID ?? ""
+                }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
                 yesIWantToUseGoogleMapApiInternals
                 onGoogleApiLoaded={({ map, maps }) => {
-                    map.setMapId(process.env.NEXT_PUBLIC_GOOGLE_MAP_ID);   
                     renderMarkers(map, maps);
                 }}
             >

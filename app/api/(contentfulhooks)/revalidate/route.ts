@@ -38,15 +38,15 @@ export async function POST(req: NextRequest) {
 
 function doRevalidate(type: string, slug: string) {
     if(type === "street") {
-        revalidatePath(`/streets/${slug}`);
+        revalidatePath(`/en/streets/${slug}`);
         revalidatePath(`/de/streets/${slug}`);
     } 
-    else if(type === "street") { 
-        revalidatePath(`/posts/${slug}`);
+    else if(type === "post") { 
+        revalidatePath(`/en/posts/${slug}`);
         revalidatePath(`/de/posts/${slug}`);
     }
     else if(type === "district") { 
-        revalidatePath(`/districts/${slug}`);
+        revalidatePath(`/en/districts/${slug}`);
         revalidatePath(`/de/districts/${slug}`);                
     } else {
         log.error(`Cannot handle type ${type}`);
