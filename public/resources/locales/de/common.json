@@ -1,6 +1,6 @@
 {
     "homepage": {
-        "title": "Die Strassen von Danzig",
+        "title": "Die Straßen von Danzig",
         "description": "Entdecken Sie die reiche Geschichte und Kultur von Danzig durch seine Straßen, Menschen und Geschichten."
     },
     "allstreets": {
@@ -12,12 +12,12 @@
         "subhead": "{{ count }} Stadtteile."
     },
     "nav": {
-        "allstreets": "All Strassen",
+        "allstreets": "Straßenübersicht",
         "alldistricts": "Stadtteile",
         "search": "Suche"
     },
     "districtdetail": {
-        "title": "Die Strassen von Danzig: {{ name }}",
+        "title": "Die Straßen von Danzig: {{ name }}",
         "description": "{{ name }} ist der deutsche Name von {{ polishName }}, eine Straße in Gdansk, Polen, früher Danzig.",
         "history": "Geschichte",
         "map": "Karte",
@@ -27,7 +27,7 @@
         "district": "Stadtteil"
     },
     "streetdetail": {
-        "title": "Die Strassen von Danzig: {{ name }}",
+        "title": "Die Straßen von Danzig: {{ name }}",
         "description": "{{ name }} ist der deutsche Name von {{ polishName }}, eine Straße in Gdansk, Polen, früher Danzig.",
         "history": "Geschichte",
         "map": "Karte",
@@ -48,12 +48,15 @@
         "headline": "Informationen"
     },
     "cardGrid": {
-        "headline": "Ausgewählte Strassen"
+        "headline": "Ausgewählte Straßen"
+        
     },
     "search": {
-        "headline": "Suchergebnisse"
+        "headline": "Suchergebnise",
+        "title": "Suche",
+        "description": "Suche nach Straßen, Menschen und Geschichte in Danzig auf Deutsch."
     },
     "streetsByDistrict":{
-        "headline" : "Strassen in {{ district }}"
+        "headline" : "Straßen in {{ district }}" 
     }
 }

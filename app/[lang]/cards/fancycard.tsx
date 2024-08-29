@@ -9,7 +9,8 @@ export type CardProps = {
     targetLink: string,
     imageUrl: string,
     key: string,
-    locale: string
+    locale: string,
+    skipImage?: boolean 
 }
 
 export type StreetCardData = {
@@ -58,7 +59,7 @@ export function FancyCard(props: CardProps) {
         <div className="relative flex flex-col mt-6 text-gray-700 bg-white dark:bg-black shadow-md bg-clip-border rounded-xl w-82">
             {/* TODO: won't work with i18n */}
             <a href={props.targetLink}>
-                {props.imageUrl &&
+                {!props.skipImage && props.imageUrl &&
                     <div className="relative h-48 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 dark:shadow-blue-gray-800/40">
                         <Image
                             src={`${imageUrl}`}
@@ -69,10 +70,10 @@ export function FancyCard(props: CardProps) {
                     </div>
                 }
                 <div className="p-6">
-                    <h5 className="block mb-2 font-sans text-lg antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white">
+                    <h5 className="block mb-2 font-sans text-m antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white">
                         {props.headline}
                     </h5>
-                    <p className="block text-base font-sans text-base antialiased font-light leading-relaxed text-inherit dark:text-white">
+                    <p className="block text-sm font-sans text-base antialiased font-light leading-relaxed text-inherit dark:text-white">
                         {props.excerpt}
                     </p>
                 </div>

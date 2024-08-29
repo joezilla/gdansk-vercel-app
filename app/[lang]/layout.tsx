@@ -1,6 +1,6 @@
 import Footer from './footer'
 import Navi from './navigation'
-import Head from 'next/head';
+// import Head from 'next/head';
 import { ContentfulLoader } from '../../lib/contentful';
 import { i18n, type Locale } from "../../i18n-config";
 // css
@@ -25,7 +25,7 @@ export default async function RootLayout({
   //
   return (
     <html lang={params.lang}>
-      <Head>
+      <head>
         {/* <!-- Google Tag Manager --> */}
         <script
           dangerouslySetInnerHTML={{
@@ -83,7 +83,7 @@ export default async function RootLayout({
         <meta name="msapplication-config" content="/resources/favicon/browserconfig.xml" />
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      </Head>
+      </head>
       <body>
         <div className="flex flex-col h-full dark:bg-mybg-dark h-screen dark:text-mytxt-dark">
           <Navi navigationPosts={navigationPosts} locale={params.lang} />

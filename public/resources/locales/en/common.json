@@ -53,7 +53,9 @@
         "headline": "Select Streets"
     },
     "search": {
-        "headline": "Search Results"
+        "headline": "Search Results",
+        "title": "Search",
+        "description": "Search for streets, people and history in Danzig."
     },
     "streetsByDistrict": {
         "headline" : "Streets in {{ district }}"

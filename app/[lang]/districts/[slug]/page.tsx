@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation'
 import { StreetsByDistrict } from '../streetsByDistrict'
 import { Metadata } from 'next'
 import { I18N } from '../../../../lib/i18n';
+import { RichtextComponent } from '../../contentful';
 
 async function getDistrictData(lang: Locale, slug: string) {
   let loader = new ContentfulLoader(3600, lang);
@@ -73,8 +74,16 @@ export default async function Page({ params: { lang, slug }, }: { params: { lang
 
   return (
     <section className="dark:bg-mybg-dark dark:text-gray-100">
-      <div className="container  p-6 mx-auto space-y-6 sm:space-y-12">
-]        <StreetsByDistrict streets={allStreets} district={district} locale={lang} />
+      <div className="container p-6 mx-auto space-y-6 sm:space-y-12">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-4">{district.fields.name}</h1>
+          {district.fields.description && (
+            <div className="prose dark:prose-invert">
+              <RichtextComponent content={district.fields.description} locale={lang}/>
+            </div>
+          )}
+        </div>
+        <StreetsByDistrict streets={allStreets} district={district} locale={lang} />
       </div>
     </section>
   );

@@ -3,7 +3,6 @@
 import { DarkmodeToggle } from '../navigation/darkmodeToggle'
 import { useRouter, usePathname } from 'next/navigation'
 
-
 type FooterProps = {
   locale: string
 }
@@ -15,11 +14,11 @@ type FooterProps = {
 export default function Footer(props: FooterProps) {
   const router = useRouter();
   const pathname = usePathname();
-  function switchLocale(locale: string) {
-    // e.g. '/en/about' or '/fr/contact'
-    const newPath = `/${locale}${pathname}`
-    window.history.replaceState(null, '', newPath)
-  }
+  const switchLocalePath = (newLocale: string) => {
+    const pathParts = pathname.split('/');
+    pathParts[1] = newLocale; // Replace the language part
+    return pathParts.join('/');
+  };
   return (
     <footer className="py-8 mt-auto dark:bg-mybg-dark dark:text-mytxt-dark border-t border-gray-200 dark:border-gray-600">
       <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
@@ -31,22 +30,14 @@ export default function Footer(props: FooterProps) {
           </div>
           <ul className="flex flex-wrap items-center space-x-4 sm:space-x-8">
             <li>
-              Built with Contentful, NextJS, and Algolia.
+              Built with the help of AI.
             </li>
           </ul>
         </div>
         <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
-            <div
-              onClick={() => {
-                switchLocale('en');
-              }}
-            >English</div>
-            <div
-              onClick={() => {
-                switchLocale('de');
-              }}
-            >German</div>
-            <li><DarkmodeToggle/></li>
+          <li> <a href={switchLocalePath('en')}>English</a></li>
+          <li> <a href={switchLocalePath('de')}>German</a></li>
+          <li><DarkmodeToggle /></li>
           <li>
             <a rel="noopener noreferrer" href="https://github.com/joezilla/gdansk-vercel-app">Source on Github</a>
           </li>

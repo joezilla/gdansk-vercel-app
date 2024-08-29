@@ -37,11 +37,7 @@ export default async function SearchComponent(
     { params: { lang, resolvedUrl, resultsState, searchState2 }, }:
     { params: { lang: Locale, resolvedUrl: string, resultsState: any, searchState2: any }; }) {
 
-        
-        console.log(`ResolvedUrl = ${resolvedUrl}`);
-  
-   // let resultsState = foo(lang, resolvedUrl);
-
+    
     const [searchState, setSearchState] = React.useState(searchState2);
     const router = useRouter();
     const debouncedSetState = React.useRef<any>();// todo: defaults to undefined type

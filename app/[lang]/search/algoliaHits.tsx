@@ -17,8 +17,8 @@ export default function CustomHit({ hit }: {hit:any}) {
     <>
       {/* STREET */}
       {hit.type === 'street' &&
-      <FancyCard key={hit.germanName} headline={hit.germanName} locale={lang}
-        excerpt={hit.polishNames.flat()} targetLink={createStreetURL(hit.slug, lang)} imageUrl={renderImageUrl(hit, lang)} />
+      <FancyCard skipImage={true} key={hit.germanName} headline={hit.germanName} locale={lang}
+        excerpt={hit.polishNames[0]} targetLink={createStreetURL(hit.slug, lang)} imageUrl={renderImageUrl(hit, lang)} />
       }
       {/* POST */}
       {hit.type === 'post' &&
