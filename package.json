@@ -29,6 +29,7 @@
     "i18n": "^0.15.1",
     "i18next": "^23.16.4",
     "instantsearch.css": "^8.5.1",
+    "logrocket": "^9.0.0",
     "negotiator": "^0.6.4",
     "next": "^14.2.16",
     "next-axiom": "^1.5.1",

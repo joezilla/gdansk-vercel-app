@@ -9,6 +9,9 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import '../styles/global.css'
 // consnet
 import ConsentBanner from './consent/consentBanner';
+// next
+import Script from 'next/script';
+
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -40,6 +43,9 @@ export default async function RootLayout({
         <script type='text/javascript' src='/resources/scripts/freshworks.js' />
         <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' />
         <link href="/resources/lb2/css/lightbox.css" rel="stylesheet" />
+        {/* logrocket */}
+        <Script src="https://cdn.lrkt-in.com/LogRocket.min.js" crossOrigin="anonymous"></Script>
+        <Script>{`window.LogRocket && window.LogRocket.init('uzwkwq/streets-of-danzig')`}</Script>
         {/* styles etc */}
         <link
           rel="apple-touch-icon"
