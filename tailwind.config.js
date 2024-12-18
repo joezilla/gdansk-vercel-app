@@ -1,11 +1,13 @@
 const colors = require('tailwindcss/colors')
+import flowbite from "flowbite-react/tailwind";
 
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',    
-    "./node_modules/flowbite/**/*.{js,jsx,ts,tsx}"
+    "./node_modules/flowbite/**/*.{js,jsx,ts,tsx}",
+    flowbite.content()
   ],
   darkMode: 'class', // media  
   theme: {
@@ -91,7 +93,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('flowbite/plugin'),
+    flowbite.plugin()
   ]
   ,
 }

@@ -13,16 +13,21 @@ import { notFound } from 'next/navigation'
 import { StreetsByDistrict } from '../streetsByDistrict'
 import { I18N } from '../../../../lib/i18n'
 import { createDistrictURL } from '../../../../lib/urlutil'
+import { Metadata, ResolvingMetadata } from 'next/types'
 
-// component properties
-// type StreetProps = {
-//   street: IStreet,
-//   navigationPosts: IPost[],
-//   preview: boolean,
-//   locale: string
-// }
+type Props = {
+  params: Promise<{ lang: Locale, slug: string }>
+}
 
-export default async function Page({ params: { lang, slug }, }: { params: { lang: Locale, slug: string }; }) {
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata
+): Promise<Metadata> {
+  return {
+    title: "All districts",
+  }
+}
+
+export default async function Page( { params }: Props) {
+  const { lang } = await params;
 
   let loader = new ContentfulLoader(3600, lang);
   const i18n = new I18N(lang).getTranslator();

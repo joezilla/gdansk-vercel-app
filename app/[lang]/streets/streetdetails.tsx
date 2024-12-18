@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { IStreet, IImageWithFocalPoint } from '../../../lib/contentmodel/wrappertypes';
 import { RichtextComponent } from '../contentful'
 import { DistrictNames } from './districtNames'
-import { GoogleMap } from './googleMap'
+import { MyGoogleMap } from './googleMap'
 import React from "react";
 import { I18N } from "../../../lib/i18n";
 import Lightbox2 from './lightbox';
@@ -85,7 +85,7 @@ export function StreetDetail(props: StreetDetailProps) {
             </div>
             <div aria-hidden="true" className="mt-4 lg:mt-0 top-0">
               <h2 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">{i18n("streetdetail.map")}</h2>
-              <GoogleMap street={street} />
+              <MyGoogleMap street={street} />
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@ export function StreetDetail(props: StreetDetailProps) {
             <span className="text-sm">Source(s): {street.fields.source}</span>
           </div>
         }
-        {street.fields?.media &&
+        { street.fields?.media &&
           <div className="container max-w-xl p-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
             <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">{i18n("streetdetail.pictures")}</h3>
             <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">

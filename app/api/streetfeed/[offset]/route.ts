@@ -8,19 +8,23 @@ import { NextRequest } from 'next/server';
 
 import { StreetAPIResponse, StreetSummary } from '../../../../types/streetApi'
 
-export async function GET(req: NextRequest, {params} : {params: { offset: string}}) {
+type Props = {
+    params: Promise<{ offset: string }>
+}
 
-    try {       
-        let offset = params.offset;
+export async function GET(req: NextRequest, { params }: Props) {
+
+    try {
+        const { offset } = await params;
         var locale = "en-US";
-    
+
         //console.log(`Calling with locale ${locale} and offset ${offset}`);
 
         let loader = new AlgoliaApi(locale);
-        
+
         var apiResult = await loader.getStreetsWithImages(Number(offset));
-    
-        var data: StreetSummary[]  = [];
+
+        var data: StreetSummary[] = [];
 
         apiResult.forEach((e) =>
             data.push({
@@ -40,7 +44,7 @@ export async function GET(req: NextRequest, {params} : {params: { offset: string
         }
 
         return Response.json(response);
-   
+
     } catch (err) {
         log.error("Error in handler", (err as Error));
         var response: StreetAPIResponse = {

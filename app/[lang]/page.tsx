@@ -1,6 +1,6 @@
 export const dynamic = 'force-static'
 
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 import { ContentfulLoader } from '../../lib/contentful'
 import { HeroPost } from './posts/heroPost'
 import { MoreStories } from './posts/moreStories'
@@ -9,7 +9,16 @@ import { CardGrid } from './streets/cardGrid'
 import { Locale } from "../../i18n-config";
 import { I18N } from '../../lib/i18n'
 
-export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
+
+type Props = {
+  params: Promise<{ lang: Locale }>
+}
+
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata
+): Promise<Metadata> {
+  
+  const { lang } = await params;
+
   const i18n = new I18N(lang).getTranslator();
   // You can fetch data here if needed for dynamic metadata
   return {
@@ -40,7 +49,13 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
   }
 }
 
-export default async function Page({ params: { lang } }: { params: { lang: Locale } }) { 
+
+
+export default async function Page({params} : Props) {
+  
+  const { lang } = await params;
+
+
   let loader = new ContentfulLoader(3600, lang);
 
   const allPosts = await loader.getHomepagePosts() ?? []

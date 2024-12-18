@@ -6,7 +6,7 @@ import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";
 import { notFound } from 'next/navigation'
 import { StreetsByDistrict } from '../streetsByDistrict'
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 import { I18N } from '../../../../lib/i18n';
 import { RichtextComponent } from '../../contentful';
 
@@ -21,8 +21,15 @@ async function getDistrictData(lang: Locale, slug: string) {
 }
 
 
-export async function generateMetadata({ params: { lang, slug }, }: { params: { lang: Locale, slug: string } }):
-  Promise<Metadata> {
+type Props = {
+  params: Promise<{ lang: Locale, slug: string }>
+}
+
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata
+): Promise<Metadata> {
+  //
+  const { lang, slug } = await params;
+
   //
   const district = await getDistrictData(lang, slug);
   if (!district) return notFound();
@@ -64,7 +71,9 @@ export async function generateMetadata({ params: { lang, slug }, }: { params: { 
   }
 }
 
-export default async function Page({ params: { lang, slug }, }: { params: { lang: Locale, slug: string }; }) {
+export default async function Page({ params }: Props) {
+
+  const { lang, slug } = await params;
 
   const district = await getDistrictData(lang, slug);
   if (!district) return notFound();
@@ -79,7 +88,7 @@ export default async function Page({ params: { lang, slug }, }: { params: { lang
           <h1 className="text-3xl font-bold mb-4">{district.fields.name}</h1>
           {district.fields.description && (
             <div className="prose dark:prose-invert">
-              <RichtextComponent content={district.fields.description} locale={lang}/>
+              <RichtextComponent content={district.fields.description} locale={lang} />
             </div>
           )}
         </div>
@@ -92,7 +101,7 @@ export default async function Page({ params: { lang, slug }, }: { params: { lang
 export async function generateStaticParams() {
   let loader = new ContentfulLoader();
   let allDistricts = await loader.getAllDistricts();
-  
+
   return allDistricts?.flatMap((district: any) => [
     { lang: 'de', slug: String(district.slug) },
     { lang: 'en', slug: String(district.slug) }

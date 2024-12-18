@@ -1,13 +1,12 @@
 export const dynamic = 'force-static'
 
-import { Metadata } from 'next'
 import { ContentfulLoader } from '../../../../lib/contentful'
 import { Locale } from "../../../../i18n-config";
 import { notFound } from 'next/navigation'
 import { FullpagePost } from '../fullpagePost'
 import { log } from 'next-axiom'
 import { I18N } from '../../../../lib/i18n';
-import { IPost } from '../../../../lib/contentmodel/wrappertypes';
+import type { Metadata, ResolvingMetadata } from 'next'
 
 async function getPostData(lang: Locale, slug: string) {
   let loader = new ContentfulLoader(3600, lang);
@@ -19,17 +18,23 @@ async function getPostData(lang: Locale, slug: string) {
   return post;
 }
 
+type Props = {
+  params: Promise<{ lang: Locale, slug: string }>
+}
 
-export async function generateMetadata({ params: { lang, slug }, }: { params: { lang: Locale, slug: string } }):
-  Promise<Metadata> {
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata
+): Promise<Metadata> {
   //
+
+  const { lang, slug } = await params;
+
   const post = await getPostData(lang, slug);
   if (!post) return notFound();
 
   let name = post.fields?.title;
   let image = "";
   if (post.fields.coverImage) {
-      image = post.fields?.coverImage?.fields?.file?.url as string ?? "";
+    image = post.fields?.coverImage?.fields?.file?.url as string ?? "";
   }
   let excerpt = post.fields.excerpt;
 
@@ -74,7 +79,9 @@ export async function generateStaticParams() {
   ]) ?? [];
 }
 
-export default async function Page({ params: { lang, slug } }: { params: { lang: Locale, slug: string } }) {
+export default async function Page( { params }: Props) {
+
+  const { lang, slug } = await params;
 
   const post = await getPostData(lang, slug);
   if (!post) return notFound();

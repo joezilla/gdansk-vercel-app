@@ -68,9 +68,47 @@ export class AlgoliaApi {
                 facetFilters: 'type:street'
             });
 
-        // content.hits.forEach((x) =>
-        //     console.log(x.images[0])
-        // );
+        var data: StreetSummary[] = [];
+
+        content.hits.forEach((e) => {
+
+            console.debug(e);
+
+            var imageUrl;
+            if (/^(https?:).*/.test(e.images[0].url)) {
+                imageUrl = e.images[0].url;
+            } else {
+                imageUrl = `https:${e.images[0].url}`;
+            }
+
+            data.push({
+                germanName: e.germanName,
+                imageUrl: imageUrl,
+                polishNames: e.polishNames,
+                slug: e.slug
+            })
+        }
+        );
+        return data;
+
+    }
+
+
+
+     /**
+     * 
+     * @param offset returns IStreet objects in an array
+     */
+     public async getStreetsByQuery(query: string, page: number = 0, hitsPerPage: number = 6) {
+
+        const content: AlgoliaHits = await this.getIndex().search(query,
+            {
+                query: query,
+                filters: 'hasImages = 1',
+                facetFilters: 'type:street',
+                page: page,
+                hitsPerPage: hitsPerPage
+            });
 
         var data: StreetSummary[] = [];
 

@@ -7,7 +7,7 @@ import { ContentfulLoader } from '../../../../lib/contentful'
 import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";
 import { notFound } from 'next/navigation'
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 
 async function getStreetData(lang: Locale, slug: string) {
   let loader = new ContentfulLoader(3600, lang);
@@ -19,8 +19,15 @@ async function getStreetData(lang: Locale, slug: string) {
   return street;
 }
 
-export async function generateMetadata({ params: { lang, slug }, }: { params: { lang: Locale, slug: string } }):
-  Promise<Metadata> {
+type Props = {
+  params: Promise<{ lang: Locale, slug: string }>
+}
+
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata
+): Promise<Metadata> {
+  //
+  const { lang, slug } = await params;
+
   //
   const street = await getStreetData(lang, slug);
   if (!street) return notFound();
@@ -65,8 +72,11 @@ export async function generateMetadata({ params: { lang, slug }, }: { params: { 
   }
 }
 
-export default async function Page({ params: { lang, slug }, }:
-  { params: { lang: Locale, slug: string }; }) {
+
+
+export default async function Page({params} : Props) {
+
+  const { lang, slug } = await params;
 
   const street = await getStreetData(lang, slug);
   if (!street) return notFound();

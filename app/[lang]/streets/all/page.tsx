@@ -1,12 +1,17 @@
 export const dynamic = 'force-static'
 
 import { ContentfulLoader } from '../../../../lib/contentful'
-import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";
 import { StreetOverview } from '../streetoverview'
 import { I18N } from '../../../../lib/i18n'
 
-export default async function Page({ params: { lang }, }: { params: { lang: Locale }; }) {
+type Props = {
+    params: Promise<{ lang: Locale }>
+}
+
+export default async function Page({params} : Props) {
+
+    const { lang } = await params;
 
     const i18n = new I18N(lang).getTranslator();
     let loader = new ContentfulLoader(3600, lang);
