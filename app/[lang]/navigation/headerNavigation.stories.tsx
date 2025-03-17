@@ -5,7 +5,7 @@ import HeaderNavigationModule from './headerNavigation'
 
 
 // load sample data
-const hydrated = require("../../content/contentful/homepage-post.json");
+const hydrated = require("../../../content/contentful/homepage-post.json");
 let post = {
   ...hydrated,
   toPlainObject(): object {

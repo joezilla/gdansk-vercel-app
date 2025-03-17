@@ -47,10 +47,10 @@
         "fallback": "US-fallback"
     },
     "moreStories": {
-        "headline": "Helpful Content"
+        "headline": "Resources"
     },
     "cardGrid": {
-        "headline": "Select Streets"
+        "headline": "Recently Updated Streets"
     },
     "search": {
         "headline": "Search Results",

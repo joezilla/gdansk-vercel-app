@@ -12,21 +12,52 @@ type HeroPostProps = {
 export function HeroPost(props: HeroPostProps) {
   let locale = props.locale;
   return (
-    <>
-      <section className="bg-mybg-light dark:bg-mybg-dark">
-        <div className="container max-w-6xl p-6 mx-auto space-y-2 sm:space-y-12">
-          <Link locale={props.locale} href={`/posts/${props.content.fields.slug}`} rel="noopener noreferrer" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12">
-            <img src={props.content.fields.coverImage.fields.file?.url as string} alt={props.content.fields.title} className="object-cover w-full h-48 rounded sm:h-96 mt-6 lg:col-span-7 dark:bg-mybg-dark" />
-            <div className="p-6 space-y-2 lg:col-span-5">
-              <h3 className="text-2xl text-mytxt dark:text-mytxt-dark font-semibold sm:text-4xl group-hover:underline group-focus:underline">{props.content.fields.title}</h3>
-              <span className="text-xs dark:text-mytxt-300"><DateComponent dateString={props.content.fields.date} locale={locale}/></span>
-              <div className="text-mytxt dark:text-mytxt-dark md:text-base"><RichtextComponent content={props.content.fields.content} locale={locale} /></div>
+    <section className="relative w-full bg-mybg-light dark:bg-mybg-dark">
+      <div className="relative h-[70vh] min-h-[600px] w-full overflow-hidden">
+        <img 
+          src={props.content.fields.coverImage.fields.file?.url as string} 
+          alt={props.content.fields.title} 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+        
+        <Link 
+          locale={props.locale} 
+          href={`/posts/${props.content.fields.slug}`} 
+          className="absolute inset-0 flex items-end"
+        >
+          <div className="w-full max-w-6xl mx-auto px-6 pb-12 sm:pb-16">
+            <div className="max-w-2xl space-y-6">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white group-hover:underline">
+                {props.content.fields.title}
+              </h3>
+              <span className="inline-block text-gray-200 text-sm">
+                <DateComponent dateString={props.content.fields.date} locale={locale}/>
+              </span>
+              <div className="text-gray-100 line-clamp-3 sm:line-clamp-4">
+                <RichtextComponent content={props.content.fields.content} locale={locale} />
+              </div>
+              <button className="inline-flex items-center px-6 py-2.5 text-sm font-medium text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-colors duration-200 ease-in-out group">
+                Read More
+                <svg 
+                  className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-200" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                  />
+                </svg>
+              </button>
             </div>
-            </Link>
-        </div>
-      </section>
-
-    </>
+          </div>
+        </Link>
+      </div>
+    </section>
   );
 }
 

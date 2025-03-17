@@ -20,7 +20,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
   const i18n = new I18N(props.locale).getTranslator();
   return (
     <>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="bg-white border-gray-200 dark:bg-black">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
           <a href={`/${props.locale}`} className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
@@ -37,7 +37,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
             </svg>
           </button>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-2 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="font-medium flex flex-col p-2 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-black md:dark:bg-black dark:border-gray-700">
               <li key="home">
                 <a href={`/${props.locale}`} className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
               </li>
@@ -64,7 +64,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                   </svg>
                 </button>
-                <div id="dropdownNavbar" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-22 dark:bg-gray-700 dark:divide-gray-600">
+                <div id="dropdownNavbar" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-22 dark:bg-black dark:divide-gray-600">
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                     <li key="en">
                       <div className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">

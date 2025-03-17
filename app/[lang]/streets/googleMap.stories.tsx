@@ -5,7 +5,7 @@ import { IStreet } from '../../../lib/contentmodel/wrappertypes';
   import { GoogleMap } from './googleMap'
 
 // # sample data
-const hydrated = require("../../content/contentful/Abbegg-Gasse.json");
+const hydrated = require("../../../content/contentful/Abbegg-Gasse.json");
 let aStreet = {
   ...hydrated,
   toPlainObject(): object {

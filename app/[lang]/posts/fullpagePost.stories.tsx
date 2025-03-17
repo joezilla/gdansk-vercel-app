@@ -3,7 +3,7 @@ import { FullpagePost } from './fullpagePost'
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 
 // # sample data
-const hydrated = require("../../content/contentful/richtext-test.json");
+const hydrated = require("../../../content/contentful/richtext-test.json");
 let post = {
   ...hydrated,
   toPlainObject(): object {

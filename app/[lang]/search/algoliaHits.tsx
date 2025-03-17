@@ -1,33 +1,51 @@
 'use client';
 import { createPostURL, createStreetURL } from '../../../lib/urlutil';
 import { FancyCard } from "../cards/fancycard";
+import Image from 'next/image'
 
 function renderImageUrl(hit: any, locale: string) {
-  var url = hit.images && hit.images.length > 0 ? hit.images[0].url : "/resources/images/No-Image-Placeholder.png"    
+  var url = hit.images && hit.images.length > 0 ? hit.images[0].url : "/resources/images/No-Image-Placeholder.png"
   var imageUrl = url;
-  if(/^\/\/.*/.test(url)) {
+  if (/^\/\/.*/.test(url)) {
     imageUrl = `https:${url}`;
-  }  
+  }
   return (imageUrl);
 }
 
-export default function CustomHit({ hit }: {hit:any}) {
+export  function OldHit({ hit }: { hit: any }) {
   let lang = "en"; // todo - fix, prob just get from url
   return (
     <>
       {/* STREET */}
       {hit.type === 'street' &&
-      <FancyCard skipImage={true} key={hit.germanName} headline={hit.germanName} locale={lang}
-        excerpt={hit.polishNames[0]} targetLink={createStreetURL(hit.slug, lang)} imageUrl={renderImageUrl(hit, lang)} />
+        <FancyCard skipImage={true} key={hit.germanName} headline={hit.germanName} locale={lang}
+          excerpt={hit.polishNames[0]} targetLink={createStreetURL(hit.slug, lang)} imageUrl={renderImageUrl(hit, lang)} />
       }
       {/* POST */}
       {hit.type === 'post' &&
-      <>Post</>
+        <>Post</>
       }
     </>
   );
 }
 
+export default function CustomHit({ hit }: { hit: any }) {
+  let lang = "en";
+  return (<>
+    <div className="bg-gray-900 p-4 rounded-md shadow-md w-full">
+      <div className="flex items-center space-x-3">
+        <Image src={renderImageUrl(hit, lang)} alt="Icon" width={30} height={30} className="w-6 h-6"/>
+        <a href="#" className="text-pink-500 text-sm font-semibold">{hit.germanName}</a>
+      </div>
+     {/* <a href={createStreetURL(hit.slug, lang)} className="text-lg font-bold text-white mt-2 block">
+        {hit.germanName}
+      </a>*/}
+      <p className="text-gray-400 text-sm mt-1">
+      Todya's name is <strong className="text-white">{hit?.polishNames[0]}</strong>
+      </p>
+    </div>
+  </>);
+}
 
 // import { getServerState } from 'react-instantsearch';
 // import { useInstantSearch } from 'react-instantsearch';

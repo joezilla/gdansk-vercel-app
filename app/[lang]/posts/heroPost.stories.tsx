@@ -3,7 +3,7 @@ import { HeroPost } from './heroPost'
 import { StoryObj, StoryFn, Meta } from '@storybook/react';
 
 // load sample data
-const hydrated = require("../../content/contentful/homepage-post.json");
+const hydrated = require("../../../content/contentful/homepage-post.json");
 let post = {
   ...hydrated,
   toPlainObject(): object {

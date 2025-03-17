@@ -3,7 +3,7 @@ import { IStreet } from '../../../lib/contentmodel/wrappertypes';
 import { StreetDetail } from './streetdetails'
 
 // # sample data
-const hydrated = require("../../content/contentful/Abbegg-Gasse.json");
+const hydrated = require("../../../content/contentful/Abbegg-Gasse.json");
 let aStreet = {
   ...hydrated,
   toPlainObject(): object {

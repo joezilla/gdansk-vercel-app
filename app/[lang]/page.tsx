@@ -48,16 +48,20 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
   const cards = await new AlgoliaApi(lang).getStreetsWithImages(0,12);  
 
   return (
-    <>
-      <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-          {heroPost &&
-            <HeroPost locale={lang} content={heroPost} />
-          }
-          <MoreStories content={allPosts} locale={lang} />
-          <CardGrid initialStreets={cards} locale={lang}/>
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-mybg-dark dark:to-gray-900 dark:text-mytxt-dark">
+      {heroPost && (
+        <HeroPost locale={lang} content={heroPost} />
+      )}
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="space-y-12">
+          <div className="shadow-sm rounded-lg overflow-hidden">
+            <MoreStories content={allPosts} locale={lang} />
+          </div>
+          <div className="shadow-sm rounded-lg overflow-hidden">
+            <CardGrid initialStreets={cards} locale={lang}/>
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </main>
   );
 }

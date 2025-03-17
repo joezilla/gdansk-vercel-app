@@ -73,7 +73,7 @@ export default async function Page({ params: { lang, slug }, }:
 
   return (
     <section className="dark:bg-mybg-dark dark:text-gray-100">
-      <div className="container  p-6 mx-auto space-y-6 sm:space-y-12">
+      <div className=" mx-auto p-0">
         <article>
           <StreetDetail street={street} locale={lang} />
         </article>

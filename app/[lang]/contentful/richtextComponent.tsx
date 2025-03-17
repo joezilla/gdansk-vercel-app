@@ -143,7 +143,7 @@ class MyOptions implements Options {
             renderEmbeddedAsset(node, children, this.locale)
         ),
         [BLOCKS.PARAGRAPH]: (node: Block | Inline, children: ReactNode) => (
-            <p className="py-1">{children}</p>
+            <p className="py-2 leading-7">{children}</p>
         ),
         ["embedded-entry-inline"]: (node: Block | Inline, children: any) => (
             renderInlineEntry(node, children, this.locale)
