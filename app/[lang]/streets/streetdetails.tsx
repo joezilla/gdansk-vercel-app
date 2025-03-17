@@ -39,7 +39,7 @@ export function StreetDetail(props: StreetDetailProps) {
         {hasHeroImage && (
           <div className="absolute inset-0">
             <img
-              src={street.fields.media[0].fields.image.fields.file.url}
+              src={street.fields.media[0]?.fields.image.fields.file?.url?.toString()}
               alt=""
               className="w-full h-full object-cover opacity-80 dark:opacity-40"
               aria-hidden="true"
@@ -72,7 +72,7 @@ export function StreetDetail(props: StreetDetailProps) {
                   {street.fields.previousNames}
                 </p>
                 <div className="flex gap-2">
-                  {street.fields.districts?.map((district, index) => (
+                  {street.fields.districts?.map((district: any, index: number) => (
                     <span 
                       key={index}
                       className="inline-flex items-center px-3 py-1 rounded-full 

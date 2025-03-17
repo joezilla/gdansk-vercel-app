@@ -15,7 +15,7 @@ export function FullpagePost(props: PostProps) {
             {/* Hero Image Section */}
             <div className="relative h-[60vh] w-full">
                 <img 
-                    src={content.fields.coverImage?.fields.file?.url} 
+                    src={content.fields.coverImage?.fields.file?.url?.toString()}  
                     alt={content.fields.title}
                     className="w-full h-full object-cover"
                 />
