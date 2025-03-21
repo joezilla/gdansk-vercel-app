@@ -19,7 +19,7 @@
     "@upstash/redis": "^1.32.0",
     "algoliasearch": "^4.24.0",
     "classnames": "2.5.1",
-    "contentful": "^10.15.0",
+    "contentful": "^11.5.10",
     "date-fns": "3.6.0",
     "dotenv": "^16.4.5",
     "eslint-config-next": "^14.2.5",
