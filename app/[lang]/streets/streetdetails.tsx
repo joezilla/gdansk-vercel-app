@@ -32,7 +32,7 @@ export function StreetDetail(props: StreetDetailProps) {
     <article className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section - Adaptive Height */}
       <header className={`relative w-full flex items-end 
-        ${hasHeroImage ? 'h-[50vh]' : 'h-[30vh]'}
+        ${hasHeroImage ? 'h-[30vh]' : 'h-[30vh]'}
         bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700`}
       >
         {/* Conditional Hero Image */}

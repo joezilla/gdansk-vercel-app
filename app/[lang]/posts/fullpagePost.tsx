@@ -13,7 +13,7 @@ export function FullpagePost(props: PostProps) {
     return (
         <article className="min-h-screen bg-mybg-light dark:bg-mybg-dark">
             {/* Hero Image Section */}
-            <div className="relative h-[60vh] w-full">
+            <div className="relative h-[30vh] w-full">
                 <img 
                     src={content.fields.coverImage?.fields.file?.url?.toString()}  
                     alt={content.fields.title}
