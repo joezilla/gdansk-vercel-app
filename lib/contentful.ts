@@ -239,7 +239,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         }, 60 * 60 /* cache for an hour */);
         // ok
 
-        if (!entry || entry.length == 0) return [];
+        if (!entry) return [];
         // just fetched one
 
         return entry;

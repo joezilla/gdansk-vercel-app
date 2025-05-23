@@ -17,9 +17,6 @@ test('getStreetByName', async () => {
     await expect(street.fields.media[0].fields.title).toBe("Dobra (Abegg-Gasse)");
     await expect(street.fields.media[0].fields.image.fields.file?.url).toBe("//images.ctfassets.net/9ieso0n2yz5w/1TxV2nAp1kTG8CKYsVzAGa/c1ad09d4046c615e9ddb2b1c6e6f8170/Ulica_Abegg_Gasse_z_logo.jpg");
 
-// console.log(">>>>>>>");
-// console.log(street.fields.media[0]);
-// console.log("<<<<<<<");
 });
 
 // lower case fun

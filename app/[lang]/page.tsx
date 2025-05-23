@@ -8,6 +8,7 @@ import { AlgoliaApi } from '../../lib/search'
 import { CardGrid } from './streets/cardGrid'
 import { Locale } from "../../i18n-config";
 import { I18N } from '../../lib/i18n'
+import { IPost } from '../../lib/contentmodel/wrappertypes'
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
   const i18n = new I18N(lang).getTranslator();
@@ -45,12 +46,13 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
 
   const allPosts = await loader.getHomepagePosts() ?? []
   const heroPost = await loader.getHomepageHeroPost();
+  const validHeroPost = Array.isArray(heroPost) ? null : (heroPost as IPost);
   const cards = await new AlgoliaApi(lang).getStreetsWithImages(0,12);  
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-mybg-dark dark:to-gray-900 dark:text-mytxt-dark">
-      {heroPost && (
-        <HeroPost locale={lang} content={heroPost} />
+      {validHeroPost && (
+        <HeroPost locale={lang} content={validHeroPost} />
       )}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="space-y-12">

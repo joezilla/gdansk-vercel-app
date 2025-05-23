@@ -5,6 +5,7 @@ import { ContentfulLoader } from '../../lib/contentful';
 import { i18n, type Locale } from "../../i18n-config";
 // 3rd party
 import { GoogleTagManager } from '@next/third-parties/google';
+import Script from 'next/script';
 // css
 import '../styles/global.css'
 // consnet
@@ -37,8 +38,8 @@ export default async function RootLayout({
                                 document.documentElement.classList.remove('dark')
                             }`,
         }} />
-        <script type='text/javascript' src='/resources/scripts/freshworks.js' />
-        <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' />
+        <Script src='/resources/scripts/freshworks.js' strategy="afterInteractive" />
+        <Script src='https://widget.freshworks.com/widgets/151000001120.js' strategy="afterInteractive" />
         <link href="/resources/lb2/css/lightbox.css" rel="stylesheet" />
         {/* styles etc */}
         <link
@@ -78,8 +79,8 @@ export default async function RootLayout({
           <main className="py-0">{children}</main>
           <Footer locale={params.lang} />
         </div>
-        <script type='text/javascript' src='/resources/lb2/js/lightbox-plus-jquery.js' />
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+        <Script src='/resources/lb2/js/lightbox-plus-jquery.js' strategy="afterInteractive" />
+        <Script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js" strategy="afterInteractive" />
       </body>
     </html>
   )

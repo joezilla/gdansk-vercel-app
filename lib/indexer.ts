@@ -18,8 +18,8 @@ const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "");
 
-const algoliaIndexEn = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-en-US" ?? "");
-const algoliaIndexDe = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-de" ?? "");
+const algoliaIndexEn = searchClient.initIndex((process.env.ALGOLIA_INDEX_NAME ?? "") + "-en-US");
+const algoliaIndexDe = searchClient.initIndex((process.env.ALGOLIA_INDEX_NAME ?? "") + "-de");
 
 log.info(`Feeding into algolia with app id ${searchClient.appId} and index ${process.env.ALGOLIA_INDEX_NAME}`);
 
@@ -205,7 +205,7 @@ export class IndexingController {
         if (!feeder) {
             throw new Error("no feeder found");
         }
-        console.log(`Feeding for locale ${locale}`);
+        // console.log(`Feeding for locale ${locale}`);
         // go in batches of 100, until nothing else is returned.
         do {
             batch = 0;

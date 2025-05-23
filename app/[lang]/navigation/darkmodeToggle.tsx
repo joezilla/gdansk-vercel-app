@@ -26,14 +26,14 @@ export function DarkmodeToggle() {
         if (typeof window !== "undefined") {
             window.localStorage.setItem('color-theme', !darkMode ? 'dark' : 'light');
         } else {
-            console.log("Cannot update local storage.");
+            // Cannot update local storage in server environment
         }
     }
 
     // apply theme
     useEffect(() => {
         darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
-    }, [darkMode ? 'dark' : 'light']);
+    }, [darkMode]);
 
     // render the icon
     return (

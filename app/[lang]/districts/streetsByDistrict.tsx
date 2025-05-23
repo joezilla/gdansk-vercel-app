@@ -41,8 +41,8 @@ export function StreetsByDistrict(props: AllDistrictProps) {
                 <h3 className="font-semibold hover:underline">{street.germanName}</h3>
                 <span className="text-sm">
                   <ul>
-                  {street.polishNames.map(p =>
-                    <li>{p}</li>
+                  {street.polishNames.map((p, idx) =>
+                    <li key={idx}>{p}</li>
                   )}
                   </ul>
                 </span>

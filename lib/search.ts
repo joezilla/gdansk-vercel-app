@@ -14,8 +14,8 @@ const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "");
 
-const algoliaIndexEn = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-en-US" ?? "");
-const algoliaIndexDe = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-de" ?? "");
+const algoliaIndexEn = searchClient.initIndex((process.env.ALGOLIA_INDEX_NAME ?? "") + "-en-US");
+const algoliaIndexDe = searchClient.initIndex((process.env.ALGOLIA_INDEX_NAME ?? "") + "-de");
 
 type AlgoliaHits = {
     hits: AlgoliaHit[];
@@ -46,7 +46,7 @@ export class AlgoliaApi {
     constructor(private locale: string = "en-US") { }
 
     public getIndex() {
-        console.log(`Locale is ${this.locale}`);
+        log.debug(`Locale is ${this.locale}`);
         if (this.locale === "en-US" || this.locale === "en")
             return algoliaIndexEn;
         if (this.locale === "de")
@@ -76,7 +76,7 @@ export class AlgoliaApi {
 
         content.hits.forEach((e) => {
 
-            console.debug(e);
+            //console.debug(e);
 
             var imageUrl;
             if (/^(https?:).*/.test(e.images[0].url)) {

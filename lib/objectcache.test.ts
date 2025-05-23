@@ -36,7 +36,7 @@ test('testCacheAlways', async () => {
     }, 0);
 
 
-    console.debug("first", first);
+    // console.debug("first", first);
 
     expect(first).toBe(second);
 });

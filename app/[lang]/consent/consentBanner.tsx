@@ -3,6 +3,7 @@
  * Cookie consent banner
  */
 import { useState, useEffect } from 'react';
+import Script from 'next/script';
 
 declare const cookieconsent: any;
 export default function ConsentBanner({ locale }: { locale: string }) {
@@ -33,5 +34,5 @@ return () => {
     document.removeEventListener('DOMContentLoaded', runCookieConsent);
 };
     }, []);
-return (<><script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"></script></>);
+return (<><Script src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js" strategy="afterInteractive" /></>);
 }

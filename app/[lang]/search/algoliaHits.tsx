@@ -41,7 +41,7 @@ export default function CustomHit({ hit }: { hit: any }) {
         {hit.germanName}
       </a>*/}
       <p className="text-gray-400 text-sm mt-1">
-      Todya's name is <strong className="text-white">{hit?.polishNames[0]}</strong>
+      Today&apos;s name is <strong className="text-white">{hit?.polishNames[0]}</strong>
       </p>
     </div>
   </>);

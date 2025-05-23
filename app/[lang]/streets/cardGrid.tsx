@@ -1,7 +1,7 @@
 'use client';
 
 import { FancyCard } from '../cards/fancycard';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer'
 import { StreetAPIResponse, StreetSummary } from '../../../types/streetApi'
 import { createStreetURL, createPostURL } from '../../../lib/urlutil';
@@ -25,7 +25,7 @@ export function CardGrid(props: CardGridProps) {
   let t = new I18N(props.locale).getTranslator();
 
 
-  const loadMoreStreets = async () => {
+  const loadMoreStreets = useCallback(async () => {
     const url = `/api/streetfeed/${offset}`
     // console.log("DOMAIN: " + url);
     const response = await fetch(url);
@@ -33,13 +33,13 @@ export function CardGrid(props: CardGridProps) {
     // console.log(data);
     setStreets([...streets, ...data.streets]);
     setOffset(offset + NUMBER_OF_STREETs_TO_FETCH);
-  }
+  }, [offset, streets]);
 
   useEffect(() => {
     if (inView) {
       loadMoreStreets();
     }
-  }, [inView])
+  }, [inView, loadMoreStreets])
 
   //
   return (

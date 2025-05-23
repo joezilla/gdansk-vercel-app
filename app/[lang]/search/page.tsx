@@ -17,7 +17,7 @@ const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "undefined",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "undefined");
 
-export default async function Page({ params: { lang }, }:
+export default function Page({ params: { lang }, }:
     { params: { lang: Locale } }) {
 
     let indexName = lang == "en" ? `${process.env.ALGOLIA_INDEX_NAME}-en-US` : `${process.env.ALGOLIA_INDEX_NAME}-de`;

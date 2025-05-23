@@ -34,11 +34,10 @@ export class ObjectCache {
      * @param timeout timeout in seconds. 0 always caches, -1 never caches.
      * @returns cached or retrieved value
      */
-    async getCachedEntry<Any>(id: string, tags: string[] = [], fn: (id: string) => any, timeout: number = this.defaultTimeout) {
+    async getCachedEntry<T>(id: string, tags: string[] = [], fn: (id: string) => Promise<T> | T, timeout: number = this.defaultTimeout): Promise<T> {
         if (!id) {
             throw new Error("id is required");
         }
-        // log.debug(`Cache timeout is ${timeout}`);
         if(process.env.CACHE_DISABLED == "true") {
             log.warn("CACHE DISABLED");
             timeout = -1;
@@ -58,7 +57,7 @@ export class ObjectCache {
                 return value;
             } else {
                 log.debug(`cache hit for ${key} yielded entry.`);
-                return entry.value;
+                return entry.value as T;
             }
         } else {
             log.debug(`cache miss for ${key}`);

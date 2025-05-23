@@ -1,5 +1,5 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { IStreet, IImageWithFocalPoint } from '../../../lib/contentmodel/wrappertypes';
+import { IStreet, IImageWithFocalPoint, IDistrict } from '../../../lib/contentmodel/wrappertypes';
 import { RichtextComponent } from '../contentful'
 import { DistrictNames } from './districtNames'
 import { GoogleMap } from './googleMap'
@@ -50,11 +50,11 @@ export function StreetDetail(props: StreetDetailProps) {
 
         {/* Decorative Background Pattern when no image */}
         {!hasHeroImage && (
-          <div className="absolute inset-0 opacity-40">
+          <div className="absolute inset-0 opacity-90 brightness-50">
            <img
               src="/resources/images/generated-danzig.png"
               alt=""
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover opacity-160"
               aria-hidden="true"
             />
           </div>
@@ -72,7 +72,7 @@ export function StreetDetail(props: StreetDetailProps) {
                   {street.fields.previousNames}
                 </p>
                 <div className="flex gap-2">
-                  {street.fields.districts?.map((district: any, index: number) => (
+                  {street.fields.district_ref?.map((district: IDistrict, index: number) => (
                     <span 
                       key={index}
                       className="inline-flex items-center px-3 py-1 rounded-full 
