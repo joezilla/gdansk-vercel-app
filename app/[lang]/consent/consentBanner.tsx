@@ -34,5 +34,5 @@ return () => {
     document.removeEventListener('DOMContentLoaded', runCookieConsent);
 };
     }, []);
-return (<><Script src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js" strategy="afterInteractive" /></>);
+return (<><Script src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js" strategy="beforeInteractive" /></>);
 }
