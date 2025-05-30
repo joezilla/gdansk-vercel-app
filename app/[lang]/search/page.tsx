@@ -1,8 +1,8 @@
 'use client';
 
 // import 'instantsearch.css/themes/satellite.css';
-
-
+import { Locale } from "../../../i18n-config";
+/*
 import { Locale } from "../../../i18n-config";
 import algoliasearch from 'algoliasearch/lite';
 import React from 'react';
@@ -83,3 +83,14 @@ export default async function Page({ params }:
         </section>
     </>);
 }
+    */
+
+
+
+export default async function Page({ params }:
+    { params: Promise<{ lang: Locale }> }) {
+    
+        return(<>
+        Disabled</>);
+    
+    }

@@ -32,6 +32,7 @@ export function DarkmodeToggle() {
 
     // apply theme
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
     }, [darkMode]);
 

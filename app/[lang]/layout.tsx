@@ -7,7 +7,7 @@ import { i18n, type Locale } from "../../i18n-config";
 import { GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
 // css
-import '../styles/global.css'
+import '@/app/ui/index.css'
 // consnet
 import ConsentBanner from './consent/consentBanner';
 
@@ -71,6 +71,8 @@ export default async function RootLayout({
         <meta name="msapplication-config" content="/resources/favicon/browserconfig.xml" />
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        {/* <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="/styles/index.css" rel="stylesheet" />  */}
       </head>
       <body>
         <ConsentBanner locale={lang} />

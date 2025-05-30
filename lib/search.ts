@@ -9,13 +9,13 @@ import { StreetSummary } from '../types/streetApi'
 // util
 
 // //// algolia
-import algoliasearch from 'algoliasearch';
+import { algoliasearch } from 'algoliasearch';
 const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "");
 
-const algoliaIndexEn = searchClient.initIndex((process.env.ALGOLIA_INDEX_NAME ?? "") + "-en-US");
-const algoliaIndexDe = searchClient.initIndex((process.env.ALGOLIA_INDEX_NAME ?? "") + "-de");
+const algoliaIndexEn = process.env.ALGOLIA_INDEX_NAME ?? "" + "-en-US";
+const algoliaIndexDe = process.env.ALGOLIA_INDEX_NAME ?? "" + "-de";
 
 type AlgoliaHits = {
     hits: AlgoliaHit[];
@@ -45,7 +45,7 @@ type SimpleStreetHit = {
 export class AlgoliaApi {
     constructor(private locale: string = "en-US") { }
 
-    public getIndex() {
+    public indexName() {
         log.debug(`Locale is ${this.locale}`);
         if (this.locale === "en-US" || this.locale === "en")
             return algoliaIndexEn;
@@ -60,13 +60,15 @@ export class AlgoliaApi {
      */
     public async getStreetsWithImages(offset: number = 0, count: number = 6) {
 
-        const content: AlgoliaHits = await this.getIndex().search("",
-            {
+        const content: AlgoliaHits = await searchClient.searchSingleIndex({
+            indexName: this.indexName(),
+            searchParams: {
                 offset: offset,
                 length: count,
                 filters: 'hasImages = 1',
                 facetFilters: 'type:street'
-            });
+            }
+        });
 
         // content.hits.forEach((x) =>
         //     console.log(x.images[0])

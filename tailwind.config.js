@@ -1,5 +1,4 @@
-const colors = require('tailwindcss/colors')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -7,7 +6,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',    
     "./node_modules/flowbite/**/*.{js,jsx,ts,tsx}"
   ],
-  darkMode: 'class', // media  
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -22,51 +21,50 @@ module.exports = {
           500: '#6b7280',
           600: '#4b5563',
           700: '#374151',
-          800: colors.black,
+          800: '#000000',
           900: '#111827',
-
         },
         // standard text color. could not thing of a better name
         'mytxt': {
-          light: colors.black,
-          DEFAULT: colors.black,
-          dark: colors.white,
+          light: '#000000',
+          DEFAULT: '#000000',
+          dark: '#ffffff',
           // same as neutral
-          100: colors.neutral[100],
-          200: colors.neutral[200],
-          300: colors.neutral[300],
-          400: colors.neutral[400],
-          500: colors.neutral[500],
-          600: colors.neutral[600],
-          700: colors.neutral[700],
-          800: colors.neutral[800],
-          900: colors.neutral[900],
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
         },
         // standard background background. could not thing of a better name
         'mybg': {
-          light: colors.white,
-          DEFAULT: colors.black,
-          dark: colors.black,
+          light: '#ffffff',
+          DEFAULT: '#000000',
+          dark: '#000000',
           // same as zinc
-          100: colors.zinc[100],
-          200: colors.zinc[200],
-          300: colors.zinc[300],
-          400: colors.zinc[400],
-          500: colors.zinc[500],
-          600: colors.zinc[600],
-          700: colors.zinc[700],
-          800: colors.zinc[800],
-          900: colors.zinc[900],
+          100: '#f4f4f5',
+          200: '#e4e4e7',
+          300: '#d4d4d8',
+          400: '#a1a1aa',
+          500: '#71717a',
+          600: '#52525b',
+          700: '#3f3f46',
+          800: '#27272a',
+          900: '#18181b',
         },
         'accent': {
-          light: colors.red[600],
-          DEFAULT: colors.red[600],
-          dark: colors.red[600],
+          light: '#dc2626',
+          DEFAULT: '#dc2626',
+          dark: '#dc2626',
         },
         'header': {
-          light: colors.white,
-          DEFAULT: colors.gray[900],
-          dark: colors.gray[900],
+          light: '#ffffff',
+          DEFAULT: '#111827',
+          dark: '#111827',
         }
       },
       spacing: {
@@ -92,6 +90,5 @@ module.exports = {
   },
   plugins: [
     require('flowbite/plugin'),
-  ]
-  ,
+  ],
 }

@@ -13,16 +13,15 @@ const cache = new ObjectCache();
 // util
 
 // //// algolia
-import algoliasearch from 'algoliasearch';
+import { algoliasearch } from 'algoliasearch';
 const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "");
 
-const algoliaIndexEn = searchClient.initIndex((process.env.ALGOLIA_INDEX_NAME ?? "") + "-en-US");
-const algoliaIndexDe = searchClient.initIndex((process.env.ALGOLIA_INDEX_NAME ?? "") + "-de");
+const algoliaIndexEn = process.env.ALGOLIA_INDEX_NAME ?? "" + "-en-US";
+const algoliaIndexDe = process.env.ALGOLIA_INDEX_NAME ?? "" + "-de";
 
 log.info(`Feeding into algolia with app id ${searchClient.appId} and index ${process.env.ALGOLIA_INDEX_NAME}`);
-
 
 // //// contentful client
 import { createClient } from "contentful";
@@ -76,7 +75,10 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
 
     async delete(id: string) {
         log.debug(`deleting entry ${id}`);
-        await this.getIndex().deleteObject(id);
+        await searchClient.deleteObject({
+            indexName: this.indexName(),
+            objectID: id
+        });
     }
 
     async doIndex(toIndex: AbstractIndexObject) {
@@ -84,8 +86,10 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
             log.error("Validation failed for", toIndex);
             throw new Error("invalid object");
         }
-        // log.debug("indexing", toIndex);
-        let response = await this.getIndex().saveObject(toIndex);
+        let response = await searchClient.saveObject({
+            indexName: this.indexName(),
+            body: { ...toIndex }
+        });
 
       //  let response = { "result": this.getIndex().indexName };
         log.debug("response", response);
@@ -95,7 +99,7 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
         this.locale = loc;
     }
 
-    getIndex() {
+    indexName() {
         // console.log(`** Locale is ${this.locale}`);
         if (this.locale === "en-US" || this.locale === "en")
             return algoliaIndexEn;
