@@ -1,18 +1,19 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { FullpagePost } from './fullpagePost'
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 
 // # sample data
-const hydrated = require("../../../content/contentful/richtext-test.json");
-let post = {
+import hydrated from '../../../content/contentful/richtext-test.json';
+const post = {
   ...hydrated,
+  contentTypeId: "post",
   toPlainObject(): object {
     return this;
   },
   update(): Promise<IPost> {
     throw new Error("Method not implemented.");
   }
-}
+} as unknown as IPost;
 
 //👇 This default export determines where your story goes in the story list
 export default {
@@ -24,7 +25,7 @@ export default {
     component: FullpagePost,
   } as Meta<typeof FullpagePost>;
   
-  //👇 We create a “template” of how args map to rendering
+  //👇 We create a "template" of how args map to rendering
   const Template: StoryFn<typeof FullpagePost> = (args) => <FullpagePost {...args} />;
  
   export const Basic = Template.bind({});

@@ -1,18 +1,17 @@
 'use client';
 
 import { DarkmodeToggle } from '../navigation/darkmodeToggle'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 type FooterProps = {
-  locale: string
+    locale: 'en' | 'de';
 }
 
 /**
  * Footer.
  * @returns 
  */
-export default function Footer(props: FooterProps) {
-  const router = useRouter();
+export default function Footer({ locale }: FooterProps) {
   const pathname = usePathname();
   const switchLocalePath = (newLocale: string) => {
     const pathParts = pathname.split('/');

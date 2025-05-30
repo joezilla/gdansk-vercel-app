@@ -1,20 +1,21 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { IStreet } from '../../../lib/contentmodel/wrappertypes';
   
   
   import { GoogleMap } from './googleMap'
 
 // # sample data
-const hydrated = require("../../../content/contentful/Abbegg-Gasse.json");
-let aStreet = {
+import hydrated from '../../../content/contentful/Abbegg-Gasse.json';
+const aStreet = {
   ...hydrated,
+  contentTypeId: "street",
   toPlainObject(): object {
     return this;
   },
   update(): Promise<IStreet> {
     throw new Error("Method not implemented.");
   }
-}
+} as unknown as IStreet;
 
 //👇 This default export determines where your story goes in the story list
 export default {
@@ -26,7 +27,7 @@ export default {
     component: GoogleMap,
   } as Meta<typeof GoogleMap>;
   
-  //👇 We create a “template” of how args map to rendering
+  //👇 We create a "template" of how args map to rendering
   const Template: StoryFn<typeof GoogleMap> = (args) => <GoogleMap {...args} />;
   
   export const Basic = Template.bind({});

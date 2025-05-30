@@ -8,10 +8,10 @@ import { NextRequest } from 'next/server';
 
 import { StreetAPIResponse, StreetSummary } from '../../../../types/streetApi'
 
-export async function GET(req: NextRequest, {params} : {params: { offset: string}}) {
+export async function GET(req: NextRequest, {params} : {params: Promise<{ offset: string}>}) {
 
     try {       
-        let offset = params.offset;
+        const { offset } = await params;
         var locale = "en-US";
     
         //console.log(`Calling with locale ${locale} and offset ${offset}`);

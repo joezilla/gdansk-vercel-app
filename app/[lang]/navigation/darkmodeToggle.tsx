@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 /**
  * Initializes dark mode based on browser preference but then also allows

@@ -2,7 +2,6 @@
 
 import { Asset } from 'contentful'
 import Image from 'next/image'
-import { ImageLoaderProps, ImageProps } from 'next/image'
 import { contentfulLoader } from './imageLoader'
 import { useState } from "react";
 
@@ -13,7 +12,7 @@ type MyImageProps = {
   width?: number,
   height?: number,
   alt?: string,
-  objectFit?: any,
+  objectFit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down',
   layout?: "fill" | "fixed" | "intrinsic" | "responsive" | undefined
 }
 

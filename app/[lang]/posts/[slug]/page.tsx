@@ -7,10 +7,10 @@ import { notFound } from 'next/navigation'
 import { FullpagePost } from '../fullpagePost'
 import { log } from 'next-axiom'
 import { I18N } from '../../../../lib/i18n';
-import { IPost } from '../../../../lib/contentmodel/wrappertypes';
+import { PostSummary } from '../../../../lib/contentmodel/wrappertypes';
 
 async function getPostData(lang: Locale, slug: string) {
-  let loader = new ContentfulLoader(3600, lang);
+  const loader = new ContentfulLoader(3600, lang);
   const post = await loader.getPostBySlug(slug);
   if (!post) {
     log.error(`Cannot find post ${slug}`);
@@ -20,18 +20,19 @@ async function getPostData(lang: Locale, slug: string) {
 }
 
 
-export async function generateMetadata({ params: { lang, slug }, }: { params: { lang: Locale, slug: string } }):
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale, slug: string }> }):
   Promise<Metadata> {
+  const { lang, slug } = await params;
   //
   const post = await getPostData(lang, slug);
   if (!post) return notFound();
 
-  let name = post.fields?.title;
+  const name = post.fields?.title;
   let image = "";
   if (post.fields.coverImage) {
       image = post.fields?.coverImage?.fields?.file?.url as string ?? "";
   }
-  let excerpt = post.fields.excerpt;
+  const excerpt = post.fields.excerpt;
 
   //
   const i18n = new I18N(lang).getTranslator();
@@ -65,16 +66,17 @@ export async function generateMetadata({ params: { lang, slug }, }: { params: { 
 }
 
 export async function generateStaticParams() {
-  let loader = new ContentfulLoader()
-  let allPosts = await loader.getAllPosts();
+  const loader = new ContentfulLoader()
+  const allPosts = await loader.getAllPosts();
 
-  return allPosts?.flatMap((post: any) => [
+  return allPosts?.flatMap((post: PostSummary) => [
     { lang: 'de', slug: post.slug },
     { lang: 'en', slug: post.slug }
   ]) ?? [];
 }
 
-export default async function Page({ params: { lang, slug } }: { params: { lang: Locale, slug: string } }) {
+export default async function Page({ params }: { params: Promise<{ lang: Locale, slug: string }> }) {
+  const { lang, slug } = await params;
 
   const post = await getPostData(lang, slug);
   if (!post) return notFound();

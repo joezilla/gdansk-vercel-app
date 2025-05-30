@@ -1,4 +1,4 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 import { SearchResultCard } from './searchResultCard'
 
@@ -13,10 +13,6 @@ export default {
 } as Meta<typeof SearchResultCard>;
 
 //👇 We create a “template” of how args map to rendering
-const Template: StoryFn<typeof SearchResultCard> = (args) => <SearchResultCard {...args} />;
+const Template: StoryFn<typeof SearchResultCard> = () => <SearchResultCard />;
 
 export const Basic = Template.bind({});
-Basic.args = {
-    /*👇 The args you need here will depend on your component */
-    lang: "en"
-};

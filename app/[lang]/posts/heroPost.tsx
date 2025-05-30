@@ -10,7 +10,7 @@ type HeroPostProps = {
 }
 
 export function HeroPost(props: HeroPostProps) {
-  let locale = props.locale;
+  const locale = props.locale;
   return (
     <section className="relative w-full bg-mybg-light dark:bg-mybg-dark">
       <div className="relative h-[70vh] min-h-[600px] w-full overflow-hidden">

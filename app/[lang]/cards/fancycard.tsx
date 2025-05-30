@@ -1,5 +1,5 @@
 
-import { IStreet, IPost, IImageWithFocalPoint } from '../../../lib/contentmodel/wrappertypes';
+import { IStreet, IPost } from '../../../lib/contentmodel/wrappertypes';
 import Image from 'next/image'
 import { createStreetURL, createPostURL } from '../../../lib/urlutil';
 
@@ -18,7 +18,7 @@ export type StreetCardData = {
     locale: string
 }
 export function StreetCard(props: StreetCardData) {
-    var p = {
+    const p = {
         headline: props.street.fields.germanName,
         excerpt: "t",
         targetLink: createStreetURL(props.street.fields.slug, props.locale),
@@ -34,7 +34,7 @@ export type PostCardData = {
     locale: string
 }
 export function PostCard(props: PostCardData) {
-    var p = {
+    const p = {
         headline: props.post.fields.title,
         excerpt: props.post.fields.excerpt,
         targetLink: createPostURL(props.post.fields.slug, props.locale), // todo: add locale
@@ -51,7 +51,7 @@ export function PostCard(props: PostCardData) {
 
 export function FancyCard(props: CardProps) {
     // annoying, but contentful returns images with a // and no protocol
-    var imageUrl = props.imageUrl;
+    let imageUrl = props.imageUrl;
     if (/^\/\/.*/.test(imageUrl)) {
         imageUrl = `https:${imageUrl}`;
     }

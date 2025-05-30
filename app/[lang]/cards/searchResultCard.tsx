@@ -1,6 +1,6 @@
 
 
-export function SearchResultCard({ lang }: { lang: string }) {
+export function SearchResultCard() {
     return (<>
         <div className="bg-gray-900 p-4 rounded-md shadow-md max-w-md">
             <div className="flex items-center space-x-3">

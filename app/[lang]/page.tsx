@@ -10,7 +10,8 @@ import { Locale } from "../../i18n-config";
 import { I18N } from '../../lib/i18n'
 import { IPost } from '../../lib/contentmodel/wrappertypes'
 
-export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params;
   const i18n = new I18N(lang).getTranslator();
   // You can fetch data here if needed for dynamic metadata
   return {
@@ -41,8 +42,9 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
   }
 }
 
-export default async function Page({ params: { lang } }: { params: { lang: Locale } }) { 
-  let loader = new ContentfulLoader(3600, lang);
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params; 
+  const loader = new ContentfulLoader(3600, lang);
 
   const allPosts = await loader.getHomepagePosts() ?? []
   const heroPost = await loader.getHomepageHeroPost();

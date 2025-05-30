@@ -1,16 +1,7 @@
 export const dynamic = 'force-static'
 
-import ErrorPage from 'next/error'
-import { Container } from '../../layout/container'
-import { IStreet, IPost } from '../../../../lib/contentmodel/wrappertypes'
-import { GetStaticProps, GetStaticPaths } from 'next'
 import { ContentfulLoader } from '../../../../lib/contentful'
-import { parseStreetURL, createStreetURL } from '../../../../lib/urlutil';
-// import { StreetMeta } from '../../components/streets/metatags'
-import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";
-import { notFound } from 'next/navigation'
-import { StreetsByDistrict } from '../streetsByDistrict'
 import { I18N } from '../../../../lib/i18n'
 import { createDistrictURL } from '../../../../lib/urlutil'
 
@@ -22,11 +13,12 @@ import { createDistrictURL } from '../../../../lib/urlutil'
 //   locale: string
 // }
 
-export default async function Page({ params: { lang, slug }, }: { params: { lang: Locale, slug: string }; }) {
+export default async function Page({ params }: { params: Promise<{ lang: Locale, slug: string }>; }) {
+  const { lang } = await params;
 
-  let loader = new ContentfulLoader(3600, lang);
+  const loader = new ContentfulLoader(3600, lang);
   const i18n = new I18N(lang).getTranslator();
-  let allDistricts = await loader.getAllDistricts();
+  const allDistricts = await loader.getAllDistricts();
 
   return (
     <section className="dark:bg-mybg-dark dark:text-mytxt-dark">

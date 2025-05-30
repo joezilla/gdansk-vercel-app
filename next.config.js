@@ -1,18 +1,17 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    // loader: 'custom',    
     deviceSizes: [640, 1080, 1920],
     formats: ['image/webp'],
     minimumCacheTTL: 3600,
-    // loaderFile: ''
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'images.ctfassets.net',
-          port: '',
-          pathname: '/9ieso0n2yz5w/**',
-        },
-      ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: '/9ieso0n2yz5w/**',
+      },
+    ],
   },
   
   env: {
@@ -22,6 +21,18 @@ module.exports = {
     UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL
   },
   compiler: {
-    styledComponents: true // needed so that the dom manipulation of the darkmode icon works
+    styledComponents: true
+  },
+  eslint: {
+    // Only run ESLint on these directories during builds
+    dirs: ['app', 'lib'],
+    // Ignore test files and stories
+    ignoreDuringBuilds: false,
+  },
+  typescript: {
+    // Ignore TypeScript errors during builds
+    ignoreBuildErrors: false,
   }
 }
+
+module.exports = nextConfig

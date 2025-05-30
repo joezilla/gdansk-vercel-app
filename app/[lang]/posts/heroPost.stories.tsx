@@ -1,18 +1,19 @@
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 import { HeroPost } from './heroPost'
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 // load sample data
-const hydrated = require("../../../content/contentful/homepage-post.json");
-let post = {
+import hydrated from '../../../content/contentful/homepage-post.json';
+const post = {
   ...hydrated,
+  contentTypeId: "post",
   toPlainObject(): object {
     return this;
   },
   update(): Promise<IPost> {
     throw new Error("Method not implemented.");
   }
-}
+} as unknown as IPost;
 
 //👇 This default export determines where your story goes in the story list
 export default {
@@ -24,7 +25,7 @@ export default {
     component: HeroPost,
   } as Meta<typeof HeroPost>;
   
-  //👇 We create a “template” of how args map to rendering
+  //👇 We create a "template" of how args map to rendering
   const Template: StoryFn<typeof HeroPost> = (args) => <HeroPost {...args} />;
  
   export const Basic = Template.bind({});

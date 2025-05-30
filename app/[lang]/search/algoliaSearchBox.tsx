@@ -2,8 +2,8 @@
 
 import { useSearchBox } from 'react-instantsearch';
 
-function AlgoliaSearchBox({ query, isSearchStalled, refine }:
-  { query: string, isSearchStalled: boolean, refine: (value: string) => void }) {
+function AlgoliaSearchBox({ query, refine }:
+  { query: string, refine: (value: string) => void }) {
   return (
     <form noValidate action="" role="search">
       <fieldset className="w-full space-y-1 dark:text-gray-100">
@@ -27,7 +27,7 @@ function AlgoliaSearchBox({ query, isSearchStalled, refine }:
   );
 }
 
-export default function CustomSearchBox(props: any) {
+export default function CustomSearchBox(props: Record<string, unknown>) {
   const searchBoxApi = useSearchBox(props);
   return <AlgoliaSearchBox {...searchBoxApi} />;
 }

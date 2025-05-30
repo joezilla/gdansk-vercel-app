@@ -18,7 +18,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
     const API_KEY = process.env.API_KEY;
 
-    const headersList = headers();
+    const headersList = await headers();
     const secret = headersList.get("apisecret");
 
     if (secret === API_KEY) {

@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import { Locale } from "../../../i18n-config";
 
-export default function NotFound({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function NotFound({ params }: { params: Promise<{ lang: Locale }> }) {
+    const { lang } = await params;
     return (
         <div className="flex items-center justify-center py-20">
             <div className="text-center">

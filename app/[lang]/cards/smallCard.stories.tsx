@@ -1,4 +1,4 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 import { SmallCard } from './smallCard'
 

@@ -3,30 +3,29 @@
 //
 // Also see https://www.npmjs.com/package/@contentful/rich-text-react-renderer
 //
-import { documentToReactComponents, Options, RenderText } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, MARKS, Document, Node, Block, Inline } from '@contentful/rich-text-types'
+import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
+import { BLOCKS, MARKS, Document, Block, Inline } from '@contentful/rich-text-types'
 import markdownStyles from './richtextComponent.module.css'
 import { ReactNode } from 'react';
 import { SmallCard } from '../cards/smallCard'
-import { ImageComponent, NaturalImageComponent } from './imageComponent';
+import { NaturalImageComponent } from './imageComponent';
 import { log } from 'next-axiom'
-import { unwatchFile } from 'fs';
 import Link from 'next/link'
 import { IImageWithFocalPoint } from '../../../lib/contentmodel/wrappertypes';
 
-function renderLink(target: any, locale: string) {
+function renderLink(target: { sys?: { contentType?: { sys?: { id?: string } } }, fields?: { slug?: string, germanName?: string, title?: string } }, locale: string) {
+    if (!target.fields) return null;
+    
     if (target.sys?.contentType?.sys?.id === "street") {
         return <Link locale={locale} href={`/streets/${target.fields.slug}`} className="text-accent underline">{target.fields.germanName}</Link>
     } else if (target.sys?.contentType?.sys?.id === "post") {
         return <Link locale={locale} href={`/posts/${target.fields.slug}`} className="text-accent underline">{target.fields.title}</Link>
     } else {
-        log.warn("Refusing to render a link to type ", target.sys?.contentType?.sys?.id);
+        log.warn("Refusing to render a link to type", { type: target.sys?.contentType?.sys?.id });
     }
-
 }
 
-export function renderEmbeddedEntry(node: Block | Inline, children: any, locale: string) {
-    const { data } = node;
+export function renderEmbeddedEntry(node: Block | Inline) {
 
     return (
         <>
@@ -51,7 +50,7 @@ export function renderEmbeddedEntry(node: Block | Inline, children: any, locale:
     );
 }
 
-export function renderEmbeddedAsset(node: Block | Inline, children: any, locale: string) {
+export function renderEmbeddedAsset(node: Block | Inline, _children: unknown, locale: string) {
     const { data } = node;
     if (data.target) {
         return (
@@ -92,8 +91,7 @@ export function renderImageWithFocalPoint(image: IImageWithFocalPoint) {
 }
 
 
-export function renderInlineEntry(node: Block | Inline, children: any, locale: string) {
-    const { data } = node;
+export function renderInlineEntry(node: Block | Inline, locale: string) {
     return (
         <>
             {
@@ -136,17 +134,17 @@ class MyOptions implements Options {
     }
 
     renderNode = {
-        [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline, children: any) => (
-            renderEmbeddedEntry(node, children, this.locale)
+        [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => (
+            renderEmbeddedEntry(node)
         ),
-        [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline, children: any) => (
+        [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline, children: unknown) => (
             renderEmbeddedAsset(node, children, this.locale)
         ),
         [BLOCKS.PARAGRAPH]: (node: Block | Inline, children: ReactNode) => (
             <p className="py-2 leading-7">{children}</p>
         ),
-        ["embedded-entry-inline"]: (node: Block | Inline, children: any) => (
-            renderInlineEntry(node, children, this.locale)
+        ["embedded-entry-inline"]: (node: Block | Inline) => (
+            renderInlineEntry(node, this.locale)
         ),
         [BLOCKS.QUOTE]: (node: Block | Inline, children: ReactNode) => (
             <blockquote className="text-l mx-8 italic font-semibold text-gray-900 dark:text-white">
@@ -177,10 +175,10 @@ class MyOptions implements Options {
         [BLOCKS.HEADING_6]: (node: Block | Inline, children: ReactNode) => (
             <h6 className="text-lg font-bold dark:text-white">{children}</h6>
         ),
-        [BLOCKS.HR]: (node: Block | Inline, children: ReactNode) => (
+        [BLOCKS.HR]: () => (
             <hr className="mx-6 text-lg font-bold border-accent py-4 dark:text-white" />
         ),
-        ["entry-hyperlink"]: (node: Block | Inline, children: ReactNode) => (
+        ["entry-hyperlink"]: (node: Block | Inline) => (
             renderLink(node.data.target, this.locale)
         ),
         /// tables
@@ -203,7 +201,7 @@ export type RichtextProps = {
 }
 
 export function RichtextComponent(props: RichtextProps) {
-    let options = new MyOptions(props.locale);
+    const options = new MyOptions(props.locale);
     if (props.content) {
         return (
             <div className={markdownStyles['markdown']}>

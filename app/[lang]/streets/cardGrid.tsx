@@ -4,11 +4,10 @@ import { FancyCard } from '../cards/fancycard';
 import React, { useState, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer'
 import { StreetAPIResponse, StreetSummary } from '../../../types/streetApi'
-import { createStreetURL, createPostURL } from '../../../lib/urlutil';
+import { createStreetURL } from '../../../lib/urlutil';
 import { I18N } from "../../../lib/i18n";
 
 const NUMBER_OF_STREETs_TO_FETCH = 6;
-const DOMAIN = process.env.SOD_BASE_URL;
 
 
 type CardGridProps = {
@@ -22,7 +21,7 @@ export function CardGrid(props: CardGridProps) {
   const [offset, setOffset] = useState(props.initialStreets.length);
   const [streets, setStreets] = useState<StreetSummary[]>(props.initialStreets);
   const { ref, inView } = useInView();
-  let t = new I18N(props.locale).getTranslator();
+  const t = new I18N(props.locale).getTranslator();
 
 
   const loadMoreStreets = useCallback(async () => {

@@ -8,7 +8,7 @@ type PostProps = {
 }
 
 export function FullpagePost(props: PostProps) {
-    let { content, locale } = props;
+    const { content, locale } = props;
 
     return (
         <article className="min-h-screen bg-mybg-light dark:bg-mybg-dark">

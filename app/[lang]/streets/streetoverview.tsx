@@ -15,12 +15,12 @@ interface BucketType {
 
 // buckets the streets by alphabet and then sorts each array in the bucket
 function sort2({ streets }: { streets: StreetSummary[] }) {
-  let buckets = {} as BucketType;
+  const buckets = {} as BucketType;
 
   streets.map(s => {
-    var firstLetter = s.germanName.trim().charAt(0);
+    const firstLetter = s.germanName.trim().charAt(0);
     if (!buckets[firstLetter]) {
-      buckets[firstLetter] = new Array();
+      buckets[firstLetter] = [];
     }
     buckets[firstLetter].push(s);
   }
@@ -29,7 +29,7 @@ function sort2({ streets }: { streets: StreetSummary[] }) {
   letters.map(l => {
     if (buckets[l]) {
       buckets[l].sort((a, b) => {
-        let fa = a.germanName.toLowerCase(),
+        const fa = a.germanName.toLowerCase(),
             fb = b.germanName.toLowerCase();
         if (fa < fb) {
           return -1;
@@ -44,9 +44,6 @@ function sort2({ streets }: { streets: StreetSummary[] }) {
   return (buckets);
 }
 
-function truncate(str: string) {
-  return str.length > 20 ? str.substring(0, 20) + "..." : str;
-}
 
 type AllStreetsProps = {
   streets: StreetSummary[]
@@ -54,8 +51,8 @@ type AllStreetsProps = {
 
 // todo: add i18n
 export function StreetOverview(props: AllStreetsProps) {
-  let streets = props.streets;
-  var sorted = sort2({ streets })
+  const streets = props.streets;
+  const sorted = sort2({ streets })
   return (
     <div className="dark:bg-mybg-dark dark:text-mytxt-dark">
       <div className="dark:text-white">
@@ -68,12 +65,12 @@ export function StreetOverview(props: AllStreetsProps) {
           <div key={k}>
               <div className="columns-2 md:columns-3 gap-1 mt-2">
                 <div className="w-64 dark:text-purple-400 pb-1"><h2 className="bigletter flex" id={`alphabetlist-${k}`}>{k}</h2></div>
-                {Object.values(sorted[k] ?? new Array).map(v =>
+                {Object.values(sorted[k] ?? []).map(v =>
                   <div key={v.sys.id} className="w-48 dark:text-gray-200">
                     <Link href={createStreetURL(v.slug)}>{v.germanName}</Link>
                   </div>
                 )}
-                { Object.values(sorted[k] ?? new Array).length === 0 &&
+                { Object.values(sorted[k] ?? []).length === 0 &&
                   <div className="w-48 dark:text-gray-200">No streets found</div>
                 }
             </div>

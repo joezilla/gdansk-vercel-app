@@ -1,4 +1,3 @@
-import { Button } from '../buttons/Button'
 
 export type TinyCardProps = {
     headline: string,

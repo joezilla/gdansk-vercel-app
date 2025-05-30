@@ -11,17 +11,16 @@ import { InstantSearchNext } from 'react-instantsearch-nextjs';
 
 import CustomSearchBox from './algoliaSearchBox';   
 import CustomHits from './algoliaHits';
-import { I18N } from "../../../lib/i18n";
 
 const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "undefined",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "undefined");
 
-export default function Page({ params: { lang }, }:
-    { params: { lang: Locale } }) {
+export default async function Page({ params }:
+    { params: Promise<{ lang: Locale }> }) {
+    const { lang } = await params;
 
-    let indexName = lang == "en" ? `${process.env.ALGOLIA_INDEX_NAME}-en-US` : `${process.env.ALGOLIA_INDEX_NAME}-de`;
-    let t = new I18N(lang).getTranslator();
+    const indexName = lang == "en" ? `${process.env.ALGOLIA_INDEX_NAME}-en-US` : `${process.env.ALGOLIA_INDEX_NAME}-de`;
 
     return (<>
         <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
@@ -59,7 +58,7 @@ export default function Page({ params: { lang }, }:
                                             input: 'w-full'
                                         }}/>
                                     </div>
-                                    <Hits hitComponent={CustomHits} lang={lang}
+                                    <Hits hitComponent={CustomHits}
                                         classNames={{
                                             root: 'w-96',
                                             list: 'w-128',

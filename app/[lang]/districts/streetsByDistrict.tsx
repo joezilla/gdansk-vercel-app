@@ -5,14 +5,13 @@
 export const dynamic = 'force-dynamic'
 
 import { StreetSummary, IDistrict } from '../../../lib/contentmodel/wrappertypes';
-import Link from 'next/link'
 import { createStreetURL } from '../../../lib/urlutil';
 import { I18N } from "../../../lib/i18n";
 
 
 // sort out the wrong ones
 function filter(streets: StreetSummary[], districtSlug: string) {
-  let filtered = [] as StreetSummary[];
+  const filtered = [] as StreetSummary[];
   streets.map(street => {
     street.districtRefCollection.items.map(item =>
      (item.slug === districtSlug) && filtered.push(street)
@@ -28,7 +27,7 @@ type AllDistrictProps = {
 }
 
 export function StreetsByDistrict(props: AllDistrictProps) {
-  let streets = filter(props.streets, props.district.fields.slug);
+  const streets = filter(props.streets, props.district.fields.slug);
   const t = new I18N(props.locale).getTranslator();
   return (
     <>

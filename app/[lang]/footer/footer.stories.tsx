@@ -1,4 +1,4 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import Footer  from './footer'
 
 
@@ -12,8 +12,8 @@ export default {
     component: Footer,
   } as Meta<typeof Footer>;
   
-  //👇 We create a “template” of how args map to rendering
-  const Template: StoryFn<typeof Footer> = (args) => <Footer {...args} />;
+  //👇 We create a "template" of how args map to rendering
+  const Template: StoryFn<typeof Footer> = (args: any) => <Footer {...args} />;
   
   export const Basic = Template.bind({});
   

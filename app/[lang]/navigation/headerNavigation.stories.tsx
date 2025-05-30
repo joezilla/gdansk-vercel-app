@@ -1,12 +1,12 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 
 import HeaderNavigationModule from './headerNavigation'
 
 
 // load sample data
-const hydrated = require("../../../content/contentful/homepage-post.json");
-let post = {
+import hydrated from '../../../content/contentful/homepage-post.json';
+const post = {
   ...hydrated,
   toPlainObject(): object {
     return this;
@@ -14,7 +14,7 @@ let post = {
   update(): Promise<IPost> {
     throw new Error("Method not implemented.");
   }
-}
+} as unknown as Partial<IPost>;
 
 
 //👇 This default export determines where your story goes in the story list
@@ -27,7 +27,7 @@ export default {
     component: HeaderNavigationModule,
   } as Meta<typeof HeaderNavigationModule>;
   
-  //👇 We create a “template” of how args map to rendering
+  //👇 We create a "template" of how args map to rendering
   const Template: StoryFn<typeof HeaderNavigationModule> = (args) => <HeaderNavigationModule {...args} />;
   
   export const Basic = Template.bind({});

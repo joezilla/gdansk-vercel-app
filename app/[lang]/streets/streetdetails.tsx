@@ -1,5 +1,5 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { IStreet, IImageWithFocalPoint, IDistrict } from '../../../lib/contentmodel/wrappertypes';
+import { IStreet, IDistrict } from '../../../lib/contentmodel/wrappertypes';
 import { RichtextComponent } from '../contentful'
 import { DistrictNames } from './districtNames'
 import { GoogleMap } from './googleMap'
@@ -7,17 +7,6 @@ import React from "react";
 import { I18N } from "../../../lib/i18n";
 import Lightbox2 from './lightbox';
 
-// image for carousel
-function renderImage(image: IImageWithFocalPoint) {
-  return (
-    <div className="mb-4" key={image.sys.id}>
-      <a className="example-image-link" href={image.fields.image.fields.file?.url as string} data-lightbox="street-pics" data-title={`${image.fields.title}, Source: ${image.fields.source ?? "-"}`}>
-        <img alt={image.fields.title} key={image.sys.id} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={image.fields.image.fields.file?.url as string} />
-        <span className="text-xs">Source: {image.fields.source}</span>
-      </a>
-    </div>
-  )
-}
 
 type StreetDetailProps = {
   street: IStreet,

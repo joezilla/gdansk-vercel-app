@@ -2,8 +2,8 @@
  * Summary module that shows all available streets in 3 columns
  * and links to the individual street pages.
  */
-import { IDistrict, IStreet } from '../../../lib/contentmodel/wrappertypes';
-import { createDistrictURL, createStreetURL } from '../../../lib/urlutil';
+import { IStreet } from '../../../lib/contentmodel/wrappertypes';
+import { createDistrictURL } from '../../../lib/urlutil';
 // import { I18N } from "../../lib/i18n";
 
 type DistrictProps = {
