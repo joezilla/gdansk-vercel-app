@@ -1,7 +1,7 @@
 'use client';
 
 import { Locale } from "../../../i18n-config";
-import { liteClient as algoliasearch } from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite';
 import React, { use } from 'react';
 import { Pagination, Hits, Configure, RefinementList } from 'react-instantsearch';
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
