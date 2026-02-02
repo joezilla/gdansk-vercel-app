@@ -13,15 +13,15 @@ const cache = new ObjectCache();
 // util
 
 // //// algolia
-import algoliasearch from 'algoliasearch';
+import { algoliasearch } from 'algoliasearch';
 const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "");
 
-const algoliaIndexEn = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-en-US" ?? "");
-const algoliaIndexDe = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-de" ?? "");
+const indexNameEn = (process.env.ALGOLIA_INDEX_NAME ?? "") + "-en-US";
+const indexNameDe = (process.env.ALGOLIA_INDEX_NAME ?? "") + "-de";
 
-log.info(`Feeding into algolia with app id ${searchClient.appId} and index ${process.env.ALGOLIA_INDEX_NAME}`);
+log.info(`Feeding into algolia with index ${process.env.ALGOLIA_INDEX_NAME}`);
 
 
 // //// contentful client
@@ -76,7 +76,7 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
 
     async delete(id: string) {
         log.debug(`deleting entry ${id}`);
-        await this.getIndex().deleteObject(id);
+        await searchClient.deleteObject({ indexName: this.getIndexName(), objectID: id });
     }
 
     async doIndex(toIndex: AbstractIndexObject) {
@@ -84,10 +84,7 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
             log.error("Validation failed for", toIndex);
             throw new Error("invalid object");
         }
-        // log.debug("indexing", toIndex);
-        let response = await this.getIndex().saveObject(toIndex);
-
-      //  let response = { "result": this.getIndex().indexName };
+        const response = await searchClient.saveObject({ indexName: this.getIndexName(), body: toIndex });
         log.debug("response", response);
     }
 
@@ -95,12 +92,11 @@ export abstract class AbstractFeeder<T> implements Feeder<T> {
         this.locale = loc;
     }
 
-    getIndex() {
-        // console.log(`** Locale is ${this.locale}`);
+    getIndexName() {
         if (this.locale === "en-US" || this.locale === "en")
-            return algoliaIndexEn;
+            return indexNameEn;
         if (this.locale === "de")
-            return algoliaIndexDe;
+            return indexNameDe;
         throw "Locale not defined!!!!";
     }
 
@@ -151,7 +147,7 @@ export class IndexingController {
     }
 
     public async delete(data: FeederObject) {
-        let feeder = this.getFeeder(data.objectType);
+        const feeder = this.getFeeder(data.objectType);
         if (!feeder) {
             log.error(`Cannot find feeder for type #{data.objectType}`);
             throw new Error("no feeder found");
@@ -160,7 +156,7 @@ export class IndexingController {
     }
 
     public async index(data: FeederObject) {
-        let dependencyManager = new DefaultDependencyManager();
+        const dependencyManager = new DefaultDependencyManager();
 
         if ("Asset" === data.contentType) {
 
@@ -175,7 +171,7 @@ export class IndexingController {
 
         } else if ("Entry" === data.contentType) {
 
-            let feeder = this.getFeeder(data.objectType);
+            const feeder = this.getFeeder(data.objectType);
             if (!feeder) {
                 throw new Error("no feeder found");
             }
@@ -196,11 +192,11 @@ export class IndexingController {
     }
 
     public async indexAll(type: string, locale: string) {
-        let dependencyManager = new DefaultDependencyManager();
+        const dependencyManager = new DefaultDependencyManager();
         let offset = 0;
         let batch = 0;
         // find the right feeder for this type
-        let feeder = this.getFeeder(type);
+        const feeder = this.getFeeder(type);
         feeder?.setLocale(locale);
         if (!feeder) {
             throw new Error("no feeder found");

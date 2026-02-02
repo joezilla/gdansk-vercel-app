@@ -104,7 +104,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         let offset = 0;
         let result = [] as StreetSummary[];
         do {
-            let currentResult = await this.fetchGraphQL(
+            const currentResult = await this.fetchGraphQL(
                 `query {
                     streetCollection(limit: ${batchSize}, skip: ${offset} preview: ${preview ? 'true' : 'false'}) {
                         items {
@@ -295,7 +295,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         return await cache.getCachedEntry(cacheKey, ['districts'], async () => {
             let result = [] as DistrictSummary[];
             
-            let currentResult = await this.fetchGraphQL(
+            const currentResult = await this.fetchGraphQL(
                 `query {
                         districtCollection(limit: 50) {
                             items {

@@ -8,9 +8,9 @@ afterEach(async() => {
 
 // test loading by name
 test('getStreetByName', async () => {
-    let loader = new AlgoliaApi("en-US");
+    const loader = new AlgoliaApi("en-US");
 
-    var result = await loader.getStreetsWithImages();
+    const result = await loader.getStreetsWithImages();
 
 
     // no test yet... :()

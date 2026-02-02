@@ -14,13 +14,13 @@ export async function GET() {
 export async function POST(req: NextRequest) {
     const API_KEY = process.env.API_KEY;
 
-    const headersList = headers();
+    const headersList = await headers();
     const secret = headersList.get("apisecret");
 
     if (secret === API_KEY) {
         const fromHook = await req.json()
-        var slug = fromHook.fields.slug['en-US'];
-        var type = fromHook.sys.contentType.sys.id;
+        const slug = fromHook.fields.slug['en-US'];
+        const type = fromHook.sys.contentType.sys.id;
         log.info(`Revalidating type ${type} and slug ${slug}`);
         
         // clear object cache, nuclear option

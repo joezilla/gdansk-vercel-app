@@ -8,7 +8,7 @@ declare const cookieconsent: any;
 export default function ConsentBanner({ locale }: { locale: string }) {
     useEffect(() => {
         const runCookieConsent = () => {
-            let palette = (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && 
+            const palette = (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) &&
                     window.matchMedia('(prefers-color-scheme: dark)').matches)) ? "dark" : "light";
             cookieconsent.run({
                 "notice_banner_type": "simple",

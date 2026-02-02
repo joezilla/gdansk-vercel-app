@@ -15,10 +15,10 @@ interface BucketType {
 
 // buckets the streets by alphabet and then sorts each array in the bucket
 function sort2({ streets }: { streets: StreetSummary[] }) {
-  let buckets = {} as BucketType;
+  const buckets = {} as BucketType;
 
   streets.map(s => {
-    var firstLetter = s.germanName.trim().charAt(0);
+    const firstLetter = s.germanName.trim().charAt(0);
     if (!buckets[firstLetter]) {
       buckets[firstLetter] = new Array();
     }
@@ -29,7 +29,7 @@ function sort2({ streets }: { streets: StreetSummary[] }) {
   letters.map(l => {
     if (buckets[l]) {
       buckets[l].sort((a, b) => {
-        let fa = a.germanName.toLowerCase(),
+        const fa = a.germanName.toLowerCase(),
             fb = b.germanName.toLowerCase();
         if (fa < fb) {
           return -1;
@@ -54,8 +54,8 @@ type AllStreetsProps = {
 
 // todo: add i18n
 export function StreetOverview(props: AllStreetsProps) {
-  let streets = props.streets;
-  var sorted = sort2({ streets })
+  const streets = props.streets;
+  const sorted = sort2({ streets })
   return (
     <div className="dark:bg-mybg-dark dark:text-mytxt-dark">
       <div className="dark:text-white">

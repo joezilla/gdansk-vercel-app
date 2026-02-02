@@ -10,7 +10,7 @@ type HeroPostProps = {
 }
 
 export function HeroPost(props: HeroPostProps) {
-  let locale = props.locale;
+  const locale = props.locale;
   return (
     <>
       <section className="bg-mybg-light dark:bg-mybg-dark">

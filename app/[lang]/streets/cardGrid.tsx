@@ -22,7 +22,7 @@ export function CardGrid(props: CardGridProps) {
   const [offset, setOffset] = useState(props.initialStreets.length);
   const [streets, setStreets] = useState<StreetSummary[]>(props.initialStreets);
   const { ref, inView } = useInView();
-  let t = new I18N(props.locale).getTranslator();
+  const t = new I18N(props.locale).getTranslator();
 
 
   const loadMoreStreets = async () => {

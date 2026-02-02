@@ -1,4 +1,4 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/nextjs-vite';
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 
 import HeaderNavigationModule from './headerNavigation'
@@ -6,7 +6,7 @@ import HeaderNavigationModule from './headerNavigation'
 
 // load sample data
 const hydrated = require("../../content/contentful/homepage-post.json");
-let post = {
+const post = {
   ...hydrated,
   toPlainObject(): object {
     return this;

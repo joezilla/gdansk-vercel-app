@@ -12,7 +12,7 @@ import { I18N } from "../../../lib/i18n";
 
 // sort out the wrong ones
 function filter(streets: StreetSummary[], districtSlug: string) {
-  let filtered = [] as StreetSummary[];
+  const filtered = [] as StreetSummary[];
   streets.map(street => {
     street.districtRefCollection.items.map(item =>
      (item.slug === districtSlug) && filtered.push(street)
@@ -28,7 +28,7 @@ type AllDistrictProps = {
 }
 
 export function StreetsByDistrict(props: AllDistrictProps) {
-  let streets = filter(props.streets, props.district.fields.slug);
+  const streets = filter(props.streets, props.district.fields.slug);
   const t = new I18N(props.locale).getTranslator();
   return (
     <>
@@ -41,8 +41,8 @@ export function StreetsByDistrict(props: AllDistrictProps) {
                 <h3 className="font-semibold hover:underline">{street.germanName}</h3>
                 <span className="text-sm">
                   <ul>
-                  {street.polishNames.map(p =>
-                    <li>{p}</li>
+                  {street.polishNames.map((p, index) =>
+                    <li key={index}>{p}</li>
                   )}
                   </ul>
                 </span>

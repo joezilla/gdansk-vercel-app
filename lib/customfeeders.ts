@@ -68,14 +68,14 @@ class StreetIndexObject extends AbstractIndexObject {
 export class StreetFeeder extends AbstractFeeder<IStreet> {
   async index(sourceObject: IStreet, dependencyManager: DependencyManager) {
 
-    var myTags: string[] = [];
+    const myTags: string[] = [];
     sourceObject.metadata?.tags?.forEach(tag => {
       myTags.push(tag.sys.id);
     });
 
-    var imagesToIndex: IndexImage[] = [];
+    const imagesToIndex: IndexImage[] = [];
     sourceObject.fields?.media?.forEach(image => {
-      var i = {
+      const i = {
         url: image.fields.image.fields.file?.url,
         title: image.fields.title,
         source: image.fields.source,
@@ -84,7 +84,7 @@ export class StreetFeeder extends AbstractFeeder<IStreet> {
       imagesToIndex.push(i);
     });
    
-    var toIndex = new StreetIndexObject({
+    const toIndex = new StreetIndexObject({
       objectID: sourceObject.sys.id,
       type: sourceObject.sys.contentType.sys.id,
       firstLetter: sourceObject.fields.germanName.charAt(0).toUpperCase(),
@@ -138,12 +138,12 @@ class PostIndexObject extends AbstractIndexObject {
 export class PostFeeder extends AbstractFeeder<IPost> {
   async index(sourceObject: IPost, dependencyManager: DependencyManager) {
 
-    var myTags: string[] = [];
+    const myTags: string[] = [];
     sourceObject.metadata?.tags?.forEach(tag => {
       myTags.push(tag.sys.id);
     });
 
-    var toIndex = new PostIndexObject({
+    const toIndex = new PostIndexObject({
       objectID: sourceObject.sys.id,
       type: sourceObject.sys.contentType.sys.id,
       title: sourceObject.fields.title,

@@ -20,10 +20,15 @@ export class I18N {
     "de": de_dict
   };
   private locale: string;
-  private fallbackLocale = "en-US";
+  private fallbackLocale = "en";
 
   constructor(locale: string) {
-    this.locale = locale;
+    // Normalize locale to match dictionary keys: "en-US" → "en", "" → "en"
+    if (locale === "en-US" || locale === "en" || locale === "") {
+      this.locale = "en";
+    } else {
+      this.locale = locale;
+    }
   }
 
   private getTranslation(key: string, dictionary: Record<string, any>) {

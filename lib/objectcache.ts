@@ -51,7 +51,7 @@ export class ObjectCache {
             if (timeout > 0 && entry.timestamp + timeout * 1000 < Date.now()) {
                 log.debug(`refreshing stale cache entry ${key}`);
                 // cache expired, reload the docume
-                var value = await fn(id);
+                const value = await fn(id);
                 // save back into cache
                 if (value)
                     await redisClient.set(key, JSON.stringify({ id, timestamp: Date.now(), value, tags }));
@@ -62,7 +62,7 @@ export class ObjectCache {
             }
         } else {
             log.debug(`cache miss for ${key}`);
-            var value = await fn(id);
+            const value = await fn(id);
             if (value)
                 await redisClient.set(key, JSON.stringify({ id, timestamp: Date.now(), value, tags }));
             return value;

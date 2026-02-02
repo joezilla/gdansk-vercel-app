@@ -1,4 +1,4 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/nextjs-vite';
 import { Document } from '@contentful/rich-text-types'
 
 import { RichtextComponent } from './richtextComponent'

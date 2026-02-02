@@ -1,10 +1,10 @@
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 import { HeroPost } from './heroPost'
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/nextjs-vite';
 
 // load sample data
 const hydrated = require("../../content/contentful/homepage-post.json");
-let post = {
+const post = {
   ...hydrated,
   toPlainObject(): object {
     return this;

@@ -1,3 +1,6 @@
+@reference "tailwindcss";
+@reference "../../styles/global.css";
+
 .markdown {
  /* @apply text-md leading-relaxed; */
   @apply dark:text-white;

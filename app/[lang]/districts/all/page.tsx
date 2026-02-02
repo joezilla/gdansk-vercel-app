@@ -22,11 +22,13 @@ import { createDistrictURL } from '../../../../lib/urlutil'
 //   locale: string
 // }
 
-export default async function Page({ params: { lang, slug }, }: { params: { lang: Locale, slug: string }; }) {
+export default async function Page({ params }: { params: Promise<{ lang: string, slug: string }> }) {
+  const { lang: langParam, slug } = await params;
+  const lang = langParam as Locale;
 
-  let loader = new ContentfulLoader(3600, lang);
+  const loader = new ContentfulLoader(3600, lang);
   const i18n = new I18N(lang).getTranslator();
-  let allDistricts = await loader.getAllDistricts();
+  const allDistricts = await loader.getAllDistricts();
 
   return (
     <section className="dark:bg-mybg-dark dark:text-mytxt-dark">

@@ -11,8 +11,8 @@ type PostProps = {
 
 // todo: make these individual card components
 export function MoreStories(props: PostProps) {
-  let { content, locale } = props;
-  let t = new I18N(props.locale).getTranslator();
+  const { content, locale } = props;
+  const t = new I18N(props.locale).getTranslator();
   return (
     <>
       <section className="dark:bg-mybg-dark dark:text-mytxt-dark">

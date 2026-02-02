@@ -10,7 +10,7 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 
 async function getStreetData(lang: Locale, slug: string) {
-  let loader = new ContentfulLoader(3600, lang);
+  const loader = new ContentfulLoader(3600, lang);
   const street = await loader.getStreetBySlug(slug);
   if (!street) {
     log.error(`Cannot find street ${slug}`);
@@ -19,18 +19,20 @@ async function getStreetData(lang: Locale, slug: string) {
   return street;
 }
 
-export async function generateMetadata({ params: { lang, slug }, }: { params: { lang: Locale, slug: string } }):
+export async function generateMetadata({ params }: { params: Promise<{ lang: string, slug: string }> }):
   Promise<Metadata> {
+  const { lang: langParam, slug } = await params;
+  const lang = langParam as Locale;
   //
   const street = await getStreetData(lang, slug);
   if (!street) return notFound();
 
-  let streetName = street.fields.germanName;
+  const streetName = street.fields.germanName;
   let image = "";
   if (street.fields.media && street.fields.media.length > 0) {
     image = street.fields.media[0].fields?.image?.fields?.file?.url as string ?? "";
   }
-  let polishName = street.fields.polishNames && street.fields.polishNames.length
+  const polishName = street.fields.polishNames && street.fields.polishNames.length
     > 0 ? street.fields.polishNames[0] : "";
 
   //
@@ -65,8 +67,10 @@ export async function generateMetadata({ params: { lang, slug }, }: { params: { 
   }
 }
 
-export default async function Page({ params: { lang, slug }, }:
-  { params: { lang: Locale, slug: string }; }) {
+export default async function Page({ params }:
+  { params: Promise<{ lang: string, slug: string }> }) {
+  const { lang: langParam, slug } = await params;
+  const lang = langParam as Locale;
 
   const street = await getStreetData(lang, slug);
   if (!street) return notFound();
@@ -83,8 +87,8 @@ export default async function Page({ params: { lang, slug }, }:
 }
 
 export async function generateStaticParams() {
-  let loader = new ContentfulLoader();
-  let allStreets = await loader.getAllStreets();
+  const loader = new ContentfulLoader();
+  const allStreets = await loader.getAllStreets();
 
   return allStreets?.flatMap((street: any) => [
     { lang: 'de', slug: String(street.slug) },

@@ -11,7 +11,7 @@ import { I18N } from '../../../../lib/i18n';
 import { RichtextComponent } from '../../contentful';
 
 async function getDistrictData(lang: Locale, slug: string) {
-  let loader = new ContentfulLoader(3600, lang);
+  const loader = new ContentfulLoader(3600, lang);
   const district = await loader.getDistrictBySlug(slug);
   if (!district) {
     log.error(`Cannot find district ${slug}`);
@@ -21,13 +21,15 @@ async function getDistrictData(lang: Locale, slug: string) {
 }
 
 
-export async function generateMetadata({ params: { lang, slug }, }: { params: { lang: Locale, slug: string } }):
+export async function generateMetadata({ params }: { params: Promise<{ lang: string, slug: string }> }):
   Promise<Metadata> {
+  const { lang: langParam, slug } = await params;
+  const lang = langParam as Locale;
   //
   const district = await getDistrictData(lang, slug);
   if (!district) return notFound();
 
-  let districtName = district.fields?.name;
+  const districtName = district.fields?.name;
   let image = "";
   if (district.fields.media && district.fields.media.length > 0) {
     image = district.fields.media[0].fields?.image?.fields?.file?.url as string ?? "";
@@ -64,13 +66,15 @@ export async function generateMetadata({ params: { lang, slug }, }: { params: { 
   }
 }
 
-export default async function Page({ params: { lang, slug }, }: { params: { lang: Locale, slug: string }; }) {
+export default async function Page({ params }: { params: Promise<{ lang: string, slug: string }> }) {
+  const { lang: langParam, slug } = await params;
+  const lang = langParam as Locale;
 
   const district = await getDistrictData(lang, slug);
   if (!district) return notFound();
 
-  let loader = new ContentfulLoader(3600, lang);
-  let allStreets = await loader.getAllStreets();
+  const loader = new ContentfulLoader(3600, lang);
+  const allStreets = await loader.getAllStreets();
 
   return (
     <section className="dark:bg-mybg-dark dark:text-gray-100">
@@ -90,8 +94,8 @@ export default async function Page({ params: { lang, slug }, }: { params: { lang
 }
 
 export async function generateStaticParams() {
-  let loader = new ContentfulLoader();
-  let allDistricts = await loader.getAllDistricts();
+  const loader = new ContentfulLoader();
+  const allDistricts = await loader.getAllDistricts();
   
   return allDistricts?.flatMap((district: any) => [
     { lang: 'de', slug: String(district.slug) },

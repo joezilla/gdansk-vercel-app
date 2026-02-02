@@ -9,7 +9,9 @@ import { CardGrid } from './streets/cardGrid'
 import { Locale } from "../../i18n-config";
 import { I18N } from '../../lib/i18n'
 
-export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: langParam } = await params;
+  const lang = langParam as Locale;
   const i18n = new I18N(lang).getTranslator();
   // You can fetch data here if needed for dynamic metadata
   return {
@@ -40,8 +42,10 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
   }
 }
 
-export default async function Page({ params: { lang } }: { params: { lang: Locale } }) { 
-  let loader = new ContentfulLoader(3600, lang);
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: langParam } = await params;
+  const lang = langParam as Locale;
+  const loader = new ContentfulLoader(3600, lang);
 
   const allPosts = await loader.getHomepagePosts() ?? []
   const heroPost = await loader.getHomepageHeroPost();

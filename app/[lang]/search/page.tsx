@@ -1,8 +1,8 @@
 'use client';
 
 import { Locale } from "../../../i18n-config";
-import algoliasearch from 'algoliasearch/lite';
-import React from 'react';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
+import React, { use } from 'react';
 import { Pagination, Hits, Configure, RefinementList } from 'react-instantsearch';
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
 
@@ -14,8 +14,9 @@ const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "undefined",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "undefined");
 
-export default function Page({ params: { lang } }:
-    { params: { lang: Locale } }) {
+export default function Page({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang: langParam } = use(params);
+    const lang = langParam as Locale;
 
     const indexName = lang == "en" ? `${process.env.ALGOLIA_INDEX_NAME}-en-US` : `${process.env.ALGOLIA_INDEX_NAME}-de`;
     const t = new I18N(lang).getTranslator();

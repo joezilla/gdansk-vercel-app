@@ -8,19 +8,19 @@ import { NextRequest } from 'next/server';
 
 import { StreetAPIResponse, StreetSummary } from '../../../../types/streetApi'
 
-export async function GET(req: NextRequest, {params} : {params: { offset: string}}) {
+export async function GET(req: NextRequest, {params} : {params: Promise<{ offset: string}>}) {
 
-    try {       
-        let offset = params.offset;
-        var locale = "en-US";
-    
+    try {
+        const { offset } = await params;
+        const locale = "en-US";
+
         //console.log(`Calling with locale ${locale} and offset ${offset}`);
 
-        let loader = new AlgoliaApi(locale);
-        
-        var apiResult = await loader.getStreetsWithImages(Number(offset));
-    
-        var data: StreetSummary[]  = [];
+        const loader = new AlgoliaApi(locale);
+
+        const apiResult = await loader.getStreetsWithImages(Number(offset));
+
+        const data: StreetSummary[]  = [];
 
         apiResult.forEach((e) =>
             data.push({
@@ -31,7 +31,7 @@ export async function GET(req: NextRequest, {params} : {params: { offset: string
             })
         );
 
-        var response: StreetAPIResponse = {
+        const response: StreetAPIResponse = {
             success: true,
             message: "ok",
             total_streets: data.length,
@@ -40,17 +40,17 @@ export async function GET(req: NextRequest, {params} : {params: { offset: string
         }
 
         return Response.json(response);
-   
+
     } catch (err) {
         log.error("Error in handler", (err as Error));
-        var response: StreetAPIResponse = {
+        const errorResponse: StreetAPIResponse = {
             success: false,
             message: "Error in handler: " + err,
             total_streets: -1,
             offset: -1,
             streets: []
         }
-        return Response.json(response);
+        return Response.json(errorResponse);
     }
 
 

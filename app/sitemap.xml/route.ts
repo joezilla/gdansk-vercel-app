@@ -17,7 +17,7 @@ export async function GET() {
 }
 
 async function generateSitemap() {
-  let loader = new ContentfulLoader();
+  const loader = new ContentfulLoader();
   const allStreets = (await loader.getAllStreets()) ?? []
   const allPosts = (await loader.getAllPosts()) ?? []
 

@@ -7,15 +7,15 @@ afterEach(async () => {
 
 // test loading by name
 test('testCacheDisabled', async () => {
-    let loader = new ObjectCache();
+    const loader = new ObjectCache();
 
     await loader.invalidate("test");
 
-    let first = await loader.getCachedEntry("test", [], () => {
+    const first = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, -1);
 
-    let second = await loader.getCachedEntry("test", [], () => {
+    const second = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, -1);
 
@@ -23,15 +23,15 @@ test('testCacheDisabled', async () => {
 });
 
 test('testCacheAlways', async () => {
-    let loader = new ObjectCache();
+    const loader = new ObjectCache();
 
     await loader.invalidate("test");
 
-    let first = await loader.getCachedEntry("test", [], () => {
+    const first = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, 0);
 
-    let second = await loader.getCachedEntry("test", [], () => {
+    const second = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, 0);
 
@@ -43,15 +43,15 @@ test('testCacheAlways', async () => {
 
 
 test('testInvalidation', async () => {
-    let loader = new ObjectCache();
+    const loader = new ObjectCache();
 
-    let first = await loader.getCachedEntry("test", [], () => {
+    const first = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, 0);
 
     await loader.invalidate("test");
 
-    let second = await loader.getCachedEntry("test", [], () => {
+    const second = await loader.getCachedEntry("test", [], () => {
         return Date.now();
     }, 0);
 
@@ -62,7 +62,7 @@ test('testInvalidation', async () => {
 });
 
 test('manualCache', async () => {
-    let loader = new ObjectCache(500);
+    const loader = new ObjectCache(500);
 
     await loader.invalidate("test");
 

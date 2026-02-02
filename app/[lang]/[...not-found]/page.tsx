@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import { Locale } from "../../../i18n-config";
 
-export default function NotFound({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function NotFound({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang: langParam } = await params;
+    const lang = langParam as Locale;
     return (
         <div className="flex items-center justify-center py-20">
             <div className="text-center">
@@ -11,7 +13,7 @@ export default function NotFound({ params: { lang } }: { params: { lang: Locale 
                     <img src="/resources/images/confused.webp" alt="Confused face" className="w-64 h-64" />
                 </div>
                 <p className="text-xl text-gray-500 dark:text-gray-500">
-                    Oops! The page you're looking for doesn't exist. Try the <a href={`/${lang}/streets/all`}>Street Overview</a>.
+                    Oops! The page you&apos;re looking for doesn&apos;t exist. Try the <a href={`/${lang}/streets/all`}>Street Overview</a>.
                 </p>
             </div>
         </div>

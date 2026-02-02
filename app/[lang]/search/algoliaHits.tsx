@@ -3,8 +3,8 @@ import { createPostURL, createStreetURL } from '../../../lib/urlutil';
 import { FancyCard } from "../cards/fancycard";
 
 function renderImageUrl(hit: any, locale: string) {
-  var url = hit.images && hit.images.length > 0 ? hit.images[0].url : "/resources/images/No-Image-Placeholder.png"    
-  var imageUrl = url;
+  const url = hit.images && hit.images.length > 0 ? hit.images[0].url : "/resources/images/No-Image-Placeholder.png"
+  let imageUrl = url;
   if(/^\/\/.*/.test(url)) {
     imageUrl = `https:${url}`;
   }  
@@ -12,7 +12,7 @@ function renderImageUrl(hit: any, locale: string) {
 }
 
 export default function CustomHit({ hit }: {hit:any}) {
-  let lang = "en"; // todo - fix, prob just get from url
+  const lang = "en"; // todo - fix, prob just get from url
   return (
     <>
       {/* STREET */}

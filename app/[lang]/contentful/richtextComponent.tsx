@@ -203,7 +203,7 @@ export type RichtextProps = {
 }
 
 export function RichtextComponent(props: RichtextProps) {
-    let options = new MyOptions(props.locale);
+    const options = new MyOptions(props.locale);
     if (props.content) {
         return (
             <div className={markdownStyles['markdown']}>

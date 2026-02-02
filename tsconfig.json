@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "lib": [
       "dom",
       "dom.iterable",
@@ -13,7 +13,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -31,6 +31,14 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "ai-disabled",
+    "app/[lang]/find",
+    "app/[lang]/chat",
+    "app/[lang]/search2",
+    "app/[lang]/test",
+    "app/api/(llm)",
+    "scripts",
+    "contentful/translate.tsx"
   ]
 }

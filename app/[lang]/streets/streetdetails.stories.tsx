@@ -1,10 +1,10 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/nextjs-vite';
 import { IStreet } from '../../../lib/contentmodel/wrappertypes';
 import { StreetDetail } from './streetdetails'
 
 // # sample data
 const hydrated = require("../../content/contentful/Abbegg-Gasse.json");
-let aStreet = {
+const aStreet = {
   ...hydrated,
   toPlainObject(): object {
     return this;

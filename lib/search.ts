@@ -9,17 +9,13 @@ import { StreetSummary } from '../types/streetApi'
 // util
 
 // //// algolia
-import algoliasearch from 'algoliasearch';
+import { algoliasearch } from 'algoliasearch';
 const searchClient = algoliasearch(
     process.env.ALGOLIA_APP_ID ?? "",
     process.env.ALGOLIA_ACCESS_TOKEN ?? "");
 
-const algoliaIndexEn = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-en-US" ?? "");
-const algoliaIndexDe = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME + "-de" ?? "");
-
-type AlgoliaHits = {
-    hits: AlgoliaHit[];
-};
+const indexNameEn = (process.env.ALGOLIA_INDEX_NAME ?? "") + "-en-US";
+const indexNameDe = (process.env.ALGOLIA_INDEX_NAME ?? "") + "-de";
 
 type AlgoliaHit = {
     identifier: string;
@@ -45,40 +41,39 @@ type SimpleStreetHit = {
 export class AlgoliaApi {
     constructor(private locale: string = "en-US") { }
 
-    public getIndex() {
+    public getIndexName() {
         console.log(`Locale is ${this.locale}`);
         if (this.locale === "en-US" || this.locale === "en")
-            return algoliaIndexEn;
+            return indexNameEn;
         if (this.locale === "de")
-            return algoliaIndexDe;
+            return indexNameDe;
         throw `Locale ${this.locale} not defined or supported for algolia indexing.`;
     }
 
     /**
-     * 
+     *
      * @param offset returns IStreet objects in an array
      */
     public async getStreetsWithImages(offset: number = 0, count: number = 6) {
 
-        const content: AlgoliaHits = await this.getIndex().search("",
-            {
+        const content = await searchClient.searchSingleIndex<AlgoliaHit>({
+            indexName: this.getIndexName(),
+            searchParams: {
+                query: "",
                 offset: offset,
                 length: count,
                 filters: 'hasImages = 1',
-                facetFilters: 'type:street'
-            });
+                facetFilters: ['type:street']
+            }
+        });
 
-        // content.hits.forEach((x) =>
-        //     console.log(x.images[0])
-        // );
-
-        var data: StreetSummary[] = [];
+        const data: StreetSummary[] = [];
 
         content.hits.forEach((e) => {
 
             console.debug(e);
 
-            var imageUrl;
+            let imageUrl;
             if (/^(https?:).*/.test(e.images[0].url)) {
                 imageUrl = e.images[0].url;
             } else {

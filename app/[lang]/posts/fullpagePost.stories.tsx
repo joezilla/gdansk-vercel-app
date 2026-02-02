@@ -1,10 +1,10 @@
-import { StoryObj, StoryFn, Meta } from '@storybook/react';
+import { StoryObj, StoryFn, Meta } from '@storybook/nextjs-vite';
 import { FullpagePost } from './fullpagePost'
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 
 // # sample data
 const hydrated = require("../../content/contentful/richtext-test.json");
-let post = {
+const post = {
   ...hydrated,
   toPlainObject(): object {
     return this;

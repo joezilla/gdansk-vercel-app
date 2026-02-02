@@ -15,9 +15,9 @@ const MAX_PAGES = 7;
  */
 function renderButtons(currentRefinement: number, createURL: any, nbPages: number) {
     // upper and lower bounds for pagination
-    let lowerBound = Math.max(1, currentRefinement - 3);
-    let upperBound = Math.max(nbPages, currentRefinement + 3);
-    let showPages = Math.min(MAX_PAGES, upperBound - lowerBound + 1);
+    const lowerBound = Math.max(1, currentRefinement - 3);
+    const upperBound = Math.max(nbPages, currentRefinement + 3);
+    const showPages = Math.min(MAX_PAGES, upperBound - lowerBound + 1);
 
     // console.log("lower bound is " + lowerBound);
     // console.log("current refinement: " + currentRefinement);

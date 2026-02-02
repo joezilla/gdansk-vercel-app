@@ -1,11 +1,82 @@
-/* purgecss start ignore */
-@tailwind base;
-@tailwind components;
-/* purgecss end ignore */
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "flowbite/plugin";
+
+@variant dark (&:where(.dark, .dark *));
+
+@source "../../node_modules/flowbite/**/*.{js,jsx,ts,tsx}";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@theme {
+  /* gray overrides (800 set to black for flowbite compat) */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #000;
+  --color-gray-900: #111827;
+
+  /* custom text color palette (mytxt) — maps to neutral */
+  --color-mytxt-light: #000;
+  --color-mytxt: #000;
+  --color-mytxt-dark: #fff;
+  --color-mytxt-100: #f5f5f5;
+  --color-mytxt-200: #e5e5e5;
+  --color-mytxt-300: #d4d4d4;
+  --color-mytxt-400: #a3a3a3;
+  --color-mytxt-500: #737373;
+  --color-mytxt-600: #525252;
+  --color-mytxt-700: #404040;
+  --color-mytxt-800: #262626;
+  --color-mytxt-900: #171717;
+
+  /* custom background palette (mybg) — maps to zinc */
+  --color-mybg-light: #fff;
+  --color-mybg: #000;
+  --color-mybg-dark: #000;
+  --color-mybg-100: #f4f4f5;
+  --color-mybg-200: #e4e4e7;
+  --color-mybg-300: #d4d4d8;
+  --color-mybg-400: #a1a1aa;
+  --color-mybg-500: #71717a;
+  --color-mybg-600: #52525b;
+  --color-mybg-700: #3f3f46;
+  --color-mybg-800: #27272a;
+  --color-mybg-900: #18181b;
+
+  /* accent */
+  --color-accent-light: #dc2626;
+  --color-accent: #dc2626;
+  --color-accent-dark: #dc2626;
+
+  /* header */
+  --color-header-light: #fff;
+  --color-header: #111827;
+  --color-header-dark: #111827;
+
+  /* spacing */
+  --spacing-28: 7rem;
+
+  /* letter-spacing */
+  --tracking-tighter: -.04em;
+
+  /* line-height */
+  --leading-tight: 1.2;
+
+  /* font-size */
+  --text-5xl: 2.5rem;
+  --text-6xl: 2.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6.25rem;
+
+  /* box-shadow */
+  --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
 
 /** ***** */
 /* grid */
@@ -74,26 +145,18 @@
 .streetInfoTable th {
   width: 250px;
   text-align: left;
-  /*@apply text-2xl;*/
 }
 
 .streetInfoTable td {
   text-align: left;
-  /* @apply text-2xl;*/
 }
 
 .columnX {
-  /* flex-direction: column;
-    height: 400px;*/
 }
 
 .itemX {
-  /* width: 100px;
-    height: 100px;*/
   padding: 10px;
 }
-
-
 
 
 #scrollBtn {
@@ -128,100 +191,4 @@ body {
 
 p {
   margin: 0 0 1em 0;
-}
-
-/* the header menu */
-
-/** hamburger **/
-/* Position and sizing of burger button */
-.bm-burger-button {
-  position: relative;
-  width: 36px;
-  height: 30px;
-  right: 0px;
-  top: 0px;
-}
-
-/* Color/shape of burger icon bars */
-
-@media (prefers-color-scheme: dark) {
-  .bm-burger-bars {
-    background: #fff;
-  }
-
-  .bm-menu {
-    background: #1f2937;
-  }
-
-  .list-menu li a {
-    color: #fff;
-  }
-
-}
-
-@media (prefers-color-scheme: light) {
-  .bm-burger-bars {
-    background: #ccc;
-  }
-
-  .bm-menu {
-    background: #fff;
-  }
-
-}
-
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-  background: #a90000;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  background: #bdc3c7;
-}
-
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
-.bm-menu-wrap {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  height: 100%;
-}
-
-/* General sidebar styles */
-.bm-menu {
-  padding: 1.5em 0.5em 0;
-  font-size: 1.5em;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: #000;
-  padding: 0.8em;
-}
-
-/* Individual item */
-.bm-item {
-  display: inline-block;
-  padding: 0.8em;
-  border-bottom: 1px solid #ccc;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
 }

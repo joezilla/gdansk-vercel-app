@@ -18,13 +18,13 @@ export async function GET() {
 export async function POST(req: NextRequest) {
     const API_KEY = process.env.API_KEY;
 
-    const headersList = headers();
+    const headersList = await headers();
     const secret = headersList.get("apisecret");
 
     if (secret === API_KEY) {
         const fromHook = await req.json()
-        var slug = fromHook.fields.slug['en-US'];
-        var type = fromHook.sys.contentType.sys.id;
+        const slug = fromHook.fields.slug['en-US'];
+        const type = fromHook.sys.contentType.sys.id;
         log.info(`Reindex type ${type} and slug ${slug}`);
         
         // re-validate paths 
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
 function doReindex(type: string, slug: string) {
     
 
-    let ic = new IndexingController();
+    const ic = new IndexingController();
     // register the two feeders available
     ic.addFeeder("street", new StreetFeeder());
     ic.addFeeder("post", new PostFeeder());
