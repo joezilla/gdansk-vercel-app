@@ -21,14 +21,16 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang: langParam } = await params;
+  const lang = langParam as Locale;
   // load static navigation posts
-  const loader = new ContentfulLoader(3600, params.lang);
+  const loader = new ContentfulLoader(3600, lang);
   const navigationPosts = await loader.getNavigationPosts();
   //
   return (
-    <html lang={params.lang}>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -39,7 +41,6 @@ export default async function RootLayout({
         }} />
         <script type='text/javascript' src='/resources/scripts/freshworks.js' />
         <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' />
-        <link href="/resources/lb2/css/lightbox.css" rel="stylesheet" />
         {/* styles etc */}
         <link
           rel="apple-touch-icon"
@@ -71,15 +72,14 @@ export default async function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body>
-        <ConsentBanner locale={params.lang} />
+        <ConsentBanner locale={lang} />
         <GoogleTagManager gtmId='GTM-W6NVS67' />
         <div className="flex flex-col h-full dark:bg-mybg-dark h-screen dark:text-mytxt-dark">
-          <HeaderNavigationModule navigationPosts={navigationPosts} locale={params.lang} />
+          <HeaderNavigationModule navigationPosts={navigationPosts} locale={lang} />
           <main className="py-0">{children}</main>
-          <Footer locale={params.lang} />
+          <Footer locale={lang} />
         </div>
-        <script type='text/javascript' src='/resources/lb2/js/lightbox-plus-jquery.js' />
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
       </body>
     </html>
   )

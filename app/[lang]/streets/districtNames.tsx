@@ -17,9 +17,7 @@ export function DistrictNames(props: DistrictProps) {
     <>
     <ul>
       {props.street.fields.district_ref.map(d =>
-        <>
           <li key={d.fields.slug}><a className="hover:underline" href={createDistrictURL(d.fields.slug, props.locale)}>{d.fields.name}</a></li>
-        </>
       )}
       </ul>
 

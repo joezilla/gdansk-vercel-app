@@ -8,32 +8,28 @@ import React, { useState, useEffect } from 'react';
  */
 export function DarkmodeToggle() {
 
-    // use React state to manage it all
-    const [darkMode, setDarkMode] = React.useState(() => {
-        if (typeof window === "undefined") {
-            return false;
-        }
+    // Initialize to false on both server and client to avoid hydration mismatch.
+    // The actual theme is applied by the inline script in <head>, so there's no flash.
+    const [darkMode, setDarkMode] = React.useState(false);
+
+    // Sync state from localStorage/matchMedia after hydration
+    useEffect(() => {
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            return true;
+            setDarkMode(true);
         }
-        return false;
-    }
-    );
+    }, []);
 
     // allow toggle
     function handleToggle() {
-        setDarkMode(!darkMode);
-        if (typeof window !== "undefined") {
-            window.localStorage.setItem('color-theme', !darkMode ? 'dark' : 'light');
-        } else {
-            console.log("Cannot update local storage.");
-        }
+        const newMode = !darkMode;
+        setDarkMode(newMode);
+        window.localStorage.setItem('color-theme', newMode ? 'dark' : 'light');
     }
 
     // apply theme
     useEffect(() => {
         darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
-    }, [darkMode ? 'dark' : 'light']);
+    }, [darkMode]);
 
     // render the icon
     return (
