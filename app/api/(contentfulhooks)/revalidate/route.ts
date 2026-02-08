@@ -4,8 +4,7 @@
 import { log } from 'next-axiom'
 import { type NextRequest } from 'next/server'
 import { headers } from 'next/headers'
-import { revalidatePath } from 'next/cache';
-import { ObjectCache } from '../../../../lib/objectcache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 export async function GET() {
     return Response.json({ result: 'Unauthorized' }, { status: 403 })
@@ -23,10 +22,12 @@ export async function POST(req: NextRequest) {
         const type = fromHook.sys.contentType.sys.id;
         log.info(`Revalidating type ${type} and slug ${slug}`);
         
-        // clear object cache, nuclear option
-        new ObjectCache().clearCache();
+        // granular cache invalidation by content type
+        if (type === 'street') revalidateTag('streets');
+        else if (type === 'post') revalidateTag('posts');
+        else if (type === 'district') revalidateTag('districts');
 
-        // re-validate paths 
+        // re-validate paths
         doRevalidate(type, slug);
         
         return Response.json({ result: `Revalidated ${type} with slug ${slug}. Thank you.` }, { status: 200 });

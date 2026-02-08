@@ -1,14 +1,12 @@
 /**
  * Generic Algolia Indexer
  */
-import { ObjectCache } from "../lib/objectcache"
 import { Entry } from "contentful";
 import { isEmptyString } from "../lib/util";
+import { cached } from '../lib/contentful-cache';
 
 // logging
 import { log } from 'next-axiom'
-// object cache
-const cache = new ObjectCache();
 
 // util
 
@@ -176,10 +174,12 @@ export class IndexingController {
                 throw new Error("no feeder found");
             }
             // get entry
-            const entry = await cache.getCachedEntry(data.id, [ 'streets' ], () => {
-                // log.debug(`Querying contentful entry with id ${data.id}`);
-                return contentfulClient.getEntry(data.id);
-            }) as Entry<any>;
+            const entry = await cached(
+                () => contentfulClient.getEntry(data.id),
+                ['entry', data.id],
+                ['streets'],
+                0
+            ) as Entry<any>;
 
             // log.debug("Contentful returned", entry)
 

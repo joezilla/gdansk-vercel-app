@@ -14,11 +14,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.72.1",
     "@contentful/rich-text-react-renderer": "^16.1.6",
     "@formatjs/intl-localematcher": "^0.8.1",
     "@next/third-parties": "^15.5.11",
     "@tailwindcss/postcss": "^4.1.18",
-    "@upstash/redis": "^1.36.1",
     "@vis.gl/react-google-maps": "^1.7.1",
     "algoliasearch": "^5.47.0",
     "contentful": "^11.10.3",

@@ -5,7 +5,6 @@ import { log } from 'next-axiom'
 import { type NextRequest } from 'next/server'
 import { headers } from 'next/headers'
 import { revalidatePath } from 'next/cache';
-import { ObjectCache } from '../../../../../lib/objectcache';
 import { IndexingController } from '../../../../../lib/indexer';
 import { StreetFeeder, PostFeeder } from '../../../../../lib/customfeeders';
 

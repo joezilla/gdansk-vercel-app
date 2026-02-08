@@ -1,16 +1,13 @@
 /**
  * Contentful API wrapper and content access.
- * 
- * Uses contentful graphql and cf's javascript sdk to do the heavy lifting. 
- * The sdk doesn't work with fetch but axios which is why it's using its own caching
- * mechanism rather than using next js's. 
+ *
+ * Uses contentful graphql and cf's javascript sdk to do the heavy lifting.
+ * Non-fetch calls (SDK/axios) are cached via Next.js unstable_cache.
+ * GraphQL fetch() calls use native Next.js fetch cache with tags.
  */
 import { IStreet, IPost, IDistrict, StreetSummary, PostSummary, DistrictSummary } from './contentmodel/wrappertypes';
-import { ObjectCache } from './objectcache';
+import { cached } from './contentful-cache';
 
-
-// REDIS cache
-const cache = new ObjectCache();
 // logging
 import { log } from 'next-axiom'
 // contentful client
@@ -26,11 +23,11 @@ abstract class AbstractContentfulLoader {
 
     /**
      * Fetch via contentful graphql query.
-     * 
-     * @param query   - graphql query 
+     *
+     * @param query   - graphql query
      * @param preview -
      * @param tags    - cache invalidationTag
-     * @returns 
+     * @returns
      */
     public async fetchGraphQL(query: string, preview = false, tags: string[] = []) {
         return fetch(
@@ -51,11 +48,11 @@ abstract class AbstractContentfulLoader {
     }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////// 
-// 
-//////////////////////////////////////////////////////////////////////////////////////////////// 
+////////////////////////////////////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////////////////////////////////////
 
-////// 
+//////
 export class ContentfulLoader extends AbstractContentfulLoader {
 
     private cacheTimeout: number;
@@ -77,27 +74,25 @@ export class ContentfulLoader extends AbstractContentfulLoader {
 
     /**
      * Return all streets
-     * @param preview 
-     * @param limit up to how many to return, defaults to 2000
+     * @param preview
      * @returns StreetSummary[]
-     * @todo: add city name at some point
      */
     public async getAllStreets(preview = false) {
-        const cacheKey = "all-streets";
-        const entries = await cache.getCachedEntry(cacheKey, [ 'streets' ], () => {
-            return this.doGetStreets();
-        }, this.cacheTimeout);
+        const entries = await cached(
+            () => this.doGetStreets(100, preview),
+            ['all-streets'],
+            ['streets'],
+            this.cacheTimeout
+        );
         return entries as StreetSummary[];
     }
 
     /**
      * Get the streets in batches since there's an annoying query limit of 1000 results
      * in contentful's graphql api.
-     * 
-     * Uncached.
-     * 
-     * @param limit 
-     * @param preview 
+     *
+     * @param batchSize
+     * @param preview
      */
     private async doGetStreets(batchSize: number = 100, preview: boolean = false) {
         let currentBatchSize = 0;
@@ -108,7 +103,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 `query {
                     streetCollection(limit: ${batchSize}, skip: ${offset} preview: ${preview ? 'true' : 'false'}) {
                         items {
-                            germanName    
+                            germanName
                             polishNames
                             slug
                             districtRefCollection {
@@ -124,7 +119,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                     }`,
                     preview,
                     [ 'streets' ]
-                 
+
             )
             currentBatchSize = currentResult?.data?.streetCollection?.items?.length ?? 0;
             offset += currentBatchSize;
@@ -137,20 +132,17 @@ export class ContentfulLoader extends AbstractContentfulLoader {
 
     /**
     * Return all posts
-    * @param preview 
-    * @param limit up to how many to return, defaults to 2000
+    * @param preview
+    * @param limit up to how many to return, defaults to 1000
     * @returns PostSummary[]
-    * @todo: add city name at some point
     */
     public async getAllPosts(preview = false, limit = 1000) {
-        const cacheKey = "all-posts";
-
-        const entries = await cache.getCachedEntry(cacheKey, [ 'posts' ], () => {
-            return this.fetchGraphQL(
+        const entries = await cached(
+            () => this.fetchGraphQL(
                 `query {
                     postCollection(limit: ${limit}, preview: ${preview ? 'true' : 'false'}) {
                     items {
-                        title    
+                        title
                         slug
                         sys {
                             id
@@ -160,8 +152,11 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 }`,
                 preview,
                 ['posts']
-            )
-        }, this.cacheTimeout);
+            ),
+            ['all-posts'],
+            ['posts'],
+            this.cacheTimeout
+        );
         return entries?.data?.postCollection?.items as PostSummary[];
     }
 
@@ -169,29 +164,25 @@ export class ContentfulLoader extends AbstractContentfulLoader {
      * get a street object from contentful by name
      */
     public async getStreetBySlug(slug: string, locale: string = this.locale) {
-
-        // query by name
         const query = {
             content_type: 'street',
             'fields.slug': slug,
             'locale': locale,
         };
-        const cacheKey = "street-by-name-" + slug + "-" + locale;
 
-        const entry = await cache.getCachedEntry(cacheKey, [ 'streets' ], () => {
-            //const queryString = JSON.stringify(query);
-            return contentfulClient.getEntries(query).then((entries) => {
-                // check if we got a result
+        const entry = await cached(
+            () => contentfulClient.getEntries(query).then((entries) => {
                 return entries.items.length == 0 ? null : entries.items[0];
-            });
-
-        }, this.cacheTimeout) as IStreet;
+            }),
+            ['street-by-name', slug, locale],
+            ['streets'],
+            this.cacheTimeout
+        ) as IStreet;
         return entry;
     }
 
 
     /**
-     * 
      * @returns get the posts for the homepage
      */
     public async getHomepagePosts(locale: string = this.locale) {
@@ -201,20 +192,17 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             'fields.showIn': "Homepage",
             'fields.showIn[nin]': "Hero",
             'locale': locale,
-            // 'fields.showIn[nin]': "Hero",
             limit: 10
         };
-        const cacheKey = "homepage-posts-3-" + locale;
-        const entries = await cache.getCachedEntry(cacheKey, [ 'posts' ], () => {
-            //const queryString = JSON.stringify(query);
-            return contentfulClient.getEntries(query).then((entries) => {
-                // check if we got a result
+
+        const entries = await cached(
+            () => contentfulClient.getEntries(query).then((entries) => {
                 return entries.items;
-            });
-
-        }, 60 * 60 /* cache for an hour */);
-
-        // console.log("homepage posts", entries as IPost[]);
+            }),
+            ['homepage-posts', locale],
+            ['posts'],
+            3600
+        );
 
         return entries as IPost[];
     }
@@ -228,21 +216,18 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             limit: 1,
             'include': 2
         };
-        const cacheKey = "homepage-hero-post-" + locale;
-        const entry = await cache.getCachedEntry(cacheKey, [ 'posts' ], () => {
-            //const queryString = JSON.stringify(query);
-            return contentfulClient.getEntries(query).then((entries) => {
-                // check if we got a result
+
+        const entry = await cached(
+            () => contentfulClient.getEntries(query).then((entries) => {
                 return entries.items.length == 0 ? null : entries.items[0];
-            });
+            }),
+            ['homepage-hero-post', locale],
+            ['posts'],
+            3600
+        );
 
-        }, 60 * 60 /* cache for an hour */);
-        // ok
-
-        if (!entry || entry.length == 0) return [];
-        // just fetched one
-
-        return entry;
+        if (!entry) return null;
+        return entry as IPost;
     }
 
 
@@ -255,15 +240,15 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             'locale': locale,
             limit: 10
         };
-        const cacheKey = "navigation-posts-" + locale;
-        const entries = await cache.getCachedEntry(cacheKey, [ 'posts' ], () => {
-            //const queryString = JSON.stringify(query);
-            return contentfulClient.getEntries(query).then((entries) => {
-                // check if we got a result
-                return entries.items;
-            });
 
-        }, this.cacheTimeout);
+        const entries = await cached(
+            () => contentfulClient.getEntries(query).then((entries) => {
+                return entries.items;
+            }),
+            ['navigation-posts', locale],
+            ['posts'],
+            this.cacheTimeout
+        );
         return entries as IPost[];
     }
 
@@ -274,54 +259,57 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             'fields.slug': slug,
             'locale': locale,
         };
-        const cacheKey = "post-by-slug-" + slug + "-" + locale;
-        const entry = await cache.getCachedEntry(cacheKey, [ 'posts' ], () => {
-            // const queryString = JSON.stringify(query);
-            return contentfulClient.getEntries(query).then((entries) => {
-                // check if we got a result
+
+        const entry = await cached(
+            () => contentfulClient.getEntries(query).then((entries) => {
                 return entries.items.length == 0 ? null : entries.items[0];
-            });
-        }, this.cacheTimeout) as IPost;
+            }),
+            ['post-by-slug', slug, locale],
+            ['posts'],
+            this.cacheTimeout
+        ) as IPost;
         return entry;
     }
 
     /**
-     * 
-     * @param locale 
+     * @param locale
      * @returns array of DistrictSummary
      */
     public async getAllDistricts(locale: string = this.locale, preview: boolean = false) {
-        const cacheKey = `all-districts-${locale}-${preview}`;
-        return await cache.getCachedEntry(cacheKey, ['districts'], async () => {
-            let result = [] as DistrictSummary[];
-            
-            const currentResult = await this.fetchGraphQL(
-                `query {
-                        districtCollection(limit: 50) {
-                            items {
-                                slug    
-                                name
-                                polishName
-                                sys {
-                                    id
+        return await cached(
+            async () => {
+                let result = [] as DistrictSummary[];
+                const currentResult = await this.fetchGraphQL(
+                    `query {
+                            districtCollection(limit: 50) {
+                                items {
+                                    slug
+                                    name
+                                    polishName
+                                    sys {
+                                        id
+                                    }
                                 }
                             }
-                        }
-                        }`,
-                        preview,
-                        ['districts']
-            )
-            result = result.concat(currentResult?.data?.districtCollection?.items);
-            return result;
-        }, this.cacheTimeout) as DistrictSummary[];
+                            }`,
+                            preview,
+                            ['districts']
+                )
+                result = result.concat(currentResult?.data?.districtCollection?.items);
+                return result;
+            },
+            ['all-districts', locale, String(preview)],
+            ['districts'],
+            this.cacheTimeout
+        ) as DistrictSummary[];
     }
 
 
     /**
      * Retrieve a district by slug
-     * @param slug 
-     * @param locale 
-     * @returns 
+     * @param slug
+     * @param locale
+     * @returns
      */
     public async getDistrictBySlug(slug: string, locale: string = this.locale) {
         const query = {
@@ -329,14 +317,15 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             'fields.slug': slug,
             'locale': locale,
         };
-        const cacheKey = "district-by-slug-" + slug + "-" + locale;
-        const entry = await cache.getCachedEntry(cacheKey, [ 'districts' ], () => {
-            // const queryString = JSON.stringify(query);
-            return contentfulClient.getEntries(query).then((entries) => {
-                // check if we got a result
+
+        const entry = await cached(
+            () => contentfulClient.getEntries(query).then((entries) => {
                 return entries.items.length == 0 ? null : entries.items[0];
-            });
-        }, this.cacheTimeout) as IDistrict;
+            }),
+            ['district-by-slug', slug, locale],
+            ['districts'],
+            this.cacheTimeout
+        ) as IDistrict;
         return entry;
     }
 
