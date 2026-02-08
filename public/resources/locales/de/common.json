@@ -52,9 +52,17 @@
         
     },
     "search": {
-        "headline": "Suchergebnise",
+        "headline": "Suchergebnisse",
         "title": "Suche",
-        "description": "Suche nach Straßen, Menschen und Geschichte in Danzig auf Deutsch."
+        "description": "Suche nach Straßen, Menschen und Geschichte in Danzig auf Deutsch.",
+        "noResults": "Keine Ergebnisse gefunden",
+        "noResultsHint": "Versuchen Sie, Ihre Suche oder Filter anzupassen.",
+        "initialPrompt": "Beginnen Sie zu tippen, um Straßen und Artikel zu suchen.",
+        "resultCount": "{{ count }} Ergebnisse",
+        "resultCountSingular": "1 Ergebnis",
+        "showFilters": "Filter anzeigen",
+        "hideFilters": "Filter ausblenden",
+        "districts": "Stadtteile"
     },
     "streetsByDistrict":{
         "headline" : "Straßen in {{ district }}" 
