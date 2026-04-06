@@ -70,10 +70,12 @@ export async function generateStaticParams() {
   const loader = new ContentfulLoader()
   const allPosts = await loader.getAllPosts();
 
-  return allPosts?.flatMap((post: any) => [
-    { lang: 'de', slug: post.slug },
-    { lang: 'en', slug: post.slug }
-  ]) ?? [];
+  return (allPosts ?? [])
+    .filter((post: any) => post?.slug)
+    .flatMap((post: any) => [
+      { lang: 'de', slug: post.slug },
+      { lang: 'en', slug: post.slug }
+    ]);
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string, slug: string }> }) {

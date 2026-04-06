@@ -14,8 +14,8 @@ import { I18N } from "../../../lib/i18n";
 function filter(streets: StreetSummary[], districtSlug: string) {
   const filtered = [] as StreetSummary[];
   streets.map(street => {
-    street.districtRefCollection.items.map(item =>
-     (item.slug === districtSlug) && filtered.push(street)
+    (street.districtRefCollection?.items ?? []).map(item =>
+     (item?.slug === districtSlug) && filtered.push(street)
     );
   });
   return filtered;

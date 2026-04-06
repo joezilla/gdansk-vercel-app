@@ -12,6 +12,7 @@ import { NaturalImageComponent } from './imageComponent';
 import { log } from 'next-axiom'
 import Link from 'next/link'
 import { IImageWithFocalPoint } from '../../../lib/contentmodel/wrappertypes';
+import { normalizeContentfulImageUrl } from '../../../lib/imageUrl';
 
 function getContentTypeId(target: any): string | undefined {
     return target?.sys?.contentType?.sys?.id;
@@ -32,8 +33,7 @@ function renderLink(target: any, children: ReactNode, locale: string) {
 function getEntryImageUrl(target: any): string {
     const coverImage = target?.fields?.coverImage ?? target?.fields?.media?.[0]?.fields?.image;
     if (coverImage?.fields?.file?.url) {
-        const url = coverImage.fields.file.url as string;
-        return url.startsWith('//') ? `https:${url}` : url;
+        return normalizeContentfulImageUrl(coverImage.fields.file.url as string);
     }
     return '';
 }
@@ -204,8 +204,7 @@ class MyOptions implements Options {
         [INLINES.ASSET_HYPERLINK]: (node: Block | Inline, children: ReactNode) => {
             const url = node.data?.target?.fields?.file?.url;
             if (!url) return <span>{children}</span>;
-            const href = (url as string).startsWith('//') ? `https:${url}` : url;
-            return <a href={href} target="_blank" rel="noopener noreferrer" className="text-accent underline">{children}</a>;
+            return <a href={normalizeContentfulImageUrl(url as string)} target="_blank" rel="noopener noreferrer" className="text-accent underline">{children}</a>;
         },
         // tables
         [BLOCKS.TABLE]: (node: Block | Inline, children: ReactNode) => (

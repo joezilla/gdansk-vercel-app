@@ -3,7 +3,7 @@ module.exports = {
     // loader: 'custom',    
     deviceSizes: [640, 1080, 1920],
     formats: ['image/webp'],
-    minimumCacheTTL: 3600,
+    minimumCacheTTL: 2592000, // 30 days — Contentful asset URLs are content-addressed/immutable
     // loaderFile: ''
       remotePatterns: [
         {

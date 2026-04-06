@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { normalizeContentfulImageUrl } from '../../../lib/imageUrl';
 
 type SearchResultCardProps = {
   type: 'street' | 'post';
@@ -12,10 +13,7 @@ type SearchResultCardProps = {
 };
 
 export function SearchResultCard(props: SearchResultCardProps) {
-  let imageUrl = props.imageUrl;
-  if (imageUrl && /^\/\/.*/.test(imageUrl)) {
-    imageUrl = `https:${imageUrl}`;
-  }
+  const imageUrl = props.imageUrl ? normalizeContentfulImageUrl(props.imageUrl) : null;
 
   return (
     <a

@@ -96,9 +96,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string,
 export async function generateStaticParams() {
   const loader = new ContentfulLoader();
   const allDistricts = await loader.getAllDistricts();
-  
-  return allDistricts?.flatMap((district: any) => [
-    { lang: 'de', slug: String(district.slug) },
-    { lang: 'en', slug: String(district.slug) }
-  ]) ?? [];
+
+  return (allDistricts ?? [])
+    .filter((district: any) => district?.slug)
+    .flatMap((district: any) => [
+      { lang: 'de', slug: String(district.slug) },
+      { lang: 'en', slug: String(district.slug) }
+    ]);
 }

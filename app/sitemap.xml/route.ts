@@ -18,8 +18,8 @@ export async function GET() {
 
 async function generateSitemap() {
   const loader = new ContentfulLoader();
-  const allStreets = (await loader.getAllStreets()) ?? []
-  const allPosts = (await loader.getAllPosts()) ?? []
+  const allStreets = ((await loader.getAllStreets()) ?? []).filter(Boolean)
+  const allPosts = ((await loader.getAllPosts()) ?? []).filter(Boolean)
 
 
     return `<?xml version="1.0" encoding="UTF-8"?>

@@ -1,15 +1,12 @@
 'use client';
 
 import { createPostURL, createStreetURL } from '../../../lib/urlutil';
+import { normalizeContentfulImageUrl } from '../../../lib/imageUrl';
 import { SearchResultCard } from './searchResultCard';
 
 function getImageUrl(hit: any): string | null {
   if (!hit.images || hit.images.length === 0) return null;
-  let url = hit.images[0].url;
-  if (/^\/\/.*/.test(url)) {
-    url = `https:${url}`;
-  }
-  return url;
+  return normalizeContentfulImageUrl(hit.images[0].url);
 }
 
 export default function CustomHit({ hit, lang }: { hit: any; lang: string }) {

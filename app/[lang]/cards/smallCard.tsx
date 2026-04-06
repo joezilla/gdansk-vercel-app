@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import { normalizeContentfulImageUrl } from '../../../lib/imageUrl'
 import { Button } from '../buttons/Button'
 
 export type SmallCardProps = {
@@ -20,7 +22,7 @@ export function SmallCard(props: SmallCardProps) {
     return (
         <div className="max-w-md p-8 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
         <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
-            <img src={props.imageUrl} alt={props.headline} className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
+            <Image src={normalizeContentfulImageUrl(props.imageUrl)} alt={props.headline} width={176} height={176} sizes="(max-width: 640px) 100vw, 176px" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
         </div>
         <div className="flex flex-col space-y-4">
             <div>

@@ -2,6 +2,7 @@
 import { IStreet, IPost, IImageWithFocalPoint } from '../../../lib/contentmodel/wrappertypes';
 import Image from 'next/image'
 import { createStreetURL, createPostURL } from '../../../lib/urlutil';
+import { normalizeContentfulImageUrl } from '../../../lib/imageUrl';
 
 export type CardProps = {
     headline: string,
@@ -50,11 +51,7 @@ export function PostCard(props: PostCardData) {
 // </Link>&nbsp;on
 
 export function FancyCard(props: CardProps) {
-    // annoying, but contentful returns images with a // and no protocol
-    let imageUrl = props.imageUrl;
-    if (/^\/\/.*/.test(imageUrl)) {
-        imageUrl = `https:${imageUrl}`;
-    }
+    const imageUrl = normalizeContentfulImageUrl(props.imageUrl);
     return (
         <div className="relative flex flex-col mt-6 text-gray-700 bg-white dark:bg-black shadow-md bg-clip-border rounded-xl w-82">
             {/* TODO: won't work with i18n */}

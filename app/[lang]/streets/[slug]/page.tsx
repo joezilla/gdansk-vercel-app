@@ -90,8 +90,10 @@ export async function generateStaticParams() {
   const loader = new ContentfulLoader();
   const allStreets = await loader.getAllStreets();
 
-  return allStreets?.flatMap((street: any) => [
-    { lang: 'de', slug: String(street.slug) },
-    { lang: 'en', slug: String(street.slug) }
-  ]) ?? [];
+  return (allStreets ?? [])
+    .filter((street: any) => street?.slug)
+    .flatMap((street: any) => [
+      { lang: 'de', slug: String(street.slug) },
+      { lang: 'en', slug: String(street.slug) }
+    ]);
 }

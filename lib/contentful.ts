@@ -121,9 +121,10 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                     [ 'streets' ]
 
             )
-            currentBatchSize = currentResult?.data?.streetCollection?.items?.length ?? 0;
+            const items = currentResult?.data?.streetCollection?.items;
+            currentBatchSize = items?.length ?? 0;
             offset += currentBatchSize;
-            result = result.concat(currentResult?.data?.streetCollection?.items);
+            if (items) result = result.concat(items.filter(Boolean));
         } while (currentBatchSize > 0);
         log.debug(`Loaded ${result.length} streets in batches of ${batchSize}`);
         return result;
@@ -157,7 +158,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             ['posts'],
             this.cacheTimeout
         );
-        return entries?.data?.postCollection?.items as PostSummary[];
+        return ((entries?.data?.postCollection?.items ?? []).filter(Boolean)) as PostSummary[];
     }
 
     /**
@@ -295,7 +296,8 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                             preview,
                             ['districts']
                 )
-                result = result.concat(currentResult?.data?.districtCollection?.items);
+                const items = currentResult?.data?.districtCollection?.items;
+                if (items) result = result.concat(items.filter(Boolean));
                 return result;
             },
             ['all-districts', locale, String(preview)],
