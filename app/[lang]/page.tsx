@@ -15,13 +15,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const i18n = new I18N(lang).getTranslator();
   // You can fetch data here if needed for dynamic metadata
   return {
-    title: i18n('homepage.title'),
+    title: { absolute: i18n('homepage.title') },
     description: i18n('homepage.description'),
     openGraph: {
       title: i18n('homepage.title'),
       description: i18n('homepage.description'),
-      url: 'https://www.streetsofdanzig.com',
-      siteName: i18n('homepage.title'),
+      url: '/',
       images: [
         {
           url: 'https://www.streetsofdanzig.com/resources/images/site-screenshot.png', 

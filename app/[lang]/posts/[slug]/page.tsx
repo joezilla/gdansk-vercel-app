@@ -44,9 +44,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: excerpt,
     openGraph: {
       title: name,
-      description: i18n('homepage.description'),
-      url: `https://www.streetsofdanzig.com/{lang}/posts/{slug}`,
-      siteName: i18n('homepage.title'),
+      description: excerpt,
+      url: `/${lang}/posts/${slug}`,
       images: [
         {
           url: image,

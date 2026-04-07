@@ -39,20 +39,22 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const i18n = new I18N(lang).getTranslator();
 
   // You can fetch data here if needed for dynamic metadata
+  const title = i18n('streetdetail.title', { name: streetName });
+  const description = i18n('streetdetail.description', { name: streetName, polishName: polishName });
+
   return {
-    title: i18n('streetdetail.title', { name: streetName }),
-    description: i18n('streetdetail.description', { name: streetName, polishName: polishName }),
+    title,
+    description,
     openGraph: {
-      title: i18n('homepage.title'),
-      description: i18n('homepage.description'),
-      url: `https://www.streetsofdanzig.com/{lang}/streets/{slug}`,
-      siteName: i18n('streetdetail.title', { name: 'street name' }),
+      title,
+      description,
+      url: `/${lang}/streets/${slug}`,
       images: [
         {
           url: image,
           width: 1200,
           height: 630,
-          alt: i18n('streetdetail.title', { name: streetName }),
+          alt: title,
         },
       ],
       locale: lang,
@@ -60,8 +62,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: i18n('streetdetail.title', { name: streetName }),
-      description: i18n('streetdetail.description', { name: streetName, polishName: polishName }),
+      title,
+      description,
       images: [image],
     },
   }

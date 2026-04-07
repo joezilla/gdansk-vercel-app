@@ -3,15 +3,35 @@ import HeaderNavigationModule from './navigation'
 // import Head from 'next/head';
 import { ContentfulLoader } from '../../lib/contentful';
 import { i18n, type Locale } from "../../i18n-config";
+import { I18N } from '../../lib/i18n';
 // 3rd party
 import { GoogleTagManager } from '@next/third-parties/google';
 // css
 import '../styles/global.css'
 // consnet
 import ConsentBanner from './consent/consentBanner';
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: langParam } = await params;
+  const lang = langParam as Locale;
+  const t = new I18N(lang).getTranslator();
+
+  return {
+    metadataBase: new URL('https://www.streetsofdanzig.com'),
+    title: {
+      default: t('homepage.title'),
+      template: `%s | ${t('homepage.title')}`,
+    },
+    description: t('homepage.description'),
+    openGraph: {
+      siteName: t('homepage.title'),
+    },
+  };
 }
 
 export default async function RootLayout({
