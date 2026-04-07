@@ -1,16 +1,25 @@
 import Footer from './footer'
 import HeaderNavigationModule from './navigation'
-// import Head from 'next/head';
 import { ContentfulLoader } from '../../lib/contentful';
 import { i18n, type Locale } from "../../i18n-config";
 import { I18N } from '../../lib/i18n';
 // 3rd party
 import { GoogleTagManager } from '@next/third-parties/google';
+import Script from 'next/script';
+import { Roboto } from 'next/font/google';
 // css
 import '../styles/global.css'
-// consnet
+// consent
 import ConsentBanner from './consent/consentBanner';
 import { Metadata } from 'next';
+import { FlowbiteScript } from './flowbiteScript';
+
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -59,7 +68,7 @@ export default async function RootLayout({
   const navigationPosts = await loader.getNavigationPosts();
   //
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang} className={roboto.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -68,9 +77,8 @@ export default async function RootLayout({
                                 document.documentElement.classList.remove('dark')
                             }`,
         }} />
-        <script type='text/javascript' src='/resources/scripts/freshworks.js' />
-        <script type='text/javascript' src='https://widget.freshworks.com/widgets/151000001120.js' />
-        {/* styles etc */}
+        <link rel="preconnect" href="https://images.ctfassets.net" />
+        <link rel="dns-prefetch" href="https://images.ctfassets.net" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -100,7 +108,7 @@ export default async function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body>
+      <body className={roboto.className}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded focus:shadow-lg">
           Skip to main content
         </a>
@@ -111,7 +119,9 @@ export default async function RootLayout({
           <main id="main-content" className="py-0">{children}</main>
           <Footer locale={lang} />
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+        <Script src="/resources/scripts/freshworks.js" strategy="lazyOnload" />
+        <Script src="https://widget.freshworks.com/widgets/151000001120.js" strategy="lazyOnload" />
+        <FlowbiteScript />
       </body>
     </html>
   )

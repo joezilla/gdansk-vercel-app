@@ -1,10 +1,14 @@
 import { IStreet } from '../../../lib/contentmodel/wrappertypes';
 import { RichtextComponent } from '../contentful'
 import { DistrictNames } from './districtNames'
-import { GoogleMap } from './googleMap'
+import dynamic from 'next/dynamic';
 import React from "react";
 import { I18N } from "../../../lib/i18n";
 import Lightbox2 from './lightbox';
+
+const GoogleMap = dynamic(() => import('./googleMap').then(mod => mod.GoogleMap), {
+  loading: () => <div style={{ height: '60vh', width: '100%' }} className="bg-gray-100 dark:bg-gray-800 animate-pulse rounded" />,
+});
 
 type StreetDetailProps = {
   street: IStreet,

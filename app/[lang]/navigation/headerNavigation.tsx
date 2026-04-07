@@ -3,6 +3,7 @@
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 import { I18N } from "../../../lib/i18n";
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 type HeaderNaviProps = {
   currentPage?: string,
@@ -23,10 +24,13 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
           <a href={`/${props.locale}`} className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img
+            <Image
               src="/resources/favicon/android-chrome-512x512.png"
-              className="mr-3 h-6 sm:h-9"
+              width={36}
+              height={36}
+              className="mr-3 h-6 sm:h-9 w-auto"
               alt="Danzig Coat Of Arms"
+              priority
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"> {i18n("homepage.title")}</span>
           </a>
@@ -59,7 +63,7 @@ export default function HeaderNavigationModule(props: HeaderNaviProps) {
               {/* language toggle*/}
               <li key="language">
                 <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="Change language" className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                  <img src={`/resources/locales/${props.locale}.svg`} alt={props.locale} className="mr-3 h-6 sm:h-3" />
+                  <Image src={`/resources/locales/${props.locale}.svg`} alt={props.locale} width={24} height={16} className="mr-3 h-6 sm:h-3 w-auto" />
                   &nbsp;<svg className="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                   </svg>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Locale } from "../../../i18n-config";
 
 export default async function NotFound({ params }: { params: Promise<{ lang: string }> }) {
@@ -10,7 +11,7 @@ export default async function NotFound({ params }: { params: Promise<{ lang: str
                 <h2 className="text-3xl font-semibold text-gray-600 dark:text-gray-400 mb-4">Page Not Found</h2>
 
                 <div className="flex justify-center mb-4">
-                    <img src="/resources/images/confused.webp" alt="Confused face" className="w-64 h-64" />
+                    <Image src="/resources/images/confused.webp" alt="Confused face" width={256} height={256} className="w-64 h-64" />
                 </div>
                 <p className="text-xl text-gray-500 dark:text-gray-500">
                     Oops! The page you&apos;re looking for doesn&apos;t exist. Try the <a href={`/${lang}/streets/all`}>Street Overview</a>.

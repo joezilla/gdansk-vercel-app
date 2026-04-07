@@ -3,10 +3,6 @@
 
 @variant dark (&:where(.dark, .dark *));
 
-@source "../../node_modules/flowbite/**/*.{js,jsx,ts,tsx}";
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 @theme {
   /* gray overrides (800 set to black for flowbite compat) */
   --color-gray-50: #f9fafb;
@@ -117,7 +113,7 @@
 }
 
 .bigletter {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   font-size: 76pt;
   display: inline;
   /*display: block; */
@@ -182,7 +178,7 @@
 
 body {
   /*padding: 10px;*/
-  font: 1em 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 1em var(--font-roboto), Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 * {
