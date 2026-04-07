@@ -8,6 +8,7 @@ import { AlgoliaApi } from '../../lib/search'
 import { CardGrid } from './streets/cardGrid'
 import { Locale } from "../../i18n-config";
 import { I18N } from '../../lib/i18n'
+import { websiteJsonLd, JsonLdScript } from '../../lib/jsonld'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang: langParam } = await params;
@@ -17,13 +18,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: { absolute: i18n('homepage.title') },
     description: i18n('homepage.description'),
+    alternates: {
+      canonical: `/${lang}`,
+      languages: { en: '/en', de: '/de' },
+    },
     openGraph: {
       title: i18n('homepage.title'),
       description: i18n('homepage.description'),
-      url: '/',
+      url: `/${lang}`,
       images: [
         {
-          url: 'https://www.streetsofdanzig.com/resources/images/site-screenshot.png', 
+          url: 'https://www.streetsofdanzig.com/resources/images/site-screenshot.png',
           width: 1200,
           height: 630,
           alt: i18n('homepage.title'),
@@ -33,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       type: 'website',
     },
     twitter: {
-      card: 'summary_large_image',  
+      card: 'summary_large_image',
       title: i18n('homepage.title'),
       description: i18n('homepage.description'),
       images: ['https://www.streetsofdanzig.com/resources/images/site-screenshot.png'],
@@ -52,8 +57,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
+      <JsonLdScript data={websiteJsonLd(lang)} />
       <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+          <h1 className="sr-only">{new I18N(lang).getTranslator()('homepage.title')}</h1>
           {heroPost &&
             <HeroPost locale={lang} content={heroPost} />
           }

@@ -1,5 +1,6 @@
 User-Agent: *
 Allow: /
-Disallow: /en/search /de/search
+Disallow: /en/search
+Disallow: /de/search
 
-Sitemap: https://wwww.streetsofdanzig.com/sitemap.xml
+Sitemap: https://www.streetsofdanzig.com/sitemap.xml

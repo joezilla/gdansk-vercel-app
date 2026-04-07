@@ -8,6 +8,8 @@ import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
+import { streetJsonLd, breadcrumbJsonLd, JsonLdScript } from '../../../../lib/jsonld'
+import { Breadcrumbs } from '../../layout/breadcrumbs'
 
 async function getStreetData(lang: Locale, slug: string) {
   const loader = new ContentfulLoader(3600, lang);
@@ -45,6 +47,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${lang}/streets/${slug}`,
+      languages: { en: `/en/streets/${slug}`, de: `/de/streets/${slug}` },
+    },
     openGraph: {
       title,
       description,
@@ -77,14 +83,52 @@ export default async function Page({ params }:
   const street = await getStreetData(lang, slug);
   if (!street) return notFound();
 
+  const i18n = new I18N(lang).getTranslator();
+  const streetName = street.fields.germanName;
+  const polishName = street.fields.polishNames?.[0] ?? '';
+  const description = i18n('streetdetail.description', { name: streetName, polishName });
+  let imageUrl = '';
+  if (street.fields.media?.length) {
+    imageUrl = street.fields.media[0].fields?.image?.fields?.file?.url as string ?? '';
+  }
+  const districtName = street.fields.district_ref?.[0]?.fields?.name;
+  const location = street.fields.location;
+
+  const breadcrumbItems = [
+    { name: i18n('homepage.title'), url: `/${lang}` },
+    { name: i18n('allstreets.header'), url: `/${lang}/streets/all` },
+    { name: streetName, url: `/${lang}/streets/${slug}` },
+  ];
+
   return (
-    <section className="dark:bg-mybg-dark dark:text-gray-100">
-      <div className="container  p-6 mx-auto space-y-6 sm:space-y-12">
-        <article>
-          <StreetDetail street={street} locale={lang} />
-        </article>
-      </div>
-    </section>
+    <>
+      <JsonLdScript data={[
+        streetJsonLd({
+          germanName: streetName,
+          polishNames: street.fields.polishNames,
+          previousNames: street.fields.previousNames,
+          description,
+          locale: lang,
+          slug,
+          lat: location?.lat,
+          lon: location?.lon,
+          imageUrl: imageUrl ? `https:${imageUrl}` : undefined,
+          districtName,
+        }),
+        breadcrumbJsonLd(breadcrumbItems),
+      ]} />
+      <section className="dark:bg-mybg-dark dark:text-gray-100">
+        <div className="container p-6 mx-auto space-y-6 sm:space-y-12">
+          <Breadcrumbs items={breadcrumbItems.map(b => ({
+            label: b.name,
+            href: b.url === `/${lang}/streets/${slug}` ? undefined : b.url,
+          }))} />
+          <article>
+            <StreetDetail street={street} locale={lang} />
+          </article>
+        </div>
+      </section>
+    </>
   )
 }
 

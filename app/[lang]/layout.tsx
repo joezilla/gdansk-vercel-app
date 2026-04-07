@@ -21,6 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang = langParam as Locale;
   const t = new I18N(lang).getTranslator();
 
+  const otherLocale = lang === 'de' ? 'en' : 'de';
+
   return {
     metadataBase: new URL('https://www.streetsofdanzig.com'),
     title: {
@@ -30,6 +32,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: t('homepage.description'),
     openGraph: {
       siteName: t('homepage.title'),
+    },
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        [lang]: `/${lang}`,
+        [otherLocale]: `/${otherLocale}`,
+      },
     },
   };
 }
@@ -92,11 +101,14 @@ export default async function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded focus:shadow-lg">
+          Skip to main content
+        </a>
         <ConsentBanner locale={lang} />
         <GoogleTagManager gtmId='GTM-W6NVS67' />
         <div className="flex flex-col h-full dark:bg-mybg-dark h-screen dark:text-mytxt-dark">
           <HeaderNavigationModule navigationPosts={navigationPosts} locale={lang} />
-          <main className="py-0">{children}</main>
+          <main id="main-content" className="py-0">{children}</main>
           <Footer locale={lang} />
         </div>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>

@@ -60,16 +60,16 @@ export function FancyCard(props: CardProps) {
                     <div className="relative h-48 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40 dark:shadow-blue-gray-800/40">
                         <Image
                             src={`${imageUrl}`}
-                            alt="Picture of the street"
+                            alt={props.headline}
                             width={500}
                             height={500}
                         />
                     </div>
                 }
                 <div className="p-6">
-                    <h5 className="block mb-2 font-sans text-m antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white">
+                    <h3 className="block mb-2 font-sans text-m antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white">
                         {props.headline}
-                    </h5>
+                    </h3>
                     <p className="block text-sm font-sans text-base antialiased font-light leading-relaxed text-inherit dark:text-white">
                         {props.excerpt}
                     </p>

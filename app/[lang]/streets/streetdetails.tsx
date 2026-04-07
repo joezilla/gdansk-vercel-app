@@ -69,7 +69,7 @@ export function StreetDetail(props: StreetDetailProps) {
                   </div>}
               </div>
             </div>
-            <div aria-hidden="true" className="mt-4 lg:mt-0 top-0">
+            <div className="mt-4 lg:mt-0 top-0">
               <h2 className="text-2xl py-2 font-bold tracking-tight sm:text-3xl dark:text-gray-50">{i18n("streetdetail.map")}</h2>
               <GoogleMap street={street} />
             </div>

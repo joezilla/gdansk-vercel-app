@@ -1,65 +1,52 @@
 import { ContentfulLoader } from '../../lib/contentful'
-import { createPostURL, createStreetURL } from '../../lib/urlutil';
+import { createPostURL, createStreetURL, createDistrictURL } from '../../lib/urlutil';
+
+const SITE_URL = 'https://www.streetsofdanzig.com';
+const LOCALES = ['en', 'de'] as const;
 
 export async function GET() {
-  // Generate the sitemap
   const sitemap = await generateSitemap();
 
-  // Set the response headers
-  const headers = new Headers();
-  headers.set('Content-Type', 'application/xml');
-
-  // Return the response with the sitemap and headers
   return new Response(sitemap, {
     status: 200,
-    headers: headers,
+    headers: { 'Content-Type': 'application/xml' },
   });
+}
+
+function urlEntry(loc: string) {
+  return `  <url>
+    <loc>${SITE_URL}${loc}</loc>
+  </url>`;
 }
 
 async function generateSitemap() {
   const loader = new ContentfulLoader();
-  const allStreets = ((await loader.getAllStreets()) ?? []).filter(Boolean)
-  const allPosts = ((await loader.getAllPosts()) ?? []).filter(Boolean)
+  const [allStreets, allPosts, allDistricts] = await Promise.all([
+    loader.getAllStreets().then(s => (s ?? []).filter(Boolean)),
+    loader.getAllPosts().then(p => (p ?? []).filter(Boolean)),
+    loader.getAllDistricts().then(d => (d ?? []).filter(Boolean)),
+  ]);
 
+  const staticPages = LOCALES.flatMap(locale => [
+    urlEntry(`/${locale}`),
+    urlEntry(`/${locale}/streets/all`),
+    urlEntry(`/${locale}/districts/all`),
+  ]);
 
-    return `<?xml version="1.0" encoding="UTF-8"?>
-   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <url>
-       <loc>https://www.streetsofdanzig.com/en</loc>
-     </url>
-     <url>
-       <loc>https://www.streetsofdanzig.com/de</loc>
-     </url>
-     <url>
-       <loc>https://www.streetsofdanzig.com/en/streets/all</loc>
-     </url>
-     <url>
-       <loc>https://www.streetsofdanzig.com/de/streets/all</loc>
-     </url>
-     <url>
-       <loc>https://www.streetsofdanzig.com/en/districts/all</loc>
-     </url>
-     <url>
-       <loc>https://www.streetsofdanzig.com/de/districts/all</loc>
-     </url>
-     ${allStreets
-            .map(({ slug }) => {
-                return `
-       <url>
-           <loc>https://www.streetsofdanzig.com${createStreetURL(slug, "en")}</loc>
-       </url>
-     `;
-            })
-            .join('')}
-        ${allPosts
-            .map(({ slug }) => {
-                return `
-                    <url>
-                        <loc>https://www.streetsofdanzig.com${createPostURL(slug, "en")}</loc>
-                    </url>
-                    `;
-            })
-            .join('')}
-   </urlset>
- `;
+  const streetPages = allStreets.flatMap(({ slug }) =>
+    LOCALES.map(locale => urlEntry(createStreetURL(slug, locale)))
+  );
+
+  const postPages = allPosts.flatMap(({ slug }) =>
+    LOCALES.map(locale => urlEntry(createPostURL(slug, locale)))
+  );
+
+  const districtPages = allDistricts.flatMap(({ slug }) =>
+    LOCALES.map(locale => urlEntry(createDistrictURL(slug, locale)))
+  );
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${[...staticPages, ...streetPages, ...districtPages, ...postPages].join('\n')}
+</urlset>`;
 }
