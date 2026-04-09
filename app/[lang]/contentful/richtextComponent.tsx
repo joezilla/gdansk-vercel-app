@@ -74,7 +74,7 @@ export function renderEmbeddedAsset(node: Block | Inline, children: any, locale:
     return (
         <div className="mx-6 ml-12 mt-6 mb-6 flex-shrink-0 overflow-hidden">
             <Link className="example-image-link" href={target.fields.file.url} data-lightbox="street-pics" data-title={`${target.fields.title}, ${target.fields.description ?? "-"}`}>
-                <NaturalImageComponent image={target} layout={'responsive'} objectFit={'scale-down'} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500" />
+                <NaturalImageComponent image={target} layout={'responsive'} objectFit={'scale-down'} className="w-full h-full rounded shadow-sm min-h-48 dark:bg-surface-container-high" />
                 <div className="text-xs ml-1">{target.fields.title}{target.fields.source && <>, source: {target.fields.source}</>}</div>
             </Link>
         </div>
@@ -97,7 +97,7 @@ export function renderImageWithFocalPoint(image: IImageWithFocalPoint) {
     }
 
     return (
-        <NaturalImageComponent image={image.fields.image} width={size} height={size} layout={'responsive'} objectFit={'scale-down'} className={`${align} rounded mx-2 shadow-sm dark:bg-gray-500`} />
+        <NaturalImageComponent image={image.fields.image} width={size} height={size} layout={'responsive'} objectFit={'scale-down'} className={`${align} rounded mx-2 shadow-sm dark:bg-surface-container-high`} />
     );
 }
 
@@ -145,7 +145,7 @@ class MyOptions implements Options {
 
     renderMark = {
         [MARKS.BOLD]: (text: ReactNode) => <strong>{text}</strong>,
-        [MARKS.CODE]: (text: ReactNode) => <code className="bg-gray-100 dark:bg-slate-800 text-accent px-1.5 py-0.5 rounded text-sm font-mono">{text}</code>,
+        [MARKS.CODE]: (text: ReactNode) => <code className="bg-surface-container-high text-accent px-1.5 py-0.5 rounded text-sm font-mono">{text}</code>,
         [MARKS.ITALIC]: (text: ReactNode) => <em>{text}</em>,
         [MARKS.UNDERLINE]: (text: ReactNode) => <u>{text}</u>,
     }
@@ -164,8 +164,8 @@ class MyOptions implements Options {
             renderInlineEntry(node, children, this.locale)
         ),
         [BLOCKS.QUOTE]: (node: Block | Inline, children: ReactNode) => (
-            <blockquote className="text-l mx-8 italic font-semibold text-gray-900 dark:text-white">
-                <svg aria-hidden="true" className="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor" /></svg>
+            <blockquote className="text-l mx-8 italic font-semibold text-on-surface">
+                <svg className="w-10 h-10 text-outline" aria-hidden="true" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor" /></svg>
                 <div>{children}</div>
             </blockquote>),
         [BLOCKS.UL_LIST]: (node: Block | Inline, children: ReactNode) => (
@@ -178,22 +178,22 @@ class MyOptions implements Options {
             <h1 className="text-5xl mx-0 font-extrabold text-accent">{children}</h1>
         ),
         [BLOCKS.HEADING_2]: (node: Block | Inline, children: ReactNode) => (
-            <h2 className="text-4xl font-bold dark:text-white my-2">{children}</h2>
+            <h2 className="text-4xl font-bold dark:text-on-surface my-2">{children}</h2>
         ),
         [BLOCKS.HEADING_3]: (node: Block | Inline, children: ReactNode) => (
-            <h3 className="text-3xl font-bold dark:text-white">{children}</h3>
+            <h3 className="text-3xl font-bold dark:text-on-surface">{children}</h3>
         ),
         [BLOCKS.HEADING_4]: (node: Block | Inline, children: ReactNode) => (
-            <h4 className="text-2xl font-bold dark:text-white">{children}</h4>
+            <h4 className="text-2xl font-bold dark:text-on-surface">{children}</h4>
         ),
         [BLOCKS.HEADING_5]: (node: Block | Inline, children: ReactNode) => (
-            <h5 className="text-xl font-bold dark:text-white">{children}</h5>
+            <h5 className="text-xl font-bold dark:text-on-surface">{children}</h5>
         ),
         [BLOCKS.HEADING_6]: (node: Block | Inline, children: ReactNode) => (
-            <h6 className="text-lg font-bold dark:text-white">{children}</h6>
+            <h6 className="text-lg font-bold dark:text-on-surface">{children}</h6>
         ),
         [BLOCKS.HR]: (node: Block | Inline, children: ReactNode) => (
-            <hr className="mx-6 text-lg font-bold border-accent py-4 dark:text-white" />
+            <hr className="mx-6 text-lg font-bold border-accent py-4 dark:text-on-surface" />
         ),
         [INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => (
             <a href={node.data.uri} target="_blank" rel="noopener noreferrer" className="text-accent underline">{children}</a>
@@ -214,10 +214,10 @@ class MyOptions implements Options {
             <tr>{children}</tr>
         ),
         [BLOCKS.TABLE_HEADER_CELL]: (node: Block | Inline, children: ReactNode) => (
-            <th className="bg-slate-200 dark:bg-slate-900 border p-2">{children}</th>
+            <th className="bg-surface-container-high border border-outline-variant/20 p-2">{children}</th>
         ),
         [BLOCKS.TABLE_CELL]: (node: Block | Inline, children: ReactNode) => (
-            <td className="border p-2">{children}</td>
+            <td className="border border-outline-variant/20 p-2">{children}</td>
         ),
     }
 

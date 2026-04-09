@@ -1,9 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import { IPost } from '../../../lib/contentmodel/wrappertypes';
 import { I18N } from "../../../lib/i18n";
 import { usePathname } from 'next/navigation'
-import Image from 'next/image'
 
 type HeaderNaviProps = {
   currentPage?: string,
@@ -12,82 +12,138 @@ type HeaderNaviProps = {
 }
 
 export default function HeaderNavigationModule(props: HeaderNaviProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const pathname = usePathname();
+
   const switchLocalePath = (newLocale: string) => {
     const pathParts = pathname.split('/');
-    pathParts[1] = newLocale; // Replace the language part
+    pathParts[1] = newLocale;
     return pathParts.join('/');
   };
+
   const i18n = new I18N(props.locale).getTranslator();
+
+  const isActive = (path: string) => pathname === path || pathname.startsWith(path + '/');
+
+  const navLinkClass = (path: string) =>
+    isActive(path)
+      ? "text-primary font-bold border-b-2 border-primary pb-1 font-label transition-colors"
+      : "text-on-surface/60 hover:text-primary font-label transition-colors";
+
   return (
-    <>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-          <a href={`/${props.locale}`} className="flex items-center space-x-3 rtl:space-x-reverse">
-            <Image
-              src="/resources/favicon/android-chrome-512x512.png"
-              width={36}
-              height={36}
-              className="mr-3 h-6 sm:h-9 w-auto"
-              alt="Danzig Coat Of Arms"
-              priority
-            />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"> {i18n("homepage.title")}</span>
+    <header className="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/10">
+      <nav aria-label="Main navigation" className="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+        {/* Brand */}
+        <a
+          href={`/${props.locale}`}
+          className="text-2xl font-headline italic text-primary tracking-tighter hover:opacity-80 transition-opacity"
+        >
+          {i18n("homepage.title")}
+        </a>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-x-8">
+          <a href={`/${props.locale}/streets/all`} className={navLinkClass(`/${props.locale}/streets`)}>
+            {i18n("nav.allstreets")}
           </a>
-          <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-            <span className="sr-only">Open main menu</span>
-            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-            </svg>
-          </button>
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-2 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li key="home">
-                <a href={`/${props.locale}`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" {...(pathname === `/${props.locale}` ? { 'aria-current': 'page' as const } : {})}>Home</a>
-              </li>
-              <li key="allstreets">
-                <a href={`/${props.locale}/streets/all`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.allstreets")}</a>
-              </li>
-              <li key="alldistricts">
-                <a href={`/${props.locale}/districts/all`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.alldistricts")}</a>
-              </li>
-              <li key="search">
-                <a href={`/${props.locale}/search`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> {i18n("nav.search")}</a>
-              </li>
-              {/* nav posts */}
-              {props.navigationPosts?.map(post =>
-                <li key={post.fields?.slug}>
-                  <a href={`/${props.locale}/posts/${post.fields?.slug}`} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{post.fields?.title}</a>
-                </li>
-              )}
-              {/* language toggle*/}
-              <li key="language">
-                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="Change language" className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                  <Image src={`/resources/locales/${props.locale}.svg`} alt={props.locale} width={24} height={16} className="mr-3 h-6 sm:h-3 w-auto" />
-                  &nbsp;<svg className="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-                  </svg>
-                </button>
-                <div id="dropdownNavbar" suppressHydrationWarning className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-22 dark:bg-gray-700 dark:divide-gray-600">
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                    <li key="en">
-                      <div className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        <a href={switchLocalePath('en')}>English</a>
-                      </div>
-                    </li>
-                    <li key="de">
-                      <div className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        <a href={switchLocalePath('de')}>German</a>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
+          <a href={`/${props.locale}/districts/all`} className={navLinkClass(`/${props.locale}/districts`)}>
+            {i18n("nav.alldistricts")}
+          </a>
+          <a href={`/${props.locale}/search`} className={navLinkClass(`/${props.locale}/search`)}>
+            {i18n("nav.search")}
+          </a>
+          {props.navigationPosts?.map(post => (
+            <a
+              key={post.fields?.slug}
+              href={`/${props.locale}/posts/${post.fields?.slug}`}
+              className={navLinkClass(`/${props.locale}/posts/${post.fields?.slug}`)}
+            >
+              {post.fields?.title}
+            </a>
+          ))}
+        </div>
+
+        {/* Right side: Language toggle + mobile menu */}
+        <div className="flex items-center gap-4">
+          {/* Language toggle */}
+          <div className="relative">
+            <button
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              onBlur={() => setTimeout(() => setLangDropdownOpen(false), 150)}
+              className="text-primary font-label font-bold text-sm tracking-widest hover:bg-surface-container-high/50 px-3 py-2 rounded transition-all"
+              aria-label="Change language"
+            >
+              {props.locale === 'en' ? 'EN' : 'DE'}
+              <svg className="w-2.5 h-2.5 ms-1.5 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            {langDropdownOpen && (
+              <div className="absolute right-0 mt-2 bg-surface-container-lowest shadow-lg rounded-md py-2 z-50 min-w-[120px] border border-outline-variant/10">
+                <a
+                  href={switchLocalePath('en')}
+                  className="block px-4 py-2 text-sm text-on-surface hover:bg-surface-container-high transition-colors"
+                >
+                  English
+                </a>
+                <a
+                  href={switchLocalePath('de')}
+                  className="block px-4 py-2 text-sm text-on-surface hover:bg-surface-container-high transition-colors"
+                >
+                  Deutsch
+                </a>
+              </div>
+            )}
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-primary p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {mobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
       </nav>
-    </>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div id="mobile-menu" className="md:hidden bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant/10 px-8 py-6 space-y-4">
+          <a href={`/${props.locale}`} className="block py-2 text-on-surface font-label hover:text-primary transition-colors">
+            {i18n("nav.home") ?? 'Home'}
+          </a>
+          <a href={`/${props.locale}/streets/all`} className="block py-2 text-on-surface font-label hover:text-primary transition-colors">
+            {i18n("nav.allstreets")}
+          </a>
+          <a href={`/${props.locale}/districts/all`} className="block py-2 text-on-surface font-label hover:text-primary transition-colors">
+            {i18n("nav.alldistricts")}
+          </a>
+          <a href={`/${props.locale}/search`} className="block py-2 text-on-surface font-label hover:text-primary transition-colors">
+            {i18n("nav.search")}
+          </a>
+          {props.navigationPosts?.map(post => (
+            <a
+              key={post.fields?.slug}
+              href={`/${props.locale}/posts/${post.fields?.slug}`}
+              className="block py-2 text-on-surface font-label hover:text-primary transition-colors"
+            >
+              {post.fields?.title}
+            </a>
+          ))}
+        </div>
+      )}
+    </header>
   );
 }
-

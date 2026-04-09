@@ -97,6 +97,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string,
     imageUrl = post.fields.coverImage?.fields?.file?.url as string ?? '';
   }
 
+  // Fetch related posts (other homepage posts, excluding current)
+  const loader = new ContentfulLoader(3600, lang);
+  const allPosts = await loader.getHomepagePosts() ?? [];
+  const relatedPosts = allPosts.filter((p: IPost) => p.fields.slug !== slug).slice(0, 3);
+
   const breadcrumbItems = [
     { name: i18n('homepage.title'), url: `/${lang}` },
     { name: postTitle, url: `/${lang}/posts/${slug}` },
@@ -111,17 +116,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string,
           locale: lang,
           slug,
           datePublished: post.fields.date,
+          dateModified: post.sys.updatedAt,
           imageUrl: imageUrl ? `https:${imageUrl}` : undefined,
+          authorName: post.fields.author?.fields?.name,
         }),
         breadcrumbJsonLd(breadcrumbItems),
       ]} />
-      <section className="dark:bg-mybg-dark dark:text-gray-100">
-        <div className="container p-6 mx-auto space-y-6 sm:space-y-12">
+      <section>
+        <div className="max-w-screen-xl mx-auto px-6 py-12 md:py-20">
           <Breadcrumbs items={breadcrumbItems.map(b => ({
             label: b.name,
             href: b.url === `/${lang}/posts/${slug}` ? undefined : b.url,
           }))} />
-          <FullpagePost content={post} locale={lang} />
+          <FullpagePost content={post} locale={lang} relatedPosts={relatedPosts} />
         </div>
       </section>
     </>

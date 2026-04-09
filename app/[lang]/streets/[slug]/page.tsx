@@ -117,8 +117,8 @@ export default async function Page({ params }:
         }),
         breadcrumbJsonLd(breadcrumbItems),
       ]} />
-      <section className="dark:bg-mybg-dark dark:text-gray-100">
-        <div className="container p-6 mx-auto space-y-6 sm:space-y-12">
+      <section>
+        <div className="max-w-screen-2xl mx-auto px-8 py-12">
           <Breadcrumbs items={breadcrumbItems.map(b => ({
             label: b.name,
             href: b.url === `/${lang}/streets/${slug}` ? undefined : b.url,

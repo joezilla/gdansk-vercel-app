@@ -29,7 +29,7 @@ export function GoogleMap(props: GoogleMapProps) {
     }
 
     return (
-        <div style={{ height: '60vh', width: '100%' }}>
+        <div style={{ height: '30vh', width: '100%' }}>
             <APIProvider apiKey={apiKey}>
                 <Map
                     defaultCenter={center}

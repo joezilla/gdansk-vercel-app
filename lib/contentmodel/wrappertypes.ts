@@ -128,6 +128,7 @@ export type DistrictSummary = {
     name: string,
     slug: string,
     polishName: string,
+    imageUrl?: string,
     sys: {
         id: string
     }
@@ -143,6 +144,23 @@ export type IDistrict = {
     }
 } & IBaseEntry
 
+export type IHomepage = {
+    contentTypeId: 'homepage',
+    fields: {
+        title: string,
+        locale: string,
+        heroHeadline: string,
+        heroSubtitle: string,
+        heroImage: Asset,
+        seoHeadline: string,
+        seoText: Document,
+        seoQuote: string,
+        featuredStreets: IStreet[],
+        featuredDistricts: IDistrict[],
+        featuredPosts: IPost[],
+    }
+} & IBaseEntry
+
 export type IEntry =
     | IAuthor
     | ICity
@@ -150,5 +168,6 @@ export type IEntry =
     | IPerson
     | IPost
     | IDistrict
-    | IStreet;
+    | IStreet
+    | IHomepage;
 

@@ -6,7 +6,7 @@ import { I18N } from '../../lib/i18n';
 // 3rd party
 import { GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
-import { Roboto } from 'next/font/google';
+import { Noto_Serif, Inter } from 'next/font/google';
 // css
 import '../styles/global.css'
 // consent
@@ -14,11 +14,19 @@ import ConsentBanner from './consent/consentBanner';
 import { Metadata } from 'next';
 import { FlowbiteScript } from './flowbiteScript';
 
-const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
+const notoSerif = Noto_Serif({
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  variable: '--font-roboto',
+  variable: '--font-headline',
+});
+
+const inter = Inter({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-body',
 });
 
 export async function generateStaticParams() {
@@ -68,7 +76,7 @@ export default async function RootLayout({
   const navigationPosts = await loader.getNavigationPosts();
   //
   return (
-    <html lang={lang} className={roboto.variable} suppressHydrationWarning>
+    <html lang={lang} className={`${notoSerif.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -105,16 +113,16 @@ export default async function RootLayout({
         <link rel="shortcut icon" href="/resources/favicon/favicon.ico" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/resources/favicon/browserconfig.xml" />
-        <meta name="theme-color" content="#000" />
+        <meta name="theme-color" content="#fdfcf8" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={roboto.className}>
+      <body className={inter.className}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded focus:shadow-lg">
           Skip to main content
         </a>
         <ConsentBanner locale={lang} />
         <GoogleTagManager gtmId='GTM-W6NVS67' />
-        <div className="flex flex-col h-full dark:bg-mybg-dark h-screen dark:text-mytxt-dark">
+        <div className="flex flex-col min-h-screen bg-background text-on-surface">
           <HeaderNavigationModule navigationPosts={navigationPosts} locale={lang} />
           <main id="main-content" className="py-0">{children}</main>
           <Footer locale={lang} />

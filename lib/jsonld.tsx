@@ -15,6 +15,14 @@ export function websiteJsonLd(locale: string) {
     description: locale === 'de'
       ? 'Entdecken Sie die reiche Geschichte und Kultur von Danzig durch seine Straßen, Menschen und Geschichten.'
       : 'Explore the rich history and culture of Danzig through its streets, people, and stories.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/${locale}/search?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 
@@ -107,7 +115,9 @@ export function articleJsonLd(opts: {
   locale: string;
   slug: string;
   datePublished?: string;
+  dateModified?: string;
   imageUrl?: string;
+  authorName?: string;
 }) {
   const jsonLd: Record<string, any> = {
     '@context': 'https://schema.org',
@@ -122,8 +132,14 @@ export function articleJsonLd(opts: {
     },
   };
 
+  if (opts.authorName) {
+    jsonLd.author = { '@type': 'Person', name: opts.authorName };
+  }
   if (opts.datePublished) {
     jsonLd.datePublished = opts.datePublished;
+  }
+  if (opts.dateModified) {
+    jsonLd.dateModified = opts.dateModified;
   }
   if (opts.imageUrl) {
     jsonLd.image = opts.imageUrl;
@@ -133,10 +149,16 @@ export function articleJsonLd(opts: {
 }
 
 export function JsonLdScript({ data }: { data: Record<string, any> | Record<string, any>[] }) {
+  const items = Array.isArray(data) ? data : [data];
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <>
+      {items.map((item, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+        />
+      ))}
+    </>
   );
 }

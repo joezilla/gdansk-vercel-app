@@ -1,7 +1,17 @@
 {
     "homepage": {
         "title": "The Streets of Danzig",
-        "description": "Explore the rich history and culture of Danzig through its streets, people, and stories."
+        "description": "Explore the rich history and culture of Danzig through its streets, people, and stories.",
+        "seoLabel": "Historical Context",
+        "streetsOfInterest": "Streets of Interest",
+        "historicalDistricts": "Historical Districts",
+        "districtsSubtitle": "Mapping the socio-economic topography of the Free City. Explore the distinct identities of the historical quarters.",
+        "editorialJournal": "Editorial Journal",
+        "archivalInsights": "Archival Insights",
+        "seoHeadlineFallback": "Documenting a Lost Era",
+        "seoTextFallback1": "The Streets of Danzig project is a digital attempt to reconcile the layered history of a city that has existed under multiple identities.",
+        "seoTextFallback2": "Our archival goals focus on the preservation of toponymy\u2014the names of places.",
+        "enterArchive": "Enter Archive"
     },
     "allstreets": {
         "header": "List of All Streets",
@@ -9,13 +19,16 @@
     },
     "alldistricts": {
         "header": "List of All Districts in Danzig",
-        "subhead": "{{ count }} districts indexed in Danzig."
+        "subhead": "{{ count }} districts indexed in Danzig.",
+        "intro1": "Danzig's architectural evolution is a testament to centuries of merchant ambition and maritime influence. From the medieval density of the Rechtstadt to the industrial expansion of the 19th-century suburbs, each district preserves a specific layer of European history.",
+        "intro2": "Our visual directory offers a curated passage through these historical enclaves, mapped not just by geography but by the narratives of the families, artisans, and sailors who defined its streets.",
+        "explore": "Explore Districts"
     },
     "nav": {
+        "home": "Home",
         "allstreets": "Streets",
         "alldistricts": "Districts",
         "search": "Search"
-
     },
     "districtdetail": {
         "title": "The Streets of Danzig: {{ name }}",
@@ -35,7 +48,9 @@
         "pictures": "Pictures",
         "polishNames": "Polish Names",
         "previousNames": "Previous Names",
-        "district": "District"
+        "district": "District",
+        "quickFacts": "Quick Facts",
+        "noHistory": "No history has been recorded yet."
     },
     "title": {
         "title": "Hello World!",
@@ -67,6 +82,9 @@
     },
     "streetsByDistrict": {
         "headline" : "Streets in {{ district }}"
+    },
+    "post": {
+        "relatedArchives": "Related Archives"
     }
 
 }

@@ -5,7 +5,7 @@
  * Non-fetch calls (SDK/axios) are cached via Next.js unstable_cache.
  * GraphQL fetch() calls use native Next.js fetch cache with tags.
  */
-import { IStreet, IPost, IDistrict, StreetSummary, PostSummary, DistrictSummary } from './contentmodel/wrappertypes';
+import { IStreet, IPost, IDistrict, IHomepage, StreetSummary, PostSummary, DistrictSummary } from './contentmodel/wrappertypes';
 import { cached } from './contentful-cache';
 
 // logging
@@ -287,6 +287,9 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                                     slug
                                     name
                                     polishName
+                                    image {
+                                        url
+                                    }
                                     sys {
                                         id
                                     }
@@ -297,7 +300,12 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                             ['districts']
                 )
                 const items = currentResult?.data?.districtCollection?.items;
-                if (items) result = result.concat(items.filter(Boolean));
+                if (items) result = result.concat(
+                    items.filter(Boolean).map((d: any) => ({
+                        ...d,
+                        imageUrl: d.image?.url ? (d.image.url.startsWith('//') ? `https:${d.image.url}` : d.image.url) : undefined,
+                    }))
+                );
                 return result;
             },
             ['all-districts', locale, String(preview)],
@@ -328,6 +336,31 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             ['districts'],
             this.cacheTimeout
         ) as IDistrict;
+        return entry;
+    }
+
+    /**
+     * Retrieve homepage content for a locale.
+     * Returns the full entry with resolved references (streets, districts, posts).
+     */
+    public async getHomepageContent(locale: string = this.locale) {
+        const cfLocale = locale === 'de' ? 'de' : 'en-US';
+        const query = {
+            content_type: 'homepage',
+            'fields.locale': locale === 'en-US' ? 'en' : (locale === 'de' ? 'de' : 'en'),
+            locale: cfLocale,
+            include: 3,
+            limit: 1,
+        };
+
+        const entry = await cached(
+            () => contentfulClient.getEntries(query).then((entries) => {
+                return entries.items.length === 0 ? null : entries.items[0];
+            }),
+            ['homepage-content', locale],
+            ['homepage'],
+            this.cacheTimeout
+        ) as IHomepage | null;
         return entry;
     }
 

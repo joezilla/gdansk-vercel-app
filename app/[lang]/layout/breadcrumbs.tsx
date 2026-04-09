@@ -11,17 +11,21 @@ type BreadcrumbsProps = {
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+    <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-sm text-on-surface/60 mb-12">
       <ol className="flex flex-wrap items-center gap-1">
         {items.map((item, index) => (
-          <li key={index} className="flex items-center gap-1">
-            {index > 0 && <span aria-hidden="true">/</span>}
+          <li key={index} className="flex items-center gap-2">
+            {index > 0 && (
+              <svg className="w-3 h-3 text-on-surface/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            )}
             {item.href ? (
-              <Link href={item.href} className="hover:underline hover:text-gray-700 dark:hover:text-gray-200">
+              <Link href={item.href} className="hover:text-primary transition-colors">
                 {item.label}
               </Link>
             ) : (
-              <span aria-current="page">{item.label}</span>
+              <span aria-current="page" className="text-on-surface font-semibold">{item.label}</span>
             )}
           </li>
         ))}

@@ -29,14 +29,14 @@ function SearchLayout({ lang, t }: { lang: string; t: (key: string) => string })
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <section className="dark:bg-mybg-dark dark:text-mytxt-dark">
-      <div className="container max-w-6xl mx-auto px-4 pt-6 pb-8">
+    <section>
+      <div className="max-w-screen-2xl mx-auto px-8 pt-16 pb-24">
         {/* Page Header */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold tracking-tight dark:text-white">
+        <div className="mb-12">
+          <h1 className="text-6xl md:text-7xl font-headline font-bold text-on-surface tracking-tighter leading-none mb-6">
             {t('search.title')}
           </h1>
-          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-lg text-on-surface/60 leading-relaxed max-w-xl">
             {t('search.description')}
           </p>
         </div>
@@ -48,7 +48,7 @@ function SearchLayout({ lang, t }: { lang: string; t: (key: string) => string })
 
         {/* Results Count */}
         {hasQuery && !isLoading && (
-          <p className="mb-4 text-sm text-gray-500 dark:text-gray-400">
+          <p className="mb-4 text-sm text-on-surface/50">
             {nbHits === 1 ? t('search.resultCountSingular') : t('search.resultCount').replace('{{ count }}', String(nbHits))}
           </p>
         )}
@@ -58,7 +58,7 @@ function SearchLayout({ lang, t }: { lang: string; t: (key: string) => string })
           {/* Mobile filter toggle */}
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="md:hidden flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 self-start"
+            className="md:hidden flex items-center gap-2 text-sm font-medium text-on-surface border border-outline-variant rounded-lg px-4 py-2 self-start"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -81,8 +81,8 @@ function SearchLayout({ lang, t }: { lang: string; t: (key: string) => string })
           <aside
             className={`w-full md:w-64 lg:w-72 shrink-0 ${sidebarOpen ? 'block' : 'hidden'} md:block`}
           >
-            <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-mybg-900 p-4">
-              <h2 className="text-xs font-semibold tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">
+            <div className="bg-surface-container-low p-6">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-on-surface/50 mb-3">
                 {t('search.districts')}
               </h2>
               <RefinementList
@@ -91,11 +91,11 @@ function SearchLayout({ lang, t }: { lang: string; t: (key: string) => string })
                   list: 'flex flex-col space-y-1',
                   item: '',
                   label:
-                    'flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 cursor-pointer hover:text-accent',
+                    'flex items-center gap-2 text-sm text-on-surface/70 cursor-pointer hover:text-accent',
                   count:
-                    'ml-auto text-xs text-gray-400 dark:text-gray-500 bg-gray-200 dark:bg-mybg-800 px-1.5 py-0.5 rounded-full',
+                    'ml-auto text-xs text-on-surface/40 bg-surface-container-high px-1.5 py-0.5 rounded-full',
                   checkbox:
-                    'rounded border-gray-300 dark:border-gray-600 text-accent focus:ring-accent',
+                    'rounded border-outline-variant text-accent focus:ring-accent',
                   selectedItem: 'font-medium',
                 }}
               />
@@ -139,7 +139,7 @@ function SearchLayout({ lang, t }: { lang: string; t: (key: string) => string })
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-16 h-16 text-gray-300 dark:text-gray-600 mb-4"
+                  className="w-16 h-16 text-outline mb-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -147,19 +147,15 @@ function SearchLayout({ lang, t }: { lang: string; t: (key: string) => string })
                     d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
                   />
                 </svg>
-                <h3 className="text-lg font-semibold text-gray-600 dark:text-gray-400">
+                <h3 className="text-lg font-semibold text-on-surface/60">
                   {t('search.noResults')}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500 dark:text-gray-500">
+                <p className="mt-1 text-sm text-on-surface/50">
                   {t('search.noResultsHint')}
                 </p>
               </div>
             )}
 
-            {/* Hits grid — always rendered to avoid hydration mismatch.
-                InstantSearchNext performs SSR with an initial search, so
-                the server may already have results while client-only
-                conditional rendering would disagree. */}
             <Hits
               hitComponent={(props: any) => <CustomHit hit={props.hit} lang={lang} />}
               classNames={{
@@ -169,14 +165,14 @@ function SearchLayout({ lang, t }: { lang: string; t: (key: string) => string })
           </div>
         </div>
 
-        {/* Pagination — always rendered for same hydration reason */}
+        {/* Pagination */}
         <nav aria-label="Search results pagination" className="mt-8">
           <Pagination
             classNames={{
               list: 'flex items-center justify-center gap-1',
               item: '',
-              link: 'inline-flex items-center justify-center w-9 h-9 text-sm rounded-lg border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 bg-white dark:bg-mybg-900 hover:bg-gray-100 dark:hover:bg-mybg-800 transition-colors',
-              selectedItem: '[&>a]:bg-accent [&>a]:text-white [&>a]:border-accent',
+              link: 'inline-flex items-center justify-center w-9 h-9 text-sm rounded-lg border border-outline-variant text-on-surface bg-surface-container-lowest hover:bg-surface-container-high transition-colors',
+              selectedItem: '[&>a]:bg-accent [&>a]:text-on-primary [&>a]:border-accent',
               disabledItem: 'opacity-40 pointer-events-none',
             }}
           />
@@ -198,6 +194,29 @@ export default function SearchPageClient({ lang }: { lang: Locale }) {
       searchClient={searchClient}
       indexName={indexName}
       future={{ preserveSharedStateOnUnmount: true }}
+      routing={{
+        stateMapping: {
+          stateToRoute(uiState) {
+            const indexState = uiState[indexName] || {};
+            return {
+              q: indexState.query,
+              district: indexState.refinementList?.district,
+              page: indexState.page,
+            };
+          },
+          routeToState(routeState) {
+            return {
+              [indexName]: {
+                query: routeState.q as string,
+                refinementList: {
+                  district: routeState.district as string[],
+                },
+                page: routeState.page as number,
+              },
+            };
+          },
+        },
+      }}
     >
       <Configure hitsPerPage={12} />
       <SearchLayout lang={lang} t={t} />

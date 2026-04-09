@@ -4,7 +4,76 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* gray overrides (800 set to black for flowbite compat) */
+  /* === Editorial Cartography Design System === */
+
+  /* Primary (The Seal) */
+  --color-primary: #7e000e;
+  --color-primary-container: #a11d21;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffb4ad;
+  --color-primary-fixed: #ffdad7;
+  --color-primary-fixed-dim: #ffb3ad;
+
+  /* Secondary */
+  --color-secondary: #5f5e5e;
+  --color-secondary-container: #e5e2e1;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #656464;
+  --color-secondary-fixed: #e5e2e1;
+  --color-secondary-fixed-dim: #c8c6c5;
+
+  /* Tertiary (The Nautical) */
+  --color-tertiary: #003a7e;
+  --color-tertiary-container: #0050aa;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #adc7ff;
+  --color-tertiary-fixed: #d8e2ff;
+  --color-tertiary-fixed-dim: #adc7ff;
+
+  /* Surface hierarchy (The Parchment) */
+  --color-background: #fdfcf8;
+  --color-on-background: #1b1c1a;
+  --color-surface: #fdfcf8;
+  --color-surface-bright: #fdfcf8;
+  --color-surface-dim: #dbdad6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f4f0;
+  --color-surface-container: #efeeea;
+  --color-surface-container-high: #e9e8e4;
+  --color-surface-container-highest: #e3e2df;
+  --color-surface-variant: #e3e2df;
+  --color-surface-tint: #b22a2b;
+  --color-on-surface: #1b1c1a;
+  --color-on-surface-variant: #59413f;
+
+  /* Outline */
+  --color-outline: #8d706e;
+  --color-outline-variant: #e1bebb;
+
+  /* Inverse */
+  --color-inverse-surface: #2f312e;
+  --color-inverse-on-surface: #f2f1ed;
+  --color-inverse-primary: #ffb3ad;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* Legacy aliases (backward compat during migration) */
+  --color-accent: #7e000e;
+  --color-accent-light: #7e000e;
+  --color-accent-dark: #7e000e;
+  --color-mybg-light: #fdfcf8;
+  --color-mybg: #000;
+  --color-mybg-dark: #1b1c1a;
+  --color-mytxt-light: #1b1c1a;
+  --color-mytxt: #1b1c1a;
+  --color-mytxt-dark: #f2f1ed;
+  --color-header: #111827;
+
+  /* gray overrides (for flowbite compat) */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -16,43 +85,18 @@
   --color-gray-800: #000;
   --color-gray-900: #111827;
 
-  /* custom text color palette (mytxt) — maps to neutral */
-  --color-mytxt-light: #000;
-  --color-mytxt: #000;
-  --color-mytxt-dark: #fff;
-  --color-mytxt-100: #f5f5f5;
-  --color-mytxt-200: #e5e5e5;
-  --color-mytxt-300: #d4d4d4;
-  --color-mytxt-400: #a3a3a3;
-  --color-mytxt-500: #737373;
-  --color-mytxt-600: #525252;
-  --color-mytxt-700: #404040;
-  --color-mytxt-800: #262626;
-  --color-mytxt-900: #171717;
+  /* Font families */
+  --font-headline: 'Noto Serif', 'Georgia', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-label: 'Inter', system-ui, sans-serif;
 
-  /* custom background palette (mybg) — maps to zinc */
-  --color-mybg-light: #fff;
-  --color-mybg: #000;
-  --color-mybg-dark: #000;
-  --color-mybg-100: #f4f4f5;
-  --color-mybg-200: #e4e4e7;
-  --color-mybg-300: #d4d4d8;
-  --color-mybg-400: #a1a1aa;
-  --color-mybg-500: #71717a;
-  --color-mybg-600: #52525b;
-  --color-mybg-700: #3f3f46;
-  --color-mybg-800: #27272a;
-  --color-mybg-900: #18181b;
-
-  /* accent */
-  --color-accent-light: #dc2626;
-  --color-accent: #dc2626;
-  --color-accent-dark: #dc2626;
-
-  /* header */
-  --color-header-light: #fff;
-  --color-header: #111827;
-  --color-header-dark: #111827;
+  /* Border radius (architectural, not bubbly) */
+  --radius-DEFAULT: 0.125rem;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
 
   /* spacing */
   --spacing-28: 7rem;
@@ -62,6 +106,7 @@
 
   /* line-height */
   --leading-tight: 1.2;
+  --leading-relaxed: 1.6;
 
   /* font-size */
   --text-5xl: 2.5rem;
@@ -74,16 +119,112 @@
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/** ***** */
-/* grid */
-/** ***** */
+/* === Dark Mode Token Overrides === */
+/* When .dark is on <html>, all design tokens invert automatically. */
+/* Components using bg-background, text-on-surface, bg-surface-container-*, etc. */
+/* will adapt without needing per-element dark: classes. */
+.dark {
+  --color-primary: #dc2626;
+  --color-primary-container: #a11d21;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffdad7;
+  --color-primary-fixed: #3b0008;
+  --color-primary-fixed-dim: #dc2626;
+
+  --color-secondary: #c8c6c5;
+  --color-secondary-container: #474646;
+  --color-on-secondary: #303030;
+  --color-on-secondary-container: #e5e2e1;
+
+  --color-tertiary: #adc7ff;
+  --color-tertiary-container: #004493;
+  --color-on-tertiary: #00295b;
+  --color-on-tertiary-container: #d8e2ff;
+
+  --color-background: #131211;
+  --color-on-background: #e7e0de;
+  --color-surface: #131211;
+  --color-surface-bright: #3a3836;
+  --color-surface-dim: #131211;
+  --color-surface-container-lowest: #0c0a09;
+  --color-surface-container-low: #1c1917;
+  --color-surface-container: #211f1d;
+  --color-surface-container-high: #2c2926;
+  --color-surface-container-highest: #373431;
+  --color-surface-variant: #534342;
+  --color-surface-tint: #dc2626;
+  --color-on-surface: #e7e0de;
+  --color-on-surface-variant: #d8c2bf;
+
+  --color-outline: #a08c8a;
+  --color-outline-variant: #534342;
+
+  --color-inverse-surface: #e7e0de;
+  --color-inverse-on-surface: #322f2e;
+  --color-inverse-primary: #7e000e;
+
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-on-error-container: #ffdad6;
+
+  --color-accent: #dc2626;
+}
+
+.dark .editorial-shadow {
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.3);
+}
+
+.dark .hero-gradient {
+  background: linear-gradient(45deg, #5e0009 0%, #8f0d17 100%);
+}
+
+/* === Base Styles === */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-headline);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+/* === Utility Classes === */
+.editorial-shadow {
+  box-shadow: 0 32px 64px -12px rgba(27, 28, 26, 0.04);
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-gradient {
+  background: linear-gradient(45deg, #7e000e 0%, #a11d21 100%);
+}
+
+/* Hide scrollbar for carousel components */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* === Legacy Grid Styles (to be removed in Phase 12) === */
 .streetGrid {
   padding-bottom: 10px;
   padding-top: 10px;
   border-bottom: solid 1px gray;
 }
 
-/** alphabet list */
 .alphabetlist ul {
   background: none;
   height: 50px;
@@ -102,7 +243,7 @@
 }
 
 .alphabetlist li a {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-headline);
   text-decoration: none;
   font-weight: bolder;
   height: 50px;
@@ -113,10 +254,9 @@
 }
 
 .bigletter {
-  font-family: var(--font-roboto), sans-serif;
+  font-family: var(--font-headline);
   font-size: 76pt;
   display: inline;
-  /*display: block; */
 }
 
 .columnContainer {
@@ -147,14 +287,6 @@
   text-align: left;
 }
 
-.columnX {
-}
-
-.itemX {
-  padding: 10px;
-}
-
-
 #scrollBtn {
   display: none;
   position: fixed;
@@ -164,7 +296,7 @@
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: var(--color-primary);
   color: white;
   cursor: pointer;
   padding: 5px;
@@ -173,18 +305,4 @@
 
 #scrollBtn:hover {
   background-color: #555;
-}
-
-
-body {
-  /*padding: 10px;*/
-  font: 1em var(--font-roboto), Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-p {
-  margin: 0 0 1em 0;
 }

@@ -106,20 +106,30 @@ export default async function Page({ params }: { params: Promise<{ lang: string,
         }),
         breadcrumbJsonLd(breadcrumbItems),
       ]} />
-      <section className="dark:bg-mybg-dark dark:text-gray-100">
-        <div className="container p-6 mx-auto space-y-6 sm:space-y-12">
+      <section>
+        <div className="max-w-screen-2xl mx-auto px-8 py-12">
           <Breadcrumbs items={breadcrumbItems.map(b => ({
             label: b.name,
             href: b.url === `/${lang}/districts/${slug}` ? undefined : b.url,
           }))} />
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-4">{districtName}</h1>
-            {district.fields.description && (
-              <div className="prose dark:prose-invert">
-                <RichtextComponent content={district.fields.description} locale={lang}/>
+          <header className="mb-20">
+            <h1 className="text-6xl md:text-8xl font-headline font-bold text-on-surface leading-none tracking-tighter mb-4">
+              {districtName}
+            </h1>
+            {district.fields.polishName && (
+              <div className="flex items-center space-x-4">
+                <div className="h-px w-12 bg-primary"></div>
+                <p className="text-2xl font-headline italic text-on-surface/60">
+                  {district.fields.polishName}
+                </p>
               </div>
             )}
-          </div>
+          </header>
+          {district.fields.description && (
+            <div className="prose prose-lg max-w-3xl text-on-surface leading-relaxed mb-24">
+              <RichtextComponent content={district.fields.description} locale={lang}/>
+            </div>
+          )}
           <StreetsByDistrict streets={allStreets} district={district} locale={lang} />
         </div>
       </section>

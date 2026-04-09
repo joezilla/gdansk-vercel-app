@@ -1,17 +1,31 @@
 {
     "homepage": {
         "title": "Die Straßen von Danzig",
-        "description": "Entdecken Sie die reiche Geschichte und Kultur von Danzig durch seine Straßen, Menschen und Geschichten."
+        "description": "Entdecken Sie die reiche Geschichte und Kultur von Danzig durch seine Straßen, Menschen und Geschichten.",
+        "seoLabel": "Historischer Kontext",
+        "streetsOfInterest": "Straßen von Interesse",
+        "historicalDistricts": "Historische Stadtteile",
+        "districtsSubtitle": "Die sozioökonomische Topographie der Freien Stadt. Entdecken Sie die Identitäten der historischen Viertel.",
+        "editorialJournal": "Redaktionelles Journal",
+        "archivalInsights": "Archivalische Einblicke",
+        "seoHeadlineFallback": "Eine verlorene Ära dokumentieren",
+        "seoTextFallback1": "Das Projekt Straßen von Danzig ist ein digitaler Versuch, die vielschichtige Geschichte einer Stadt zu versöhnen, die unter mehreren Identitäten existiert hat.",
+        "seoTextFallback2": "Unsere archivarischen Ziele konzentrieren sich auf die Bewahrung der Toponymie\u2014der Namen von Orten.",
+        "enterArchive": "Archiv erkunden"
     },
     "allstreets": {
         "header": "Alle Straßen",
         "subtitle": "{{ count }} indizierte Straßen in Danzig."
     },
     "alldistricts": {
-        "header": "Alle Danziger Stadtteike",
-        "subhead": "{{ count }} Stadtteile."
+        "header": "Alle Danziger Stadtteile",
+        "subhead": "{{ count }} Stadtteile.",
+        "intro1": "Danzigs architektonische Entwicklung zeugt von Jahrhunderten kaufmännischen Ehrgeizes und maritimen Einflusses. Von der mittelalterlichen Dichte der Rechtstadt bis zur industriellen Expansion der Vororte des 19. Jahrhunderts bewahrt jeder Stadtteil eine besondere Schicht europäischer Geschichte.",
+        "intro2": "Unser Verzeichnis bietet einen kuratierten Überblick durch diese historischen Viertel, kartiert nicht nur nach Geographie, sondern nach den Geschichten der Familien, Handwerker und Seeleute, die seine Straßen prägten.",
+        "explore": "Stadtteile erkunden"
     },
     "nav": {
+        "home": "Startseite",
         "allstreets": "Straßenübersicht",
         "alldistricts": "Stadtteile",
         "search": "Suche"
@@ -34,7 +48,9 @@
         "pictures": "Bilder",
         "polishNames": "Polnische Namen",
         "previousNames": "Andere Namen",
-        "district": "Stadtteil"
+        "district": "Stadtteil",
+        "quickFacts": "Kurzinfo",
+        "noHistory": "Es wurde noch keine Geschichte erfasst."
     },
     "title": {
         "title": "Hello World!",
@@ -65,6 +81,9 @@
         "districts": "Stadtteile"
     },
     "streetsByDistrict":{
-        "headline" : "Straßen in {{ district }}" 
+        "headline" : "Straßen in {{ district }}"
+    },
+    "post": {
+        "relatedArchives": "Verwandte Beiträge"
     }
 }

@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 /**
  * Initializes dark mode based on browser preference but then also allows
  * toggle and stores the toggle in localStorage.
- * 
- * @returns 
  */
 export function DarkmodeToggle() {
 
@@ -38,7 +36,7 @@ export function DarkmodeToggle() {
             type="button"
             onClick={handleToggle}
             aria-label="Toggle dark mode"
-            className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 rounded-lg p-1"
+            className="text-on-surface/50 hover:bg-surface-container-high focus:outline-none focus:ring-2 focus:ring-outline-variant rounded-lg p-1 transition-colors"
         >
             <svg
                 id="theme-toggle-dark-icon"
