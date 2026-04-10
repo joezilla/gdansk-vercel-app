@@ -4,6 +4,11 @@ module.exports = {
     deviceSizes: [640, 1080, 1920],
     formats: ['image/webp'],
     minimumCacheTTL: 2592000, // 30 days — Contentful asset URLs are content-addressed/immutable
+    // Allow SVG for placeholder image served by /cached-assets route when
+    // a cached file is missing. Safe because we only serve our own SVG,
+    // never user-supplied content.
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // loaderFile: ''
       remotePatterns: [
         {

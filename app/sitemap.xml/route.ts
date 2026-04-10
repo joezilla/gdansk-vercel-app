@@ -1,4 +1,4 @@
-import { ContentfulLoader } from '../../lib/contentful'
+import { getContentfulLoader } from '../../lib/contentful'
 import { createPostURL, createStreetURL, createDistrictURL } from '../../lib/urlutil';
 
 const SITE_URL = 'https://www.streetsofdanzig.com';
@@ -20,7 +20,10 @@ function urlEntry(loc: string) {
 }
 
 async function generateSitemap() {
-  const loader = new ContentfulLoader();
+  // Long TTL — sitemap only needs to regenerate when content list changes.
+  // List-tag invalidation (streets-list, posts-list, districts-list) is
+  // handled automatically by the webhook.
+  const loader = getContentfulLoader(60 * 60 * 24);
   const [allStreets, allPosts, allDistricts] = await Promise.all([
     loader.getAllStreets().then(s => (s ?? []).filter(Boolean)),
     loader.getAllPosts().then(p => (p ?? []).filter(Boolean)),

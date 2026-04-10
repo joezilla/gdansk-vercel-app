@@ -23,11 +23,15 @@ export class I18N {
   private fallbackLocale = "en";
 
   constructor(locale: string) {
-    // Normalize locale to match dictionary keys: "en-US" → "en", "" → "en"
-    if (locale === "en-US" || locale === "en" || locale === "") {
-      this.locale = "en";
+    // Normalize locale to match dictionary keys.
+    // Known mappings: "en-US" → "en", everything else → fall back to "en"
+    // unless it's a supported dictionary key.
+    if (locale === "de") {
+      this.locale = "de";
     } else {
-      this.locale = locale;
+      // "en", "en-US", "", or anything unexpected (e.g., "_next" from
+      // edge-case routing) all normalize to the default locale.
+      this.locale = "en";
     }
   }
 

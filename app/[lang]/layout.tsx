@@ -1,8 +1,9 @@
 import Footer from './footer'
 import HeaderNavigationModule from './navigation'
-import { ContentfulLoader } from '../../lib/contentful';
+import { getContentfulLoader } from '../../lib/contentful';
 import { i18n, type Locale } from "../../i18n-config";
 import { I18N } from '../../lib/i18n';
+import { hreflangAlternates } from '../../lib/hreflang';
 // 3rd party
 import { GoogleTagManager } from '@next/third-parties/google';
 import Script from 'next/script';
@@ -38,8 +39,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang = langParam as Locale;
   const t = new I18N(lang).getTranslator();
 
-  const otherLocale = lang === 'de' ? 'en' : 'de';
-
   return {
     metadataBase: new URL('https://www.streetsofdanzig.com'),
     title: {
@@ -50,13 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       siteName: t('homepage.title'),
     },
-    alternates: {
-      canonical: `/${lang}`,
-      languages: {
-        [lang]: `/${lang}`,
-        [otherLocale]: `/${otherLocale}`,
-      },
-    },
+    alternates: hreflangAlternates(lang),
   };
 }
 
@@ -72,7 +65,7 @@ export default async function RootLayout({
   const { lang: langParam } = await params;
   const lang = langParam as Locale;
   // load static navigation posts
-  const loader = new ContentfulLoader(3600, lang);
+  const loader = getContentfulLoader(3600, lang);
   const navigationPosts = await loader.getNavigationPosts();
   //
   return (

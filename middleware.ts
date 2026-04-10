@@ -41,6 +41,10 @@ export function middleware(request: NextRequest) {
   if(pathname.startsWith('/resources'))
     return;
 
+  // ignore cached Contentful assets (file-backend mode)
+  if(pathname.startsWith('/cached-assets'))
+    return;
+
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
@@ -69,5 +73,5 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ["/((?!api|_next/static|sitemap.xml|_next/image|robots.txt|favicon.ico).*)"],
+  matcher: ["/((?!api|_next|sitemap.xml|robots.txt|favicon.ico|cached-assets).*)"],
 };

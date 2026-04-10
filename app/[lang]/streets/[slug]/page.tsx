@@ -3,7 +3,8 @@ export const dynamic = 'force-static'
 import { I18N } from '../../../../lib/i18n';
 import { Container } from '../../layout/container'
 import { StreetDetail } from '../streetdetails'
-import { ContentfulLoader } from '../../../../lib/contentful'
+import { getContentfulLoader } from '../../../../lib/contentful'
+import { hreflangAlternates } from '../../../../lib/hreflang'
 import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";
 import { notFound } from 'next/navigation'
@@ -12,7 +13,7 @@ import { streetJsonLd, breadcrumbJsonLd, JsonLdScript } from '../../../../lib/js
 import { Breadcrumbs } from '../../layout/breadcrumbs'
 
 async function getStreetData(lang: Locale, slug: string) {
-  const loader = new ContentfulLoader(3600, lang);
+  const loader = getContentfulLoader(3600, lang);
   const street = await loader.getStreetBySlug(slug);
   if (!street) {
     log.error(`Cannot find street ${slug}`);
@@ -47,10 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title,
     description,
-    alternates: {
-      canonical: `/${lang}/streets/${slug}`,
-      languages: { en: `/en/streets/${slug}`, de: `/de/streets/${slug}` },
-    },
+    alternates: hreflangAlternates(lang, `/streets/${slug}`),
     openGraph: {
       title,
       description,
@@ -133,7 +131,7 @@ export default async function Page({ params }:
 }
 
 export async function generateStaticParams() {
-  const loader = new ContentfulLoader();
+  const loader = getContentfulLoader();
   const allStreets = await loader.getAllStreets();
 
   return (allStreets ?? [])

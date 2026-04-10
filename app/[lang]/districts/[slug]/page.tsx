@@ -1,7 +1,8 @@
 export const dynamic = 'force-static'
 
 // import { useRouter } from 'next/router'
-import { ContentfulLoader } from '../../../../lib/contentful'
+import { getContentfulLoader } from '../../../../lib/contentful'
+import { hreflangAlternates } from '../../../../lib/hreflang'
 import { log } from 'next-axiom'
 import { Locale } from "../../../../i18n-config";
 import { notFound } from 'next/navigation'
@@ -13,7 +14,7 @@ import { districtJsonLd, breadcrumbJsonLd, JsonLdScript } from '../../../../lib/
 import { Breadcrumbs } from '../../layout/breadcrumbs'
 
 async function getDistrictData(lang: Locale, slug: string) {
-  const loader = new ContentfulLoader(3600, lang);
+  const loader = getContentfulLoader(3600, lang);
   const district = await loader.getDistrictBySlug(slug);
   if (!district) {
     log.error(`Cannot find district ${slug}`);
@@ -46,10 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title,
     description,
-    alternates: {
-      canonical: `/${lang}/districts/${slug}`,
-      languages: { en: `/en/districts/${slug}`, de: `/de/districts/${slug}` },
-    },
+    alternates: hreflangAlternates(lang, `/districts/${slug}`),
     openGraph: {
       title,
       description,
@@ -81,7 +79,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string,
   const district = await getDistrictData(lang, slug);
   if (!district) return notFound();
 
-  const loader = new ContentfulLoader(3600, lang);
+  const loader = getContentfulLoader(3600, lang);
   const allStreets = await loader.getAllStreets();
 
   const i18n = new I18N(lang).getTranslator();
@@ -138,7 +136,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string,
 }
 
 export async function generateStaticParams() {
-  const loader = new ContentfulLoader();
+  const loader = getContentfulLoader();
   const allDistricts = await loader.getAllDistricts();
 
   return (allDistricts ?? [])

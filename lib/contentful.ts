@@ -4,7 +4,13 @@
  * Uses contentful graphql and cf's javascript sdk to do the heavy lifting.
  * Non-fetch calls (SDK/axios) are cached via Next.js unstable_cache.
  * GraphQL fetch() calls use native Next.js fetch cache with tags.
+ *
+ * Caching strategy:
+ * - Long safety-net TTLs (days/weeks) — cache persists until webhook invalidates.
+ * - Fine-grained tags: per-entry (`street:${slug}`) + list (`streets-list`).
+ * - Request-scoped deduplication via React.cache().
  */
+import { cache as reactCache } from 'react';
 import { IStreet, IPost, IDistrict, IHomepage, StreetSummary, PostSummary, DistrictSummary } from './contentmodel/wrappertypes';
 import { cached } from './contentful-cache';
 
@@ -19,15 +25,17 @@ export const contentfulClient = createClient({
     environment: process.env.CONTENTFUL_ENVIRONMENT ?? "",
 });
 
+// Safety-net TTLs. Real invalidation happens via Contentful webhooks
+// calling revalidateTag() on the tags below. These long TTLs exist only
+// to recover if a webhook is ever missed.
+const TTL_DAY = 60 * 60 * 24;
+const TTL_WEEK = TTL_DAY * 7;
+const TTL_MONTH = TTL_DAY * 30;
+
 abstract class AbstractContentfulLoader {
 
     /**
      * Fetch via contentful graphql query.
-     *
-     * @param query   - graphql query
-     * @param preview -
-     * @param tags    - cache invalidationTag
-     * @returns
      */
     public async fetchGraphQL(query: string, preview = false, tags: string[] = []) {
         return fetch(
@@ -49,50 +57,41 @@ abstract class AbstractContentfulLoader {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-//
-////////////////////////////////////////////////////////////////////////////////////////////////
 
-//////
 export class ContentfulLoader extends AbstractContentfulLoader {
 
-    private cacheTimeout: number;
     private locale: string;
 
-    constructor(cacheTimeout: number = 60 * 60, locale: string = "en-US") {
+    // cacheTimeout retained only for backward-compatibility with existing callers.
+    // It is no longer used — per-method TTLs are now defined below as constants.
+    constructor(_cacheTimeout: number = 60 * 60, locale: string = "en-US") {
         super();
-        this.cacheTimeout = cacheTimeout;
         if (locale == "en")
             this.locale = "en-US";
         else
             this.locale = locale;
     }
 
-    /** return the contentful client */
     public getClient() {
         return contentfulClient;
     }
 
     /**
-     * Return all streets
-     * @param preview
-     * @returns StreetSummary[]
+     * Return all streets.
+     * Cached: 7 days + invalidated by `streets-list` tag.
      */
-    public async getAllStreets(preview = false) {
+    public getAllStreets = reactCache(async (preview = false) => {
         const entries = await cached(
             () => this.doGetStreets(100, preview),
             ['all-streets'],
-            ['streets'],
-            this.cacheTimeout
+            ['streets', 'streets-list'],
+            TTL_WEEK
         );
         return entries as StreetSummary[];
-    }
+    });
 
     /**
-     * Get the streets in batches since there's an annoying query limit of 1000 results
-     * in contentful's graphql api.
-     *
-     * @param batchSize
-     * @param preview
+     * Get the streets in batches. Contentful's graphql api has a 1000 result limit.
      */
     private async doGetStreets(batchSize: number = 100, preview: boolean = false) {
         let currentBatchSize = 0;
@@ -118,8 +117,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                     }
                     }`,
                     preview,
-                    [ 'streets' ]
-
+                    [ 'streets', 'streets-list' ]
             )
             const items = currentResult?.data?.streetCollection?.items;
             currentBatchSize = items?.length ?? 0;
@@ -130,14 +128,11 @@ export class ContentfulLoader extends AbstractContentfulLoader {
         return result;
     }
 
-
     /**
-    * Return all posts
-    * @param preview
-    * @param limit up to how many to return, defaults to 1000
-    * @returns PostSummary[]
-    */
-    public async getAllPosts(preview = false, limit = 1000) {
+     * Return all posts.
+     * Cached: 7 days + invalidated by `posts-list` tag.
+     */
+    public getAllPosts = reactCache(async (preview = false, limit = 1000) => {
         const entries = await cached(
             () => this.fetchGraphQL(
                 `query {
@@ -152,19 +147,20 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 }
                 }`,
                 preview,
-                ['posts']
+                ['posts', 'posts-list']
             ),
             ['all-posts'],
-            ['posts'],
-            this.cacheTimeout
+            ['posts', 'posts-list'],
+            TTL_WEEK
         );
         return ((entries?.data?.postCollection?.items ?? []).filter(Boolean)) as PostSummary[];
-    }
+    });
 
     /**
-     * get a street object from contentful by name
+     * Get a street by slug.
+     * Cached: 1 month + invalidated by `street:${slug}` tag.
      */
-    public async getStreetBySlug(slug: string, locale: string = this.locale) {
+    public getStreetBySlug = reactCache(async (slug: string, locale: string = this.locale) => {
         const query = {
             content_type: 'street',
             'fields.slug': slug,
@@ -176,17 +172,17 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 return entries.items.length == 0 ? null : entries.items[0];
             }),
             ['street-by-name', slug, locale],
-            ['streets'],
-            this.cacheTimeout
+            ['streets', `street:${slug}`],
+            TTL_MONTH
         ) as IStreet;
         return entry;
-    }
-
+    });
 
     /**
-     * @returns get the posts for the homepage
+     * Get homepage posts.
+     * Cached: 7 days + invalidated by `posts-list` tag.
      */
-    public async getHomepagePosts(locale: string = this.locale) {
+    public getHomepagePosts = reactCache(async (locale: string = this.locale) => {
         const query = {
             content_type: 'post',
             order: '-sys.createdAt',
@@ -201,15 +197,18 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 return entries.items;
             }),
             ['homepage-posts', locale],
-            ['posts'],
-            3600
+            ['posts', 'posts-list', 'homepage'],
+            TTL_WEEK
         );
 
         return entries as IPost[];
-    }
+    });
 
-    /** Homepage Hero */
-    public async getHomepageHeroPost(locale: string = this.locale) {
+    /**
+     * Homepage Hero post.
+     * Cached: 7 days + invalidated by `posts-list` or `homepage` tag.
+     */
+    public getHomepageHeroPost = reactCache(async (locale: string = this.locale) => {
         const query = {
             content_type: 'post',
             'fields.showIn': "Hero",
@@ -223,17 +222,21 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 return entries.items.length == 0 ? null : entries.items[0];
             }),
             ['homepage-hero-post', locale],
-            ['posts'],
-            3600
+            ['posts', 'posts-list', 'homepage'],
+            TTL_WEEK
         );
 
         if (!entry) return null;
         return entry as IPost;
-    }
+    });
 
-
-    /** Get the posts to put into the navigation */
-    public async getNavigationPosts(locale: string = this.locale) {
+    /**
+     * Navigation posts — shown in header on every page.
+     * Cached: 1 month + invalidated by `navigation` or `posts-list` tag.
+     * Navigation almost never changes; this runs on every page request so
+     * long TTL is critical for API call reduction.
+     */
+    public getNavigationPosts = reactCache(async (locale: string = this.locale) => {
         const query = {
             content_type: 'post',
             order: '-sys.createdAt',
@@ -247,14 +250,17 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 return entries.items;
             }),
             ['navigation-posts', locale],
-            ['posts'],
-            this.cacheTimeout
+            ['posts', 'posts-list', 'navigation'],
+            TTL_MONTH
         );
         return entries as IPost[];
-    }
+    });
 
-    // get a post by slug
-    public async getPostBySlug(slug: string, locale: string = this.locale) {
+    /**
+     * Get a post by slug.
+     * Cached: 1 month + invalidated by `post:${slug}` tag.
+     */
+    public getPostBySlug = reactCache(async (slug: string, locale: string = this.locale) => {
         const query = {
             content_type: 'post',
             'fields.slug': slug,
@@ -266,17 +272,17 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 return entries.items.length == 0 ? null : entries.items[0];
             }),
             ['post-by-slug', slug, locale],
-            ['posts'],
-            this.cacheTimeout
+            ['posts', `post:${slug}`],
+            TTL_MONTH
         ) as IPost;
         return entry;
-    }
+    });
 
     /**
-     * @param locale
-     * @returns array of DistrictSummary
+     * Return all districts.
+     * Cached: 7 days + invalidated by `districts-list` tag.
      */
-    public async getAllDistricts(locale: string = this.locale, preview: boolean = false) {
+    public getAllDistricts = reactCache(async (locale: string = this.locale, preview: boolean = false) => {
         return await cached(
             async () => {
                 let result = [] as DistrictSummary[];
@@ -297,7 +303,7 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                             }
                             }`,
                             preview,
-                            ['districts']
+                            ['districts', 'districts-list']
                 )
                 const items = currentResult?.data?.districtCollection?.items;
                 if (items) result = result.concat(
@@ -309,19 +315,16 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 return result;
             },
             ['all-districts', locale, String(preview)],
-            ['districts'],
-            this.cacheTimeout
+            ['districts', 'districts-list'],
+            TTL_WEEK
         ) as DistrictSummary[];
-    }
-
+    });
 
     /**
-     * Retrieve a district by slug
-     * @param slug
-     * @param locale
-     * @returns
+     * Get a district by slug.
+     * Cached: 1 month + invalidated by `district:${slug}` tag.
      */
-    public async getDistrictBySlug(slug: string, locale: string = this.locale) {
+    public getDistrictBySlug = reactCache(async (slug: string, locale: string = this.locale) => {
         const query = {
             content_type: 'district',
             'fields.slug': slug,
@@ -333,17 +336,17 @@ export class ContentfulLoader extends AbstractContentfulLoader {
                 return entries.items.length == 0 ? null : entries.items[0];
             }),
             ['district-by-slug', slug, locale],
-            ['districts'],
-            this.cacheTimeout
+            ['districts', `district:${slug}`],
+            TTL_MONTH
         ) as IDistrict;
         return entry;
-    }
+    });
 
     /**
-     * Retrieve homepage content for a locale.
-     * Returns the full entry with resolved references (streets, districts, posts).
+     * Homepage content (hero, featured refs, SEO text).
+     * Cached: 1 month + invalidated by `homepage` tag.
      */
-    public async getHomepageContent(locale: string = this.locale) {
+    public getHomepageContent = reactCache(async (locale: string = this.locale) => {
         const cfLocale = locale === 'de' ? 'de' : 'en-US';
         const query = {
             content_type: 'homepage',
@@ -359,9 +362,48 @@ export class ContentfulLoader extends AbstractContentfulLoader {
             }),
             ['homepage-content', locale],
             ['homepage'],
-            this.cacheTimeout
+            TTL_MONTH
         ) as IHomepage | null;
         return entry;
-    }
+    });
 
+}
+
+// ---------------------------------------------------------------------------
+// Backend factory — switch between Contentful API and local file export
+// ---------------------------------------------------------------------------
+
+import { FileContentfulLoader } from './contentfulFile';
+
+/**
+ * Common interface for API-backed and file-backed loaders.
+ * Both expose the same methods so callers don't care which backend is active.
+ */
+export type IContentfulLoader = {
+    getClient: () => any;
+    getAllStreets: (preview?: boolean) => Promise<StreetSummary[]>;
+    getAllPosts: (preview?: boolean, limit?: number) => Promise<PostSummary[]>;
+    getStreetBySlug: (slug: string, locale?: string) => Promise<IStreet | null>;
+    getPostBySlug: (slug: string, locale?: string) => Promise<IPost | null>;
+    getDistrictBySlug: (slug: string, locale?: string) => Promise<IDistrict | null>;
+    getHomepagePosts: (locale?: string) => Promise<IPost[]>;
+    getHomepageHeroPost: (locale?: string) => Promise<IPost | null>;
+    getNavigationPosts: (locale?: string) => Promise<IPost[]>;
+    getAllDistricts: (locale?: string, preview?: boolean) => Promise<DistrictSummary[]>;
+    getHomepageContent: (locale?: string) => Promise<IHomepage | null>;
+};
+
+/**
+ * Returns the configured Contentful loader.
+ *
+ * Set CONTENTFUL_BACKEND=file in .env to use the local JSON export
+ * (content/2026-04-10/contentful-export-*.json) instead of Contentful's API.
+ * Any other value (or unset) uses the live Contentful API.
+ */
+export function getContentfulLoader(cacheTimeout: number = 60 * 60, locale: string = 'en-US'): IContentfulLoader {
+    const backend = (process.env.CONTENTFUL_BACKEND ?? '').trim().replace(/^["']|["']$/g, '').toLowerCase();
+    if (backend === 'file') {
+        return new FileContentfulLoader(cacheTimeout, locale) as unknown as IContentfulLoader;
+    }
+    return new ContentfulLoader(cacheTimeout, locale) as unknown as IContentfulLoader;
 }

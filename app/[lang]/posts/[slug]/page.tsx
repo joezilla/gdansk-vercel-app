@@ -1,7 +1,8 @@
 export const dynamic = 'force-static'
 
 import { Metadata } from 'next'
-import { ContentfulLoader } from '../../../../lib/contentful'
+import { getContentfulLoader } from '../../../../lib/contentful'
+import { hreflangAlternates } from '../../../../lib/hreflang'
 import { Locale } from "../../../../i18n-config";
 import { notFound } from 'next/navigation'
 import { FullpagePost } from '../fullpagePost'
@@ -12,7 +13,7 @@ import { articleJsonLd, breadcrumbJsonLd, JsonLdScript } from '../../../../lib/j
 import { Breadcrumbs } from '../../layout/breadcrumbs'
 
 async function getPostData(lang: Locale, slug: string) {
-  const loader = new ContentfulLoader(3600, lang);
+  const loader = getContentfulLoader(3600, lang);
   const post = await loader.getPostBySlug(slug);
   if (!post) {
     log.error(`Cannot find post ${slug}`);
@@ -44,10 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: name,
     description: excerpt,
-    alternates: {
-      canonical: `/${lang}/posts/${slug}`,
-      languages: { en: `/en/posts/${slug}`, de: `/de/posts/${slug}` },
-    },
+    alternates: hreflangAlternates(lang, `/posts/${slug}`),
     openGraph: {
       title: name,
       description: excerpt,
@@ -72,7 +70,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 export async function generateStaticParams() {
-  const loader = new ContentfulLoader()
+  const loader = getContentfulLoader()
   const allPosts = await loader.getAllPosts();
 
   return (allPosts ?? [])
@@ -98,7 +96,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string,
   }
 
   // Fetch related posts (other homepage posts, excluding current)
-  const loader = new ContentfulLoader(3600, lang);
+  const loader = getContentfulLoader(3600, lang);
   const allPosts = await loader.getHomepagePosts() ?? [];
   const relatedPosts = allPosts.filter((p: IPost) => p.fields.slug !== slug).slice(0, 3);
 

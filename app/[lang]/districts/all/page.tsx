@@ -1,17 +1,29 @@
 export const dynamic = 'force-static'
 
-import { ContentfulLoader } from '../../../../lib/contentful'
+import { Metadata } from 'next'
+import { getContentfulLoader } from '../../../../lib/contentful'
 import { Locale } from "../../../../i18n-config";
 import { I18N } from '../../../../lib/i18n'
 import { createDistrictURL } from '../../../../lib/urlutil'
 import Image from 'next/image'
 import { normalizeContentfulImageUrl } from '../../../../lib/imageUrl'
+import { hreflangAlternates } from '../../../../lib/hreflang'
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: langParam } = await params;
+  const lang = langParam as Locale;
+  const i18n = new I18N(lang).getTranslator();
+  return {
+    title: i18n('alldistricts.header'),
+    alternates: hreflangAlternates(lang, '/districts/all'),
+  };
+}
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: langParam } = await params;
   const lang = langParam as Locale;
 
-  const loader = new ContentfulLoader(3600, lang);
+  const loader = getContentfulLoader(3600, lang);
   const i18n = new I18N(lang).getTranslator();
   const allDistricts = await loader.getAllDistricts();
 

@@ -1,7 +1,8 @@
 export const dynamic = 'force-static'
 
 import { Metadata } from 'next'
-import { ContentfulLoader } from '../../lib/contentful'
+import { getContentfulLoader } from '../../lib/contentful'
+import { hreflangAlternates } from '../../lib/hreflang'
 import { Locale } from "../../i18n-config";
 import { I18N } from '../../lib/i18n'
 import { websiteJsonLd, JsonLdScript } from '../../lib/jsonld'
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: { absolute: i18n('homepage.title') },
     description: i18n('homepage.description'),
-    alternates: { canonical: `/${lang}`, languages: { en: '/en', de: '/de' } },
+    alternates: hreflangAlternates(lang),
     openGraph: {
       title: i18n('homepage.title'), description: i18n('homepage.description'), url: `/${lang}`,
       images: [{ url: 'https://www.streetsofdanzig.com/resources/images/site-screenshot.png', width: 1200, height: 630, alt: i18n('homepage.title') }],
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: langParam } = await params;
   const lang = langParam as Locale;
-  const loader = new ContentfulLoader(3600, lang);
+  const loader = getContentfulLoader(3600, lang);
   const i18n = new I18N(lang).getTranslator();
   const homepage = await loader.getHomepageContent(lang);
 

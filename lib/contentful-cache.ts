@@ -6,9 +6,13 @@
  * via revalidateTag() instead of nuclear flushdb().
  */
 import { unstable_cache } from 'next/cache';
+import { log } from 'next-axiom';
 
 /**
  * Wraps an async function with Next.js data cache.
+ *
+ * Logs a MISS line when the function actually executes (cache miss),
+ * so Contentful API consumption can be monitored in Axiom logs.
  *
  * @param fn         - The async function to cache
  * @param cacheKey   - Array of strings forming the cache key
@@ -21,9 +25,16 @@ export function cached<T>(
   tags: string[],
   revalidate?: number
 ): Promise<T> {
-  const cachedFn = unstable_cache(fn, cacheKey, {
-    tags: [...tags, 'cf'],
-    revalidate: revalidate && revalidate > 0 ? revalidate : undefined,
-  });
+  const cachedFn = unstable_cache(
+    async () => {
+      log.info(`[cache MISS] ${cacheKey.join('/')}`);
+      return fn();
+    },
+    cacheKey,
+    {
+      tags: [...tags, 'cf'],
+      revalidate: revalidate && revalidate > 0 ? revalidate : undefined,
+    }
+  );
   return cachedFn() as Promise<T>;
 }

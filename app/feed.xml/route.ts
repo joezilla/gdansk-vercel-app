@@ -1,10 +1,11 @@
-import { ContentfulLoader } from '../../lib/contentful';
+import { getContentfulLoader } from '../../lib/contentful';
 import { createPostURL } from '../../lib/urlutil';
 
 const SITE_URL = 'https://www.streetsofdanzig.com';
 
 export async function GET() {
-  const loader = new ContentfulLoader();
+  // Long TTL — RSS feed only regenerates when posts-list tag is invalidated.
+  const loader = getContentfulLoader(60 * 60 * 24);
   const allPosts = ((await loader.getAllPosts()) ?? []).filter(Boolean);
 
   const items = allPosts.map(post => {
