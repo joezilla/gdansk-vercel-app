@@ -4,6 +4,7 @@ import { DistrictNames } from './districtNames'
 import dynamic from 'next/dynamic';
 import React from "react";
 import { I18N } from "../../../lib/i18n";
+import { normalizeContentfulImageUrl } from "../../../lib/imageUrl";
 import Lightbox2 from './lightbox';
 
 const GoogleMap = dynamic(() => import('./googleMap').then(mod => mod.GoogleMap), {
@@ -69,7 +70,7 @@ export function StreetDetail(props: StreetDetailProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <Lightbox2
                   slides={street.fields.media.map(item => ({
-                    src: item.fields.image.fields.file?.url as string,
+                    src: normalizeContentfulImageUrl(item.fields.image.fields.file?.url as string),
                     title: item.fields.title,
                     source: item.fields.source,
                     id: item.sys.id,

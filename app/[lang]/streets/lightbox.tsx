@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { normalizeContentfulImageUrl } from "../../../lib/imageUrl";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Captions from "yet-another-react-lightbox/plugins/captions";
@@ -34,7 +33,7 @@ export default function Lightbox2({ slides }: { slides: LightboxProps[] }) {
                     <Image
                         alt={slide.title}
                         className="w-full aspect-square object-cover hover:opacity-90 transition-opacity"
-                        src={normalizeContentfulImageUrl(slide.src)}
+                        src={slide.src}
                         width={400}
                         height={400}
                         sizes="(max-width: 768px) 100vw, 40vw"
@@ -57,7 +56,7 @@ export default function Lightbox2({ slides }: { slides: LightboxProps[] }) {
                 index={slideIndex}
                 plugins={[Captions]}
                 close={() => setOpen(false)}
-                slides={slides.map(s => ({ ...s, src: normalizeContentfulImageUrl(s.src) }))}
+                slides={slides}
             />
         </>);
 }
