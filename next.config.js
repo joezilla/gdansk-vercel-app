@@ -27,5 +27,12 @@ module.exports = {
   },
   compiler: {
     styledComponents: true // needed so that the dom manipulation of the darkmode icon works
-  }
+  },
+  // Include the Contentful export + cached images in every serverless
+  // function's bundle so CONTENTFUL_BACKEND=file works on Vercel.
+  // Without this, process.cwd() on Vercel Lambda (/var/task/) has no
+  // content/ directory and fs reads throw ENOENT.
+  outputFileTracingIncludes: {
+    '/**/*': ['./content/2026-04-10/**/*'],
+  },
 }

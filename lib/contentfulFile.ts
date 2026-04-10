@@ -76,26 +76,42 @@ let entriesByType: Map<string, RawEntry[]> | null = null;
 
 const EXPORT_DIR = path.join(process.cwd(), 'content/2026-04-10');
 
-function findExportFile(): string {
-    // Look for a contentful-export-*.json file in the export dir
-    const files = fs.readdirSync(EXPORT_DIR);
-    const exportFile = files.find(f =>
-        f.startsWith('contentful-export-') &&
-        f.endsWith('.json') &&
-        !f.includes('error-log')
-    );
-    if (!exportFile) {
-        throw new Error(`No contentful export file found in ${EXPORT_DIR}`);
+function findExportFile(): string | null {
+    // Look for a contentful-export-*.json file in the export dir.
+    // Returns null (rather than throwing) if the directory is missing
+    // so the app can render gracefully instead of crashing.
+    try {
+        const files = fs.readdirSync(EXPORT_DIR);
+        const exportFile = files.find(f =>
+            f.startsWith('contentful-export-') &&
+            f.endsWith('.json') &&
+            !f.includes('error-log')
+        );
+        return exportFile ? path.join(EXPORT_DIR, exportFile) : null;
+    } catch (err: any) {
+        console.error(`[FileContentfulLoader] Cannot access ${EXPORT_DIR}: ${err.message}`);
+        return null;
     }
-    return path.join(EXPORT_DIR, exportFile);
 }
 
 function loadExport(): ExportFile {
     if (cachedData) return cachedData;
 
     const filePath = findExportFile();
-    const raw = fs.readFileSync(filePath, 'utf-8');
-    cachedData = JSON.parse(raw) as ExportFile;
+    if (!filePath) {
+        // Fall back to an empty dataset so the rest of the app still renders.
+        // A single error was already logged by findExportFile().
+        cachedData = { entries: [], assets: [] };
+        return cachedData;
+    }
+
+    try {
+        const raw = fs.readFileSync(filePath, 'utf-8');
+        cachedData = JSON.parse(raw) as ExportFile;
+    } catch (err: any) {
+        console.error(`[FileContentfulLoader] Failed to read ${filePath}: ${err.message}`);
+        cachedData = { entries: [], assets: [] };
+    }
     return cachedData;
 }
 
